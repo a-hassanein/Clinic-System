@@ -1,4 +1,4 @@
-# important instraction 
+# important instructions 
 
 
 # npm install
