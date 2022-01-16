@@ -1,11 +1,9 @@
 import {
-  BsFacebook,
-  BsInstagram,
-  BsGoogle,
-  BsTwitter,
-  BsGithub,
-  BsLinkedin,
-} from "react-icons/bs";
+  ImFacebook,
+  ImTwitter,
+  ImGithub,
+  ImLinkedin,
+} from "react-icons/im";
 
 
 const Home = () => {
@@ -13,7 +11,7 @@ const Home = () => {
         <>
         <div className="container">
   <div className="row">
-    <div className="col-6">
+    <div className="col-md-8 col-lg-8">
         <div><h1 style={{color: "var(--first_color)" , fontFamily: "var(--font_family)" , fontWeight:"bold"}}>Hello Doctor</h1></div>
         <div style={{fontFamily: "var(--font_family)"}}>
         The Doctor is the title character in the long-running BBC science fiction television programme Doctor Who.
@@ -26,61 +24,46 @@ const Home = () => {
         </div>
         <br/>
         <div>
-            <button className='btn' style={{background: "var(--first_color)" ,color: "white" }} >Sign In</button>
+            <button className='btn ' style={{background: "var(--first_color)" ,color: "white" }} >Sign In</button>
             <span> </span>
             <button className='btn' style={{background: "var(--first_color)" , color: "white" }} >Sign Up</button>
         </div>
         </div>
-    <div className="col-md-3 col-lg-3 col-sm-12"><img src={require('../Images/Home_img.png')} alt='...img' width={'100%'} /></div>
+    <div className="col-3"><img className="d-none d-lg-block d-md-block" src={require('../Images/Home_img.png')} alt='...img' width={'100%'} /></div>
     <div className='col-1'>
-   <div>
-            <a
-              href="https://www.google.com"
-              className="btn btn-floating m-1"
-              style={{background: "var(--first_color)"}}
-            >
-              <i>
-                <BsGoogle />
-              </i>
-            </a>
+   <div className="d-none d-lg-block">
+       
             <a
               href="https://twitter.com/?logout=1639488448834"
-              className="btn btn-info btn-floating m-1"
+              className="btn btn-floating m-1"
             >
               <i>
-                <BsTwitter />
+                <ImTwitter />
               </i>
             </a>
             <a
               href="https://www.linkedin.com/feed/"
-              className="btn btn-outline-info btn-floating m-1"
+              className="btn  btn-floating m-1"
             >
               <i>
-                <BsLinkedin />
+                <ImLinkedin />
               </i>
             </a>
             <a
               href="https://www.facebook.com/profile.php?id=100035313377270"
-              className="btn btn-outline-info btn-floating m-1"
+              className="btn  btn-floating m-1"
             >
               <i>
-                <BsFacebook />
+                <ImFacebook />
               </i>
             </a>
-            <a
-              href="https://www.instagram.com/"
-              className="btn btn-outline-info btn-floating m-1"
-            >
-              <i>
-                <BsInstagram />
-              </i>
-            </a>
+         
             <a
               href="https://github.com/Ahmedxd199/"
-              className="btn btn-outline-info btn-floating m-1"
+              className="btn btn-floating m-1"
             >
               <i>
-                <BsGithub />
+                <ImGithub />
               </i>
             </a>
           </div>
