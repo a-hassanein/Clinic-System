@@ -4,6 +4,7 @@ import NavBar from './Components/NavBar';
 import About from './Pages/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/header';
+import Contact from './Pages/ContactUs';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/about" element={<About/>} />
+              <Route path="/contact" element={<Contact/>} />
+
             </Routes>
          </Router> 
           </>
