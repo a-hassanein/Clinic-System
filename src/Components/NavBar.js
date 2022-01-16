@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light">
-        <div className="container">
+        <div className="container-fluid">
           <Link className="navbar-brand" to="/" style={{ color: "#528197" }}>
             {" "}
             Logo{" "}
