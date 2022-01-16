@@ -70,8 +70,6 @@ const NavBar = () => {
       <br/>
 
 
-    <Home />
-
 
 
     </>

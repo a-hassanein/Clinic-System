@@ -26,9 +26,9 @@ const Home = () => {
         </div>
         <br/>
         <div>
-            <button className='btn' style={{background: "var(--first_color)" ,color: "white"}} >Sign In</button>
+            <button className='btn' style={{background: "var(--first_color)" ,color: "white" }} >Sign In</button>
             <span> </span>
-            <button className='btn' style={{background: "var(--first_color)" , color: "white"}} >Sign Up</button>
+            <button className='btn' style={{background: "var(--first_color)" , color: "white" }} >Sign Up</button>
         </div>
         </div>
     <div className="col-md-3 col-lg-3 col-sm-12"><img src={require('../Images/Home_img.png')} alt='...img' width={'100%'} /></div>
