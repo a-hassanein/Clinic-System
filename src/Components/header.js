@@ -1,17 +1,17 @@
 import {
-  ImFacebook ,
+  ImFacebook,
   ImTwitter,
   ImGithub,
-  ImLinkedin2,
+  ImLinkedin,
 } from "react-icons/im";
 
 
 const Home = () => {
     return (
         <>
-        <div className="container-fluid">
+        <div className="container">
   <div className="row">
-    <div className="col-6" style={{marginLeft:"150px"}}>
+    <div className="col-md-8 col-lg-8">
         <div><h1 style={{color: "var(--first_color)" , fontFamily: "var(--font_family)" , fontWeight:"bold"}}>Hello Doctor</h1></div>
         <div style={{fontFamily: "var(--font_family)"}}>
         The Doctor is the title character in the long-running BBC science fiction television programme Doctor Who.
@@ -24,17 +24,18 @@ const Home = () => {
         </div>
         <br/>
         <div>
-            <button className='btn' style={{background: "var(--first_color)" ,color: "white" }} >Sign In</button>
+            <button className='btn ' style={{background: "var(--first_color)" ,color: "white" }} >Sign In</button>
             <span> </span>
             <button className='btn' style={{background: "var(--first_color)" , color: "white" }} >Sign Up</button>
         </div>
         </div>
-    <div className="col-md-3 col-lg-3 col-sm-12"><img src={require('../Images/Home_img.png')} alt='...img' width={'100%'} /></div>
+    <div className="col-3"><img className="d-none d-lg-block d-md-block" src={require('../Images/Home_img.png')} alt='...img' width={'100%'} /></div>
     <div className='col-1'>
-   <div>    
+   <div className="d-none d-lg-block">
+       
             <a
               href="https://twitter.com/?logout=1639488448834"
-              className="btn  btn-floating m-1"
+              className="btn btn-floating m-1"
             >
               <i>
                 <ImTwitter />
@@ -45,7 +46,7 @@ const Home = () => {
               className="btn  btn-floating m-1"
             >
               <i>
-                <ImLinkedin2 />
+                <ImLinkedin />
               </i>
             </a>
             <a
@@ -56,9 +57,10 @@ const Home = () => {
                 <ImFacebook />
               </i>
             </a>
+         
             <a
               href="https://github.com/Ahmedxd199/"
-              className="btn  btn-floating m-1"
+              className="btn btn-floating m-1"
             >
               <i>
                 <ImGithub />

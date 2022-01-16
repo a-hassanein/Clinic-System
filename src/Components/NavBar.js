@@ -47,13 +47,13 @@ const NavBar = () => {
                 </Link>
               </li>
               <li className="nav-item text-uppercase">
-                <Link className="nav-link" to="#" style={{fontWeight: "bold"}}>
+                <Link className="nav-link" to="/about" style={{fontWeight: "bold"}}>
                   About
                 </Link>
               </li>
               <li className="nav-item text-uppercase">
-                <Link className="nav-link" to="#" style={{fontWeight: "bold"}}>
-                  Contact
+                <Link className="nav-link" to="/contact" style={{fontWeight: "bold"}}>
+                  Contact Us
                 </Link>
               </li>
             </ul>
