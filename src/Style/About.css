@@ -122,9 +122,10 @@ display: flex;
     text-transform: capitalize;
     background-color: #BCD9E6;
     border-radius: 15px;
-    padding: 20px;
+    padding: 25px;
     border: 1px solid #52829840;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     float: center;
     display: flex;
+    align-items: center;
 }
