@@ -7,16 +7,14 @@ import { Link } from "react-router-dom";
 //   BsGithub,
 //   BsLinkedin,
 // } from "react-icons/bs";
-import Home from "./header";
 
 const NavBar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/" style={{ color: "#528197" }}>
-            {" "}
-            Logo{" "}
+          <Link className="navbar-brand" to="/">
+            <img src={require('../Images/logo.png')} alt="..logo" style={{width: "100%" , height:"100%" , maxWidth:"100px" , marginLeft:"50px"}} />
           </Link>
           <button
             className="navbar-toggler"
