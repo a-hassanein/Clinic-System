@@ -13,7 +13,7 @@ function About() {
         <>
         <div className='container-fluid '>
             <div className='row'>
-                 <div className='col-12 text-left'>
+                 <div className='col-12 text-center'>
                     <h1  className='title'>ABOUT US</h1>
                 </div>
             </div>

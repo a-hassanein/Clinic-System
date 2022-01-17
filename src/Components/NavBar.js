@@ -1,12 +1,4 @@
 import { Link } from "react-router-dom";
-// import {
-//   BsFacebook,
-//   BsInstagram,
-//   BsGoogle,
-//   BsTwitter,
-//   BsGithub,
-//   BsLinkedin,
-// } from "react-icons/bs";
 
 const NavBar = () => {
   return (
