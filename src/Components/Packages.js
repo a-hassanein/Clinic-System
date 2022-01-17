@@ -43,7 +43,6 @@ function Packages() {
   ];
   return (
     <div className="Body__Packages">
-      <NavBar />
       <br />
       <h2 className="Packages__heading">OUR PACKAGES</h2>
       <br />

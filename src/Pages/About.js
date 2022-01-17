@@ -1,5 +1,4 @@
 import '../Style/About.css';
-import '../Images/Hassanein.png';
 import {
     RiFacebookFill,
     RiTwitterFill,
@@ -33,7 +32,7 @@ function About() {
         </div>
 
 
-        <div className='container text-left'>
+        <div className='container '>
         <h1  className='title'>OUR TEAM</h1>
         </div> 
 
@@ -62,7 +61,7 @@ function About() {
                 </ul>
                 </div>
 
-                <div className="card">
+                <div className="card frame">
                     <div className="content">
                         <div className="imgBx"><img src={require('../Images/Abdo.jpeg')}/></div>
                         <div className="contentBx">
@@ -156,7 +155,7 @@ function About() {
 
                 <div className="card">
                     <div className="content">
-                        <div className="imgBx"><img src={require('../Images/Home_img.png')}/></div>
+                        <div className="imgBx"><img src={require('../Images/Abrar.png')}/></div>
                         <div className="contentBx">
                             <h3>Abrar Abdelmohsen <br></br> <span>Software Engineer</span></h3>
                         </div>
