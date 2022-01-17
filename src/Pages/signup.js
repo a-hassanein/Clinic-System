@@ -28,7 +28,7 @@ function SignUp() {
                 <div className="signup-conatiner bg-light">
                     <div className="left-side">
                         <div className="welcomeNote" id="welcomeNote">
-                            <h1>
+                            <h1 style={{color:"#ffffff"}}>
                                 Welcome Doctor
                                 {/* <div className="img-className">
                             <img style={{ height: '150px', width: '400px' }} src={Logo} />
@@ -88,7 +88,7 @@ function SignUp() {
                                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                                 </a>
                             </div>
-                            <div className="footerform " style={{ color: "var(--first_color)", fontSize: '5px', paddingTop: '15px' }}>
+                            <div className="footerform " style={{ color: "#528298", fontSize: '5px', paddingTop: '15px' }}>
                                 <h5>Have an Account ? <Link id="linkform" to='/login'> Sign In Now </Link> </h5>
                             </div>
                         </div>

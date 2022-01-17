@@ -55,14 +55,14 @@ function Login() {
                                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                                 </a>
                             </div>
-                            <div className="footerform " style={{ color: "var(--first_color)", fontSize: '5px', paddingTop: '15px' }}>
+                            <div className="footerform " style={{ color: "#528298", fontSize: '5px', paddingTop: '15px' }}>
                                 <h5>Dont Have an Account ? <Link id ="linkform" to='/signup'> Register Now </Link> </h5>
                             </div>
                         </div>
                     </div>
                     <div className="right-side">
                         <div className="welcomeNote" id="welcomeNote">
-                            <h1>
+                            <h1 style={{color:"#ffffff"}}>
                                 Welcome Back
                             </h1>
                         </div>
