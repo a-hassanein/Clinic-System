@@ -8,6 +8,7 @@ import Contact from './Pages/ContactUs';
 import SignUp from './Pages/signup';
 import Login from './Pages/login';
 import Packages from "./Components/Packages";
+import Services from './Pages/Services';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/about" element={<About/>} />
+              <Route path="/services" element={<Services/>} />
               <Route path="/contact" element={<Contact/>} />
               <Route path="/packages" element={<Packages />} />
               <Route path="/login" element={<Login />} />
