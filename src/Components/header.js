@@ -5,16 +5,15 @@ import {
   ImLinkedin2,
 } from "react-icons/im";
 import { Link } from "react-router-dom";
-
-
+import '../Style/styleservices.css'
 const Home = () => {
   return (
     <>
-      <div className="container-xxl">
+      <div className="container" >
         <div className="row">
-          <div className="col-md-8 col-lg-8">
-            <div><h1 style={{ color: "var(--first_color)", fontFamily: "var(--font_family)", fontWeight: "bold" }}>Hello Doctor</h1></div>
-            <div style={{ fontFamily: "var(--font_family)" }}>
+          <div className="col-md-6 col-lg-7 col-sm-12 col-xs-12">
+            <div><h1 style={{ color: "var(--first_color)", fontFamily: "var(--font_family)", fontWeight: "bold" , fontSize:"3em" }}>Hello Doctor</h1></div>
+            <div className="d-flex .justify-content-center" style={{ fontFamily: "var(--font_family)" , fontSize:"1.25em" }}>
               The Doctor is the title character in the long-running BBC science fiction television programme Doctor Who.
               Since the show's inception in 1963, the character has been portrayed by thirteen lead actors.
               In the programme, "the Doctor" is the alias assumed by a millennia-old humanoid alien called a Time Lord
@@ -26,18 +25,21 @@ const Home = () => {
             <br />
             <div>
               <Link to='/login'>
-                <button className='btn ' style={{ background: "var(--first_color)", color: "white" }} >Sign In</button>
+                <button className='btn' id="card_services" style={{ background: "var(--first_color)", color: "white" , width:"120px" }} >Sign In</button>
               </Link>
 
               <span> </span>
               <Link to='signup'>
-              <button className='btn' style={{ background: "var(--first_color)", color: "white" }} >Sign Up</button>
+              <button className='btn' id="card_services" style={{ background: "var(--first_color)", color: "white" ,width:"120px" }} >Sign Up</button>
 
               </Link>
             </div>
           </div>
-          <div className="col-3"><img className="d-none d-lg-block" src={require('../Images/Home_img.png')} alt='...img' width={'100%'} /></div>
-          <div className='col-1' style={{marginTop:"70px"}}>
+            <div className="col-lg-4 col-md-5 col-sm-0 col-xs-0"><img className="d-none d-lg-block" src={require('../Images/Home_img.png')} alt='...img' width={'450px'} /></div>
+         
+         
+         
+        <div className='col-1' style={{marginTop:"100px"}}>
             <div className="d-none d-lg-block">
 
               <a
@@ -74,6 +76,10 @@ const Home = () => {
                   <ImGithub />
                 </i>
               </a>
+
+
+
+
             </div>
 
 
