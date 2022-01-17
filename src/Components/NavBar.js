@@ -27,7 +27,7 @@ const NavBar = () => {
                 </Link>
               </li>
               <li className="nav-item text-uppercase">
-                <Link className="nav-link" to="#" style={{fontWeight: "bold"}}>
+                <Link className="nav-link" to="/services" style={{fontWeight: "bold"}}>
                   Services
                 </Link>
               </li>
