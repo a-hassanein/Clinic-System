@@ -1,10 +1,15 @@
-:root{
+/* :root{
     --first_color:#528298;
     --second_color:#BCD9E6;
     --light_color:#ffffff;
     --dark_color:#303030;
     --font_family:'Cairo', sans-serif;
-}
+} */
+*{
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 .main-signup {   
     min-height: 75vh;
     min-width: 75vw;
@@ -14,10 +19,10 @@
 .main-signup .signup-conatiner{
     height: 75vh;
     width: 70% ;
-    background: linear-gradient(to right , var(--first_color) , var(--light_color) 55%);
+    background: linear-gradient(to right , #528298 , #ffffff 55%);
     border-radius: 10;
     margin: 2rem auto ;
-    box-shadow: 0.5rem 0.5rem 2rem -1rem var(--dark_color);
+    box-shadow: 0.5rem 0.5rem 2rem -1rem #303030;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +30,7 @@
 }
 .main-signup .signup-conatiner Link {
     text-decoration: none;
-    color: var(--first_color);
+    color: #528298 ;
 }
 .main-signup .signup-conatiner .right-side , .left-side {
     height: 80%;
@@ -34,7 +39,7 @@
 }
 #Form_Title {
     text-align: center;
-    color: var(--first_color);
+    color: #528298;
     font-size: 30px;
     font-weight: 10px;
 }
@@ -55,7 +60,7 @@
     display: block;
     width: 350px; 
     height: 3rem;
-    border-color: var(--second_color);
+    border-color: #BCD9E6;
     border-radius: 15px;
     padding: 10px;
 }
@@ -74,8 +79,8 @@
 
 }
 .main-signup .signup-conatiner .btn {
-    background-color: var(--first_color);
-    color: var(--light_color);
+    background-color: #528298;
+    color: #ffffff;
     margin-top: 15px;
     cursor: pointer;
     border-radius: 15px;
@@ -104,7 +109,7 @@
 }
 
 #welcomeNote {
-    color: var(--light_color);
+    color: #ffffff ;
     font-size: 70px;
     font-weight: 10;
     font-style: bold;

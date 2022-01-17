@@ -5,6 +5,11 @@
     --dark_color:#303030;
     --font_family:'Cairo', sans-serif;
 }
+*{
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 .main-login {   
     min-height: 75vh;
     min-width: 75vw;
