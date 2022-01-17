@@ -30,14 +30,14 @@ const Home = () => {
         </div>
         </div>
     <div className="col-3"><img className="d-none d-lg-block" src={require('../Images/Home_img.png')} alt='...img' width={'100%'} /></div>
-    <div className='col-1'>
+    <div className='col-1' style={{marginTop:"70px"}}>
    <div className="d-none d-lg-block">
        
             <a
               href="https://twitter.com/?logout=1639488448834"
               className="btn btn-floating m-1"
             >
-              <i>
+              <i style={{color:"var(--first_color)"}}>
                 <ImTwitter />
               </i>
             </a>
@@ -45,7 +45,7 @@ const Home = () => {
               href="https://www.linkedin.com/feed/"
               className="btn  btn-floating m-1"
             >
-              <i>
+              <i style={{color:"var(--first_color)"}}>
                 <ImLinkedin2 />
               </i>
             </a>
@@ -53,7 +53,7 @@ const Home = () => {
               href="https://www.facebook.com/profile.php?id=100035313377270"
               className="btn  btn-floating m-1"
             >
-              <i>
+              <i style={{color:"var(--first_color)"}}>
                 <ImFacebook />
               </i>
             </a>
@@ -62,7 +62,7 @@ const Home = () => {
               href="https://github.com/Ahmedxd199/"
               className="btn btn-floating m-1"
             >
-              <i>
+              <i style={{color:"var(--first_color)"}}>
                 <ImGithub />
               </i>
             </a>
