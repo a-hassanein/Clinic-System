@@ -7,7 +7,7 @@ import Home from './Components/header';
 import Contact from './Pages/ContactUs';
 import SignUp from './Pages/signup';
 import Login from './Pages/login';
-import Services from './Pages/Services';
+import Packages from "./Components/Packages";
 
 function App() {
   return (
@@ -17,9 +17,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/about" element={<About/>} />
-              <Route path="/Services" element={<Services/>} />
               <Route path="/contact" element={<Contact/>} />
-              <Route path="/about" element={<About />} />
+              <Route path="/packages" element={<Packages />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
             </Routes>

@@ -1,5 +1,4 @@
 import '../Style/About.css';
-import '../Images/Hassanein.png';
 import {
     RiFacebookFill,
     RiTwitterFill,
@@ -21,7 +20,7 @@ function About() {
             <div className='row '>
                 <div className='col-12'>
                     <div className='AboutContent'>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim ipsum, viverra quis libero ut, iaculis feugiat nisl. Pellentesque egestas dui vel ipsum lobortis feugiat. Aliquam sed neque nec arcu malesuada placerat at sollicitudin orci. Etiam ut odio feugiat, lacinia lacus at, mollis risus. Praesent id accumsan elit. Duis egestas nunc efficitur gravida pharetra. Sed elit ante, molestie sit amet euismod vitae, mollis ut elit. Curabitur scelerisque imperdiet justo, maximus cursus ex porttitor et. Cras ullamcorper velit eget dignissim volutpat. In at bibendum velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse quis laoreet est. Sed vel ligula lorem.
+                    <p> hello im asmaaaaa Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim ipsum, viverra quis libero ut, iaculis feugiat nisl. Pellentesque egestas dui vel ipsum lobortis feugiat. Aliquam sed neque nec arcu malesuada placerat at sollicitudin orci. Etiam ut odio feugiat, lacinia lacus at, mollis risus. Praesent id accumsan elit. Duis egestas nunc efficitur gravida pharetra. Sed elit ante, molestie sit amet euismod vitae, mollis ut elit. Curabitur scelerisque imperdiet justo, maximus cursus ex porttitor et. Cras ullamcorper velit eget dignissim volutpat. In at bibendum velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse quis laoreet est. Sed vel ligula lorem.
                     Proin porttitor lacus quis semper porta. Integer sagittis massa sit amet orci condimentum consequat. Sed vehicula euismod ligula, nec lobortis turpis elementum nec. Mauris et lobortis odio, vitae porttitor risus. Donec vitae lacinia arcu. Fusce efficitur fermentum justo a consequat. Praesent a malesuada lorem. Etiam arcu diam, luctus in tortor in, convallis fringilla dolor. Aenean ut maximus nibh. Pellentesque viverra tortor sed eleifend pulvinar. Praesent rutrum nulla est, ultricies bibendum ex lobortis at. Morbi felis eros, egestas vitae iaculis sit amet, laoreet eget purus. Cras varius molestie tempus. Nullam mi enim, fermentum a eros a, porttitor sodales eros.
                     Pellentesque nec neque id tellus scelerisque aliquam eu sed libero. Integer malesuada aliquet pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec rhoncus sem vitae velit scelerisque consequat. Fusce condimentum malesuada lacus ac viverra. Pellentesque volutpat ante nunc, ac suscipit sem faucibus ac. Pellentesque scelerisque faucibus tellus.
                     Etiam venenatis odio non erat faucibus efficitur. Etiam a sem non leo commodo dignissim vel pellentesque lorem. Nam congue lacus risus, ut scelerisque odio aliquam vitae. Suspendisse consequat lorem et tincidunt lacinia. Quisque non ornare nulla. Nullam nec diam vitae elit faucibus mattis. Curabitur convallis in eros vel condimentum.
@@ -33,7 +32,7 @@ function About() {
         </div>
 
 
-        <div className='container text-left'>
+        <div className='container '>
         <h1  className='title'>OUR TEAM</h1>
         </div> 
 
@@ -62,7 +61,7 @@ function About() {
                 </ul>
                 </div>
 
-                <div className="card">
+                <div className="card frame">
                     <div className="content">
                         <div className="imgBx"><img src={require('../Images/Abdo.jpeg')}/></div>
                         <div className="contentBx">
@@ -156,7 +155,7 @@ function About() {
 
                 <div className="card">
                     <div className="content">
-                        <div className="imgBx"><img src={require('../Images/Home_img.png')}/></div>
+                        <div className="imgBx"><img src={require('../Images/Abrar.png')}/></div>
                         <div className="contentBx">
                             <h3>Abrar Abdelmohsen <br></br> <span>Software Engineer</span></h3>
                         </div>

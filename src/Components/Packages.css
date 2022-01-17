@@ -1,0 +1,15 @@
+.Body__Packages{
+    font-family: var(--font_family);
+    font-weight: var(--font_weight_bold);
+}
+.Packages__heading{
+    text-align: center;
+    font-size: 50px;
+    color: var(--first_color) ;  
+    font-weight: var(--font_weight_bold); 
+    
+}
+.Body__Packages{
+    text-align: center;
+    font-weight: var(--font_weight_bold);
+}
