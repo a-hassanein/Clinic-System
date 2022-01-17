@@ -18,7 +18,7 @@ function Services() {
         <div className="row">
     <div className="col-sm-4">
       <div className="card text-center">
-        <div className="card-body">
+        <div className="card-body" id="card_services">
         <div>
         {/* <FontAwesomeIcon icon={ faHouseChimneyMedical} /> */}
   </div>
@@ -26,35 +26,30 @@ function Services() {
           <h3 className="card-title text-center" >CREATE YOUR PRIVATE CLINIC</h3>
           <hr/>
           <p className="card-text text-center">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-          <a href="#" className="btn ">show details</a>
+          <a href="#" className="btn " id="btn_services">show details</a>
         </div>
       </div>
     </div>
 
 
-
-
-
-
-
     <div className="col-sm-4">
       <div className="card text-center">
-        <div className="card-body">
+        <div className="card-body" id="card_services">
           <h3 className="card-title text-center" >CREATE YOUR PRIVATE CLINIC</h3>
           <hr/>
           <p className="card-text text-center">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-          <a href="#" className="btn ">show details</a>
+          <a href="#" className="btn " id="btn_services">show details</a>
         </div>
       </div>
     </div>
     <div className="col-sm-4">
       <div className="card text-center">
-        <div className="card-body">
+        <div className="card-body" id="card_services">
           <h3 className="card-title text-center" >CREATE YOUR PRIVATE CLINIC</h3>
           <hr/>
          
           <p className="card-text text-center">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-          <a href="#" className="btn" >show details</a>
+          <a href="#" className="btn" id="btn_services">show details</a>
         </div>
       </div>
     </div>

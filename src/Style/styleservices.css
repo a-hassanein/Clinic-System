@@ -41,12 +41,12 @@ body{
     font-weight: 600;
     text-align: center;
 }
-.card{
+#card_services{
     
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px var(--first_color)
 }
-.btn{
+#btn_services{
     background-color: var(--first_color);
     color: white;
     text-align: center;
@@ -55,10 +55,10 @@ body{
     font-weight: 550;
     
 }
-.btn:hover{
+#btn_services:hover{
     background-color: var(--second_color);
 }
-.card:hover{
+#card_services:hover{
     background-color: var(--first_color);
     color: var(--light_color);
     
