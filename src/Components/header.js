@@ -20,7 +20,7 @@ const Home = () => {
           who travels through space and time in the TARDIS, frequently with companions. 
           The transition to each succeeding actor is explained within the show's narrative through the plot device of "regeneration", 
           a biological function of the Time Lord race that allows a change of cellular structure and appearance with recovery following
-         a potentially fatal injury Hi Hassanin.
+         a potentially fatal injury Hi Hassanin@.
         </div>
         <br/>
         <div>
