@@ -2,14 +2,14 @@ import {
   ImFacebook,
   ImTwitter,
   ImGithub,
-  ImLinkedin,
+  ImLinkedin2,
 } from "react-icons/im";
 
 
 const Home = () => {
     return (
         <>
-        <div className="container">
+        <div className="container-xxl">
   <div className="row">
     <div className="col-md-8 col-lg-8">
         <div><h1 style={{color: "var(--first_color)" , fontFamily: "var(--font_family)" , fontWeight:"bold"}}>Hello Doctor</h1></div>
@@ -29,7 +29,7 @@ const Home = () => {
             <button className='btn' style={{background: "var(--first_color)" , color: "white" }} >Sign Up</button>
         </div>
         </div>
-    <div className="col-3"><img className="d-none d-lg-block d-md-block" src={require('../Images/Home_img.png')} alt='...img' width={'100%'} /></div>
+    <div className="col-3"><img className="d-none d-lg-block" src={require('../Images/Home_img.png')} alt='...img' width={'100%'} /></div>
     <div className='col-1'>
    <div className="d-none d-lg-block">
        
@@ -46,7 +46,7 @@ const Home = () => {
               className="btn  btn-floating m-1"
             >
               <i>
-                <ImLinkedin />
+                <ImLinkedin2 />
               </i>
             </a>
             <a
