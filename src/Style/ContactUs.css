@@ -1,0 +1,91 @@
+.contactContainer{
+    border: 2px solid #fff;
+    border-radius: 40px;
+    box-shadow: 1px 1px 10px 5px #BCD9E6;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-family: var(--font_family);
+    padding-left: 30px;
+}
+.formRow{
+    padding: 10px;
+}
+.input{
+    border:none;
+    border-bottom: 1px solid #528298;
+}
+.inputLabel{
+    color: #528298;
+    font-size: 20px;
+    font-weight: 800;
+}
+    
+.Contactinfo{
+    border-radius: 30px ;
+    background-image: url(../Images/contact2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #528298;
+    /* margin-top: auto;
+    margin-bottom: auto; */
+}
+.icon:hover{
+    color: var(--second_color);
+    
+    
+    
+}
+.iconsm:hover{
+    color: var(--second_color);
+    
+    
+    
+}
+.icon{
+    font-size: 30px;
+    color: var(--first_color);
+}
+.iconsm{
+    font-size: 20px;
+    color: var(--first_color);
+}
+.contactway{
+    font-size: 17px;
+    color: #000;
+    font-weight: 700;
+    padding-top: 10px;
+    text-decoration: none;
+
+}
+.contactway:hover{
+    color: var(--first_color);
+
+}
+.button{
+    background-color: var(--first_color);
+    color: var(--light_color);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100px;
+}
+.button:hover{
+    background-color: var(--light_color);
+    color: var(--first_color);
+    border: 2px solid var(--first_color);
+}
+h1{
+    color: #528298;
+    padding-top: 40px;
+    font-weight: 700;
+}
+.contactinfo2{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.smicon{
+    margin-top: auto;
+    margin-bottom: auto;
+}

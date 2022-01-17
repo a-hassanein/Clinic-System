@@ -11,7 +11,3 @@ body{
   --font_family:'Cairo', sans-serif;
 }
 
-
-.title{
-  color: var(--first_color);
-}

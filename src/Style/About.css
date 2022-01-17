@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;700;900&display=swap');
+
+*{
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;   
+}
+
+.container{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.container .card {
+position: relative;
+width: 300px;
+height: 400px;
+background: #BCD9E6;
+margin: 20px;
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+border-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(10px);
+}
+
+.container .card .content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+.container .card:hover .content{
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.container .card .content .imgBx{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid #52829840;
+}
+
+.container .card .content .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card .content .contentBx h3{
+    color: #528298;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 1.3em;
+    text-align: center;
+    margin: 20px 0 10px;
+    line-height: 1.1em;
+}
+
+.container .card .content .contentBx h3 span{
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: initial;
+}
+
+
+.container .card .sci{
+position: absolute;
+bottom: 50px;
+margin-left: -35px;
+margin-right: 0;
+display: flex;
+}
+
+.container .card .sci li{
+    list-style: none;
+    margin: 0 5px;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: calc(0.1s * var(--i));
+}
+
+.container .card:hover .sci li{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.container .card .sci li a{
+    color: #528298;
+    font-size: 24px;
+}
+
+.AboutContent{
+    width: 80%;
+    color: #528298;
+    font-weight: 600;
+    text-transform: capitalize;
+    background-color: #BCD9E6;
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #52829840;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    float: center;
+    display: flex;
+}
