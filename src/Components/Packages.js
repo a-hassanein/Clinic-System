@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Row ,Col } from "react-bootstrap";
 
 import CardPackages from "./CardPackages";
 import NavBar from "./NavBar";
@@ -54,9 +55,11 @@ function Packages() {
       <br/>
       <br/>
      
-      <div className="d-flex justify-content-evenly flex-wrap">
+      <div className="d-flex justify-content-evenly">
+        <Container>
       
-     
+     <Row>
+       <Col className="col-sm-3 card_packages">
      
         <CardPackages
           title={packages[0].title}
@@ -65,6 +68,8 @@ function Packages() {
           list1={packages[0].list1}
           list2={packages[0].list2}
         />
+        </Col>
+        <Col className="col-sm-3 card_packages">
        
        
         <CardPackages 
@@ -76,6 +81,9 @@ function Packages() {
           list1={packages[1].list1}
           list2={packages[1].list2}
         />
+        </Col>
+        
+        <Col className="col-sm-3 card_packages">
       
         <CardPackages
           title={packages[2].title}
@@ -86,7 +94,9 @@ function Packages() {
           list1={packages[2].list1}
           list2={packages[2].list2}
         />
+        </Col>
        
+        <Col className="col-sm-3 card_packages">
         <CardPackages
           title={packages[3].title}
           Subtitle={packages[3].Subtitle}
@@ -96,6 +106,10 @@ function Packages() {
           list1={packages[3].list1}
           list2={packages[3].list2}
         />
+        </Col>
+        </Row>
+
+</Container>
        
       </div>
     </div>
