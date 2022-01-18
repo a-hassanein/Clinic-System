@@ -15,7 +15,7 @@
     font-weight: bold;
     color: var(--first_color);
     text-transform: uppercase;
-    margin-left:30px;
+    margin-left:45px;
     
 }
 
@@ -101,18 +101,18 @@
     color:var(--fourth_color)
 }
 
-@media (max-width: 1980px){
+@media (max-width: 1920px){
     .banner{
         padding: 200px 0;
     }
     .banner h1{
         font-size: 4em;
-        margin-left:0px;
+        margin-left:45px;
         
     }
     .banner p{
         font-size: 1.0em;
-        margin-left:0px;
+        margin-left:30px;
     }
 
     #signinID{
@@ -140,6 +140,12 @@
 
     .banner h1{
         margin-top: -150px;
+        margin-left:0px;
+    }
+
+    .banner p{
+        
+        margin-left:0px;
     }
     .social{
         display: none;
