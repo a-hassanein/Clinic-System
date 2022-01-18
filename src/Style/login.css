@@ -13,13 +13,13 @@
     padding: 0;
   }
 .main-login {   
-    min-height: 75vh;
-    min-width: 75vw;
+    min-height: 100vh;
+    min-width: 100vw;
     overflow: hidden;
 }
 
 .main-login .login-conatiner{
-    height: 75vh;
+    height: 85vh;
     width: 70% ;
     background: linear-gradient(to right , var(--light_color) 50%, var(--first_color));
     border-radius: 10;

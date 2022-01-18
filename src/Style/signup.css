@@ -6,13 +6,13 @@
     padding: 0;
   }
 .main-signup {   
-    min-height: 90vh;
-    min-width: 90vw;
+    min-height: 100vh;
+    min-width: 100vw;
     overflow: hidden;
 }
 
 .main-signup .signup-conatiner{
-    height: 75vh;
+    height: 85vh;
     width: 70% ;
     background: linear-gradient(to right , #528298 , #ffffff 55%);
     border-radius: 10;
