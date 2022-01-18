@@ -13,7 +13,7 @@ function About() {
         <div className='container-fluid '>
             <div className='row'>
                  <div className='col-12 text-center'>
-                    <h1  className='title'>ABOUT US</h1>
+                    <h1  className='title' style={{fontSize:"3.5em" ,color:"var(--dark_color)"}}>ABOUT US</h1>
                 </div>
             </div>
 
@@ -32,12 +32,12 @@ function About() {
         </div>
 
 
-        <div className='container '>
-        <h1  className='title'>OUR TEAM</h1>
+        <div className='container text-center'>
+        <h1  className='title' style={{fontSize:"3.5em" ,color:"var(--dark_color)"}}>OUR TEAM</h1>
         </div> 
 
         <section className='all'>
-            <div className="container">
+            <div className="container-fluid About">
                 <div className="card">
                     <div className="content">
                         <div className="imgBx"><img src={require('../Images/Hassanein.png')}/></div>

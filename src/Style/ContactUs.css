@@ -1,7 +1,7 @@
 .contactContainer{
     border: 2px solid #fff;
     border-radius: 40px;
-    box-shadow: 1px 1px 10px 5px #BCD9E6;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
     margin-bottom: 30px;
     margin-top: 30px;
     font-family: var(--font_family);
@@ -77,9 +77,11 @@
     border: 2px solid var(--first_color);
 }
 h1{
-    color: #528298;
+    color: var(--dark_color);
     padding-top: 40px;
-    font-weight: 700;
+    font-weight: 900;
+    font-size:3.5em ;
+    text-transform: uppercase;
 }
 .contactinfo2{
     padding-top: 30px;
