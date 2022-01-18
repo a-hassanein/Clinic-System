@@ -28,13 +28,13 @@ function SignUp() {
                 <div className="signup-conatiner bg-light">
                     <div className="left-side">
                         <div className="welcomeNote" id="welcomeNote">
-                            <h1 style={{color:"#ffffff"}}>
+                            <p style={{color:"#ffffff" , fontWeight:700}}>
                                 Welcome Doctor
                                 {/* <div className="img-className">
                             <img style={{ height: '150px', width: '400px' }} src={Logo} />
                       </div> */}
-                            </h1>
-                            <h3>
+                            </p>  
+                            <h3 style={{fontWeight:600 , fontSize:20}}>
                                 We are so glad to have you here
 
                             </h3>
@@ -89,7 +89,7 @@ function SignUp() {
                                 </a>
                             </div>
                             <div className="footerform " style={{ color: "#528298", fontSize: '5px', paddingTop: '15px' }}>
-                                <h5>Have an Account ? <Link id="linkform" to='/login'> Sign In Now </Link> </h5>
+                                <p style={{fontWeight:600 , fontSize:20}}>Have an Account ? <Link id="linkform" to='/login'> Sign In Now </Link> </p>
                             </div>
                         </div>
                     </div>
