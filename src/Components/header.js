@@ -5,14 +5,16 @@ import {
   ImLinkedin2,
 } from "react-icons/im";
 import { Link } from "react-router-dom";
+import Services from "../Pages/Services";
 import '../Style/styleservices.css'
+import Packages from "./Packages";
 const Home = () => {
   return (
     <>
-      <div className="container" >
+      <div className="container-xl" >
         <div className="row">
           <div className="col-md-6 col-lg-7 col-sm-12 col-xs-12">
-            <div><h1 style={{ color: "var(--first_color)", fontFamily: "var(--font_family)", fontWeight: "bold" , fontSize:"3em" }}>Hello Doctor</h1></div>
+            <div><h1 style={{ color: "var(--first_color)", fontFamily: "var(--font_family)", fontWeight: "bold" , fontSize:"4em" }}>Hello Doctor</h1></div>
             <div className="d-flex .justify-content-center" style={{ fontFamily: "var(--font_family)" , fontSize:"1.25em" }}>
               The Doctor is the title character in the long-running BBC science fiction television programme Doctor Who.
               Since the show's inception in 1963, the character has been portrayed by thirteen lead actors.
@@ -25,12 +27,12 @@ const Home = () => {
             <br />
             <div>
               <Link to='/login'>
-                <button className='btn' id="card_services" style={{ background: "var(--first_color)", color: "white" , width:"120px" }} >Sign In</button>
+                <button className='btn'  style={{ background: "var(--first_color)", color: "white" , width:"150px" , borderRadius: "10px"}} >Sign In</button>
               </Link>
 
               <span> </span>
               <Link to='signup'>
-              <button className='btn' id="card_services" style={{ background: "var(--first_color)", color: "white" ,width:"120px" }} >Sign Up</button>
+              <button className='btn' style={{ background: "var(--first_color)", color: "white" ,width:"150px" , borderRadius: "10px" }} >Sign Up</button>
 
               </Link>
             </div>
@@ -44,9 +46,9 @@ const Home = () => {
 
               <a
                 href="https://twitter.com/?logout=1639488448834"
-                className="btn btn-floating m-1"
+                className="btn btn-floating m-1"   
               >
-                <i style={{color:'var(--first_color)'}}>
+                <i style={{color:'var(--first_color)' }} >
             
                   <ImTwitter />
                 </i>
@@ -85,7 +87,14 @@ const Home = () => {
 
           </div>
         </div>
+
+        <Services />
+        <Packages/>
+      
+
+
       </div>
+   
     </>
   );
 }
