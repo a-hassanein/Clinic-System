@@ -59,6 +59,9 @@ const Contact = ()=>{
         }
 
     }
+    const handlesubmit = (event) => {
+        event.preventDefault();
+    }
 return(
     <>
         <div className="row text-center" style={{marginTop:"50px"}}>
@@ -83,7 +86,7 @@ return(
             </div>
             <div className="row formRow">
                 <div className="col-lg-6 col-md-12">
-                    <form>
+                    <form onSubmit={handlesubmit}>
                         <div className="mb-3">
                             <label  className="form-label inputLabel">Name</label>
                             <input type="text" placeholder="Enter Your Name" name="username" className="form-control input" onChange={(e) => nameValidate(e)}/>
