@@ -11,7 +11,7 @@ import Packages from "./Packages";
 const Home = () => {
   return (
     <>
-      <div className="container-xl" >
+      <div className="container-xxl" >
         <div className="row">
           <div className="col-md-6 col-lg-7 col-sm-12 col-xs-12">
             <div><h1 style={{ color: "var(--first_color)", fontFamily: "var(--font_family)", fontWeight: "bold" , fontSize:"4em" }}>Hello Doctor</h1></div>
