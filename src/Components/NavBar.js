@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { Nav, Navbar , Container } from "react-bootstrap";
+import { Nav, Navbar  } from "react-bootstrap";
 
 const NavBar = () => {
   return (
@@ -24,7 +24,7 @@ const NavBar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <div className="collapse navbar-collapse justify-contguent-center" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item active">
                 <Link className="nav-link text-uppercase" to="/" style={{ color: "#528197" , fontWeight: "bold" }}>
