@@ -2,15 +2,16 @@
 .Card__bg{
     /*  background-color: var(--first_color);*/
      /* color: var( --first_color) !important;*/
-      font-weight: var(--font_weight_bold);
-      border-color: var(--first_color)
+      font-weight: bold;
+      border-color: var(--first_color);
+      border-radius: 10px;
   }
   .Card__Title{
       text-align: center;
      /* height: 3rem;*/
       font-size: 45px;
       color: var( --first_color);
-      font-weight: var(--font_weight_bold);
+      font-weight: bold;
   }
   .Card__Subtitle{
       text-align: center;
@@ -21,32 +22,29 @@
   }
   .Card__list{
       font-size: 20px;
-      font-weight: var(--font_weight_bold);
+      font-weight: bold;
   }
   .Card__Button{
-      background-color:var(--first_color);
-      border: none;
-      color: var(--light_color);
-      text-align: center;
-      -webkit-transition-duration: 0.4s; /* Safari */
-      transition-duration: 0.4s;
-      font-size: 16px;
-      padding: 15px 32px;
+    background-color: var( --first_color);
+    color: white;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: var(--font_weight_bold);
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: 550;
+    width: 100px;
+    height: 50px;
+
   
   }
   .Card__Button:hover{
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: var(--second_color);
   }
   .span__Egy{
       font-size: 20px;
-      font-weight: var(--font_weight_bold);
+      font-weight: bold;
   }
   .span__Per{
       font-size: 35px;
-      font-weight: var(--font_weight_bold);
+      font-weight: bold;
       font-style: oblique;
   }

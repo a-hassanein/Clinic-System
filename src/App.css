@@ -6,6 +6,8 @@ body{
 :root{
   --first_color:#528298;
   --second_color:#BCD9E6;
+  --third_color:#3f6577;
+  --fourth_color:#70a1b8;
   --light_color:#ffffff;
   --dark_color:#303030;
   --font_family:'Cairo', sans-serif;

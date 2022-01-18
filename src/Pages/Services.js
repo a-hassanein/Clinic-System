@@ -15,8 +15,9 @@ function Services() {
             <div className='d'> design your own CLINIC SYSTEM with us</div>
 <br/>
 <br/>
+<div className='services_all'>
         <div className="row">
-    <div className="col-sm-4">
+    <div className="col-sm-4" id="c1">
       <div className="card text-center">
         <div className="card-body" id="card_services">
         <div>
@@ -32,7 +33,7 @@ function Services() {
     </div>
 
 
-    <div className="col-sm-4">
+    <div className="col-sm-4" id="c1">
       <div className="card text-center">
         <div className="card-body" id="card_services">
           <h3 className="card-title text-center" >CREATE YOUR PRIVATE CLINIC</h3>
@@ -42,7 +43,7 @@ function Services() {
         </div>
       </div>
     </div>
-    <div className="col-sm-4">
+    <div className="col-sm-4" id="c1">
       <div className="card text-center">
         <div className="card-body" id="card_services">
           <h3 className="card-title text-center" >CREATE YOUR PRIVATE CLINIC</h3>
@@ -53,6 +54,7 @@ function Services() {
         </div>
       </div>
     </div>
+  </div>
   </div>
   </div>
   </div>
