@@ -93,4 +93,9 @@ h1{
     padding-top: 30px;
     padding-bottom: 30px;
 }
+@media (max-width: 719px){
+    .contactimg{
+        display:none;
+    }
+}
 
