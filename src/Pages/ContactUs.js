@@ -1,4 +1,4 @@
-import {BsFacebook, BsTwitter,BsLinkedin, BsFillTelephoneFill} from "react-icons/bs";
+import {BsFillTelephoneFill} from "react-icons/bs";
 import {TiLocation} from "react-icons/ti"
 import {HiMail} from "react-icons/hi"
 import '../Style/ContactUs.css'
@@ -61,7 +61,6 @@ const Contact = ()=>{
     }
 return(
     <>
-   
         <div className="row text-center" style={{marginTop:"200px"}}>
                 <div className="col-lg-12">
                     <h1 >Contact</h1>
