@@ -30,7 +30,7 @@ const Home = () => {
             </div>
             <br />
             <div>
-              <Link to='/login' class="btn ml-lg-auto" id="signinID">
+              <Link to='/login' className="btn ml-lg-auto" id="signinID">
               SignIn
               </Link>
 
@@ -52,11 +52,6 @@ const Home = () => {
           </ul>
           </div>
         </div>
-      
-
-        
-      
-
 
       </div>
     </section>
