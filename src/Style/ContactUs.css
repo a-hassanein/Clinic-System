@@ -7,9 +7,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;700;900&display=swap');
 
-.contactPage{
-    height: 70vh;
-}
+
 .contactContainer{
     border: 2px solid #fff;
     border-radius: 40px;
@@ -57,10 +55,7 @@
     font-size: 30px;
     color: var(--first_color);
 }
-.iconsm{
-    font-size: 20px;
-    color: var(--first_color);
-}
+
 .contactway{
     font-size: 17px;
     color: #000;
@@ -98,7 +93,4 @@ h1{
     padding-top: 30px;
     padding-bottom: 30px;
 }
-.smicon{
-    margin-top: auto;
-    margin-bottom: auto;
-}
+
