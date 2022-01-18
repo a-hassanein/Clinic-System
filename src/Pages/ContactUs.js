@@ -66,7 +66,7 @@ return(
                     <h1 >Contact</h1>
                 </div>
         </div>
-        <div className="container contactContainer ">
+        <div className="container-fluid contactContainer ">
             <div className="row text-center contactinfo2" >
                     <div className="col-lg-4 contactinfodiv">
                         <span className="icon" ><HiMail/></span>
@@ -102,7 +102,7 @@ return(
                             </textarea>
                         </div>
                         <div className="mb-3 text-center">
-                        <button type="submit" className="btn btn-lg  button" style={{marginTop:"10px",marginBottom:"10px",width:"100px"}}>Send</button>
+                        <button type="submit" className="btn btn-lg  button">Send</button>
                         </div>
                     </form>
                 </div>

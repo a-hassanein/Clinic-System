@@ -81,6 +81,7 @@
     margin-left: auto;
     flex-direction: column;
     margin-top: -150px;
+
 }
 
 .social li{
@@ -134,6 +135,11 @@
 @media (max-width: 719px){
     .banner{
         background: url(../Images/banner2.png);
+        
+    }
+
+    .banner h1{
+        margin-top: -150px;
     }
     .social{
         display: none;
