@@ -27,12 +27,12 @@ function SignUp() {
             </div> */}
             <div className="main-signup">
                 <div className="signup-conatiner">
-                    <div className="left-side">
+                    <div className="left-side" id ="leftSide">
                         <div className="welcomeNote" id="welcomeNote">
                             <p style={{color:"#ffffff" , fontWeight:700}}>
                                 Welcome To
                             
-                            <img style={{ width:'100px' , alignItems:"center" , paddingBottom: 12 , marginLeft :10  }} src={logo} />
+                            <img id ="logoSignUpId" style={{ width:'100px' , alignItems:"center" , paddingBottom: 12 , marginLeft :10  }} src={logo} />
                             </p>  
                             <h3 style={{fontWeight:600 , fontSize:20}}>
                                 We are so glad to have you here
@@ -40,20 +40,17 @@ function SignUp() {
                             </h3>
                         </div>
                         <div className="welcomeImg">
-                            <img id="loginImg" src={signup}>
+                            <img id="signupImg" src={signup}>
                             </img>
                         </div>
 
                     </div>
-                    <div className="right-side">
-                        {/* <div className="img-className">
-                            <img style={{ height: '150px', width: '400px' }} src={Logo} />
-                      </div> */}
-                        <form onSubmit={handlesubmit}>
+                    <div className="right-side" id="rightSide">
+                        <form id ="formSign"onSubmit={handlesubmit}>
                             <div id="Form_Title">Create Account</div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="text"  className="form-control" value={name} onChange={(e) => { setName(e.target.value) }} placeholder="Enter Your Name" required />
+                                <input type="text"  id ="formInput" className="form-control" value={name} onChange={(e) => { setName(e.target.value) }} placeholder="Enter Your Name" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
@@ -88,8 +85,8 @@ function SignUp() {
                                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                                 </a>
                             </div>
-                            <div className="footerform " style={{ color: "#528298", fontSize: '5px', paddingTop: '15px' }}>
-                                <p style={{fontWeight:600 , fontSize:20}}>Have an Account ? <Link id="linkform" to='/login'> Sign In Now </Link> </p>
+                            <div className="footerform " style={{ color: "#528298", paddingTop: '15px' }}>
+                                <p id= "footerLink">Have an Account ? <Link id="linkform" to='/login'> Sign In Now </Link> </p>
                             </div>
                         </div>
                     </div>
