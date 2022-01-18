@@ -21,8 +21,8 @@ function Login() {
             {/* <div>
                 <NavBar />
             </div> */}
-            <div className="main-login bg-light">
-                <div className="login-conatiner bg-light">
+            <div className="main-login">
+                <div className="login-conatiner ">
                     <div className="left-side">
                         <div className="img-className">
                             <img style={{ height: '150px', width: '200px' }} src={Logo} />
@@ -35,7 +35,7 @@ function Login() {
                             </div>
                             <div >
                                 <label  className="form-label"></label>
-                                <input  minlength="8" type="password" className="form-control" value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" id="button" required />
+                                <input   type="password" className="form-control" value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" id="button" required />
                             </div>
                             <button type="submit" className="btn" >Sign In</button>
                         </form>
