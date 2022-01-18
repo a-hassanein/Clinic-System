@@ -61,7 +61,7 @@ const Contact = ()=>{
     }
 return(
     <>
-        <div className="row text-center" style={{marginTop:"200px"}}>
+        <div className="row text-center" style={{marginTop:"50px"}}>
                 <div className="col-lg-12">
                     <h1 >Contact</h1>
                 </div>
@@ -108,13 +108,11 @@ return(
                 </div>
                 <div className="col-lg-6 col-md-12  Contactinfo " >
                     <div className="contactImage">
-                        <img src={require('../Images/contact2.png')} alt="" className="img-fluid"/>
+                        <img src={require('../Images/contact2.png')} alt="" className="img-fluid contactimg"/>
                     </div>
                 </div>
             </div>
         </div>
-  
-
     </>
 )
 }
