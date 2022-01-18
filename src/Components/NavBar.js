@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 
+import { Nav, Navbar , Container } from "react-bootstrap";
+
 const NavBar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light">
+ 
+     
+     
+      {/* <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <img src={require('../Images/logo.png')} alt="..logo" style={{width: "100%" , height:"100%" , maxWidth:"100px" , marginLeft:"50px"}} />
@@ -19,7 +24,7 @@ const NavBar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse offset-3" id="navbarNav">
+          <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item active">
                 <Link className="nav-link text-uppercase" to="/" style={{ color: "#528197" , fontWeight: "bold" }}>
@@ -51,13 +56,44 @@ const NavBar = () => {
 
        
         </div>
-      </nav>
+      </nav> */}
 
 
 
-      <br/>
-      <br/>
-      <br/>
+      <Navbar bg="light" expand="lg">
+    <Navbar.Brand>  
+     <Link className="navbar-brand" to="/">
+            <img src={require('../Images/logo.png')} alt="..logo" style={{width: "100%" , height:"100%" , maxWidth:"100px" ,marginLeft:"25px" }} />
+     </Link>
+          </Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav " />
+   
+    <Navbar.Collapse id="basic-navbar-nav" style={{marginLeft:"25px"}}>
+   
+      <Nav className="me-auto offset-lg-3 offset-md-3 offset-sm-0 offset-xs-0" >
+      <Link className="nav-link text-uppercase" to="/" style={{ color: "#528197" , fontWeight: "bold" }}>
+                  Home
+      </Link>
+      <Link className="nav-link  text-uppercase" to="/services" style={{fontWeight: "bold"}}>
+                  Services
+                </Link>
+                <Link className="nav-link text-uppercase" to="/packages" style={{fontWeight: "bold"}}>
+                  Packages
+                </Link>
+                <Link className="nav-link  text-uppercase" to="/about" style={{fontWeight: "bold"}}>
+                  About
+                </Link>
+                <Link className="nav-link text-uppercase" to="/contact" style={{fontWeight: "bold"}}>
+                  Contact Us
+                </Link>
+      </Nav>
+     
+    </Navbar.Collapse>
+    
+</Navbar>
+
+
+
 
 
 
@@ -65,5 +101,7 @@ const NavBar = () => {
     </>
   );
 };
+
+
 
 export default NavBar;
