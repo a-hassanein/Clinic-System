@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Logo from "../Images/logo.jpeg"
+import Logo from "../Images/logo.png"
 import { Link } from "react-router-dom";
 import "../Style/login.css"
 import login from "../Images/login-remove.png"
@@ -25,7 +25,7 @@ function Login() {
                 <div className="login-conatiner bg-light">
                     <div className="left-side">
                         <div className="img-className">
-                            <img style={{ height: '150px', width: '300px' }} src={Logo} />
+                            <img style={{ height: '150px', width: '200px' }} src={Logo} />
                         </div>
                         <form onSubmit={handlesubmit}>
                             <div className="Form_Title"> Sign In</div>

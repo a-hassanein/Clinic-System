@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import signup from "../Images/signup-remove.png"
 import { useState } from "react";
+import logo from "../Images/logo3.png" ; 
 import "../Style/signup.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -29,10 +30,9 @@ function SignUp() {
                     <div className="left-side">
                         <div className="welcomeNote" id="welcomeNote">
                             <p style={{color:"#ffffff" , fontWeight:700}}>
-                                Welcome Doctor
-                                {/* <div className="img-className">
-                            <img style={{ height: '150px', width: '400px' }} src={Logo} />
-                      </div> */}
+                                Welcome To
+                            
+                            <img style={{ width:'100px' , alignItems:"center" , paddingBottom: 12 , marginLeft :10  }} src={logo} />
                             </p>  
                             <h3 style={{fontWeight:600 , fontSize:20}}>
                                 We are so glad to have you here
