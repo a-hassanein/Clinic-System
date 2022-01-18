@@ -45,12 +45,7 @@
     
     
 } 
-.iconsm:hover{
-    color: var(--second_color);
-    
-    
-    
-}
+
 .icon{
     font-size: 30px;
     color: var(--first_color);
