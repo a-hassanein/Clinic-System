@@ -135,11 +135,11 @@
     padding-top: 1.5rem;
     color: var(--first_color);
 }
-#social-media a {
+#socialmediaLogin a {
     padding: 10px;
     color: var(--first_color);
 }
-#social-media a:hover{
+#socialmediaLogin a:hover{
     color: #70a1b8;
 }
 #linkform {
@@ -150,4 +150,134 @@
 #linkform:hover{
    
     color: #70a1b8;
+}
+#loginlogoID {
+    height: 150px ;
+    width: 200px ; 
+}
+#footerLink {
+    font-weight:600 ; 
+    font-size:20px ; 
+
+}
+/* Responsive */ 
+@media (max-width:1056px)  {
+
+    #LoginForm
+    {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .main-login .login-conatiner input 
+    {
+   
+        width: 200px; 
+    }
+    .main-login .login-conatiner .btn
+    {
+        width: 200px; 
+    }
+}
+@media (max-width:975px) {
+    .main-login .login-conatiner input {
+        width: 350px; 
+
+    }
+    .main-login .login-conatiner .btn {
+        width: 350px; 
+
+    }
+    .main-login .login-conatiner {
+        align-items: center;
+        text-align: center;
+    }
+    #rightSide {
+        display: none;
+    }
+}
+@media (max-width:561px)  {
+    .main-login .login-conatiner {
+        align-items: center;
+        text-align: center;
+        height: 75vh;
+        width: 80% ;
+
+    }
+}
+@media (max-width:462px)  {
+    .main-login .login-conatiner input {
+        width: 150px; 
+
+    }
+    .main-login .login-conatiner .btn {
+        width: 150px; 
+
+    }
+
+}
+@media (max-width:270px)  {
+    .main-login .login-conatiner input {
+        width: 100px; 
+        font-size: 10px;
+
+    }
+    .main-login .login-conatiner .btn {
+        width: 100px; 
+
+    }
+    #Form_Title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #loginlogoID
+    {
+        width: 50px;
+        height: 50px;
+    }
+
+}
+@media (max-width:192px) {
+   
+    #Form_Title {
+        font-size: 10px;
+    }
+    #footerLink
+    {
+        font-size:10 
+    }
+}
+@media (max-width:158px) {
+    #Form_Title , #linkform{
+        font-size: 5px;
+    }
+    #footerLink
+    {
+        font-size:15px
+    }
+
+
+}
+@media (max-width:150px) {
+    .main-login .login-conatiner input {
+        width: 50px; 
+        height: 30px;
+        font-size: 5px;
+
+    }
+    .main-login .login-conatiner .btn {
+        width: 50px; 
+        height: 30px;
+        font-size: 5px;
+
+    }
+    #Form_Title , #linkform{
+        font-size: 5px;
+    }
+    #footerLink
+    {
+        font-size:15px
+    }
+
+
 }

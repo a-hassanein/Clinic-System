@@ -25,10 +25,10 @@ function Login() {
                 <div className="login-conatiner ">
                     <div className="left-side">
                         <div className="img-className">
-                            <img style={{ height: '150px', width: '200px' }} src={Logo} />
+                            <img id ="loginlogoID" src={Logo} />
                         </div>
-                        <form onSubmit={handlesubmit}>
-                            <div className="Form_Title"> Sign In</div>
+                        <form id="LoginForm" onSubmit={handlesubmit}>
+                            <div className="Form_Title" id="Form_Title"> Sign In</div>
                             <div >
                                 <label className="form-label"></label>
                                 <input  type="email" className="form-control" value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder="Enter Your Email" required/>
@@ -41,25 +41,23 @@ function Login() {
                         </form>
                         <div>
                             <p id="social-text" style={{ alignitems: "center" }}> or sign in with</p>
-                            <div id="social-media">
-                                <a href="https://www.facebook.com"
-                                    className="facebook social">
+                            <div id="socialmediaLogin">
+                                <a href="https://www.facebook.com">
                                     <FontAwesomeIcon icon={faFacebook} size="2x" />
                                 </a>
-                                <a href="https://www.twitter.com" className="twitter social">
+                                <a href="https://www.twitter.com" >
                                     <FontAwesomeIcon icon={faTwitter} size="2x" />
                                 </a>
-                                <a href="https://www.instagram.com"
-                                    className="instagram social">
+                                <a href="https://www.instagram.com">
                                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                                 </a>
                             </div>
-                            <div className="footerform " style={{ color: "#528298", fontSize: '5px', paddingTop: '15px' }}>
-                                <p style={{fontWeight:600 , fontSize:20}}>Dont Have an Account ? <Link id ="linkform" to='/signup'> Register Now </Link> </p>
+                            <div className="footerform " style={{ color: "#528298", paddingTop: '15px' }}>
+                                <p id="footerLink" >Dont Have an Account ? <Link id ="linkform" to='/signup'> Register Now </Link> </p>
                             </div>
                         </div>
                     </div>
-                    <div className="right-side">
+                    <div className="right-side" id="rightSide">
                         <div className="welcomeNote" id="welcomeNote">
                             <p style={{color:"#ffffff" , fontWeight:700}}>
                                 Welcome Back

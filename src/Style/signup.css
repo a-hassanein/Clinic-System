@@ -153,19 +153,19 @@
 
     #formSign
     {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-.main-signup .signup-conatiner input 
-{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .main-signup .signup-conatiner input 
+    {
    
-    width: 200px; 
-}
-.main-signup .signup-conatiner .btn
-{
-    width: 200px; 
-}
+        width: 200px; 
+    }
+    .main-signup .signup-conatiner .btn
+    {
+        width: 200px; 
+    }
 }
 @media (max-width:975px) {
     .main-signup .signup-conatiner input {
