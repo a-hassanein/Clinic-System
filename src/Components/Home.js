@@ -27,12 +27,12 @@ const Home = () => {
             <br />
             <div>
               <Link to='/login'>
-                <button className='btn'  style={{ background: "var(--first_color)", color: "white" , width:"150px" , borderRadius: "10px"}} >Sign In</button>
+                <button className='btn'  id="btn_services" style={{width:"150px"}} >Sign In</button>
               </Link>
 
               <span> </span>
               <Link to='signup'>
-              <button className='btn' style={{ background: "var(--first_color)", color: "white" ,width:"150px" , borderRadius: "10px" }} >Sign Up</button>
+              <button className='btn'id="btn_services" style={{width:"150px"}}  >Sign Up</button>
 
               </Link>
             </div>
