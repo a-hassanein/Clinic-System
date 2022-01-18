@@ -11,6 +11,11 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;   
+    width:80%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .About{
@@ -25,7 +30,7 @@
 
 .About .card {
 position: relative;
-width: 300px;
+width: 370px;
 height: 400px;
 background: #BCD9E6;
 margin: 20px;
@@ -125,7 +130,6 @@ display: flex;
     border-radius: 15px;
     padding: 25px;
     border: 1px solid #52829840;
-    
     float: center;
     display: block;
     position: relative;
