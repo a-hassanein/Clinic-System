@@ -61,61 +61,60 @@ const Contact = ()=>{
     }
 return(
     <>
-    <div className="row text-center">
-            <div className="col-lg-12">
-                <h1 >Contact</h1>
-            </div>
-    </div>
-    <div className="container contactContainer" >
-        <div className="row text-center contactinfo2" >
-                <div className="col-lg-4">
-                    <span className="icon" ><HiMail/></span>
-                    <p className="contactway">abdelrahman@gmail.com</p>
-                </div>
-                <div className="col-lg-4">
-                    <span className="icon"><BsFillTelephoneFill/></span>
-                    <p className=" contactway">01155020460</p>
-                </div>
-                <div className="col-lg-4">
-                    <span className="icon"><TiLocation/></span>
-                    <p className="contactway">Cairo</p>
+   
+        <div className="row text-center" style={{marginTop:"200px"}}>
+                <div className="col-lg-12">
+                    <h1 >Contact</h1>
                 </div>
         </div>
-        <div className="row formRow">
-            <div className="col-lg-6 col-md-12">
-                <form>
-                    <div className="mb-3">
-                        <label  className="form-label inputLabel">Name</label>
-                        <input type="text" placeholder="Enter Your Name" name="username" className="form-control input" onChange={(e) => nameValidate(e)}/>
-                        <small>{error.namev}</small>
+        <div className="container contactContainer ">
+            <div className="row text-center contactinfo2" >
+                    <div className="col-lg-4 contactinfodiv">
+                        <span className="icon" ><HiMail/></span>
+                        <p className="contactway">abdelrahman@gmail.com</p>
                     </div>
-                    <div className="mb-3">
-                        <label  className="form-label inputLabel">Email</label>
-                        <input type="email" placeholder="Enter Your Mail" name="mail"  className="form-control input" onChange={(e) => emailValidate(e)}/>
-                        <small>{error.mailv}</small>
+                    <div className="col-lg-4 contactinfodiv">
+                        <span className="icon"><BsFillTelephoneFill/></span>
+                        <p className=" contactway">01155020460</p>
                     </div>
-                    <div className="mb-3 ">
-                        <label className="form-label inputLabel" >Message</label>
-                        <br/>
-                        <textarea className="form-control input" placeholder="Enter Your Message" >
-
-                        </textarea>
+                    <div className="col-lg-4 contactinfodiv">
+                        <span className="icon"><TiLocation/></span>
+                        <p className="contactway">Cairo</p>
                     </div>
-                    <div className="mb-3 text-center">
-                    <button type="submit" className="btn btn-lg  button" style={{marginTop:"10px",marginBottom:"10px",width:"100px"}}>Send</button>
-                    </div>
-                </form>
             </div>
-            <div className="col-lg-6 col-md-12  Contactinfo d-flex flex-direction-row align-items-end justify-content-center" >
+            <div className="row formRow">
+                <div className="col-lg-6 col-md-12">
+                    <form>
+                        <div className="mb-3">
+                            <label  className="form-label inputLabel">Name</label>
+                            <input type="text" placeholder="Enter Your Name" name="username" className="form-control input" onChange={(e) => nameValidate(e)}/>
+                            <small>{error.namev}</small>
+                        </div>
+                        <div className="mb-3">
+                            <label  className="form-label inputLabel">Email</label>
+                            <input type="email" placeholder="Enter Your Mail" name="mail"  className="form-control input" onChange={(e) => emailValidate(e)}/>
+                            <small>{error.mailv}</small>
+                        </div>
+                        <div className="mb-3 ">
+                            <label className="form-label inputLabel" >Message</label>
+                            <br/>
+                            <textarea className="form-control input" placeholder="Enter Your Message" >
 
-                    <a href="https://www.facebook.com/" className="btn iconsm"><BsFacebook/></a>
-                    <a href="https://twitter.com/home" className="btn iconsm"><BsTwitter/></a>
-                    <a href="https://www.linkedin.com/feed/" className="btn iconsm"><BsLinkedin/></a>
-
-                
+                            </textarea>
+                        </div>
+                        <div className="mb-3 text-center">
+                        <button type="submit" className="btn btn-lg  button" style={{marginTop:"10px",marginBottom:"10px",width:"100px"}}>Send</button>
+                        </div>
+                    </form>
+                </div>
+                <div className="col-lg-6 col-md-12  Contactinfo " >
+                    <div className="contactImage">
+                        <img src={require('../Images/contact2.png')} alt="" className="img-fluid"/>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+  
 
     </>
 )
