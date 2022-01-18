@@ -53,11 +53,11 @@ function SignUp() {
                             <div id="Form_Title">Create Account</div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="text" minLength={4} className="form-control" value={name} onChange={(e) => { setName(e.target.value) }} placeholder="Enter Your Name" required />
+                                <input type="text"  className="form-control" value={name} onChange={(e) => { setName(e.target.value) }} placeholder="Enter Your Name" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="text" className="form-control" onkeyup="if (/[^|a-z0-9]+/g.test(this.value)) this.value = this.value.replace(/[^|a-z0-9]+/g,'')" value={username} onChange={(e) => { setUsername(e.target.value) }} placeholder="Enter Your User Name" required />
+                                <input type="text" className="form-control" value={username} onChange={(e) => { setUsername(e.target.value) }} placeholder="Enter Your User Name" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
@@ -65,11 +65,11 @@ function SignUp() {
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input minlength="8" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" type="password" className="form-control" value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" required />
+                                <input  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" type="password" className="form-control" value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input minlength="8" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" type="password" className="form-control" value={Conpassword} onChange={(e) => { setConPassword(e.target.value) }} placeholder="Confirm Password" required />
+                                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" type="password" className="form-control" value={Conpassword} onChange={(e) => { setConPassword(e.target.value) }} placeholder="Confirm Password" required />
                             </div>
                             <button type="submit" className="btn" >Sign Up</button>
                         </form>
