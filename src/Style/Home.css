@@ -48,7 +48,7 @@
 
 #signinID:hover{
     color: var(--light_color);
-    background-color: var(--third_color);
+    background-color: var(--fourth_color);
 }
 
 #signupID{
@@ -68,7 +68,7 @@
 
 #signupID:hover{
     color: var(--light_color);
-    background-color: var(--third_color);
+    background-color: var(--fourth_color);
 }
 
 .social{
@@ -81,6 +81,7 @@
     margin-left: auto;
     flex-direction: column;
     margin-top: -150px;
+
 }
 
 .social li{
@@ -97,7 +98,7 @@
 }
 
 .social li i:hover {
-    color:var(--second_color)
+    color:var(--fourth_color)
 }
 
 @media (max-width: 1980px){
@@ -107,7 +108,7 @@
     .banner h1{
         font-size: 4em;
         margin-left:0px;
-        margin-top: -50px;
+        
     }
     .banner p{
         font-size: 1.0em;
@@ -134,6 +135,11 @@
 @media (max-width: 719px){
     .banner{
         background: url(../Images/banner2.png);
+        
+    }
+
+    .banner h1{
+        margin-top: -150px;
     }
     .social{
         display: none;

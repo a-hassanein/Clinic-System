@@ -125,7 +125,7 @@ display: flex;
     border-radius: 15px;
     padding: 25px;
     border: 1px solid #52829840;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+    
     float: center;
     display: block;
     position: relative;
