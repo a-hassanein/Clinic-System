@@ -16,6 +16,7 @@
     color: var(--first_color);
     text-transform: uppercase;
     margin-left:30px;
+    
 }
 
 .banner p{
@@ -38,9 +39,9 @@
     text-transform: uppercase;
     border: none;
     font-weight: 600;
-    padding: 15px 15px;
+    padding: 13px 12px;
     width: 250px;
-    font-size: 1.6em;
+    font-size: 1.5em;
     border-radius: 10px;
     margin-left:50px;
 }
@@ -58,9 +59,9 @@
     text-transform: uppercase;
     border: none;
     font-weight: 600;
-    padding: 15px 15px;
+    padding: 13px 12px;
     width: 250px;
-    font-size: 1.6em;
+    font-size: 1.5em;
     border-radius: 10px;
     margin-left:10px;
 }
@@ -79,7 +80,7 @@
     margin-right: auto;
     margin-left: auto;
     flex-direction: column;
-    margin-top: -130px;
+    margin-top: -150px;
 }
 
 .social li{
@@ -99,13 +100,14 @@
     color:var(--second_color)
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1980px){
     .banner{
         padding: 200px 0;
     }
     .banner h1{
         font-size: 4em;
         margin-left:0px;
+        margin-top: -50px;
     }
     .banner p{
         font-size: 1.0em;
@@ -124,6 +126,9 @@
         margin-left:0px;
     }
 
+    .social{
+        margin-top: 0px;
+    }
 }
 
 @media (max-width: 719px){

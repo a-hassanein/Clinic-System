@@ -126,11 +126,11 @@
     padding-top: 1.5rem;
     color: var(--first_color);
 }
-#social-media a {
+#socialmediaSignUp a {
     padding: 10px;
     color: var(--first_color);
 }
-#social-media a:hover{
+#socialmediaSignUp a:hover{
     color: #70a1b8;
 }
 #linkform {
@@ -149,7 +149,7 @@
     font-size:20 
 }
 /* Responsive */ 
-@media (max-width:1056px)  {
+ @media (max-width:1056px)  {
 
     #formSign
     {
