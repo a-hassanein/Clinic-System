@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import Services from "../Pages/Services";
 import '../Style/styleservices.css'
 import Packages from "./Packages";
+import About from '../Pages/About';
+import Contact from '../Pages/ContactUs';
 const Home = () => {
   return (
     <>
@@ -58,11 +60,21 @@ const Home = () => {
 
       </div>
     </section>
+
     <section>
-    <Services />    
+      <Services />    
     </section>
+
     <section>
-    <Packages/>
+      <Packages/>
+    </section>
+
+    <section>
+      <About/>
+    </section>
+
+    <section>
+      <Contact/>
     </section>
    
     </>
