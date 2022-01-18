@@ -25,8 +25,8 @@ function SignUp() {
             {/* <div>
                 <NavBar />
             </div> */}
-            <div className="main-signup bg-light">
-                <div className="signup-conatiner bg-light">
+            <div className="main-signup">
+                <div className="signup-conatiner">
                     <div className="left-side">
                         <div className="welcomeNote" id="welcomeNote">
                             <p style={{color:"#ffffff" , fontWeight:700}}>
