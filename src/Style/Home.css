@@ -100,7 +100,7 @@
     color:var(--second_color)
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1980px){
     .banner{
         padding: 200px 0;
     }
