@@ -45,7 +45,7 @@ function SignUp() {
                         </div>
 
                     </div>
-                    <div className="right-side" id="rightSide">
+                    <div className="right-side">
                         <form id="formSign" onSubmit={handlesubmit}>
                             <div id="Form_Title">Create Account</div>
                             <div >
