@@ -1,0 +1,136 @@
+.banner{
+    position: relative;
+    background: url(../Images/banner.png);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 250px 0 200px;
+}
+
+.banner h1 {
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    font-size: 5.8em;
+    font-weight: bold;
+    color: var(--first_color);
+    text-transform: uppercase;
+    margin-left:30px;
+}
+
+.banner p{
+    margin: 1em 0 0;
+    padding: 0px;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.5em;
+    color: var(--dark_color);
+    text-transform: capitalize;
+    text-rendering: geometricPrecision;
+    margin-left:50px;
+}
+
+#signinID{
+    display: inline-block;
+    margin: 1em 0 0;
+    background-color: var(--first_color);
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 600;
+    padding: 15px 15px;
+    width: 250px;
+    font-size: 1.6em;
+    border-radius: 10px;
+    margin-left:50px;
+}
+
+#signinID:hover{
+    color: var(--light_color);
+    background-color: var(--third_color);
+}
+
+#signupID{
+    display: inline-block;
+    margin: 1em 0 0;
+    background-color: var(--first_color);
+    color: var(--light_color);
+    text-transform: uppercase;
+    border: none;
+    font-weight: 600;
+    padding: 15px 15px;
+    width: 250px;
+    font-size: 1.6em;
+    border-radius: 10px;
+    margin-left:10px;
+}
+
+#signupID:hover{
+    color: var(--light_color);
+    background-color: var(--third_color);
+}
+
+.social{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: column;
+    margin-top: -130px;
+}
+
+.social li{
+    list-style: none;
+}
+
+.social li i {
+    display: inline-block;
+    margin: 15px 0;
+    transform: scale(1.5);
+    color:var(--first_color);
+    
+    
+}
+
+.social li i:hover {
+    color:var(--second_color)
+}
+
+@media (max-width: 1200px){
+    .banner{
+        padding: 200px 0;
+    }
+    .banner h1{
+        font-size: 4em;
+        margin-left:0px;
+    }
+    .banner p{
+        font-size: 1.0em;
+        margin-left:0px;
+    }
+
+    #signinID{
+        width: 150px;
+        font-size: 1em;
+        margin-left:0px;
+    }
+    
+    #signupID{
+        width: 150px;
+        font-size: 1em;
+        margin-left:0px;
+    }
+
+}
+
+@media (max-width: 719px){
+    .banner{
+        background: url(../Images/banner2.png);
+    }
+    .social{
+        display: none;
+    }
+}
