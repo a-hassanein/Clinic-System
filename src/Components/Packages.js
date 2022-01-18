@@ -53,8 +53,8 @@ function Packages() {
       <br />
       <br/>
       <br/>
-      <br/>
-      <div className="d-flex justify-content-evenly ">
+     
+      <div className="d-flex justify-content-evenly flex-wrap">
       
      
      
