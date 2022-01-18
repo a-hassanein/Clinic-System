@@ -48,7 +48,7 @@
 
 #signinID:hover{
     color: var(--light_color);
-    background-color: var(--third_color);
+    background-color: var(--fourth_color);
 }
 
 #signupID{
@@ -68,7 +68,7 @@
 
 #signupID:hover{
     color: var(--light_color);
-    background-color: var(--third_color);
+    background-color: var(--fourth_color);
 }
 
 .social{
@@ -98,7 +98,7 @@
 }
 
 .social li i:hover {
-    color:var(--second_color)
+    color:var(--fourth_color)
 }
 
 @media (max-width: 1980px){

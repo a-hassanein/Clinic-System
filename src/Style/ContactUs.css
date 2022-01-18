@@ -82,8 +82,8 @@
     
 }
 .button:hover{
-    background-color: #70a1b8;
-    color: var(--first_color);
+    background-color:var(--fourth_color);
+    color: var(--light_color);
     
 }
 h1{
