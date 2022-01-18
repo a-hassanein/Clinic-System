@@ -1,10 +1,5 @@
-/* :root{
-    --first_color:#528298;
-    --second_color:#BCD9E6;
-    --light_color:#ffffff;
-    --dark_color:#303030;
-    --font_family:'Cairo', sans-serif;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;700;900&display=swap');
+
 *{
     font-family: 'Cairo', sans-serif;
     margin: 0;
@@ -41,7 +36,7 @@
     text-align: center;
     color: #528298;
     font-size: 30px;
-    font-weight: 10px;
+    font-weight: 700;
 }
 .main-signup .signup-conatiner .right-side 
 {
@@ -63,6 +58,7 @@
     border-color: #BCD9E6;
     border-radius: 15px;
     padding: 10px;
+    font-weight:600 ;
 }
 .main-signup .signup-conatiner input:focus
 {
@@ -86,6 +82,7 @@
     border-radius: 15px;
     width: 350px; 
     height: 3rem;
+    font-weight:500 ;
     border: none;
     display: block;
 
@@ -111,8 +108,7 @@
 #welcomeNote {
     color: #ffffff ;
     font-size: 70px;
-    font-weight: 10;
-    font-style: bold;
+    font-weight: 700;
     padding-bottom: 70;
     margin-bottom: 50px;
 }
@@ -126,8 +122,7 @@
 #social-text 
 {
     font-size: 20px;
-    font-weight: 6px;
-    font-style: bold;
+    font-weight: 700;
     padding-top: 1.5rem;
     color: var(--first_color);
 }
@@ -142,6 +137,7 @@
     color: var(--first_color);
     font-size: 15px;
     text-decoration: none;
+    font-weight: 700;
 }
 #linkform:hover{
    

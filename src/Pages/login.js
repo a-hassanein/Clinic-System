@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../Components/NavBar";
 import { useState } from "react";
 import Logo from "../Images/logo.jpeg"
 import { Link } from "react-router-dom";
@@ -56,15 +55,15 @@ function Login() {
                                 </a>
                             </div>
                             <div className="footerform " style={{ color: "#528298", fontSize: '5px', paddingTop: '15px' }}>
-                                <h5>Dont Have an Account ? <Link id ="linkform" to='/signup'> Register Now </Link> </h5>
+                                <p style={{fontWeight:600 , fontSize:20}}>Dont Have an Account ? <Link id ="linkform" to='/signup'> Register Now </Link> </p>
                             </div>
                         </div>
                     </div>
                     <div className="right-side">
                         <div className="welcomeNote" id="welcomeNote">
-                            <h1 style={{color:"#ffffff"}}>
+                            <p style={{color:"#ffffff" , fontWeight:700}}>
                                 Welcome Back
-                            </h1>
+                            </p>
                         </div>
                         <div className="welcomeImg">
                             <img id="loginImg" src={login}>
