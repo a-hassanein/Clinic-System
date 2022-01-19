@@ -44,7 +44,7 @@ function Packages() {
   ];
   return (
     <div className="Body__Packages">
-      <br />
+      <br /><br/> <br/> 
       <h2 className="Packages__heading">OUR PACKAGES</h2>
       <br />
       <p className="Packages__p">
