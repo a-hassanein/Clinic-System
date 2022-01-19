@@ -11,6 +11,7 @@ import '../Style/styleservices.css'
 import Packages from "./Packages";
 import About from '../Pages/About';
 import Contact from '../Pages/ContactUs';
+import Footer from './footer';
 const Home = () => {
   return (
     <>
@@ -70,6 +71,9 @@ const Home = () => {
 
     <section>
       <Contact/>
+    </section>
+    <section>
+      <Footer/>
     </section>
    
     </>
