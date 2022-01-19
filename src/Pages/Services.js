@@ -1,8 +1,6 @@
 import React from 'react'
 import '../Style/styleservices.css'
-//import clinic_history from "../Images/clinic_history.png";
-// import { faHouseChimneyMedical} from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 function Services() {
     return (
       
@@ -18,39 +16,43 @@ function Services() {
 <div className='services_all'>
         <div className="row">
     <div className="col-sm-4" id="c1">
-      <div className="card text-center">
+      <div className="card text-center" id="cc" style={{"border" : "none" , "box-shadow" : "0 15px 35px #BCD9E6"}}>
         <div className="card-body" id="card_services">
         <div>
-        {/* <FontAwesomeIcon icon={ faHouseChimneyMedical} /> */}
   </div>
-          {/* <img src={clinic_history} class="card-img-top" alt="..." />; */}
+  <img style={{"height" : "60px", "width" : "60px"}} src={require("../Images/newmedicalrecord .png")} class="card-img-top" alt="..." /> 
+
           <h3 className="card-title text-center" >CREATE YOUR PRIVATE CLINIC</h3>
           <hr/>
-          <p className="card-text text-center">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-          <a href="#" className="btn " id="btn_services">show details</a>
+          <p className="card-text text-center">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged but also the leap into electronic typesetting, remaining essentially unchanged</p>
+          {/* <a href="#" className="btn " id="btn_services">show details</a> */}
         </div>
       </div>
     </div>
 
 
     <div className="col-sm-4" id="c1">
-      <div className="card text-center">
+      <div className="card text-center" id="cc" style={{"border" : "none" , "box-shadow" : "0 15px 35px #BCD9E6"}}>
         <div className="card-body" id="card_services">
+        <img style={{"height" : "60px", "width" : "60px"}} src={require("../Images/medicalreport.png")} class="card-img-top" alt="..." />
+
           <h3 className="card-title text-center" >CREATE YOUR PRIVATE CLINIC</h3>
           <hr/>
-          <p className="card-text text-center">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-          <a href="#" className="btn " id="btn_services">show details</a>
+          <p className="card-text text-center">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged but also the leap into electronic typesetting, remaining essentially unchanged</p>
+          {/* <a href="#" className="btn " id="btn_services">show details</a> */}
         </div>
       </div>
     </div>
     <div className="col-sm-4" id="c1">
-      <div className="card text-center">
+      <div className="card text-center" id="cc" style={{"border" : "none" , "box-shadow" : "0 15px 35px #BCD9E6"}}>
         <div className="card-body" id="card_services">
+        <img style={{"height" : "60px", "width" : "60px"}} src={require("../Images/medicalrecord.png")} class="card-img-top" alt="..." />
+
           <h3 className="card-title text-center" >CREATE YOUR PRIVATE CLINIC</h3>
           <hr/>
          
-          <p className="card-text text-center">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-          <a href="#" className="btn" id="btn_services">show details</a>
+          <p className="card-text text-center">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged but also the leap into electronic typesetting, remaining essentially unchanged</p>
+          {/* <a href="#" className="btn" id="btn_services">show details</a> */}
         </div>
       </div>
     </div>
