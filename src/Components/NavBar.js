@@ -60,7 +60,7 @@ const NavBar = () => {
 
 
 
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="white" expand="lg">
     <Navbar.Brand>  
      <Link className="navbar-brand" to="/">
             <img src={require('../Images/logo.png')} alt="..logo" style={{width: "100%" , height:"100%" , maxWidth:"100px" ,marginLeft:"25px" }} />

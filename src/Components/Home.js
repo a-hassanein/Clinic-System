@@ -14,7 +14,7 @@ import Contact from '../Pages/ContactUs';
 import Footer from './footer';
 const Home = () => {
   return (
-    <>
+    <div className='total'>
     <section className="banner">
       <div className="container-fluid" >
         <div className="row">
@@ -76,7 +76,7 @@ const Home = () => {
       <Footer/>
     </section>
    
-    </>
+    </div>
   );
 }
 
