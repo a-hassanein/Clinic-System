@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50px;
+    border-radius: 30px;
 }
 .main-signup .signup-conatiner Link {
     text-decoration: none;
