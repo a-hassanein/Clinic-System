@@ -64,7 +64,7 @@
     height: 3rem;
     font-weight:600 ;
     border-color: var(--second_color);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .main-login .login-conatiner input:focus
 {
@@ -86,7 +86,7 @@
     color: var(--light_color);
     margin-top: 15px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 20px;
     display: block;
     height: 3rem;
     font-weight:600 ;
