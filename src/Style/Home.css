@@ -120,17 +120,17 @@
     #signinID{
         width: 150px;
         font-size: 1em;
-        margin-left:0px;
+        margin-left:50px;
     }
     
     #signupID{
         width: 150px;
         font-size: 1em;
-        margin-left:0px;
+        margin-left:10px;
     }
 
     .social{
-        margin-top: 0px;
+        margin-top: -20px;
     }
 }
 
