@@ -46,7 +46,7 @@ function Packages() {
     <div className="Body__Packages">
       <br />
       <br /> <br />
-      <h2 className="Packages__heading">OUR PACKAGES</h2>
+      <h2 className="Packages__heading" style={{color:"#303030" ,fontWeight:"900" ,fontSize:"70px" ,marginTop:"70px"}}>PACKAGES</h2>
       <br />
       <p className="Packages__p">
         Our custom built 24/7 servers and experts deliver incredible performance
@@ -56,7 +56,7 @@ function Packages() {
       <br />
       <br />
  
-        <div className="d-flex justify-content-evenly flex-wrap">
+        <div className="d-flex justify-content-evenly flex-wrap" style={{marginBottom:"100px"}}>
           <div className="p-2 ">
             <CardPackages
               title={packages[0].title}

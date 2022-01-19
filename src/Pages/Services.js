@@ -16,7 +16,7 @@ function Services() {
 <div className='services_all'>
         <div className="row">
     <div className="col-sm-4" id="c1">
-      <div className="card text-center" id="cc" style={{"border" : "none" , "box-shadow" : "0 15px 35px #BCD9E6"}}>
+      <div className="card text-center" id="cc" style={{"border" : "none" , boxShadow: "0 15px 35px rgba(0, 0, 0, 0.10)"}}>
         <div className="card-body" id="card_services">
         <div>
   </div>
@@ -32,7 +32,7 @@ function Services() {
 
 
     <div className="col-sm-4" id="c1">
-      <div className="card text-center" id="cc" style={{"border" : "none" , "box-shadow" : "0 15px 35px #BCD9E6"}}>
+      <div className="card text-center" id="cc" style={{"border" : "none" , boxShadow: "0 15px 35px rgba(0, 0, 0, 0.10)"}}>
         <div className="card-body" id="card_services">
         <img style={{"height" : "60px", "width" : "60px"}} src={require("../Images/medicalreport.png")} class="card-img-top" alt="..." />
 
@@ -44,7 +44,7 @@ function Services() {
       </div>
     </div>
     <div className="col-sm-4" id="c1">
-      <div className="card text-center" id="cc" style={{"border" : "none" , "box-shadow" : "0 15px 35px #BCD9E6"}}>
+      <div className="card text-center" id="cc" style={{"border" : "none" , boxShadow: "0 15px 35px rgba(0, 0, 0, 0.10)"}}>
         <div className="card-body" id="card_services">
         <img style={{"height" : "60px", "width" : "60px"}} src={require("../Images/medicalrecord.png")} class="card-img-top" alt="..." />
 
