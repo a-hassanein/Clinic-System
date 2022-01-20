@@ -1,0 +1,69 @@
+.Card__body {
+  /*  background-color: var(--first_color);*/
+  /* color: var( --first_color) !important;*/
+  font-weight: bold;
+  border-color: var(--first_color);
+  border-radius: 10px;
+  padding-left: 0;
+ padding-right: 0;
+  flex: auto;
+  height: 60%;
+  display: block;
+
+}
+.Card__Title {
+  text-align: center;
+  /* height: 3rem;*/
+  font-size: 45px;
+  color: var(--first_color);
+  font-weight: bold;
+  margin-bottom: 0.2em ;
+  display: block;
+}
+.Card__Subtitle {
+  
+  text-align: center;
+  background-color: var(--first_color);
+  color: var(--light_color);
+  font-size: 35px;
+  font-weight: var(--font_weight_bold);
+  display: block;
+  margin-left: 0;
+  margin-bottom: 0.5em ;
+
+ 
+ 
+}
+.Card__list {
+  font-size: 20px;
+  font-weight: bold;
+}
+.Card__Button {
+    display: inline-block;
+  /*  margin: 1em 0 0;*/
+    background-color: var(--first_color);
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 600;
+    padding: 3% 5%;
+    width: 50%;
+    font-size: 1.2em;
+    border-radius: 10px;
+   /* margin-left:30%;*/
+    margin-bottom: 20% ;
+    font-weight: bold;
+}
+.Card__Button:hover {
+    color: var(--light_color);
+    background-color: var(--fourth_color);
+}
+.span__Egy {
+  font-size: 20px;
+  font-weight: bold;
+}
+.span__Per {
+  font-size: 35px;
+  font-weight: bold;
+  font-style: oblique;
+}

@@ -14,7 +14,6 @@
   }
 .main-login {   
     min-height: 100vh;
-    min-width: 100vw;
     overflow: hidden;
 }
 
@@ -28,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50px;
+    border-radius: 30px;
 }
 .main-login .login-conatiner Link {
     text-decoration: none;
@@ -63,7 +62,6 @@
     width: 350px; 
     height: 3rem;
     font-weight:600 ;
-
     border-color: var(--second_color);
     border-radius: 20px;
 }

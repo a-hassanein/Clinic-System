@@ -7,13 +7,13 @@ import {
 } from "react-icons/im";
 import { Link } from "react-router-dom";
 import Services from "../Pages/Services";
-import '../Style/styleservices.css'
-import Packages from "./Packages";
+import Packages from "../Pages/Packages";
 import About from '../Pages/About';
 import Contact from '../Pages/ContactUs';
+import Footer from './footer';
 const Home = () => {
   return (
-    <>
+    <div className='total'>
     <section className="banner">
       <div className="container-fluid" >
         <div className="row">
@@ -71,8 +71,11 @@ const Home = () => {
     <section>
       <Contact/>
     </section>
+    <section>
+      <Footer/>
+    </section>
    
-    </>
+    </div>
   );
 }
 
