@@ -1,9 +1,6 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-
-import CardPackages from "./CardPackages";
-import NavBar from "./NavBar";
-import "./Packages.css";
+import CardPackages from "../Components/CardPackages";
+import "../Style/Packages.css";
 
 function Packages() {
   const packages = [
@@ -46,7 +43,7 @@ function Packages() {
     <div className="Body__Packages">
       <br />
       <br /> <br />
-      <h2 className="Packages__heading" style={{color:"#303030" ,fontWeight:"900" ,fontSize:"70px" ,marginTop:"70px"}}>PACKAGES</h2>
+      <h2 className="Packages__heading" style={{color:"#303030" ,fontWeight:"800" ,fontSize:"70px"}}>PACKAGES</h2>
       <br />
       <p className="Packages__p">
         Our custom built 24/7 servers and experts deliver incredible performance

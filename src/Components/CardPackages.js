@@ -1,8 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import "./CardPackages.css";
-import Packages from "./Packages";
-
+import "../Style/CardPackages.css";
 function CardPackages(props) {
   return (
     <div>
