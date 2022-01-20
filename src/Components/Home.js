@@ -57,11 +57,11 @@ const Home = () => {
       </div>
     </section>
 
-    <section>
+    <section id='serviceID'>
       <Services />    
     </section>
 
-    <section>
+    <section id='packId'>
       <Packages/>
     </section>
 
