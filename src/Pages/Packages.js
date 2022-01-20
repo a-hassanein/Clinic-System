@@ -40,7 +40,7 @@ function Packages() {
     },
   ];
   return (
-    <div className="Body__Packages">
+    <div className="Body__Packages" id="packId">
       <br />
       <br /> <br />
       <h2 className="Packages__heading" style={{color:"#303030" ,fontWeight:"800" ,fontSize:"70px"}}>PACKAGES</h2>

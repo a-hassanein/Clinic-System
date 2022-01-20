@@ -60,7 +60,7 @@ const Home = () => {
       <Services />    
     </section>
 
-    <section id='packId'>
+    <section >
       <Packages/>
     </section>
 
