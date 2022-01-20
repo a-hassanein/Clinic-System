@@ -45,7 +45,8 @@ function Packages() {
       <br /> <br />
       <h2 className="Packages__heading" style={{color:"#303030" ,fontWeight:"800" ,fontSize:"70px"}}>PACKAGES</h2>
       <br />
-      <p className="Packages__p">
+
+      <p className="Packages__p" style={{color:"#528298"  ,fontSize:"22px" ,marginTop:"-15px"}}>
         Our custom built 24/7 servers and experts deliver incredible performance
         that grows with your business.
       </p>
