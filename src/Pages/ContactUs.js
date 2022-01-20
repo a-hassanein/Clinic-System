@@ -64,8 +64,8 @@ const Contact = ()=>{
     }
 return(
     <>
-        <div className="row text-center" style={{marginTop:"50px"}}>
-                <div className="col-lg-12">
+        <div style={{marginTop:"50px"}}>
+                <div className="col-lg-12 text-center">
                     <h1 >Contact</h1>
                 </div>
         </div>
