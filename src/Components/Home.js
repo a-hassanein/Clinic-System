@@ -29,7 +29,7 @@ const Home = () => {
               a potentially fatal injury Hi Hassanin@.</p>
             </div>
             <br />
-            <div>
+            <div className='buttonContent'>
               <Link to='/login' className="btn ml-lg-auto" id="signinID">
               SignIn
               </Link>
