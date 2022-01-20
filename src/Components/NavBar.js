@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-import { Nav, Navbar  } from "react-bootstrap";
-
 const NavBar = () => {
   return (
     <>
@@ -42,6 +40,7 @@ const NavBar = () => {
               </li>
               <li className="nav-item text-uppercase">
                 <Link className="nav-link" to="/about"  style={{ color: "black" ,fontWeight: "bold"}}>
+                 About
                 </Link>
               </li>
               <li className="nav-item text-uppercase">

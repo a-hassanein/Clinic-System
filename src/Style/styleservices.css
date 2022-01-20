@@ -21,6 +21,7 @@ body{
     text-align: center;
     font-size: 80px;
     margin-top: -30px;
+    padding-top: 50px;
     
 }
 .d{
@@ -34,9 +35,6 @@ body{
     
     
 }
-
-
-
 .card-text{
     font-weight: 600;
     text-align: center;

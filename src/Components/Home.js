@@ -7,8 +7,7 @@ import {
 } from "react-icons/im";
 import { Link } from "react-router-dom";
 import Services from "../Pages/Services";
-import '../Style/styleservices.css'
-import Packages from "./Packages";
+import Packages from "../Pages/Packages";
 import About from '../Pages/About';
 import Contact from '../Pages/ContactUs';
 import Footer from './footer';

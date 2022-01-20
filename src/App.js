@@ -7,7 +7,7 @@ import Home from './Components/Home';
 import Contact from './Pages/ContactUs';
 import SignUp from './Pages/signup';
 import Login from './Pages/login';
-import Packages from "./Components/Packages";
+import Packages from "./Pages/Packages";
 import Services from './Pages/Services';
 
 function App() {
