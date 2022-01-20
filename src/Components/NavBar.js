@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import "../Style/nav.css"
+// import { Nav, Navbar  } from "react-bootstrap";
+import "../Style/nav.css"
 
 const NavBar = () => {
   return (
@@ -6,9 +9,9 @@ const NavBar = () => {
  
      
      
-      <nav className="navbar navbar-expand-lg navbar-light">
-          <Link className="navbar-brand" to="/">
-            <img src={require('../Images/logo.png')} alt="..logo" style={{width: "100%" , height:"100%" , maxWidth:"100px" , marginLeft:"50px"}} />
+      <nav className="navbar navbar-expand-lg navbar-light" style={{position:"relative"}}> 
+          <Link  to="/">
+            <img  className={"logo"} src={require('../Images/logo.png')} alt="..logo" />
           </Link>
           <button
             className="navbar-toggler"
