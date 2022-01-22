@@ -11,9 +11,16 @@ import Packages from "../Pages/Packages";
 import About from '../Pages/About';
 import Contact from '../Pages/ContactUs';
 import Footer from './footer';
+import NavBar from './NavBar';
+
 const Home = () => {
   return (
-    <div className='total'>
+   
+    <>
+
+<NavBar />
+
+<div className='total' id='home'>
     <section className="banner">
       <div className="container-fluid" >
         <div className="row">
@@ -56,19 +63,19 @@ const Home = () => {
       </div>
     </section>
 
-    <section id='serviceID'>
+    <section >
       <Services />    
     </section>
 
-    <section id='packId'>
+    <section >
       <Packages/>
     </section>
 
-    <section>
-      <About/>
+    <section id='about' > 
+      <About />
     </section>
 
-    <section>
+    <section > 
       <Contact/>
     </section>
     <section>
@@ -76,6 +83,9 @@ const Home = () => {
     </section>
    
     </div>
+
+  
+    </>
   );
 }
 

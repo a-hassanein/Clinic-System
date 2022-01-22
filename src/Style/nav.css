@@ -1,12 +1,25 @@
-nav{
-    position: relative;
-    top: 0;
-    left:0;
-    width: 100%;
+/* .logo {
+  width: 100%;
+  height: 100%;
+  max-width: 100px;
+} */
+
+.nav-item{
+  color: black;
+  font-weight: bold;
+}
+/*  
+  nav{
+    position: fixed;
     display: flex;
     align-items: center;
-    position: sticky;
-}
+    flex-wrap: wrap;
+    flex-direction: row;
+    z-index: 2;
+}    */
+
+
+
   .logo {
     display: flex;
     align-items: center;
@@ -23,25 +36,26 @@ nav{
     margin-left: 0.5rem;
     font-size: 1.5rem;
   }
-  
-  /* ul {
+   
+  .nav_ul {
     display: flex;
     list-style: none;
+    margin-right: 0;
   }
-   */
-  .navbar-nav li {
+  
+  .nav_ul li {
     display: inline-block;
     margin: 0 1rem;
   }
   
-  .navbar-nav li a {
+  .nav_ul li a {
     text-decoration: none;
     display: block;
     position: relative;
     color: rgb(255, 244, 244);
   }
   
-  .navbar-nav li a::after {
+  .nav_ul li a::after {
     content: "";
     position: absolute;
     height: 0.1rem;
@@ -52,24 +66,25 @@ nav{
     transition: 0.3s linear;
   }
   
-  .navbar-nav li a:hover::after {
+  .nav_ul li a:hover::after {
     width: 100%;
   }
   
-  .navbar-nav li a.clicked::after {
+   .nav_ul li a.clicked::after {
     width: 100%;
   }
   
-  .navbar-nav li a:hover {
+  .nav_ul li a:hover {
     color: rgb(91, 165, 235);
   }
   
-  /* .toggle-button {
+
+  .toggle-button {
     display: none;
     font-size: 1.8rem;
-  } */
+  } 
   
-  /* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     nav {
       padding: 0 3rem;
     }
@@ -78,25 +93,23 @@ nav{
     .toggle-button {
       display: block;
     }
-    ul {
+    .nav_ul {
       flex-direction: column;
       position: fixed;
       top: 8vh;
       background: #252525;
       width: 100%;
       height: 100%;
-      left: -1000px;
       justify-content: flex-start;
       align-items: center;
     }
   
-    ul li {
+    .nav_ul li {
       padding: 2rem 0;
       font-size: 1.2rem;
     }
   
-    ul.active {
+    .nav_ul.active {
       left: 0;
     }
   }
-   */
