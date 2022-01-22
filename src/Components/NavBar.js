@@ -84,12 +84,11 @@ const NavBar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse navbar-collapse "
+          className="collapse navbar-collapse"
           id="navbarNav"
           style={{ justifyContent: "center" }}
         >
-          <ul className="nav  nav_ul">
-            <ul className="navbar-nav  ">
+          <ul className="navbar-nav  nav_ul text-center">
               <li className="nav-item text-uppercase">
                 <a
                   className="nav-link "
@@ -120,7 +119,6 @@ const NavBar = () => {
                 </a>
               </li>
             </ul>
-          </ul>
         </div>
       </nav>
     </>
