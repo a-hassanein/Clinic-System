@@ -73,12 +73,12 @@
   }
   
 
-  .toggle-button {
+  /* .toggle-button {
     display: none;
     font-size: 1.8rem;
-  } 
+  }  */
   
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     nav {
       padding: 0 3rem;
     }
@@ -87,17 +87,19 @@
     .toggle-button {
       display: block;
     }
-    .nav_ul {
+    /* .nav_ul {
       flex-direction: column;
       position: fixed;
       top: 8vh;
-      background: #252525;
+      background: white;
       width: 100%;
       height: 100%;
       justify-content: flex-start;
       align-items: center;
-    }
+    } */
+
   
+/*   
     .nav_ul li {
       padding: 2rem 0;
       font-size: 1.2rem;
@@ -105,5 +107,5 @@
   
     .nav_ul.active {
       left: 0;
-    }
-  }
+    } */
+  /* } */ 
