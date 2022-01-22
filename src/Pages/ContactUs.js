@@ -64,12 +64,12 @@ const Contact = ()=>{
     }
 return(
     <>
-        <div style={{marginTop:"50px"}}>
+        <div style={{marginTop:"50px"}}  >
                 <div className="col-lg-12 text-center">
                     <h1 >Contact</h1>
                 </div>
         </div>
-        <div className="container-fluid contactContainer ">
+        <div className="container-fluid contactContainer " id='contact'>
             <div className="row text-center contactinfo2" >
                     <div className="col-lg-4 contactinfodiv">
                         <span className="icon" ><HiMail/></span>

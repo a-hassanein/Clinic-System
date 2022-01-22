@@ -17,8 +17,8 @@ function About() {
                 </div>
             </div>
 
-            <div className='row '>
-                <div className='col-12'>
+            <div className='row ' >
+                <div className='col-12'  >
                     <div className='AboutContent'>
                     <p> hello im asmaaaaa Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer enim ipsum, viverra quis libero ut, iaculis feugiat nisl. Pellentesque egestas dui vel ipsum lobortis feugiat. Aliquam sed neque nec arcu malesuada placerat at sollicitudin orci. Etiam ut odio feugiat, lacinia lacus at, mollis risus. Praesent id accumsan elit. Duis egestas nunc efficitur gravida pharetra. Sed elit ante, molestie sit amet euismod vitae, mollis ut elit. Curabitur scelerisque imperdiet justo, maximus cursus ex porttitor et. Cras ullamcorper velit eget dignissim volutpat. In at bibendum velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse quis laoreet est. Sed vel ligula lorem.
                     Proin porttitor lacus quis semper porta. Integer sagittis massa sit amet orci condimentum consequat. Sed vehicula euismod ligula, nec lobortis turpis elementum nec. Mauris et lobortis odio, vitae porttitor risus. Donec vitae lacinia arcu. Fusce efficitur fermentum justo a consequat. Praesent a malesuada lorem. Etiam arcu diam, luctus in tortor in, convallis fringilla dolor. Aenean ut maximus nibh. Pellentesque viverra tortor sed eleifend pulvinar. Praesent rutrum nulla est, ultricies bibendum ex lobortis at. Morbi felis eros, egestas vitae iaculis sit amet, laoreet eget purus. Cras varius molestie tempus. Nullam mi enim, fermentum a eros a, porttitor sodales eros.
