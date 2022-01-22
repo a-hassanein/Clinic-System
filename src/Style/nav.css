@@ -7,16 +7,10 @@
 .nav-item{
   color: black;
   font-weight: bold;
-}
-/*  
+}  
   nav{
-    position: fixed;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    z-index: 2;
-}    */
+    background-color: white;
+}    
 
 
 
