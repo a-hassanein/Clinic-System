@@ -9,11 +9,13 @@ import SignUp from './Pages/signup';
 import Login from './Pages/login';
 import Packages from "./Pages/Packages";
 import Services from './Pages/Services';
+import Footer from './Components/footer';
 
 function App() {
   return (
           <>
          <Router>
+            <NavBar/>
             <Routes>
               <Route path="/" element={<Home/>} />
               {/* <Route path="/about" element={<About/>} />
@@ -23,6 +25,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
             </Routes>
+            <Footer/>
          </Router> 
           </>
   );

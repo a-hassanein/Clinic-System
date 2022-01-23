@@ -18,7 +18,7 @@ const Home = () => {
    
     <>
 
-<NavBar />
+{/* <NavBar /> */}
 
 <div className='total' id='home'>
     <section className="banner">
@@ -78,9 +78,9 @@ const Home = () => {
     <section > 
       <Contact/>
     </section>
-    <section>
+    {/* <section>
       <Footer/>
-    </section>
+    </section> */}
    
     </div>
 
