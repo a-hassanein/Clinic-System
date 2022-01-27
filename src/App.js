@@ -10,10 +10,14 @@ import Login from './Pages/login';
 import Packages from "./Pages/Packages";
 import Services from './Pages/Services';
 import Footer from './Components/footer';
+import Header from './Pages/DashBoard/header'
+import Dashboard from './Pages/DashBoard/Dashboard'
 
 function App() {
   return (
           <>
+          
+
          <Router>
             <NavBar/>
             <Routes>
@@ -24,6 +28,7 @@ function App() {
               <Route path="/packages" element={<Packages />} /> */}
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
+              <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
             <Footer/>
          </Router> 
