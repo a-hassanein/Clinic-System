@@ -17,7 +17,7 @@ const Home = () => {
   return (
    
     <>
-
+<NavBar/>
 {/* <NavBar /> */}
 
 <div className='total' id='home'>
@@ -78,9 +78,9 @@ const Home = () => {
     <section > 
       <Contact/>
     </section>
-    {/* <section>
+    <section>
       <Footer/>
-    </section> */}
+    </section>
    
     </div>
 
