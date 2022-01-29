@@ -5,10 +5,12 @@ import "../../Style/sidebar.css";
 const Surgery = () => {
     return (
       <>
-        <div className="bodycontent">
+        <section className="bodycontent">
+            <div>
             <h1>Bill page </h1>
             <h1>Hellllllllllllllllllllloooooooooo </h1>
-        </div>
+            </div>
+        </section>
       </>
     );
   };

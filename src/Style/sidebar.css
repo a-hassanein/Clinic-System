@@ -26,6 +26,7 @@
     /* background-image: linear-gradient(180deg, #132b36,#132b36, #70a1b8); */
     padding: 6px 14px;
     transition: all 0.5s ease;
+    z-index: 1;
 }
 
 .sidebar.active{
@@ -126,7 +127,7 @@
 }
 
 .sidebar .nav_list li input::placeholder {
-    color: #284653;
+    color: #8ab1c2;
     opacity: 1; /* Firefox */
   }
 
@@ -244,6 +245,7 @@
 
 .home-section{
     position: absolute;
+    top: 0;
     height: 100%;
     width: calc(100% - 110px);
     left: 110px;
@@ -260,21 +262,7 @@
 .sidebar.active ~ .home-section{
     width: calc(100% - 280px);
     left: 280px;
-
-}
-
-.bodycontent{
     top: 0;
-    position: absolute;
-    height: 100%;
-    width: calc(100% - 110px);
-    left: 110px;
-    transition: all 0.5s ease;
-    z-index: 0;
 }
 
-.sidebar.active ~ .bodycontent{
-    width: calc(100% - 280px);
-    left: 280px;
-    z-index: 0;
-}
+
