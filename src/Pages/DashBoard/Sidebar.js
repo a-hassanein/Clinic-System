@@ -1,8 +1,8 @@
 import {Link} from "react-router-dom";
-import '../../App.css';
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect } from "react";
 import SignUp from '../signup';
 import Home from '../../Components/Home';
+import "../../Style/sidebar.css";
 import {BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
 import {
     FiMenu,
@@ -41,6 +41,7 @@ import {
 const Sidebar = () => {
     let sidebar = document.querySelector(".sidebar");
 
+    
     const btnclass = () => {
         sidebar.classList.toggle("active");
     }
@@ -65,7 +66,7 @@ const Sidebar = () => {
             <ul className='nav_list'>
 
                 <li className="nav_Item">
-                    <Link className="linkClass" to={"#"}>
+                    <Link className="linkClass" to={""}>
                     <input type={"text"} placeholder={"search"}/>
                     <i className="searchIcon" onClick={searchBtnclass} style={{bottom:"-0.2px"}}><ImSearch></ImSearch></i>
                     <span className="tooltip">search</span>
@@ -150,7 +151,7 @@ const Sidebar = () => {
             </div>
         </div>
         <section class="home-section">
-            <div class="text">HHHHHHHHHHelllo</div>
+            <div class="text">HHHHHHHHHHedfsgzgfjhgdfghgfgfdgfdgfdgrdsfgrslllo</div>
         </section>
         </body>
     </>
