@@ -1,24 +1,36 @@
 import { Link } from "react-router-dom"
-import "../../Style/nav.css";
 import React from "react";
+// import "../../Style/header.css";
+
+import {
+  BiLogOut
+} from "react-icons/bi";
 
 const Header = () => {
   return (
     <>
-     <nav id="navbar" className="navbar navbar-expand-lg navbar-light fixed-top" style={{boxShadow:"0 2px 2px rgba(0, 0, 0, 0.10)"}}>
-        <Link to={"/"}>
-        <a href="#home">
-          <img
-            className={"logo"}
-            src={require("../../Images/logo.png")}
-            alt="..logo"
-          />
-        </a>
-        </Link>
+
+      <nav id="headerDash" className="navbar navbar-expand-lg navbar-light fixed-top" >
         
       </nav>
+
+     {/* <nav id="headerDash" className="navbar navbar-expand-lg navbar-light fixed-top" >
+        <Link to="/">
+          <img className={"logo"} src={require("../../Images/logo.png")} alt="..logo"/>
+        </Link>
+        <div className="profile_content">
+          <div className="profile">
+            <div className="profile_details">
+              <div className="name_clinic">
+                <div className="name">Ahmed Hassanein</div>
+                <div className="clinic">masr clinic</div>
+              </div>
+            </div>
+            <i><BiLogOut></BiLogOut></i>
+          </div>
+        </div>
+      </nav> */}
     </>
   );
 };
-
 export default Header;

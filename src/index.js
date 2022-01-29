@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/react-fontawesome'
 import '@fortawesome/free-solid-svg-icons'
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
