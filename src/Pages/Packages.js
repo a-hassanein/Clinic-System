@@ -54,7 +54,7 @@ function Packages() {
       <br />
       <br />
  
-        <div className="d-flex justify-content-evenly flex-wrap" style={{marginBottom:"100px"}}>
+        <div className="d-flex justify-content-center flex-wrap" style={{marginBottom:"100px"}}>
           <div className="p-2 ">
             <CardPackages
               title={packages[0].title}
