@@ -39,16 +39,25 @@ import {
   } from "react-icons/bi";
 
 const Sidebar = () => {
-    let sidebar = document.querySelector(".sidebar");
+    const [ sidebardef ,setBtn1 ] =useState()   
+
+    useEffect(() =>{    
+        console.log("11")       
+            let sidebardef = document.querySelector(".sidebar");        
+        setBtn1(sidebardef)     
+    },[]);      
+
+
 
     
     const btnclass = () => {
-        sidebar.classList.toggle("active");
+        console.log(sidebardef);    
+        sidebardef.classList.toggle("active");  
     }
 
-    const searchBtnclass = () => {
-        sidebar.classList.toggle("active");
-    }
+    const searchBtnclass = () => {  
+        sidebardef.classList.toggle("active");  
+    }   
 
     
   return (
