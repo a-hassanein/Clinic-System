@@ -4,6 +4,7 @@ import SignUp from '../signup';
 import Home from '../../Components/Home';
 import Surgery from '../DashBoard/surgery';
 import Bill from '../DashBoard/Bill';
+import Prescripe from './Prescription'
 import {BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
 
 
@@ -18,6 +19,8 @@ const Dashboard = () => {
                 <Switch>
                     <Route path="/surgery" component={Surgery} />
                     <Route path="/bill" component={Bill} />
+                    <Route path="/prescription" component={Prescripe} />
+
                 </Switch>
             </Router>
     
