@@ -159,9 +159,9 @@ const Sidebar = () => {
                 </div>
             </div>
         </div>
-        <section class="home-section">
+        {/* <section class="home-section">
             <div class="text">HHHHHHHHHHedfsgzgfjhgdfghgfgfdgfdgfdgrdsfgrslllo</div>
-        </section>
+        </section> */}
         </body>
     </>
   );
