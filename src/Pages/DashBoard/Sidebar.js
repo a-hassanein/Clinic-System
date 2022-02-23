@@ -88,7 +88,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"#"} className="linkClass">
+                    <Link to={"/Appointment"} className="linkClass">
                         <i><FiCalendar></FiCalendar></i>
                         <span className="links_name">Appointment</span>
                         <span className="tooltip">Appointment</span>
