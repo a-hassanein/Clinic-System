@@ -118,7 +118,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"#"} className="linkClass">
+                    <Link to={"/materials"} className="linkClass">
                         <i><BsBagDashFill></BsBagDashFill></i>
                         <span className="links_name">Materials</span>
                         <span className="tooltip">Materials</span>
