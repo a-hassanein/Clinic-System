@@ -13,7 +13,6 @@ import Services from './Pages/Services';
 import Footer from './Components/footer';
 import Header from './Pages/DashBoard/header'
 import Dashboard from './Pages/DashBoard/Dashboard'
-import Materials from './Pages/DashBoard/materials'
 function App() {
   return (
           <>
@@ -24,7 +23,6 @@ function App() {
                 <Route path="/login" component={Login} exact/>
                 <Route path="/signup" component={SignUp} exact/>
                 <Route path="/dashboard" component={Dashboard} exact/>
-                <Route path="/materials" component={Materials} exact/>
             </Switch>
           </Router>
 

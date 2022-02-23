@@ -3,7 +3,7 @@ import React from 'react'
 
 function Materials() {
   return (
-
+    <section className="home-section">
     <div id='materials'>
       <center><h1>Your Materials</h1></center>
 
@@ -39,6 +39,7 @@ function Materials() {
       </div>
 
     </div>
+    </section>
   )
 }
 
