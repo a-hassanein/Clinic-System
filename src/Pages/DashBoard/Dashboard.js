@@ -6,6 +6,7 @@ import Surgery from '../DashBoard/surgery';
 import Bill from '../DashBoard/Bill';
 import Prescripe from './Prescription'
 import {BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
+import Materials from '../DashBoard/materials';
 
 
 
@@ -21,6 +22,7 @@ const Dashboard = () => {
                     <Route path="/bill" component={Bill} />
                     <Route path="/prescription" component={Prescripe} />
 
+                    <Route path="/materials" component={Materials}/>
                 </Switch>
             </Router>
     
