@@ -1,11 +1,11 @@
-import "../../Style/dashpage.css";
+// import "../../Style/dashpage.css"; 
 import "../../Style/sidebar.css";
 
 
 const Surgery = () => {
     return (
       <>
-        <section className="bodycontent">
+        <section className="home-section">  
             <div>
             <h1>Bill page </h1>
             <h1>Hellllllllllllllllllllloooooooooo </h1>
