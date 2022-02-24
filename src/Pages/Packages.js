@@ -54,8 +54,8 @@ function Packages() {
       <br />
       <br />
  
-        <div className="d-flex justify-content-evenly flex-wrap" style={{marginBottom:"100px"}}>
-          <div className="p-2 ">
+        <div className="d-flex justify-content-center flex-wrap" style={{marginBottom:"100px"}}>
+          <div className="p-4 ">
             <CardPackages
               title={packages[0].title}
               Subtitle={packages[0].Subtitle}
@@ -64,7 +64,7 @@ function Packages() {
               list2={packages[0].list2}
             />
           </div>
-          <div className="p-2 ">
+          <div className="p-4 ">
             <CardPackages
               title={packages[1].title}
               Subtitle={packages[1].Subtitle}
@@ -75,7 +75,7 @@ function Packages() {
               list2={packages[1].list2}
             />
           </div>
-          <div className="p-2 ">
+          <div className="p-4 ">
             <CardPackages
               title={packages[2].title}
               Subtitle={packages[2].Subtitle}
@@ -86,7 +86,7 @@ function Packages() {
               list2={packages[2].list2}
             />
           </div>
-          <div className="p-2 ">
+          <div className="p-4 ">
             <CardPackages
               title={packages[3].title}
               Subtitle={packages[3].Subtitle}

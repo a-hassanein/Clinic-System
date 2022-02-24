@@ -17,8 +17,8 @@ const Home = () => {
   return (
    
     <>
-
-<NavBar />
+<NavBar/>
+{/* <NavBar /> */}
 
 <div className='total' id='home'>
     <section className="banner">
@@ -42,7 +42,7 @@ const Home = () => {
               </Link>
 
               <span> </span>
-              <Link to='signup'className="btn ml-lg-auto" id="signupID" >
+              <Link to='/signup'className="btn ml-lg-auto" id="signupID" >
               SignUp
               </Link>
             </div>
