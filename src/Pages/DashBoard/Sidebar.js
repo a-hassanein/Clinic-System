@@ -104,7 +104,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"#"} className="linkClass">
+                    <Link to={"/prescription"} className="linkClass">
                         <i><GiMedicines></GiMedicines></i>
                         <span className="links_name">Prescription</span>
                         <span className="tooltip">Prescription</span>
@@ -118,7 +118,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"#"} className="linkClass">
+                    <Link to={"/materials"} className="linkClass">
                         <i><BsBagDashFill></BsBagDashFill></i>
                         <span className="links_name">Materials</span>
                         <span className="tooltip">Materials</span>
@@ -159,9 +159,15 @@ const Sidebar = () => {
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <section class="home-section">
             <div class="text"></div>
         </section>
+=======
+        {/* <section class="home-section">
+            <div class="text">HHHHHHHHHHedfsgzgfjhgdfghgfgfdgfdgfdgrdsfgrslllo</div>
+        </section> */}
+>>>>>>> 5729d23c28d7dc7abb64b9da195b7e88ee3cb0f1
         </body>
     </>
   );
