@@ -63,7 +63,7 @@ const NavBar = () => {
 
       <nav
         id="navbar"
-        className="navbar navbar-expand-lg navbar-light fixed-top"
+        className="navbar navbar-expand-lg navbar-light fixed-top  "
       >
         <a href="#home">
           <img

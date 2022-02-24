@@ -8,10 +8,20 @@
   color: black;
   font-weight: bold;
 }  
-  nav{
-    background-color: white;
+ nav{
+     background-color: white;
 }    
 
+/* .bgColer.scrolled{
+    color: cadetblue;
+}
+ */
+
+
+.bg_navItem{
+  /* color:  var(--first_color); */
+  color: blueviolet;
+}
 
 
   .logo {
