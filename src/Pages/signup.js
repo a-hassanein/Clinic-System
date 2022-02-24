@@ -15,16 +15,12 @@ function SignUp() {
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [Conpassword, setConPassword] = useState("");
-
     const [password, setPassword] = useState("");
     const handlesubmit = (event) => {
         event.preventDefault();
     }
     return (
         <>
-            {/* <div>
-                <NavBar />
-            </div> */}
             <div className="main-signup">
                 <div className="signup-conatiner">
                     <div className="left-side" id="leftSide">

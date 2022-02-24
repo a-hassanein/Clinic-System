@@ -90,7 +90,7 @@ const Sidebar = () => {
                     
                 </li>
                 <li className="nav_Item">
-                    <Link to={"#"} className="linkClass">
+                    <Link to={"/patient"} className="linkClass">
                         <i><FaUserInjured></FaUserInjured></i>
                         <span className="links_name">Patient</span>
                         <span className="tooltip">Patient</span>
