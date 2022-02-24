@@ -27,8 +27,9 @@ function SignUp() {
                         <div className="welcomeNote" id="welcomeNote">
                             <p style={{ color: "#ffffff", fontWeight: 700 }}>
                                 Welcome To
-
+                                <Link to=''>
                                 <img id="logoSignUpId" style={{ width: '100px', alignItems: "center", paddingBottom: 12, marginLeft: 10 }} src={logo} />
+                                </Link>
                             </p>
                             <h3 style={{ fontWeight: 600, fontSize: 20 }}>
                                 We are so glad to have you here
