@@ -160,7 +160,7 @@ const Sidebar = () => {
             </div>
         </div>
         <section class="home-section">
-            <div class="text">HHHHHHHHHHedfsgzgfjhgdfghgfgfdgfdgfdgrdsfgrslllo</div>
+            <div class="text"></div>
         </section>
         </body>
     </>
