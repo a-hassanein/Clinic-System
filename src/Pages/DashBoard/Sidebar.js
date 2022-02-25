@@ -90,7 +90,7 @@ const Sidebar = () => {
                     
                 </li>
                 <li className="nav_Item">
-                    <Link to={"#"} className="linkClass">
+                    <Link to={"/patient"} className="linkClass">
                         <i><FaUserInjured></FaUserInjured></i>
                         <span className="links_name">Patient</span>
                         <span className="tooltip">Patient</span>
@@ -104,7 +104,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"#"} className="linkClass">
+                    <Link to={"/prescription"} className="linkClass">
                         <i><GiMedicines></GiMedicines></i>
                         <span className="links_name">Prescription</span>
                         <span className="tooltip">Prescription</span>
