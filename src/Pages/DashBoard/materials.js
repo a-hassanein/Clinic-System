@@ -1,5 +1,7 @@
 import React from 'react'
-
+import Addmaterial from '../DashBoard/addmaterial';
+import Updatematerial from '../DashBoard/updatematerial';
+import "../../Style/materials.css";
 
 function Materials() {
   return (
@@ -8,7 +10,7 @@ function Materials() {
       <center><h1>Your Materials</h1></center>
 
       <div className="container">
-            <a href="#" className="btn " id="btn_services">Add New Material</a>
+            <a href="/addmaterial" className="btn " id="btn_services">Add New Material</a>
 
         <div className="row">
           <div className='services_all'>
@@ -29,7 +31,7 @@ function Materials() {
                     </p>
                     <a href="#" className="btn " id="btn_services">show details</a> 
                     <a href="#" className="btn " id="btn_services">Delete</a>
-                    <a href="#" className="btn " id="btn_services">Update</a> 
+                    <a href="/updatematerial" className="btn " id="btn_services">Update</a> 
                   </div>
                 </div>
               </div>

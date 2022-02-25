@@ -13,6 +13,8 @@ import Services from './Pages/Services';
 import Footer from './Components/footer';
 import Header from './Pages/DashBoard/header'
 import Dashboard from './Pages/DashBoard/Dashboard'
+import Addmaterial from './Pages/DashBoard/addmaterial'
+import Updatematerial from './Pages/DashBoard/updatematerial'
 function App() {
   return (
           <>
@@ -23,6 +25,8 @@ function App() {
                 <Route path="/login" component={Login} exact/>
                 <Route path="/signup" component={SignUp} exact/>
                 <Route path="/dashboard" component={Dashboard} exact/>
+                <Route path="/addmaterial" component={Addmaterial} exact/>
+                <Route path="/updatematerial" component={Updatematerial} exact/>
             </Switch>
           </Router>
 

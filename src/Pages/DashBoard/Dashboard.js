@@ -6,6 +6,7 @@ import Surgery from '../DashBoard/surgery';
 import Bill from '../DashBoard/Bill';
 import {BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
 import Materials from '../DashBoard/materials';
+import Addmaterial from '../DashBoard/addmaterial';
 
 
 
@@ -20,6 +21,7 @@ const Dashboard = () => {
                     <Route path="/surgery" component={Surgery} />
                     <Route path="/bill" component={Bill} />
                     <Route path="/materials" component={Materials}/>
+                    <Route path="/addmaterial" component={Addmaterial}/>
                 </Switch>
             </Router>
     
