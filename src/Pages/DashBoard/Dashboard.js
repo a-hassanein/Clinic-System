@@ -8,6 +8,7 @@ import Prescripe from './Prescription'
 import Patient from './Patient'
 import {BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
 import Materials from '../DashBoard/materials';
+import Addmaterial from '../DashBoard/addmaterial';
 
 
 
@@ -25,6 +26,7 @@ const Dashboard = () => {
                     <Route path="/patient" component={Patient} />
 
                     <Route path="/materials" component={Materials}/>
+                    <Route path="/addmaterial" component={Addmaterial}/>
                 </Switch>
             </Router>
     
