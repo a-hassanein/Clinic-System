@@ -11,6 +11,7 @@ const Prescripe = () => {
         duration:"",
         foodrelation:"",
         instructions:"",
+        between:""
     }])
     // const [drugs,setDrugs] = useState([])
 
@@ -40,27 +41,42 @@ const Prescripe = () => {
 
     const handlesubmit = (e) => {
         e.preventDefault()
-        debugger;
+        // if(e.target[0].name === "drugname"){
+        //     setDrugs([...drugs,{
+        //         drugname:e.target[0].value
+        //     }])
+        // }
+        // if(e.target[1].name === "dose"){
+        //     setDrugs([...drugs,{
+        //         dose:e.target[1].value
+        //     }])
+        // }
+        setDrugs([...drugs,{
+            drugname:e.target[0].value,
+            dose:e.target[1].value,
+            dosageform:e.target[2][e.target[2].selectedIndex].text,
+            frequency:e.target[3].value,
+            noofdays:e.target[4].value,
+            duration:e.target[5][e.target[5].selectedIndex].text,
+            foodrelation:e.target[6][e.target[6].selectedIndex].text,
+            instructions:e.target[7].value,
+            between:"لمده"
+            
+        }])
         console.log(e)
-        if(e.target[0].__reactProps$1xue4qvrdmv.name === "drugname"){
-            setDrugs([...drugs,{
-                drugname:e.target[0].value
-            }])
-        }
         console.log(drugs)
     }
     return(
         <>
             <section className='home-section' >
                 <div className='container-fluid' style={{marginTop:'100px'}}>
-                    <form  onSubmit={(e) => {handlesubmit(e)}}>
+                    <form method="post" onSubmit={(e) => {handlesubmit(e)}}>
                         
                         <div className="row">
                             <div className="col-lg-12">
                                 <label className="form-label">Drug Name</label>
                                 <input type='text' className='form-control' name="drugname"  />
                             </div>
-                        
                         </div>
                         <div className="row">
                             <div className="col-lg-4">
@@ -69,18 +85,18 @@ const Prescripe = () => {
                             </div>
                             <div className="col-lg-4">
                             <label className="form-label">Dosage Form</label>
-                                <select class="form-select">
-                                    <option selected>Open this select menu</option>
+                                <select className="form-select">
+                                    <option >Open this select menu</option>
                                     <option value="1">شراب</option>
                                     <option value="2">اقراص</option>
                                     <option value="2">كبسول</option>
                                     <option value="3">حقن</option>
-                                    <option value="3">لبوس</option>
-                                    <option value="3">مرهم</option>
-                                    <option value="3">كريم</option>
-                                    <option value="3">محلول</option>
-                                    <option value="3">قطره</option>
-                                    <option value="3">غسول فم</option>
+                                    <option value="4">لبوس</option>
+                                    <option value="5">مرهم</option>
+                                    <option value="6">كريم</option>
+                                    <option value="7">محلول</option>
+                                    <option value="8">قطره</option>
+                                    <option value="9">غسول فم</option>
                                 </select>
                             </div>
                             <div className="col-lg-4">
@@ -95,7 +111,7 @@ const Prescripe = () => {
                             </div>
                             <div className="col-lg-3">
                                 <label className="form-label">duration</label>
-                                <select class="form-select">
+                                <select className="form-select">
                                     <option value="1">يوم</option>
                                     <option value="2">ايام</option>
                                     <option value="2">اسبوع</option>
@@ -106,7 +122,7 @@ const Prescripe = () => {
                             </div>
                             <div className="col-lg-6">
                                 <label className="form-label">Food Relation</label>
-                                <select class="form-select">
+                                <select className="form-select">
                                     <option value="1">قبل الاكل</option>
                                     <option value="2">يعد الاكل</option>
                                 </select>
@@ -155,10 +171,17 @@ const Prescripe = () => {
                             <h5 style={{fontSize:"100px",fontWeight:"900"}}>RX</h5>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row text-center" style={{fontSize:"24px"}}>
                         {drugs.map((drug) => {
                             return(
-                                <p>{drug.drugname}</p>
+                                <>
+                                    <div className="col-lg-6">
+                                        <p>{drug.drugname} {drug.dose} {drug.dosageform}</p>
+                                    </div>
+                                    <div className="col-lg-6" dir="rtl">
+                                        <p>{drug.frequency} {drug.between} {drug.noofdays} {drug.duration}</p>
+                                    </div>
+                                </>
                             )
                         })}
                         {/* <p>{drugs.drugname}</p> */}
