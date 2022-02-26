@@ -66,13 +66,13 @@ const NavBar = () => {
         className="navbar navbar-expand-lg navbar-light fixed-top"
       >
         <Link to={"/"}>
-        <a href="#home">
-          <img
-            className={"logo"}
-            src={require("../Images/logo.png")}
-            alt="..logo"
-          />
-        </a>
+          <a href="#home">
+            <img
+              className={"logo"}
+              src={require("../Images/logo.png")}
+              alt="..logo"
+            />
+          </a>
         </Link>
         <button
           className="navbar-toggler"
@@ -91,37 +91,37 @@ const NavBar = () => {
           style={{ justifyContent: "center" }}
         >
           <ul className="navbar-nav  nav_ul text-center">
-              <li className="nav-item text-uppercase">
-                <a
-                  className="nav-link "
-                  href="#home"
-                  style={{ color: "var(--first_color)" }}
-                >
-                  Home
-                </a>
-              </li>
-              <li className="nav-item text-uppercase">
-                <a className="nav-link" href="#services">
-                  Services
-                </a>
-              </li>
-              <li className="nav-item text-uppercase">
-                <a className="nav-link" href="#packId">
-                  Packages
-                </a>
-              </li>
-              <li className="nav-item text-uppercase">
-                <a className="nav-link" href="#about">
-                  About
-                </a>
-              </li>
-              <li className="nav-item text-uppercase">
-                <a className="nav-link" href="#contact">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-            
+            <li className="nav-item text-uppercase">
+              <a
+                className="nav-link "
+                href="#home"
+                style={{ color: "var(--first_color)" }}
+              >
+                Home
+              </a>
+            </li>
+            <li className="nav-item text-uppercase">
+              <a className="nav-link" href="#services">
+                Services
+              </a>
+            </li>
+            <li className="nav-item text-uppercase">
+              <a className="nav-link" href="#packId">
+                Packages
+              </a>
+            </li>
+            <li className="nav-item text-uppercase">
+              <a className="nav-link" href="#about">
+                About
+              </a>
+            </li>
+            <li className="nav-item text-uppercase">
+              <a className="nav-link" href="#contact">
+                Contact Us
+              </a>
+            </li>
+          </ul>
+
         </div>
       </nav>
     </>
