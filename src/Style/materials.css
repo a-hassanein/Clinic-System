@@ -1,0 +1,15 @@
+h1{
+    color: var(--first_color);
+}
+
+#btn_form_add{
+    background-color: var(--first_color);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: 550;
+    
+}#btn_form_add:hover{
+    background-color: var(--second_color);
+}

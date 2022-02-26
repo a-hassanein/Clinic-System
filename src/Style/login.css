@@ -18,7 +18,7 @@
 }
 
 .main-login .login-conatiner{
-    height: 100vh;
+    height: 90vh;
     width: 70% ;
     background: linear-gradient(to right , var(--light_color) 50%, var(--first_color));
     border-radius: 10;
