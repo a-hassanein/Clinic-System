@@ -3,6 +3,7 @@ import Sidebar from '../DashBoard/Sidebar'
 import SignUp from '../signup';
 import Home from '../../Components/Home';
 import Surgery from '../DashBoard/surgery';
+import CreatePatient from '../DashBoard/createpatient';
 import Bill from '../DashBoard/Bill';
 import Prescripe from './Prescription'
 import Patient from './Patient'
@@ -24,7 +25,6 @@ const Dashboard = () => {
                     <Route path="/bill" component={Bill} />
                     <Route path="/prescription" component={Prescripe} />
                     <Route path="/patient" component={Patient} />
-
                     <Route path="/materials" component={Materials}/>
                     <Route path="/addmaterial" component={Addmaterial}/>
                 </Switch>

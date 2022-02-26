@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;700;900&display=swap');
+:root{
+  --first_color:#528298;
+  --second_color:#BCD9E6;
+  --light_color:#ffffff;
+  --dark_color:#303030;
+  --font_family:'Cairo', sans-serif;
+}
+*{
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+#navbar_container{
+
+  margin-left: 160px;
+  width:1200px;
+  margin: top 100px;
+  
+}
+.navbarcontainer{
+  margin: 100px;
+}
+#searchfield
+{
+  height: 2.5rem;
+
+}
+.nav-link {
+  height: 2.5rem;
+  color:var(--first_color);
+}
+.nav-link:hover
+{
+  color: #70a1b8;
+
+}
+#searchbtn {
+  background-color: #528298;
+  color: #ffffff;
+  cursor: pointer;
+  width: 350px; 
+  height: 2.5rem;
+  font-weight:600 ;
+  border: none;
+  display: block;
+
+}
+#searchbtn:hover {
+   
+  background-color: #70a1b8;
+}
+#createpatientForm {
+    margin-top: 30px;
+    padding:30px;
+    background-color: #ffffff;
+    box-shadow: 0.5rem 0.5rem 2rem -1rem #303030;
+    font-weight: bold;
+    border-radius: 20px;
+    text-align: center;
+
+}
+#header_form {
+    text-align: center;
+    color: #528298;
+    font-weight: bold;
+
+}
