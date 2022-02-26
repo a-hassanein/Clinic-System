@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import CardPackages from "../Components/CardPackages";
 import "../Style/Packages.css";
 
@@ -55,6 +56,7 @@ function Packages() {
       <br />
  
         <div className="d-flex justify-content-center flex-wrap" style={{marginBottom:"100px"}}>
+        <Link to={"/dashboard"} className='cardLinkPackage'>
           <div className="p-4 ">
             <CardPackages
               title={packages[0].title}
@@ -64,6 +66,8 @@ function Packages() {
               list2={packages[0].list2}
             />
           </div>
+        </Link>
+        <Link to={"/dashboard"} className='cardLinkPackage'>
           <div className="p-4 ">
             <CardPackages
               title={packages[1].title}
@@ -75,6 +79,8 @@ function Packages() {
               list2={packages[1].list2}
             />
           </div>
+        </Link>
+        <Link to={"/dashboard"} className='cardLinkPackage'>
           <div className="p-4 ">
             <CardPackages
               title={packages[2].title}
@@ -86,6 +92,8 @@ function Packages() {
               list2={packages[2].list2}
             />
           </div>
+          </Link>
+          <Link to={"/dashboard"} className='cardLinkPackage'>
           <div className="p-4 ">
             <CardPackages
               title={packages[3].title}
@@ -97,6 +105,7 @@ function Packages() {
               list2={packages[3].list2}
             />
           </div>
+          </Link>
         </div>
       </div>
 

@@ -26,11 +26,11 @@ const Dashboard = () => {
                     <Route path="/appointment" component={Appointment} />
                     <Route path="/surgery" component={Surgery} />
                     <Route path="/bill" component={Bill} />
-                    <Route path="/home" component={HomeDashboard} />
                     <Route path="/prescription" component={Prescripe} />
                     <Route path="/patient" component={Patient} />
                     <Route path="/materials" component={Materials}/>
                     <Route path="/addmaterial" component={Addmaterial}/>
+                    <Route path="/" component={HomeDashboard} />
                 </Switch>
             </Router>
     

@@ -62,9 +62,8 @@ const Sidebar = () => {
     
   return (
     <>
-        <body className="sidebarBody">  
+        <div className="sidebarBody">  
         <div className='sidebar'>
-
             <div className="logo_content">
                 <div className="logo">
                     <img className={"logo"} src={require("../../Images/logo4.png")} alt="..logo"/>
@@ -165,7 +164,7 @@ const Sidebar = () => {
         {/* <section class="home-section">
             <div class="text">HHHHHHHHHHedfsgzgfjhgdfghgfgfdgfdgfdgrdsfgrslllo</div>
         </section> */}
-        </body>
+        </div>
     </>
   );
 };

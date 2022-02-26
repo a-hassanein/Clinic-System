@@ -16,3 +16,8 @@
 .card_packages{
     margin-top: 30px;
 }
+
+.cardLinkPackage , .cardLinkPackage:hover{
+    text-decoration: none;
+    color: black;
+}

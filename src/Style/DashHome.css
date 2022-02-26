@@ -40,6 +40,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 backdrop-filter: blur(10px);
+text-decoration: none;
 }
 
 .homeItem .card .content{
@@ -50,11 +51,13 @@ backdrop-filter: blur(10px);
     flex-direction: column;
     opacity: 0.75;
     transition: 0.5s;
+    text-decoration: none;
 }
 
 .homeItem .card:hover .content{
     opacity: 1;
     transform: translateY(-20px);
+    text-decoration: none;
 }
 
 
@@ -76,12 +79,14 @@ backdrop-filter: blur(10px);
     text-align: center;
     margin: 20px 0 10px;
     line-height: 1.1em;
+    text-decoration: none;
 }
 
 .homeItem .card .content .contentBx h3 span{
     font-size: 12px;
     font-weight: 600;
     text-transform: initial;
+    text-decoration: none;
 }
 
 
@@ -104,5 +109,10 @@ backdrop-filter: blur(10px);
     margin-right: auto;
     margin-top:50px;
     margin-bottom:100px;
+    text-decoration: none;
 
+}
+
+.cardLink , .cardLink:hover{
+    text-decoration: none;
 }
