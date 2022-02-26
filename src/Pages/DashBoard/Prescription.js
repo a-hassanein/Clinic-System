@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../../Style/prescription.css"
 
 
 const Prescripe = () => {
@@ -69,7 +70,7 @@ const Prescripe = () => {
     return(
         <>
             <section className='home-section' >
-                <div className='container-fluid' style={{marginTop:'100px'}}>
+                <div className='container-fluid formPart' >
                     <form method="post" onSubmit={(e) => {handlesubmit(e)}}>
                         
                         <div className="row">
@@ -136,23 +137,31 @@ const Prescripe = () => {
                         </div>
                         <div className="row text-center">
                             <div className="col-lg-12" style={{marginTop:"30px"}}>
-                                <input type="submit" className="btn btn-danger" value="submit"/>
+                                <input type="submit" className="btn prescriptionButton" value="submit"/>
                             </div>
                         </div>
                     </form>
 
                 </div>
-                <div className="container"  style={{border:"2px solid black",marginTop:"40px",marginBottom:"50px",height:"800px",borderRadius:"10px" }}>
-                    <div className="row" dir="rtl" style={{padding:"10px"}}>
-                        <div className="col-lg-4">
-                            <h3>عياده</h3>
+                <div className="container prescriptionPart" >
+                    <div className="row  doctor-presc-info" style={{padding:"10px"}}>
+                        <div className="col-lg-6 ">
+                            <h2>Clinic name</h2>
+                        </div>
+                        <div className="col-lg-6">
+                            <h2>Doctor name</h2>
+                        </div>
+                        <div className="col-lg-6">
+                            <h3>clinic numbers</h3>
+                        </div>
+                        <div className="col-lg-6">
+                            <h3>Doctor info</h3>
+                        </div>
+                        <div className="col-lg-6">
+                            <h3>clinic address</h3>
                         </div>
                     </div>
-                    <div className="row" dir="rtl">
-                        <div className="col-lg-4">
-                            <h5>دكتور/عبدالرحمن</h5>
-                        </div>
-                    </div>
+                    
                     <div className="row" dir="rtl">
                         <div className="col-lg-4">
                             <h5>الاسم:احمد حسانين</h5>
@@ -165,7 +174,7 @@ const Prescripe = () => {
                             <h5>التاريخ:25-2-2022</h5>
                         </div>
                     </div>
-                    <hr style={{height:"10px"}}></hr>
+                    {/* <hr style={{height:"10px"}}></hr> */}
                     <div className="row">
                         <div className="col-lg-4" >
                             <h5 style={{fontSize:"100px",fontWeight:"900"}}>RX</h5>
