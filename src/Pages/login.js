@@ -25,7 +25,9 @@ function Login() {
                 <div className="login-conatiner ">
                     <div className="left-side">
                         <div className="img-className">
+                            <Link to='' >
                             <img id ="loginlogoID" src={Logo} />
+                            </Link>
                         </div>
                         <form id="LoginForm" onSubmit={handlesubmit}>
                             <div className="Form_Title" id="Form_Title"> Sign In</div>

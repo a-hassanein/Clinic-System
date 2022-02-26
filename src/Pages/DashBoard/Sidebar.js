@@ -62,9 +62,8 @@ const Sidebar = () => {
     
   return (
     <>
-        <body className="sidebarBody">  
+        <div className="sidebarBody">  
         <div className='sidebar'>
-
             <div className="logo_content">
                 <div className="logo">
                     <img className={"logo"} src={require("../../Images/logo4.png")} alt="..logo"/>
@@ -82,7 +81,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link className="linkClass" to={"#"}>
+                    <Link className="linkClass" to={"/home"}>
                         <i><FiGrid></FiGrid></i>
                         <span className="links_name">Dashboard</span>
                         <span className="tooltip">Dashboard</span>
@@ -90,7 +89,7 @@ const Sidebar = () => {
                     
                 </li>
                 <li className="nav_Item">
-                    <Link to={"#"} className="linkClass">
+                    <Link to={"/patient"} className="linkClass">
                         <i><FaUserInjured></FaUserInjured></i>
                         <span className="links_name">Patient</span>
                         <span className="tooltip">Patient</span>
@@ -159,10 +158,13 @@ const Sidebar = () => {
                 </div>
             </div>
         </div>
+        <section class="home-section">
+            <div class="text"></div>
+        </section>
         {/* <section class="home-section">
             <div class="text">HHHHHHHHHHedfsgzgfjhgdfghgfgfdgfdgfdgrdsfgrslllo</div>
         </section> */}
-        </body>
+        </div>
     </>
   );
 };
