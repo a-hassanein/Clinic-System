@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;700;900&display=swap');
+
+*{
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;   
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.homeItem{
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.homeItem .card {
+position: relative;
+width: 250px;
+height: 250px;
+background: #BCD9E6;
+margin: 20px;
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+border-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(10px);
+}
+
+.homeItem .card .content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+.homeItem .card:hover .content{
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+
+.homeItem .card .content .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.homeItem .card .content .contentBx h3{
+    color: #528298;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 1.3em;
+    text-align: center;
+    margin: 20px 0 10px;
+    line-height: 1.1em;
+}
+
+.homeItem .card .content .contentBx h3 span{
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: initial;
+}
+
+
+.AboutContent{
+    width: 80%;
+    color: #528298;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    background-color: #BCD9E6;
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid #52829840;
+    float: center;
+    display: block;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    margin-bottom:100px;
+
+}

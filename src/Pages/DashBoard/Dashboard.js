@@ -5,6 +5,7 @@ import Home from '../../Components/Home';
 import Surgery from '../DashBoard/surgery';
 import CreatePatient from '../DashBoard/createpatient';
 import Bill from '../DashBoard/Bill';
+import HomeDashboard from '../DashBoard/home';
 import Prescripe from './Prescription'
 import Patient from './Patient'
 import {BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
@@ -25,6 +26,7 @@ const Dashboard = () => {
                     <Route path="/appointment" component={Appointment} />
                     <Route path="/surgery" component={Surgery} />
                     <Route path="/bill" component={Bill} />
+                    <Route path="/home" component={HomeDashboard} />
                     <Route path="/prescription" component={Prescripe} />
                     <Route path="/patient" component={Patient} />
                     <Route path="/materials" component={Materials}/>
