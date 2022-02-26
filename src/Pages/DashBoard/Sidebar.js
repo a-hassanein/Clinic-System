@@ -82,7 +82,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link className="linkClass" to={"#"}>
+                    <Link className="linkClass" to={"/home"}>
                         <i><FiGrid></FiGrid></i>
                         <span className="links_name">Dashboard</span>
                         <span className="tooltip">Dashboard</span>
@@ -159,9 +159,9 @@ const Sidebar = () => {
                 </div>
             </div>
         </div>
-        <section class="home-section">
+        {/* <section class="home-section">
             <div class="text">HHHHHHHHHHedfsgzgfjhgdfghgfgfdgfdgfdgrdsfgrslllo</div>
-        </section>
+        </section> */}
         </body>
     </>
   );
