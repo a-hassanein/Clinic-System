@@ -159,15 +159,12 @@ const Sidebar = () => {
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
         <section class="home-section">
             <div class="text"></div>
         </section>
-=======
         {/* <section class="home-section">
             <div class="text">HHHHHHHHHHedfsgzgfjhgdfghgfgfdgfdgfdgrdsfgrslllo</div>
         </section> */}
->>>>>>> 5729d23c28d7dc7abb64b9da195b7e88ee3cb0f1
         </body>
     </>
   );
