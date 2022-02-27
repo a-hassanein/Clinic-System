@@ -1,27 +1,30 @@
 import React from "react";
-import CardAppointment from "./CardAppointment";
-import classes from "../Style/AddAppointment.module.css";
+import '../Style/ListAppointment.css'
+
 const ListAppointment = (props) => {
-    if (props.appointments.length === 0 ){
-        return (
-            <CardAppointment  className={classes.input}>
-                <h2>No Appointment today</h2>
-            </CardAppointment>
-        )
-    }
-  return (
+  if (props.appointments.length === 0) {
+    return (
     
-  <CardAppointment  className={classes.input}>
-      
-    <ul>
-      {props.appointments.map((appointment) => (
-       <li> {appointment.patient} {appointment.date}  <button>Done</button> </li>
-       
-       
-      ))}
-    </ul>
-    </CardAppointment>
-  );  
+      <ul className="list-group list-group-flush text-center container-fluid formPart" >
+        <li className="list-group-item h1 listclass">No Appointment Today</li>
+        </ul>
+    
+    );
+  }
+  return (
+   
+      <ul className="list-group list-group-flush text-center container-fluid formPart">
+        {props.appointments.map((appointment) => (
+          <li className="list-group-item h1 listclass">
+            {" "}
+            {appointment.patient} {appointment.date} {appointment.phone}{" "}
+            {appointment.checkup}
+            <button>Done</button>{" "}
+          </li>
+        ))}
+      </ul>
+  
+  );
 };
 
 export default ListAppointment;
