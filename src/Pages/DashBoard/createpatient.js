@@ -143,7 +143,7 @@ function CreatePatient() {
 
 
 
-                            <button type="submit" id="searchbtn"  style={{ marginLeft: "520px" , marginTop:"20px" , width:"200px"}} className="btn align-items-center">Add Patient</button>
+                            <button type="submit" id="searchbtn"  style={{ marginLeft: "auto" , marginRight:"auto" , marginTop:"20px" , width:"200px"}} className="btn align-items-center">Add Patient</button>
                         </form>
                     </div>
                 </div>
