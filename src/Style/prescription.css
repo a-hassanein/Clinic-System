@@ -9,9 +9,7 @@
     box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
     padding-top: 20px;
 }
-.formPart label:hover{
-    color:var(--second_color)
-}
+
 .formPart input{
     border-radius: 10px;
     min-height: 50px;
@@ -25,7 +23,6 @@
     width: 250px;
     font-size: 20px;
     border-radius: 10px;
-    border: 3px solid var(--first_color);
 
 }
 .formPart select{
@@ -37,13 +34,11 @@
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 10px;
-    /* min-height: 1200px; */
     box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
 }
 .formPart .prescriptionButton:hover{
-    background-color: var(--second_color);
-    color:var(--third_color);
-    border: 3px solid var(--first_color);
+    background-color:var(--fourth_color);
+    color: var(--light_color);
 
 }
 .doctor-presc-info{
@@ -105,9 +100,8 @@
     border: 3px solid var(--first_color);
 }
 .printButton:hover{
-    background-color: var(--second_color);
-    color:var(--third_color);
-    border: 3px solid var(--first_color);
+    background-color:var(--fourth_color);
+    color: var(--light_color);
 }
 .presc-button-container{
     width:90%;
