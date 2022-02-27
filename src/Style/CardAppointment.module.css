@@ -1,9 +1,0 @@
-.card {
-    border-radius: 10px;
-   /* background-color: aqua;*/
-   box-shadow:  0 2px 8px rgba(0, 0, 0, 0.26 );
-   font-family: var(--font_family);
-    border: 1px solid var(--first_color);
-
-
-}
