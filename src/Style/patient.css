@@ -76,6 +76,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
+  overflow-x:auto;
   border-collapse: separate!important;
   box-shadow: 0.5rem 0.5rem 2rem -1rem #303030;
 
