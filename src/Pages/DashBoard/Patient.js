@@ -8,7 +8,10 @@ function Patient() {
 
     return (
         <>
-            <section className='home-section' >
+            <section className='home-section' style={{marginTop:'20px' , textAlign:"center"}} >
+                <div>
+                    <h2 className="header_patient"> ALL PATIENTS</h2>
+                </div>
 
                 <div className="container" id="navbar_container" >
                     <nav className="navbar navbar-expand-lg ">
@@ -38,81 +41,79 @@ function Patient() {
                         </div>
                     </nav>
                 </div>
-                <div>
-                    <h2 className="header_patient"> ALL PATIENTS</h2>
-                </div>
-                    <table class="table" id="table_container">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">PATIENT FIRST NAME </th>
-                                <th scope="col">PATIENT LAST NAME </th>
-                                <th scope="col">PATIENT's DOCTOR</th>
-                                <th scope="col">PATIENT STATUS</th>
-                                <th scope="col">PATIENT STATUS</th>
-                                <th scope="col">PATIENT STATUS</th>
-                                <th scope="col">PATIENT STATUS</th>
-                                <th scope="col">PATIENT STATUS</th>
-                                <th scope="col">PATIENT STATUS</th>
+
+                <table class="table" id="table_container">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">PATIENT FIRST NAME </th>
+                            <th scope="col">PATIENT LAST NAME </th>
+                            <th scope="col">PHON NUMBER</th>
+                            <th scope="col">PATIENT's DOCTOR</th>
+                            <th scope="col">CURRENT DISEASE</th>
+                            <th scope="col">PATIENT STATUS</th>
+                            <th scope="col">NEXT APPOINTMENT</th>
+                            <th scope="col">SURGERY</th>
+                            <th scope="col">UPDATES</th>
 
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
 
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
 
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
 
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
 
-                            </tr>
-                        </tbody>
-                    </table>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
         </>
