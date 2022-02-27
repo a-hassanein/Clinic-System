@@ -1,7 +1,7 @@
 .formPart{
     margin-top: 100px;
     width:90%;
-    color:var(--third_color);
+    color:var(--first_color);
     font-size: 20px;
     font-weight: 600;
     border: 4px solid white;
@@ -9,9 +9,7 @@
     box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
     padding-top: 20px;
 }
-.formPart label:hover{
-    color:var(--second_color)
-}
+
 .formPart input{
     border-radius: 10px;
     min-height: 50px;
@@ -25,6 +23,7 @@
     width: 250px;
     font-size: 20px;
     border-radius: 10px;
+
 }
 .formPart select{
     border-radius: 10px;
@@ -35,18 +34,75 @@
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 10px;
-    min-height: 800px;
     box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
 }
 .formPart .prescriptionButton:hover{
-    background-color: var(--light_color);
-    color:var(--third_color);
-    border: 3px solid var(--third_color);
+    background-color:var(--fourth_color);
+    color: var(--light_color);
 
 }
 .doctor-presc-info{
-    background-color: var(--third_color);
-    border-bottom:10px solid var(--second_color);
-    border-radius: 0 0 50% 50%;
+    font-size: 30px;
+    font-weight: 900;
+    background-color: var(--first_color);
+    border-bottom:10px solid var(--second_color);  
+    border-radius: 10px 10px 30% 30%;
+    min-height: 300px;
+    color:var(--light_color);
+    padding: 20px;
+}
+.prescription-body{
+    margin-top: 20px;
     
+}
+.prescription-image{
+    width: 100px;
+    padding-top: 40px;
+}
+.clinic-info{
+    font-size: 40px;
+    font-weight: 600;
+
+}
+.patient-prescription-info{
+    font-size: 24px;
+    font-weight: 600;
+}
+.drugs{
+    font-size: 26px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.prescription-footer{
+    font-size: 30px;
+    font-weight: 900;
+    background-color: var(--first_color);
+    border-top:10px solid var(--second_color);  
+    border-radius: 30% 30% 10px 10px;
+    min-height: 100px;
+    color:var(--light_color);
+    padding: 20px;
+    
+}
+.presc-footer-text{
+    font-size: 30px;
+    font-weight: 600;
+}
+.printButton{
+    margin-bottom: 40px;
+    background-color: var(--first_color);
+    color: var(--light_color);
+    font-weight: 600;
+    padding: 13px 12px;
+    width: 250px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid var(--first_color);
+}
+.printButton:hover{
+    background-color:var(--fourth_color);
+    color: var(--light_color);
+}
+.presc-button-container{
+    width:90%;
 }
