@@ -12,7 +12,7 @@ function CreatePatient() {
         <>
             <Sidebar />
             <section className='home-section' style={{ marginTop: '25px', }} >
-            <div id="page_image">
+            <div >
                 <div>
                     <h1 className="header_patient"> ADD NEW PATIENT </h1>
                 </div>
