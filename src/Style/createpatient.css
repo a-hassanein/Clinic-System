@@ -45,26 +45,43 @@
   font-weight:600 ;
   border: none;
   display: block;
-
+  text-decoration: none;
 }
 #searchbtn:hover {
    
   background-color: #70a1b8;
 }
 #createpatientForm {
-    margin-top: 30px;
+    margin-top: 40px;
     padding:30px;
-    background-color: #ffffff;
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.10);
-    font-weight: bold;
-    border-radius: 20px;
-    color: #528298;
-  
+    color:var(--first_color);
+    font-size: 20px;
+    font-weight: 600;
+    border: 4px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
+    padding-top: 20px;
+    width:90%;
+}
+#createpatientForm input{
+  border-radius: 10px;
+  min-height: 50px;
+}
+#createpatientForm select{
+  border-radius: 10px;
+  min-height: 50px;
+}
+#page_image {
+  background: url(../Images/cover_hart.png);
+
 }
 #header_form {
-    text-align: center;
-    color: #528298;
-    font-weight: bold;
+  color: #528298;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
 
 }
 #medical_details {

@@ -8,12 +8,22 @@ function Patient() {
 
     return (
         <>
-            <section className='home-section' style={{marginTop:'20px' , textAlign:"center"}} >
-                <div>
-                    <h2 className="header_patient"> ALL PATIENTS</h2>
-                </div>
+            <section className='home-section' style={{ marginTop: '30px', textAlign: "center" ,  }} >
+                <div id="page_image">
 
-                <div className="container" id="navbar_container" >
+                <div>
+                    <h1 className="header_patient"> ALL PATIENTS</h1>
+                </div>
+                <div className="frame_nav d-flex justify-content-center">
+                    <form className="d-flex" >
+                        <input className="form-control me-2" type="search" placeholder="Search For Patient" aria-label="Search" id="searchfield" />
+                        <button className="btn" id="searchbtn" type="submit">Search</button>
+                    </form>
+                    <a target="_blank" id="anchor_id"  href="/addpatient"> <button className="btn" id="createbtn" >CREATE PATIENT</button> </a>
+
+
+                </div>
+                {/* <div className="container" id="navbar_container" >
                     <nav className="navbar navbar-expand-lg ">
                         <div className="container-fluid" >
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +50,7 @@ function Patient() {
                             </div>
                         </div>
                     </nav>
-                </div>
+                </div> */}
 
                 <table class="table" id="table_container">
                     <thead>
@@ -114,6 +124,8 @@ function Patient() {
                         </tr>
                     </tbody>
                 </table>
+                </div>
+
             </section>
 
         </>
