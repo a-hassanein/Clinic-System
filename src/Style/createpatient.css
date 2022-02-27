@@ -55,15 +55,28 @@
     margin-top: 30px;
     padding:30px;
     background-color: #ffffff;
-    box-shadow: 0.5rem 0.5rem 2rem -1rem #303030;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.10);
     font-weight: bold;
     border-radius: 20px;
-    text-align: center;
-
+    color: #528298;
+  
 }
 #header_form {
     text-align: center;
     color: #528298;
     font-weight: bold;
 
+}
+#medical_details {
+  text-align: left;
+  color: #528298;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#personal_information
+{
+  text-align: left;
+  color: #528298;
+  font-weight: bold;
 }
