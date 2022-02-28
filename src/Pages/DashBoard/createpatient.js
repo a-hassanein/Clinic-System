@@ -11,37 +11,10 @@ function CreatePatient() {
 
         <>
             <Sidebar />
-            <section className='home-section' style={{ marginTop: '20px', }} >
+            <section className='home-section' style={{ marginTop: '25px', }} >
+            <div >
                 <div>
-                    <h2 className="header_patient"> ADD NEW PATIENT </h2>
-                </div>
-                <div className="container" id="navbar_container" >
-                    <nav className="navbar navbar-expand-lg ">
-                        <div className="container-fluid" >
-                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
-                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-
-                                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li className="nav-item">
-                                        <a className="nav-link" aria-current="page" href="">MASR CLINIC </a>
-
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" aria-current="page" href="/addpatient">CREATE PATIENT</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="/patient">ALL PATIENTS</a>
-                                    </li>
-                                </ul>
-                                <form className="d-flex">
-                                    <input className="form-control me-2" type="search" placeholder="Search For Patient" aria-label="Search" id="searchfield" required />
-                                    <button className="btn" id="searchbtn" type="submit">Search</button>
-                                </form>
-                            </div>
-                        </div>
-                    </nav>
+                    <h1 className="header_patient"> ADD NEW PATIENT </h1>
                 </div>
                 <div className="container" id="createpatientForm">
                     <div className="container-fluid">
@@ -146,6 +119,7 @@ function CreatePatient() {
                             <button type="submit" id="searchbtn"  style={{ marginLeft: "auto" , marginRight:"auto" , marginTop:"20px" , width:"200px"}} className="btn align-items-center">Add Patient</button>
                         </form>
                     </div>
+                </div>
                 </div>
             </section>
         </>

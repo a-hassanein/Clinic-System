@@ -6,12 +6,49 @@ import "../../Style/materials.css";
 function Materials() {
   return (
     <section className="home-section">
-    <div id='materials'>
+    {/* <div id='materials'> */}
       <center><h1>Your Materials</h1></center>
 
-      <div className="container">
-            <a href="/addmaterial" className="btn " id="btn_services">Add New Material</a>
+      <div className='container-fluid formPart' >
+                    <form method="post" >
+                        
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <label className="form-label">Material Name</label>
+                                <input type='text' className='form-control' name="materialname"  />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <label className="form-label">Useage</label>
+                                <input type='text' className="form-control" name="useage"  />
+                            </div>
+                            
+                            <div className="col-lg-6">
+                                <label className="form-label">Price</label>
+                                <input type='text' className="form-control"/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <label className="form-label">Summary</label>
+                                <input type='text' className='form-control' name="summary"  />
+                            </div>
+                        </div>
+                        <div className="row text-center">
+                            <div className="col-lg-12" style={{marginTop:"30px"}}>
+                                <input type="submit" className="btn prescriptionButton" value="ADD"/>
+                            </div>
+                        </div>
+                    </form>
 
+                </div>
+
+
+
+
+
+      <div className="container">
         <div className="row">
           <div className='services_all'>
             <div className="row">
@@ -40,7 +77,7 @@ function Materials() {
         </div>
       </div>
 
-    </div>
+    
     </section>
   )
 }

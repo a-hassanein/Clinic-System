@@ -1,0 +1,16 @@
+.listclass{
+    color: var(--first_color);
+    font-weight: 600;
+
+}
+.formPart{
+    margin-top: 100px;
+    width:90%;
+    color:var(--third_color);
+    font-size: 20px;
+    font-weight: 600;
+    border: 4px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
+    padding-top: 20px;
+}
