@@ -7,7 +7,7 @@ function Materials() {
   return (
     <section className="home-section">
     {/* <div id='materials'> */}
-      <center><h1>Your Materials</h1></center>
+      <center><h1 style={{ marginTop: '20px' }}>Your Materials</h1></center>
 
       <div className='container-fluid formPart' >
                     <form method="post" >
