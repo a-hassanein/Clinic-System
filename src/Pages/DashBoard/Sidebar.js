@@ -110,7 +110,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item"> 
-                    <Link to={"#"} className="linkClass">
+                    <Link to={"/assistant"} className="linkClass">
                         <i><RiNurseFill></RiNurseFill></i>
                         <span className="links_name">Assistants</span>
                         <span className="tooltip">Assistants</span>
@@ -137,6 +137,14 @@ const Sidebar = () => {
                         <span className="tooltip">Surgery</span>
                     </Link>
                 </li>
+                <li className="nav_Item">
+                    <Link to={"/scan_labs"} className="linkClass">
+                        <i><ImLab></ImLab></i>
+                        <span className="links_name">Scan & Labs </span>
+                        <span className="tooltip">Scan & Labs</span>
+                    </Link>
+                </li>
+
                 <li className="nav_Item">
                     <Link to={"#"} className="linkClass">
                         <i><FiSettings></FiSettings></i>
