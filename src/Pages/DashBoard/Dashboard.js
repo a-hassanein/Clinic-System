@@ -13,6 +13,7 @@ import Appointment from './Appointment';
 import Materials from '../DashBoard/materials';
 import Addmaterial from '../DashBoard/addmaterial';
 
+import Scan_labs from '../DashBoard/scan_labs';
 
 
 
@@ -30,6 +31,8 @@ const Dashboard = () => {
                     <Route path="/patient" component={Patient} />
                     <Route path="/materials" component={Materials}/>
                     <Route path="/addmaterial" component={Addmaterial}/>
+                    <Route path="/scan_labs" component={Scan_labs}/>
+
                     <Route path="/" component={HomeDashboard} />
                 </Switch>
             </Router>
