@@ -12,6 +12,7 @@ import {BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
 import Appointment from './Appointment';
 import Materials from '../DashBoard/materials';
 import Addmaterial from '../DashBoard/addmaterial';
+import Assistant from '../DashBoard/assistant'
 
 
 
@@ -30,7 +31,9 @@ const Dashboard = () => {
                     <Route path="/patient" component={Patient} />
                     <Route path="/materials" component={Materials}/>
                     <Route path="/addmaterial" component={Addmaterial}/>
+                    <Route path="/assistant" component={Assistant} />
                     <Route path="/" component={HomeDashboard} />
+                    
                 </Switch>
             </Router>
     
