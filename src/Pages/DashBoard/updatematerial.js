@@ -7,26 +7,43 @@ function Updatematerial() {
 
     <div id='updatematerial'>
         <center><h1 id="hhh">update your material</h1></center>
-        <div className="container">
-<div id="formm">
-          <form>
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" />
-    </div>
-     <div class="mb-3">
-      <label for="usage" class="form-label">Usage</label>
-      <input type="text" class="form-control" id="usage" />
-    </div>
-     <div class="mb-3">
-      <label for="summary" class="form-label">Summary</label>
-      <input type="text" class="form-control" id="summary" />
-    </div>
-    
-    <button id="btn_form_add" type="submit" class="btn btn-primary">Update Material</button>
-    </form>
-    </div>
-    </div>
+    <div className='container-fluid formPart' >
+                    <form method="post" >
+                        
+                        <div className="row">
+                            <div className="col-lg-12">
+					<center><h2 id="h2t">Update Material</h2></center>
+                                <label className="form-label">Material Name</label>
+                                <input type='text' className='form-control' name="materialname"  />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <label className="form-label">Usage</label>
+                                <input type='text' className="form-control" name="usage"  />
+                            </div>
+                            
+                            <div className="col-lg-6">
+                                <label className="form-label">Price</label>
+                                <input type='text' className="form-control"/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <label className="form-label">Summary</label>
+                                <input type='text' className='form-control' name="summary"  />
+                            </div>
+                        </div>
+                        <div className="row text-center">
+                            <div className="col-lg-12" style={{marginTop:"15px"}}>
+                                <input type="submit" className="btn prescriptionButton" value="UPDATE"/>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
     </div>
     
   )
