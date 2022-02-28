@@ -6,9 +6,9 @@ import ListAppointment from "../../Components/ListAppointment";
 const  Appointment = props => {
     const [appointmentsList , setappointmentsList] = useState([])
     
-    const addAppointmentHandler = (aPatient , aDate) => {
+    const addAppointmentHandler = (aPatient , aDate , aPhone , aCheckup) => {
         setappointmentsList((prevList)=>{
-            return [...prevList, {patient: aPatient , date : aDate}   ]
+            return [...prevList, {patient: aPatient , date : aDate , phone: aPhone , checkup: aCheckup}   ]
         });
     }
  

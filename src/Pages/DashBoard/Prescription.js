@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
+import "../../Style/prescription.css"
+import { useReactToPrint } from 'react-to-print';
 
 
 const Prescripe = () => {
     const[drugs,setDrugs] = useState([{
+        patientname:"",
+        patientmobile:"",
         drugname:"",
         dose:"",
         dosageform:"",
@@ -11,56 +15,43 @@ const Prescripe = () => {
         duration:"",
         foodrelation:"",
         instructions:"",
-        between:""
+        between:"",
+        note:""
     }])
-    // const [drugs,setDrugs] = useState([])
 
-    // const drugnamevalidate = (e) => {
-    //     if (e.target.name === "drugname"){
-    //         setDrugs([...drugs, {
-    //             drugname:e.target.value
-    //         }])
+    const[patient,setPatient] = useState({
+        patientname:"",
+    })
 
-    //     }
-    // }
-    // const dosevalidate = (e) => {
-    //     if (e.target.name === "dose"){
-    //         setDrugs([...drugs, {
-    //             dose:e.target.value
-    //         }])
+    const patientValidate = (e) => {
+        if (e.target.name === 'patientname'){
+            setPatient({
+                ...patient,
+                patientname:e.target.value
+            })
+        }
+    }
 
-    //     }
-    // }
 
-    // const adddrug = (e) => {
-    //         setDrugs([...drugs, {
-    //             drugname:e.target.value
-    //         }])
-    //     }
+    const componentRef = useRef()
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+      });
     
 
     const handlesubmit = (e) => {
         e.preventDefault()
-        // if(e.target[0].name === "drugname"){
-        //     setDrugs([...drugs,{
-        //         drugname:e.target[0].value
-        //     }])
-        // }
-        // if(e.target[1].name === "dose"){
-        //     setDrugs([...drugs,{
-        //         dose:e.target[1].value
-        //     }])
-        // }
         setDrugs([...drugs,{
-            drugname:e.target[0].value,
-            dose:e.target[1].value,
-            dosageform:e.target[2][e.target[2].selectedIndex].text,
-            frequency:e.target[3].value,
-            noofdays:e.target[4].value,
-            duration:e.target[5][e.target[5].selectedIndex].text,
-            foodrelation:e.target[6][e.target[6].selectedIndex].text,
-            instructions:e.target[7].value,
-            between:"لمده"
+            drugname:e.target[2].value,
+            dose:e.target[3].value,
+            dosageform:e.target[4][e.target[4].selectedIndex].text,
+            frequency:e.target[5].value,
+            noofdays:e.target[6].value,
+            duration:e.target[7][e.target[7].selectedIndex].text,
+            foodrelation:e.target[8][e.target[8].selectedIndex].text,
+            instructions:e.target[9].value,
+            between:"لمده",
+            
             
         }])
         console.log(e)
@@ -69,8 +60,21 @@ const Prescripe = () => {
     return(
         <>
             <section className='home-section' >
-                <div className='container-fluid' style={{marginTop:'100px'}}>
+                <div className="container-fluid text-center">
+                    <h1>Prescription</h1>
+                </div>
+                <div className='container-fluid formPart' >
                     <form method="post" onSubmit={(e) => {handlesubmit(e)}}>
+                    <div className="row">
+                            <div className="col-lg-6">
+                                <label className="form-label">Patient Name</label>
+                                <input type='text' className='form-control' name="patientname" onChange={(e)=>{patientValidate(e)}}/>
+                            </div>
+                            <div className="col-lg-6">
+                                <label className="form-label">Patient Mobile No.</label>
+                                <input type='text' className='form-control' name="patientmobile" />
+                            </div>
+                        </div>
                         
                         <div className="row">
                             <div className="col-lg-12">
@@ -80,13 +84,12 @@ const Prescripe = () => {
                         </div>
                         <div className="row">
                             <div className="col-lg-4">
-                                <label className="form-label">Dosage</label>
+                                <label className="form-label">Doses</label>
                                 <input type='text' className="form-control" name="dose"  />
                             </div>
                             <div className="col-lg-4">
                             <label className="form-label">Dosage Form</label>
                                 <select className="form-select">
-                                    <option >Open this select menu</option>
                                     <option value="1">شراب</option>
                                     <option value="2">اقراص</option>
                                     <option value="2">كبسول</option>
@@ -110,7 +113,7 @@ const Prescripe = () => {
                                 <input type="number" className="form-control"/>
                             </div>
                             <div className="col-lg-3">
-                                <label className="form-label">duration</label>
+                                <label className="form-label">Duration</label>
                                 <select className="form-select">
                                     <option value="1">يوم</option>
                                     <option value="2">ايام</option>
@@ -136,39 +139,46 @@ const Prescripe = () => {
                         </div>
                         <div className="row text-center">
                             <div className="col-lg-12" style={{marginTop:"30px"}}>
-                                <input type="submit" className="btn btn-danger" value="submit"/>
+                                <input type="submit" className="btn prescriptionButton" value="submit"/>
                             </div>
                         </div>
                     </form>
 
                 </div>
-                <div className="container"  style={{border:"2px solid black",marginTop:"40px",marginBottom:"50px",height:"800px",borderRadius:"10px" }}>
-                    <div className="row" dir="rtl" style={{padding:"10px"}}>
-                        <div className="col-lg-4">
-                            <h3>عياده</h3>
+                <div className="container prescriptionPart"  ref={componentRef}>
+                    <div className="row  doctor-presc-info">
+                        <div className="col-lg-6 ">
+                            <h2 className="clinic-info">Clinic name</h2>
+                        </div>
+                        <div className="col-lg-6 ">
+                            <h2 className="clinic-info">Doctor name</h2>
+                        </div>
+                        <div className="col-lg-6 ">
+                            <h3 className="clinic-info">clinic numbers</h3>
+                        </div>
+                        <div className="col-lg-6">
+                            <h3 className="clinic-info">Doctor info</h3>
+                        </div>
+                        <div className="col-lg-6">
+                            <h3 className="clinic-info">clinic address</h3>
                         </div>
                     </div>
-                    <div className="row" dir="rtl">
+                    
+                    <div className="row prescription-body" dir="rtl">
                         <div className="col-lg-4">
-                            <h5>دكتور/عبدالرحمن</h5>
-                        </div>
-                    </div>
-                    <div className="row" dir="rtl">
-                        <div className="col-lg-4">
-                            <h5>الاسم:احمد حسانين</h5>
+                            <h5 className="patient-prescription-info">الاسم:{patient.patientname}</h5>
                         </div>
                             
                         <div className="col-lg-4">
-                            <h5>السن:25</h5>
+                            <h5 className="patient-prescription-info">السن:25</h5>
                         </div>
                         <div className="col-lg-4">
-                            <h5>التاريخ:25-2-2022</h5>
+                            <h5 className="patient-prescription-info">التاريخ:25-2-2022</h5>
                         </div>
                     </div>
-                    <hr style={{height:"10px"}}></hr>
                     <div className="row">
                         <div className="col-lg-4" >
-                            <h5 style={{fontSize:"100px",fontWeight:"900"}}>RX</h5>
+                            <img src={require('../../Images/RX.png')} alt="" className="img-fluid prescription-image"/>
                         </div>
                     </div>
                     <div className="row text-center" style={{fontSize:"24px"}}>
@@ -176,16 +186,30 @@ const Prescripe = () => {
                             return(
                                 <>
                                     <div className="col-lg-6">
-                                        <p>{drug.drugname} {drug.dose} {drug.dosageform}</p>
+                                        <p className="drugs">{drug.drugname} {drug.dose} {drug.dosageform}</p>
                                     </div>
                                     <div className="col-lg-6" dir="rtl">
-                                        <p>{drug.frequency} {drug.between} {drug.noofdays} {drug.duration}</p>
+                                        <p className="drugs">{drug.frequency} {drug.between} {drug.noofdays} {drug.duration}</p>
+                                    </div>
+                                    <div className="col-lg-12" dir="rtl">
+                                        <p className="drugs"> {drug.instructions}</p>
                                     </div>
                                 </>
                             )
                         })}
-                        {/* <p>{drugs.drugname}</p> */}
-                        
+                    </div>
+                    {/* <div className="row prescription-footer" >
+                        <div className="col-lg-12 text-center" >
+                            <h2 className="presc-footer-text">عيادتي </h2>
+                        </div>
+                    </div> */}
+                    
+                </div>
+                <div className="container-fluid presc-button-container" >
+                    <div className="row text-center">
+                        <div className="col-lg-12">
+                            <button className="btn printButton" onClick={handlePrint}>Print Prescription</button>
+                        </div>
                     </div>
                 </div>
             </section>

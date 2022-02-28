@@ -13,8 +13,8 @@
   }
 
 #navbar_container{
-
-  margin-left: 160px;
+  text-align: center;
+  /* margin-left: 160px; */
   width:1200px;
   margin: top 100px;
   
@@ -59,23 +59,47 @@
 
 } 
 .header_patient {
-  background-color: #528298;
-  padding:10px ;
-  color: #ffffff;
+  color: #528298;
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
   text-align: center;
   font-weight: bold;
-  border-radius: 10px;
+  margin-bottom: 20px;
 }
-.header_patient:hover {
+.frame_nav
+{
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+}
+/* #page_image {
+  background: url(../Images/banner2.png);
+
+} */
+#anchor_id {
+  text-decoration: none;
+}
+#createbtn {
+  background-color: #528298;
+  color: #ffffff;
+  cursor: pointer;
+  width: 250px; 
+  height: 2.5rem;
+  font-weight:600 ;
+  border: none;
+  display: block;
+  margin-left: 20px;
+}
+#createbtn:hover {
+   
   background-color: #70a1b8;
 }
 #table_container{
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
+  overflow-x:auto;
   border-collapse: separate!important;
   box-shadow: 0.5rem 0.5rem 2rem -1rem #303030;
 
@@ -88,12 +112,4 @@
 
 #table_container tr:nth-child(even) {
   background-color: #BCD9E6;
-}
-#table_container tr:nth-child(even):hover{
-  background-color: #ffffff;
-
-}
-#table_container tr:nth-child(odd):hover{
-  background-color: #BCD9E6;
-
 }
