@@ -198,11 +198,11 @@ const Prescripe = () => {
                             )
                         })}
                     </div>
-                    <div className="row prescription-footer" >
-                        <div className="col-lg-12 text-center">
+                    {/* <div className="row prescription-footer" >
+                        <div className="col-lg-12 text-center" >
                             <h2 className="presc-footer-text">عيادتي </h2>
                         </div>
-                    </div>
+                    </div> */}
                     
                 </div>
                 <div className="container-fluid presc-button-container" >

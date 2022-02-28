@@ -8,8 +8,8 @@ function Patient() {
 
     return (
         <>
-            <section className='home-section' style={{ marginTop: '30px', textAlign: "center" ,  }} >
-                <div id="page_image">
+            <section className='home-section' style={{ marginTop: '20px', textAlign: "center" ,  }} >
+                <div>
 
                 <div>
                     <h1 className="header_patient"> ALL PATIENTS</h1>
