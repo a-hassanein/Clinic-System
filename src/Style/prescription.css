@@ -35,6 +35,8 @@
     margin-bottom: 50px;
     border-radius: 10px;
     box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
+    /* min-width: 1748px;
+    min-height: 2480px; */
 }
 .formPart .prescriptionButton:hover{
     background-color:var(--fourth_color);
@@ -44,11 +46,9 @@
 .doctor-presc-info{
     font-size: 30px;
     font-weight: 900;
-    background-color: var(--first_color);
     border-bottom:10px solid var(--second_color);  
-    border-radius: 10px 10px 30% 30%;
     min-height: 300px;
-    color:var(--light_color);
+    color:var(--first_color);
     padding: 20px;
 }
 .prescription-body{
@@ -73,17 +73,17 @@
     font-weight: 600;
     padding-bottom: 10px;
 }
-.prescription-footer{
+/* .prescription-footer{
     font-size: 30px;
     font-weight: 900;
-    background-color: var(--first_color);
     border-top:10px solid var(--second_color);  
-    border-radius: 30% 30% 10px 10px;
     min-height: 100px;
-    color:var(--light_color);
+    color:var(--first_color);
     padding: 20px;
+    position: absolute;
+    bottom: 0;
     
-}
+} */
 .presc-footer-text{
     font-size: 30px;
     font-weight: 600;
