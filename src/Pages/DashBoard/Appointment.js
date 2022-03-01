@@ -14,6 +14,9 @@ const  Appointment = props => {
  
     return(
         <section className="home-section">
+        <div className="container-fluid text-center">
+            <h1 style={{ marginTop: '20px' }}>Appointments</h1>
+        </div>
          <AddAppointment onAddAppointment={addAppointmentHandler} />
          <ListAppointment appointments={appointmentsList} />
         </section>
