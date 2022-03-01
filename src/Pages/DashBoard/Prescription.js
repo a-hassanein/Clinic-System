@@ -60,7 +60,7 @@ const Prescripe = () => {
     return(
         <>
             <section className='home-section' >
-                <div className="container-fluid text-center" style={{ marginTop: '20px' }}>
+                <div className="container-fluid text-center">
                     <h1>Prescription</h1>
                 </div>
                 <div className='container-fluid formPart' >

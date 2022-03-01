@@ -34,7 +34,6 @@ const Dashboard = () => {
                     <Route path="/materials" component={Materials}/>
                     <Route path="/addmaterial" component={Addmaterial}/>
                     <Route path="/scan_labs" component={Scan_labs}/>
-
                     <Route path="/assistant" component={Assistant} />
                     <Route path="/dashbord/setting" component={Setting}/>
                     <Route path="/" component={HomeDashboard} />
