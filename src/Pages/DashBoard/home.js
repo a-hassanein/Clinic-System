@@ -119,6 +119,17 @@ const HomeDashboard = () => {
                     
                 </div>
             </Link>
+            <Link to={"/scan_labs"} className='cardLink'>
+                <div className="card">
+                    <div className="content">
+                        <i className="iconstyle"><ImLab style={{fontSize: '32px' ,color:"#528298"}}></ImLab></i>
+                        <div className="contentBx">
+                            <h3>Scan & Labs</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </Link>
 
             <Link to={"/surgery"} className='cardLink'>
                 <div className="card">

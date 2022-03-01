@@ -34,53 +34,91 @@ const Labs = [
 
     },
 ];
-class Scan_labs extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        List: Labs,
-        MasterChecked: false,
-        SelectedList: [],
-      };
-    }   
-   onMasterCheck (e) {
-        let tempList = this.state.List;
-        // Check/ UnCheck All Items
-        tempList.map((lab) => (lab.selected = e.target.checked));
+function Scan_labs() {
+    const [labs, setLabs] = useState([{
+        patientname: "",
+        patientmobile: "",
+        doctorname: "",
+        scanname: "",
+        labname: "",
+    }])
 
-        //Update State
-        this.setState({
-            MasterChecked: e.target.checked,
-            List: tempList,
-            SelectedList: this.state.List.filter((e) => e.selected),
-        });
-    }
-    onItemCheck  (e, item) {
-        let tempList = this.state.List;
-        tempList.map((lab) => {
-            if (lab.id === item.id) {
-                lab.selected = e.target.checked;
-            }
-            return lab;
-        });
-        const totalItems = this.state.List.length;
-        const totalCheckedItems = tempList.filter((e) => e.selected).length;
+    const [patient, setPatient] = useState({
+        patientname: "",
+    })
 
-        // Update State
-        this.setState({
-            MasterChecked: totalItems === totalCheckedItems,
-            List: tempList,
-            SelectedList: this.state.List.filter((e) => e.selected),
-        });
+    const patientValidate = (e) => {
+        if (e.target.name === 'patientname') {
+            setPatient({
+                ...patient,
+                patientname: e.target.value
+            })
+        }
     }
 
-    // Event to get selected rows(Optional)
-     getSelectedRows (){
-        this.setState({
-            SelectedList: this.state.List.filter((e) => e.selected),
-        });
+
+    const componentRef = useRef()
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+    });
+
+
+    const handlesubmit = (e) => {
+        e.preventDefault()
+        setLabs([...labs, {
+            scanname: e.target[2].value,
+            labname: e.target[2].value,
+
+
+        }])
+
     }
- 
+    //     constructor(props) {
+    //       super(props);
+    //       this.state = {
+    //         List: Labs,
+    //         MasterChecked: false,
+    //         SelectedList: [],
+    //       };
+    //     }   
+    //    onMasterCheck (e) {
+    //         let tempList = this.state.List;
+    //         // Check/ UnCheck All Items
+    //         tempList.map((lab) => (lab.selected = e.target.checked));
+
+    //         //Update State
+    //         this.setState({
+    //             MasterChecked: e.target.checked,
+    //             List: tempList,
+    //             SelectedList: this.state.List.filter((e) => e.selected),
+    //         });
+    //     }
+    //     onItemCheck  (e, item) {
+    //         let tempList = this.state.List;
+    //         tempList.map((lab) => {
+    //             if (lab.id === item.id) {
+    //                 lab.selected = e.target.checked;
+    //             }
+    //             return lab;
+    //         });
+    //         const totalItems = this.state.List.length;
+    //         const totalCheckedItems = tempList.filter((e) => e.selected).length;
+
+    //         // Update State
+    //         this.setState({
+    //             MasterChecked: totalItems === totalCheckedItems,
+    //             List: tempList,
+    //             SelectedList: this.state.List.filter((e) => e.selected),
+    //         });
+    //     }
+
+    //     // Event to get selected rows(Optional)
+    //      getSelectedRows (){
+    //         this.setState({
+    //             SelectedList: this.state.List.filter((e) => e.selected),
+    //         });
+    //     }
+
     // patientValidate (e) {
     //     if (e.target.name === 'patientname') {
     //         setPatient({
@@ -91,36 +129,59 @@ class Scan_labs extends React.Component {
     // }
 
 
- 
 
-    render () {
+
     return (
 
         <>
             <section className='home-section' style={{ marginTop: '20px' }} >
-                    <div className="container-fluid text-center">
+                <div className="container-fluid text-center">
                     <h1>Scan & Labs</h1>
-                    </div>
+                </div>
                 <div>
-                    
+
                     <div className='container-fluid  formcontainer' >
-                        <form method="post">
-                                <div className="col-lg-4">
+                        <form method="post" onSubmit={(e) => { handlesubmit(e) }}>
+                            <div className="row">
+                                <div className="col-lg-6">
                                     <label className="form-label">Patient Name</label>
-                                    <input type='text' className='form-control' name="patientname" required />
+                                    <input type='text' className='form-control' name="patientname" required onChange={(e) => { patientValidate(e) }} />
                                 </div>
-                                <div className="col-lg-4">
+                                <div className="col-lg-6">
                                     <label className="form-label">Patient Phone Number </label>
                                     <input type='text' className='form-control' name="patientmobile" required />
                                 </div>
+                            </div>
 
-                                <div className="row">
-                                    <div className="col-lg-12">
-                                        <label className="form-label">Doctor Name</label>
-                                        <input type='text' className='form-control' name="drugname" />
-                                    </div>
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    <label className="form-label">Doctor Name</label>
+                                    <input type='text' className='form-control' name="doctorname" required />
                                 </div>
-                                <div className="col-md-12">
+                            </div>
+                            <div className="row">
+                                <div className="col-lg-6">
+                                    <label className="form-label">Lab Name</label>
+                                    <select className="form-select">
+                                        <option value="1">Lab1</option>
+                                        <option value="2">Lab2</option>
+                                        <option value="2">Lab3</option>
+                                        <option value="3">Lab4</option>
+                                        <option value="4">Lab5</option>
+                                    </select>
+                                </div>
+                                <div className="col-lg-6">
+                                    <label className="form-label">Scan Name</label>
+                                    <select className="form-select" >
+                                        <option value="1">Scan1</option>
+                                        <option value="2">Scan2</option>
+                                        <option value="2">Scan3</option>
+                                        <option value="3">Scan4</option>
+                                        <option value="4">Scan5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {/* <div className="col-md-12">
                                     <table className="table">
                                         <thead>
                                             <tr>
@@ -169,20 +230,76 @@ class Scan_labs extends React.Component {
                                         <b>Selected Row Items(Click Button To Get):</b>
                                         <code>{JSON.stringify(this.state.SelectedList)}</code>
                                     </div>
-                                </div>
-
-                                <div className="row text-center">
-                                    <div className="col-lg-12" style={{ marginTop: "30px" }}>
-                                        <input type="submit" className="btn prescriptionButton" value="submit" />
-                                    </div>
-                                </div>
-                            </form>
-
+                                </div> */}
+                                <div className="align-items-center text-center">
+                            <button type="submit" id="submitbtn" style={{ marginTop: "20px", width: "200px" }} className="btn align-items-center">Submit</button>
+                            </div>
+                        </form>
                     </div>
-                </div>
+                    <div className="container prescriptionPart" ref={componentRef}>
+                        <div className="row  doctor-presc-info">
+                            <div className="col-lg-6 ">
+                                <h2 className="clinic-info">Clinic name</h2>
+                            </div>
+                            <div className="col-lg-6 ">
+                                <h2 className="clinic-info">Doctor name</h2>
+                            </div>
+                            <div className="col-lg-6 ">
+                                <h3 className="clinic-info">clinic numbers</h3>
+                            </div>
+                            <div className="col-lg-6">
+                                <h3 className="clinic-info">Doctor info</h3>
+                            </div>
+                            <div className="col-lg-6">
+                                <h3 className="clinic-info">clinic address</h3>
+                            </div>
+                        </div>
+
+                        <div className="row prescription-body" dir="rtl">
+                            <div className="col-lg-4">
+                                <h5 className="patient-prescription-info">الاسم:{patient.patientname}</h5>
+                            </div>
+
+                            <div className="col-lg-4">
+                                <h5 className="patient-prescription-info">السن:25</h5>
+                            </div>
+                            <div className="col-lg-4">
+                                <h5 className="patient-prescription-info">التاريخ:25-2-2022</h5>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-4" >
+                                <img src={require('../../Images/RX.png')} alt="" className="img-fluid prescription-image" />
+                            </div>
+                        </div>
+                        <div className="row text-center" style={{ fontSize: "24px" }}>
+                            {labs.map((lab) => {
+                                return (
+                                    <>
+                                        <div className="col-lg-6">
+                                            <p className="Labs">{lab.labname} </p>
+                                        </div>
+                                        <div className="col-lg-6" dir="rtl">
+                                            <p className="Scan">{lab.scanname} </p>
+                                        </div>
+                                    </>
+                                )
+                            })}
+                        </div>
+                    </div>
+                    <div className="container-fluid presc-button-container" >
+                        <div className="row text-center">
+                            <div className="col-lg-12">
+                                <button className="btn printButton" style={{ marginLeft: "auto", marginRight: "auto", width: "200px" }} onClick={handlePrint}>Print Prescription</button>
+                            </div>
+                        </div>
+                    </div>
 
 
-            </section >
+
+            </div>
+
+        </section >
 
         </>
 
@@ -190,7 +307,6 @@ class Scan_labs extends React.Component {
     );
 
 
-}
 
 }
 export default Scan_labs;
