@@ -98,23 +98,20 @@ class Scan_labs extends React.Component {
 
         <>
             <section className='home-section' style={{ marginTop: '20px' }} >
-                <div>
-
-                    <div>
-                        <h1 className="header_patient"> Scan & Labs </h1>
+                    <div className="container-fluid text-center">
+                    <h1>Scan & Labs</h1>
                     </div>
-                    <div className="container" id="formcontainer">
-                        <div className="container-fluid">
-                            <form method="post">
-                                <div className="row">
-                                    <div className="col-lg-6">
-                                        <label className="form-label">Patient Name</label>
-                                        <input type='text' className='form-control' name="patientname"  />
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <label className="form-label">Patient Phone Number</label>
-                                        <input type='text' className='form-control' name="patientmobile" />
-                                    </div>
+                <div>
+                    
+                    <div className='container-fluid  formcontainer' >
+                        <form method="post">
+                                <div className="col-lg-4">
+                                    <label className="form-label">Patient Name</label>
+                                    <input type='text' className='form-control' name="patientname" required />
+                                </div>
+                                <div className="col-lg-4">
+                                    <label className="form-label">Patient Phone Number </label>
+                                    <input type='text' className='form-control' name="patientmobile" required />
                                 </div>
 
                                 <div className="row">
@@ -180,7 +177,6 @@ class Scan_labs extends React.Component {
                                     </div>
                                 </div>
                             </form>
-                        </div>
 
                     </div>
                 </div>
