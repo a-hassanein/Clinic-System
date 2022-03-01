@@ -78,6 +78,81 @@ const handleRemoveFields = (index) => {
           </div>
           </form>
         </div>
+
+        <div className="frame_nav d-flex justify-content-center">
+                    <form className="d-flex" >
+                        <input className="form-control me-2" type="search" placeholder="Search For Patient" aria-label="Search" id="searchfield" />
+                        <button className="btn" id="searchbtn" type="submit">Search</button>
+                    </form>
+        </div>
+        
+        <table class="table" id="table_container">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">MATERIAL NAME </th>
+                            <th scope="col">USAGE</th>
+                            <th scope="col">PRICE</th>
+                            <th scope="col">SUMMARY</th>
+                            <th scope="col">DELETE</th>
+                            <th scope="col">UPDATE</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Amalgam gun</td>
+                            <td>For dentals</td>
+                            <td>50 EGP</td>
+                            <td>This for dental fillings</td>
+                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
+                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Amalgam burnisher</td>
+                            <td>For dentals</td>
+                            <td>90 EGP</td>
+                            <td>This for dental fillings</td>
+                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
+                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Rubber dam clamp</td>
+                           <td>For dentals</td>
+                            <td>150 EGP</td>
+                            <td>This for dental fillings</td>
+                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
+                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Crown remover</td>
+                            <td>For dentals</td>
+                            <td>75 EGP</td>
+                            <td>This for dental fillings</td>
+                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
+                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
+
+                        </tr>
+ 			<tr>
+                            <th scope="row">5</th>
+                            <td>Cement spatula</td>
+                            <td>For dentals</td>
+                            <td>100 EGP</td>
+                            <td>This for dental fillings</td>
+                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
+                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
         </div>
       </>
     );
