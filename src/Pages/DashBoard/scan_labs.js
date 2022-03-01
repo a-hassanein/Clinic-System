@@ -7,11 +7,11 @@ function Scan_labs() {
     return (
         <>
             <section className='home-section' style={{ marginTop: '20px' }} >
-                <div>
-
-                    <div>
-                        <h1 className="header_patient"> Scan & Labs </h1>
+                    <div className="container-fluid text-center">
+                    <h1>Scan & Labs</h1>
                     </div>
+                <div>
+                    
                     <div className='container-fluid  formcontainer' >
                         <form method="post">
                             <div className="row">
