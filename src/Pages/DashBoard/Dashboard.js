@@ -15,6 +15,7 @@ import Addmaterial from '../DashBoard/addmaterial';
 import Assistant from '../DashBoard/assistant'
 import Setting from '../DashBoard/setting'
 
+import Scan_labs from '../DashBoard/scan_labs';
 
 
 
@@ -32,6 +33,8 @@ const Dashboard = () => {
                     <Route path="/patient" component={Patient} />
                     <Route path="/materials" component={Materials}/>
                     <Route path="/addmaterial" component={Addmaterial}/>
+                    <Route path="/scan_labs" component={Scan_labs}/>
+
                     <Route path="/assistant" component={Assistant} />
                     <Route path="/dashbord/setting" component={Setting}/>
                     <Route path="/" component={HomeDashboard} />

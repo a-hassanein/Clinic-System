@@ -138,6 +138,14 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item">
+                    <Link to={"/scan_labs"} className="linkClass">
+                        <i><ImLab></ImLab></i>
+                        <span className="links_name">Scan & Labs </span>
+                        <span className="tooltip">Scan & Labs</span>
+                    </Link>
+                </li>
+
+                <li className="nav_Item">
                     <Link to={"/dashbord/setting"} className="linkClass">
                         <i><FiSettings></FiSettings></i>
                         <span className="links_name">Settings</span>
