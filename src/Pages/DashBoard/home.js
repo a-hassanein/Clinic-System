@@ -120,7 +120,7 @@ const HomeDashboard = () => {
                 </div>
             </Link>
 
-            <Link to={"/surgery"} className='cardLink'>
+            <Link to={"/dashbord/setting"} className='cardLink'>
                 <div className="card">
                     <div className="content">
                         <i className="iconstyle"><FiSettings style={{fontSize: '32px' ,color:"#528298"}}></FiSettings></i>
