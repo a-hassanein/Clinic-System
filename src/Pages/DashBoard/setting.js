@@ -17,6 +17,9 @@ const Setting = () => {
         <>
                <section className="home-section">
           
+               <div className="container-fluid text-center" style={{ marginTop: '20px' }}>
+                    <h1>Settings</h1>
+                </div>
                <div className='container-fluid formPart' >
                
                     <form method="post">

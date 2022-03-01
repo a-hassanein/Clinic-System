@@ -23,7 +23,7 @@ const handlePrint = useReactToPrint({
 
 
 const handleChangeInput = (index, event) => {
-  // console.log(index, event.target.name)
+  //console.log(index, event.target.name)
   const values = [...inputFields];
   values[index][event.target.name] = event.target.value;
   setInputfields(values); 
