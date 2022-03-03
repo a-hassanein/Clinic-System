@@ -3,7 +3,6 @@ import Sidebar from '../DashBoard/Sidebar'
 import SignUp from '../signup';
 import Home from '../../Components/Home';
 import Surgery from '../DashBoard/surgery';
-import CreatePatient from '../DashBoard/createpatient';
 import Bill from '../DashBoard/Bill';
 import HomeDashboard from '../DashBoard/home';
 import Prescripe from './Prescription'
