@@ -23,7 +23,7 @@ const handlePrint = useReactToPrint({
 
 
 const handleChangeInput = (index, event) => {
-  // console.log(index, event.target.name)
+  //console.log(index, event.target.name)
   const values = [...inputFields];
   values[index][event.target.name] = event.target.value;
   setInputfields(values); 
@@ -47,6 +47,11 @@ const handleRemoveFields = (index) => {
     return (
       <>
         <section className="home-section">  
+
+        <div className="container-fluid text-center" style={{ marginTop: '20px' }}>
+                    <h1>Bill</h1>
+        </div>
+
         <div className='container-fluid formPart' >
           <form method="post" onSubmit={(e) => {handlesubmit(e)}}>
           <div className="row">
@@ -84,6 +89,22 @@ const handleRemoveFields = (index) => {
         </div>
 
         <div className="container prescriptionPart"  ref={componentRef}>
+
+        <div className="doctor-presc-info">
+          <div className="row">
+            <div className="col-lg-12 ">
+              <h1 className="clinic-info"><b>BILL</b></h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-6 ">
+                <h7 className="clinic-info">Clinic name</h7>
+            </div>
+            <div className="col-lg-6 ">
+                <h2 className="clinic-info">Appointment ID</h2>
+            </div>
+          </div>
+        </div>
 
         <div className="row text-center" style={{fontSize:"24px", textTransform:"capitalize"}}>
         { inputFields.map((inputField, index) => {

@@ -13,3 +13,39 @@ h1{
 }#btn_form_add:hover{
     background-color: var(--second_color);
 }
+
+#h2t{
+    color: var(--first_color); 
+   font-weight: 650;
+}
+
+.formPart .materialButton{
+    margin-bottom: 20px;
+    background-color: var(--first_color);
+    color: var(--light_color);
+    font-weight: 600;
+    padding: 10px 9px;
+    width: 200px;
+    font-size: 20px;
+    border-radius: 10px;
+
+}
+.formPart .materialButton:hover{
+    background-color:var(--fourth_color);
+    color: var(--light_color);
+
+}
+
+#btn_material{
+    background-color: var(--first_color);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: 550;
+    
+}
+#btn_material:hover{
+    background-color: var(--fourth_color);
+color: var(--light_color);
+}

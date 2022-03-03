@@ -23,9 +23,15 @@
     border-radius: 10px;
     box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
     padding-top: 20px;
-    width:90%;
+    width:85%;
 
 }
+.formcontainer input {
+    border-radius: 10px;
+    min-height: 50px;
+
+}
+
 .formcontainer select{
     border-radius: 10px;
     min-height: 50px;
@@ -36,6 +42,7 @@
     margin-right: auto;
     padding: 30px;
     overflow-x:auto;
+    width: 60%;
     border-collapse: separate!important;
   
   }
@@ -43,4 +50,24 @@
     color: #528298;
   
   }
+
+.formcontainer #submitbtn {
+    margin-bottom: 20px;
+    background-color: var(--first_color);
+    color: var(--light_color);
+    font-weight: 600;
+    padding: 13px 12px;
+    width: 250px;
+    font-size: 20px;
+    min-height: 50px;
+    border-radius: 10px; 
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.formcontainer #submitbtn:hover{
+    background-color: #70a1b8;
+
+}
+
   

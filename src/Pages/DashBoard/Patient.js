@@ -11,8 +11,8 @@ function Patient() {
             <section className='home-section' style={{ marginTop: '20px', textAlign: "center" ,  }} >
                 <div>
 
-                <div>
-                    <h1 className="header_patient"> ALL PATIENTS</h1>
+                <div className="container-fluid text-center">
+                    <h1>All Patients</h1>
                 </div>
                 <div className="frame_nav d-flex justify-content-center">
                     <form className="d-flex" >
