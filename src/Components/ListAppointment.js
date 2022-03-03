@@ -11,7 +11,6 @@ const ListAppointment = (props) => {
     );
   }
 
-
   return (
     <ul className="list-group list-group-flush  container-fluid  formPartwith list-group-numbered" >
       {props.appointments.map((appointment , index) => (
