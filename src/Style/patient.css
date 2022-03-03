@@ -24,7 +24,8 @@
 }
 #searchfield
 {
-  height: 2.5rem;
+  border-radius: 10px;
+  min-height: 50px;
 
 }
 .nav-link {
@@ -40,11 +41,14 @@
   background-color: #528298;
   color: #ffffff;
   cursor: pointer;
-  width: 350px; 
-  height: 2.5rem;
+  height: 3rem;
+  width: 250px;
+  font-size: 20px;
+  border-radius: 10px;
   font-weight:600 ;
   border: none;
   display: block;
+  text-decoration: none;
 
 }
 #searchbtn:hover {
@@ -72,10 +76,6 @@
   margin-bottom: 40px;
 
 }
-/* #page_image {
-  background: url(../Images/banner2.png);
-
-} */
 #anchor_id {
   text-decoration: none;
 }
