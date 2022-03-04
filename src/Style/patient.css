@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;700;900&display=swap'); 
 :root{
   --first_color:#528298;
   --second_color:#BCD9E6;
@@ -112,4 +112,8 @@
 
 #table_container tr:nth-child(even) {
   background-color: #BCD9E6;
+}
+
+td{
+  font-weight: 600;
 }
