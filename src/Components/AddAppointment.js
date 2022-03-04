@@ -3,27 +3,28 @@ import React, { useState } from "react";
 
 import "../Style/prescription.css";
 const AddAppointment = (props) => {
-  const [enteredPatient, setEnteredPatient] = useState("");
-  const [enteredDate, setEntereddate] = useState("");
-  const [enteredPhone, setEnteredphone] = useState("");
-  const [enteredCheckup, setEnteredCheckup] = useState("");
+  const [patient_name, setEnteredPatient] = useState("");
+  const [appointment_date, setEntereddate] = useState("");
+  const [patient_phone, setEnteredphone] = useState("");
+  const [checkup_type, setEnteredCheckup] = useState("");
 
   const addAppointmentHandler = (event) => {
     event.preventDefault();
     if (
-      enteredPatient.trim().length === 0 ||
-      enteredDate.trim().length === 0 ||
-      enteredPhone.trim().length === 0 ||
-      enteredCheckup.trim().length === 0
+      patient_name.trim().length === 0 ||
+      appointment_date.trim().length === 0 ||
+      patient_phone.trim().length === 0 ||
+      checkup_type.trim().length === 0
     ) {
       return;
     }
-    props.onAddAppointment(
-      enteredPatient,
-      enteredDate,
-      enteredPhone,
-      enteredCheckup
-    );
+     props.addAppointment({
+      patient_name ,
+      appointment_date , 
+      patient_phone ,
+      checkup_type,
+       completed: false ,
+     });
     setEnteredPatient("");
     setEntereddate("");
     setEnteredphone("");
@@ -55,7 +56,7 @@ const AddAppointment = (props) => {
               <input
                 id="patient"
                 type="text"
-                value={enteredPatient}
+                value={patient_name}
                 onChange={patientHandler}
                 className="form-control"
               />
@@ -69,7 +70,7 @@ const AddAppointment = (props) => {
               <input
                 id="patient"
                 type="tel"
-                value={enteredPhone}
+                value={patient_phone}
                 onChange={phoneHandler}
                 className="form-control"
               />
@@ -83,7 +84,7 @@ const AddAppointment = (props) => {
               <select
                 name="checkup"
                 id="checkup"
-                value={enteredCheckup}
+                value={ checkup_type}
                 onChange={checkupHandler}
                 className="form-select"
               >
@@ -99,7 +100,7 @@ const AddAppointment = (props) => {
           <input
             id="time"
             type="datetime-local"
-            value={enteredDate}
+            value={appointment_date}
             onChange={dateHandler}
             className="form-control"
           />
@@ -107,7 +108,7 @@ const AddAppointment = (props) => {
           </div>
           <div className="row text-center">
           <div className="col-lg-12" style={{marginTop:"30px"}}>
-          <input type="submit" className="btn prescriptionButton" value="Add Appointment"/> 
+          <input type="submit" className="btn prescriptionButton" value="Add Appointment" onClick={addAppointmentHandler}/> 
           </div>
           </div>
         </form>
