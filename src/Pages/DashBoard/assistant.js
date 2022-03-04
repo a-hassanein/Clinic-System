@@ -80,7 +80,7 @@ const Assistant = () => {
 
         const newDatas = [...data, newData];
         
-        //setData(newDatas);
+        setData(newDatas);
 
         try{
             axios.post('http://127.0.0.1:8000/assistant/assistant/', newData).then((response)=>{
