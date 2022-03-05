@@ -83,6 +83,7 @@ const Appointment = (props) => {
       <ListAppointment
         appointments={appointmentsList}
         completedAppointment={completedAppointment}
+        deleteAppointment={deleteAppointment}
        />
       {/*appointmentsList.map((appointment, index) => {
         <ListAppointment 
