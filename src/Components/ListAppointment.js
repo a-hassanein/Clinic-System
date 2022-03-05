@@ -23,7 +23,7 @@ const ListAppointment = (props) => {
         <span className="col-2 offset-1">{appointment.patient_phone}</span>
         <sapn className="rounded-pill col-2 offset-1"> {appointment.checkup_type} </sapn>
         <span className="col-2 "> {appointment.patient_id} </span>
-        <span>
+        <span onClick={() =>{props.deleteAppointment(appointment.appointment_id)}}>
           <a
             style={{
               border: "none",
@@ -31,7 +31,7 @@ const ListAppointment = (props) => {
               color: "var(--first_color)",
               fontSize: "28px",
               marginLeft: "5px",
-          
+              
             }}
           >
             <HiMinusCircle></HiMinusCircle>
