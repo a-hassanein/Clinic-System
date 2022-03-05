@@ -1,10 +1,29 @@
 import React from 'react'
 import Addmaterial from '../DashBoard/addmaterial';
 import Updatematerial from '../DashBoard/updatematerial';
+import MaterialTable from "../../Components/MaterialTable";
+import axios from "axios";
+
 import "../../Style/materials.css";
-import { useState,useRef } from "react";
+import { useState,useRef,useEffect } from "react";
 
 function Materials() {
+
+  const [materials, setMaterials] = useState([])
+  const getMaterials = async () => {
+      try {
+          const response = await axios.get('/materials/materials/')
+          const { data } = response
+          console.log(data)
+          setMaterials(data)
+      } catch (err) {
+          console.log(err)
+      }
+  }
+  useEffect(() => {
+    getMaterials()
+}, [])
+
   return (
     <section className="home-section">
     {/* <div id='materials'> */}
@@ -31,12 +50,6 @@ function Materials() {
                                 <input type='text' className="form-control"/>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <label className="form-label">Summary</label>
-                                <input type='text' className='form-control' name="summary"  />
-                            </div>
-                        </div>
                         <div className="row text-center">
                             <div className="col-lg-12" style={{marginTop:"15px"}}>
                                 <input type="submit" className="btn materialButton" value="ADD"/>
@@ -46,72 +59,25 @@ function Materials() {
 
                 </div>
 
-                <table class="table" id="table_container">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">MATERIAL NAME </th>
-                            <th scope="col">USAGE</th>
-                            <th scope="col">PRICE</th>
-                            <th scope="col">SUMMARY</th>
-                            <th scope="col">DELETE</th>
-                            <th scope="col">UPDATE</th>
+                <table class="table" id="table_container"> 
+                        <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">MATERIAL NAME </th>
+                              <th scope="col">MATERIAL USAGE</th>
+                              <th scope="col">MATERIAL PRICE</th>
+                              <th scope="col">DELETE MATERIAL</th>
+                              <th scope="col">UPDATE MATERIAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {materials.map((material, index) => (
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Amalgam gun</td>
-                            <td>For dentals</td>
-                            <td>50 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Amalgam burnisher</td>
-                            <td>For dentals</td>
-                            <td>90 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Rubber dam clamp</td>
-                           <td>For dentals</td>
-                            <td>150 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Crown remover</td>
-                            <td>For dentals</td>
-                            <td>75 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
-
-                        </tr>
- 			<tr>
-                            <th scope="row">5</th>
-                            <td>Cement spatula</td>
-                            <td>For dentals</td>
-                            <td>100 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
-
-                        </tr>
-                    </tbody>
-                </table>
+                                <MaterialTable material={material}  index={index}/>
+                            )
+                            )}
+                        </tbody>
+                    </table>
 
 
 

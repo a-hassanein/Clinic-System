@@ -7,7 +7,7 @@ function AddPatient() {
             <div className="container-fluid text-center">
                 <h1>Add New Patient</h1>
             </div>
-            <div className="container" id="createpatientForm">
+            <div className="container-fluid formPart" id="createpatientForm">
                 <div className="container-fluid">
                     <form>
                         <div class="row">
@@ -66,7 +66,8 @@ function AddPatient() {
                             </div>
 
                         </div>
-                        <button type="submit" className="btn" id="searchbtn" style={{ marginLeft: "auto", marginRight: "auto", marginTop: "20px" }} >Add Patient</button>
+                                <button type="submit" className="btn" id="searchbtn" style={{ marginLeft: "auto", marginRight: "auto", marginTop: "20px" }}>Add Patient</button>
+
                     </form>
                 </div>
             </div>

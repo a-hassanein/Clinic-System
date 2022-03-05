@@ -1,46 +1,28 @@
 // import "../../Style/dashpage.css";
-import { useState,useRef } from "react";
+import { useState,useRef,useEffect } from "react";
 import { useReactToPrint } from 'react-to-print';
 import {Link} from "react-router-dom";
-import {
-  HiPlusCircle,
-  HiMinusCircle
-} from "react-icons/hi";
+import SurgeryTable from "../../Components/SurgeryTable";
+import axios from "axios";
 
 
 const Surgery = () => {
 
-  const[inputFields, setInputfields] =  useState([
-    { activity:'',price:'' },
-  ])
+  const [surgeries, setSurgeries] = useState([])
+  const getSurgeries = async () => {
+      try {
+          const response = await axios.get('/surgery/surgery/')
+          const { data } = response
+          console.log(data)
+          setSurgeries(data)
+      } catch (err) {
+          console.log(err)
+      }
+  }
+  useEffect(() => {
+    getSurgeries()
+}, [])
 
-const componentRef = useRef()
-const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
-
-
-const handleChangeInput = (index, event) => {
-  // console.log(index, event.target.name)
-  const values = [...inputFields];
-  values[index][event.target.name] = event.target.value;
-  setInputfields(values); 
-}
-
-const handlesubmit = (e) => {
-    e.preventDefault()
-    console.log("inputFields", inputFields); 
-}
-
-const handleAddFields = () =>{
-  setInputfields([...inputFields, { activity:'',price:'' }])
-}
-
-const handleRemoveFields = (index) => {
-  const values = [...inputFields];
-  values.splice(index, 1);
-  setInputfields(values);
-}
     return (
       <>
         <div className="home-section">
@@ -49,20 +31,18 @@ const handleRemoveFields = (index) => {
         </div>
 
         <div className='container-fluid formPart' >
-          <form method="post" onSubmit={(e) => {handlesubmit(e)}}>
+          <form method="post">
 
-          { inputFields.map((inputField, index) => (
-            <div className="row" key={index}>
+            <div className="row">
               <div className="col-lg-6">
                   <label className="form-label">Surgery Name</label>
-                  <input type='text' className='form-control' name="activity" value={inputField.surgery} onChange={event => handleChangeInput(index, event)}/>
+                  <input type='text' className='form-control' name="activity"/>
               </div>
               <div className="col-lg-6">
                   <label className="form-label">Price</label>
-                  <input type='text' className='form-control' name="price" value={inputField.price} onChange={event => handleChangeInput(index, event)}/>
+                  <input type='text' className='form-control' name="price"/>
               </div>
             </div>
-          ))}
 
           <div className="row">
                   <div className="col-lg-12">
@@ -73,7 +53,7 @@ const handleRemoveFields = (index) => {
 
           <div className="row text-center">
               <div className="col-lg-12" style={{marginTop:"30px"}}>
-                  <input type="submit" className="btn prescriptionButton" value="submit" onClick={handlesubmit}/>
+                  <input type="submit" className="btn prescriptionButton" value="submit"/>
               </div>
           </div>
           </form>
@@ -86,73 +66,25 @@ const handleRemoveFields = (index) => {
                     </form>
         </div>
         
-        <table class="table" id="table_container">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">MATERIAL NAME </th>
-                            <th scope="col">USAGE</th>
-                            <th scope="col">PRICE</th>
-                            <th scope="col">SUMMARY</th>
-                            <th scope="col">DELETE</th>
-                            <th scope="col">UPDATE</th>
+        <table class="table" id="table_container"> 
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">SURGERY NAME </th>
+                                <th scope="col">SURGERY PRICE</th>
+                                <th scope="col">SURGERY Desciption</th>
+                                <th scope="col">UPDATE SURGERY</th>
+                                <th scope="col">DELETE SURGERY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {surgeries.map((surgery, index) => (
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Amalgam gun</td>
-                            <td>For dentals</td>
-                            <td>50 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Amalgam burnisher</td>
-                            <td>For dentals</td>
-                            <td>90 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Rubber dam clamp</td>
-                           <td>For dentals</td>
-                            <td>150 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Crown remover</td>
-                            <td>For dentals</td>
-                            <td>75 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
-
-                        </tr>
- 			<tr>
-                            <th scope="row">5</th>
-                            <td>Cement spatula</td>
-                            <td>For dentals</td>
-                            <td>100 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
-
-                        </tr>
-                    </tbody>
-                </table>
-
+                                <SurgeryTable surgery={surgery}  index={index}/>
+                            )
+                            )}
+                        </tbody>
+                    </table>
         </div>
       </>
     );
