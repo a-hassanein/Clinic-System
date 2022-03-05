@@ -3,9 +3,9 @@ import Addmaterial from '../DashBoard/addmaterial';
 import Updatematerial from '../DashBoard/updatematerial';
 import MaterialTable from "../../Components/MaterialTable";
 import axios from "axios";
-
 import "../../Style/materials.css";
 import { useState,useRef,useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 
 function Materials() {
 
@@ -24,30 +24,77 @@ function Materials() {
     getMaterials()
 }, [])
 
+
+//post 
+    const [addMaterialData, setAddMaterialData] = useState({
+        materialname: "",
+        usage: "",
+        price: "",
+    });
+
+
+    const handleAddMaterialChange = (event) => {
+        event.preventDefault();
+    
+        const name = event.target.getAttribute("name");
+        const value = event.target.value;
+    
+        const newMaterialData = { ...addMaterialData };
+        newMaterialData[name] = value;
+    
+        setAddMaterialData(newMaterialData);
+      };
+
+
+      const handleAddMaterialSubmit = (event) => {
+        event.preventDefault();
+    
+        const newData = {
+          material_name: addMaterialData.materialname,
+          material_usage: addMaterialData.usage,
+          material_price: addMaterialData.price,      
+        };
+
+        const newDatas = [...materials, newData];
+        
+        setMaterials(newDatas);
+
+        try{
+            axios.post('/materials/materials/', newData).then((response)=>{
+                console.log(response.data)
+            })
+
+        }catch(error){
+            console.log(error)
+        }
+      };
+
+      console.log(materials)
+
   return (
     <section className="home-section">
     {/* <div id='materials'> */}
       <center><h1 style={{ marginTop: '20px' }}>Your Materials</h1></center>
 
       <div className='container-fluid formPart' >
-                    <form >
+                    <form  onSubmit={handleAddMaterialSubmit}>
                         
                         <div className="row">
                             <div className="col-lg-12">
 					<center><h2 id="h2t">New Material</h2></center>
                                 <label className="form-label">Material Name</label>
-                                <input type='text' className='form-control' name="materialname"  />
+                                <input type='text' className='form-control' name="materialname" onChange={handleAddMaterialChange} />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Usage</label>
-                                <input type='text' className="form-control" name="usage"  />
+                                <input type='text' className="form-control" name="usage" onChange={handleAddMaterialChange} />
                             </div>
                             
                             <div className="col-lg-6">
                                 <label className="form-label">Price</label>
-                                <input type='text' className="form-control"/>
+                                <input type='text' className="form-control" name="price" onChange={handleAddMaterialChange} />
                             </div>
                         </div>
                         <div className="row text-center">
