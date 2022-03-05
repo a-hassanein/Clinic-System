@@ -65,14 +65,14 @@ const Appointment = (props) => {
       console.log(error);
     }
   };
- // const deleteAppointment = async (appointment_id) => {
-  //  try {
-    //  await axios.delete(`/appointment/appointment/${appointment_id}/`);
-   //   getAppointments();
-  //  } catch (error) {
-    //  console.log(error);
-   // }
- // };
+  const deleteAppointment = async (appointment_id) => {
+    try {
+      await axios.delete(`/appointment/appointment/${appointment_id}/`);
+      getAppointments();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <section className="home-section">
