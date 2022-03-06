@@ -5,7 +5,6 @@ import Axios from "axios";
 
 
 const Prescripe = () => {
-    const url = "/prescription/drugs/"
     const[drugs,setDrugs] = useState([{
         patientname:"",
         patientmobile:"",
@@ -21,9 +20,17 @@ const Prescripe = () => {
         note:""
     }])
 
-    const[data,setData] = useState({
-        patientmobile:"",
-    })
+    const[data,setData] = useState([{
+        appointmentid:"",
+        drugname:"",
+        dose:"",
+        dosageform:"",
+        frequency:"",
+        noofdays:"",
+        duration:"",
+        foodrelation:"",
+        insrtuctions:"",
+    }])
 
     const[patient,setPatient] = useState({
         patientname:"",
@@ -43,14 +50,19 @@ const Prescripe = () => {
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
     });
-    const handle = (e) => {
-        if(e.target.name === 'patientmobile'){
-            setData({
-                ...data,
-                patientmobile:e.target.value
-            })
-        }
-    }
+
+    const handleAddFormChange = (event) => {
+        event.preventDefault();
+    
+        const name = event.target.getAttribute("name");
+        const value = event.target.value;
+    
+        const newFormData = { ...data };
+        newFormData[name] = value;
+    
+        setData(newFormData);
+      };
+      console.log(data)
     
 
     
@@ -70,13 +82,23 @@ const Prescripe = () => {
             
             
         }])
-        console.log(data.patientmobile)
-        Axios.post('/prescription',{
-            patient_phone:data.patientmobile,
+        try{
+            Axios.post("/prescription/prescription/",{
+                appointment_id:data.appointmentid,
+                drug_name:data.drugname,
+                drug_dose:data.dose,
+                drug_dosage_form:data.dosageform,
+                frequency:data.frequency,
+                number_of_days:data.noofdays,
+                duration:data.duration,
+                instructions:data.insrtuctions,
         })
         .then(res => {
             console.log(res.data)
-        })
+        })}
+        catch(error){
+            console.log(error)
+        }
     }
     return(
         <>
@@ -85,7 +107,7 @@ const Prescripe = () => {
                     <h1>Prescription</h1>
                 </div>
                 <div className='container-fluid formPart' >
-                    <form method="post" onSubmit={(e) => {handlesubmit(e)}}>
+                    <form  onSubmit={(e) => {handlesubmit(e)}}>
                     <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Patient Name</label>
@@ -93,69 +115,69 @@ const Prescripe = () => {
                             </div>
                             <div className="col-lg-6">
                                 <label className="form-label">Patient Mobile No.</label>
-                                <input type='text' className='form-control' name="patientmobile" onChange={(e)=>{handle(e)}}/>
+                                <input type='text' className='form-control' name="appointmentid" onChange={(event)=>{handleAddFormChange(event)}}/>
                             </div>
                         </div>
                         
                         <div className="row">
                             <div className="col-lg-12">
                                 <label className="form-label">Drug Name</label>
-                                <input type='text' className='form-control' name="drugname"  />
+                                <input type='text' className='form-control' name="drugname"  onChange={(event)=>{handleAddFormChange(event)}}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-4">
                                 <label className="form-label">Doses</label>
-                                <input type='text' className="form-control" name="dose"  />
+                                <input type='text' className="form-control" name="dose" onChange={(event)=>{handleAddFormChange(event)}} />
                             </div>
                             <div className="col-lg-4">
                             <label className="form-label">Dosage Form</label>
-                                <select className="form-select" >
-                                    <option value="1">شراب</option>
-                                    <option value="2">اقراص</option>
-                                    <option value="2">كبسول</option>
-                                    <option value="3">حقن</option>
-                                    <option value="4">لبوس</option>
-                                    <option value="5">مرهم</option>
-                                    <option value="6">كريم</option>
-                                    <option value="7">محلول</option>
-                                    <option value="8">قطره</option>
-                                    <option value="9">غسول فم</option>
+                                <select className="form-select" name="dosageform" onChange={(event)=>{handleAddFormChange(event)}}>
+                                    <option value="شراب">شراب</option>
+                                    <option value="اقراض">اقراص</option>
+                                    <option value="كبسول">كبسول</option>
+                                    <option value="حقن">حقن</option>
+                                    <option value="لبوس">لبوس</option>
+                                    <option value="مرهم">مرهم</option>
+                                    <option value="كريم">كريم</option>
+                                    <option value="ملحلول">محلول</option>
+                                    <option value="قطره">قطره</option>
+                                    <option value="غسول فم">غسول فم</option>
                                 </select>
                             </div>
                             <div className="col-lg-4">
                                 <label className="form-label">Frequency</label>
-                                <input type='text' className="form-control"/>
+                                <input type='text' className="form-control" name="frequency" onChange={(event)=>{handleAddFormChange(event)}}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-3">
                                 <label className="form-label">No of Days</label>
-                                <input type="number" className="form-control" />
+                                <input type="number" className="form-control" name="noofdays" onChange={(event)=>{handleAddFormChange(event)}}/>
                             </div>
                             <div className="col-lg-3">
                                 <label className="form-label">Duration</label>
-                                <select className="form-select" >
-                                    <option value="1">يوم</option>
-                                    <option value="2">ايام</option>
-                                    <option value="2">اسبوع</option>
-                                    <option value="2">اسابيع</option>
-                                    <option value="2">شهر</option>
-                                    <option value="2">شهور</option>
+                                <select className="form-select" name="duration" onChange={(event)=>{handleAddFormChange(event)}}>
+                                    <option value="يوم">يوم</option>
+                                    <option value="ايام">ايام</option>
+                                    <option value="اسبوع">اسبوع</option>
+                                    <option value="اسابيع">اسابيع</option>
+                                    <option value="شهر">شهر</option>
+                                    <option value="اشهر">اشهر</option>
                                 </select>
                             </div>
                             <div className="col-lg-6">
                                 <label className="form-label">Food Relation</label>
-                                <select className="form-select" >
-                                    <option value="1">قبل الاكل</option>
-                                    <option value="2">يعد الاكل</option>
+                                <select className="form-select" name="foodrelation" onChange={(event)=>{handleAddFormChange(event)}}>
+                                    <option value="قبل الاكل">قبل الاكل</option>
+                                    <option value="بعدالاكل">يعد الاكل</option>
                                 </select>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Instructions</label>
-                                <input type="text" className="form-control" />
+                                <input type="text" className="form-control" name="instructions" onChange={(event)=>{handleAddFormChange(event)}}/>
                             </div>
                         </div>
                         <div className="row text-center">
