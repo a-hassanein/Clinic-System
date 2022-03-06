@@ -2,9 +2,20 @@ import { useState,useRef } from "react";
 import "../../Style/prescription.css"
 import { useReactToPrint } from 'react-to-print';
 import Axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { adddrug } from "../../PrescriptionRedux/Action";
+
+
 
 
 const Prescripe = () => {
+    const favdrugs = useSelector((state)=>state.drugs)
+    console.log(favdrugs)
+    const dispatch = useDispatch();
+
+    const addfav = ()=>{
+        dispatch(adddrug())
+    }
     const[drugs,setDrugs] = useState([{
         patientname:"",
         patientmobile:"",
@@ -255,6 +266,13 @@ const Prescripe = () => {
                         </div>
                     </div>
                 </div>
+                <button className="btn btn-danger" onClick={addfav}>add</button>
+                {favdrugs.map((favdrug)=>{
+                    return(
+                        <h1>{favdrug}</h1>
+                    )
+                })}
+                
             </section>
 
 
