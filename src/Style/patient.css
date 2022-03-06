@@ -10,17 +10,6 @@
     font-family: 'Cairo', sans-serif;
     margin: 0;
     padding: 0;
-  }
-
-#navbar_container{
-  text-align: center;
-  /* margin-left: 160px; */
-  width:1200px;
-  margin: top 100px;
-  
-}
-.navbarcontainer{
-  margin: 100px;
 }
 #searchfield
 {
@@ -28,17 +17,8 @@
   min-height: 50px;
 
 }
-.nav-link {
-  height: 2.5rem;
-  color:var(--first_color);
-}
-.nav-link:hover
-{
-  color: #70a1b8;
-
-}
 #searchbtn {
-  background-color: #528298;
+   background-color: #528298;
   color: #ffffff;
   cursor: pointer;
   height: 3rem;
@@ -79,21 +59,6 @@
 #anchor_id {
   text-decoration: none;
 }
-#createbtn {
-  background-color: #528298;
-  color: #ffffff;
-  cursor: pointer;
-  width: 250px; 
-  height: 2.5rem;
-  font-weight:600 ;
-  border: none;
-  display: block;
-  margin-left: 20px;
-}
-#createbtn:hover {
-   
-  background-color: #70a1b8;
-}
 #table_container{
   margin-top: 20px;
   margin-left: auto;
@@ -109,7 +74,35 @@
 
 }
 
+#createpatientForm {
+  margin-top: 40px;
+  padding:30px;
+  color:var(--first_color);
+  font-size: 20px;
+  font-weight: 600;
+  border: 4px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
+  padding-top: 20px;
+  width:90%;
+}
+#createpatientForm input{
+border-radius: 10px;
+min-height: 50px;
+}
+#createpatientForm select{
+border-radius: 10px;
+min-height: 50px;
+}
+#header_form {
+color: #528298;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+font-weight: bold;
+margin-bottom: 20px;
 
+}
 #table_container tr:nth-child(even) {
   background-color: #BCD9E6;
 }
