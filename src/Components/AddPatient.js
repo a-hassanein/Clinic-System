@@ -31,7 +31,7 @@ const AddPatient = ({ addPatient }) => {
             <div className="container-fluid text-center" >
                 <h1>Add New Patient</h1>
             </div>
-            <div className="container" id="createpatientForm">
+            <div className="container-fluid formPart" id="createpatientForm">
                 <div className="container-fluid">
                     <form>
                         <div class="row">

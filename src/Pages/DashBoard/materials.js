@@ -1,40 +1,100 @@
 import React from 'react'
 import Addmaterial from '../DashBoard/addmaterial';
 import Updatematerial from '../DashBoard/updatematerial';
+import MaterialTable from "../../Components/MaterialTable";
+import axios from "axios";
 import "../../Style/materials.css";
-import { useState,useRef } from "react";
+import { useState,useRef,useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 
 function Materials() {
+
+  const [materials, setMaterials] = useState([])
+  const getMaterials = async () => {
+      try {
+          const response = await axios.get('/materials/materials/')
+          const { data } = response
+          console.log(data)
+          setMaterials(data)
+      } catch (err) {
+          console.log(err)
+      }
+  }
+  useEffect(() => {
+    getMaterials()
+}, [])
+
+
+//post 
+    const [addMaterialData, setAddMaterialData] = useState({
+        materialname: "",
+        usage: "",
+        price: "",
+    });
+
+
+    const handleAddMaterialChange = (event) => {
+        event.preventDefault();
+    
+        const name = event.target.getAttribute("name");
+        const value = event.target.value;
+    
+        const newMaterialData = { ...addMaterialData };
+        newMaterialData[name] = value;
+    
+        setAddMaterialData(newMaterialData);
+      };
+
+
+      const handleAddMaterialSubmit = (event) => {
+        event.preventDefault();
+    
+        const newData = {
+          material_name: addMaterialData.materialname,
+          material_usage: addMaterialData.usage,
+          material_price: addMaterialData.price,      
+        };
+
+        const newDatas = [...materials, newData];
+        
+        setMaterials(newDatas);
+
+        try{
+            axios.post('/materials/materials/', newData).then((response)=>{
+                console.log(response.data)
+            })
+
+        }catch(error){
+            console.log(error)
+        }
+      };
+
+      console.log(materials)
+
   return (
     <section className="home-section">
     {/* <div id='materials'> */}
       <center><h1 style={{ marginTop: '20px' }}>Your Materials</h1></center>
 
       <div className='container-fluid formPart' >
-                    <form >
+                    <form  onSubmit={handleAddMaterialSubmit}>
                         
                         <div className="row">
                             <div className="col-lg-12">
 					<center><h2 id="h2t">New Material</h2></center>
                                 <label className="form-label">Material Name</label>
-                                <input type='text' className='form-control' name="materialname"  />
+                                <input type='text' className='form-control' name="materialname" onChange={handleAddMaterialChange} />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Usage</label>
-                                <input type='text' className="form-control" name="usage"  />
+                                <input type='text' className="form-control" name="usage" onChange={handleAddMaterialChange} />
                             </div>
                             
                             <div className="col-lg-6">
                                 <label className="form-label">Price</label>
-                                <input type='text' className="form-control"/>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <label className="form-label">Summary</label>
-                                <input type='text' className='form-control' name="summary"  />
+                                <input type='text' className="form-control" name="price" onChange={handleAddMaterialChange} />
                             </div>
                         </div>
                         <div className="row text-center">
@@ -46,72 +106,25 @@ function Materials() {
 
                 </div>
 
-                <table class="table" id="table_container">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">MATERIAL NAME </th>
-                            <th scope="col">USAGE</th>
-                            <th scope="col">PRICE</th>
-                            <th scope="col">SUMMARY</th>
-                            <th scope="col">DELETE</th>
-                            <th scope="col">UPDATE</th>
+                <table class="table" id="table_container"> 
+                        <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">MATERIAL NAME </th>
+                              <th scope="col">MATERIAL USAGE</th>
+                              <th scope="col">MATERIAL PRICE</th>
+                              <th scope="col">DELETE MATERIAL</th>
+                              <th scope="col">UPDATE MATERIAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {materials.map((material, index) => (
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Amalgam gun</td>
-                            <td>For dentals</td>
-                            <td>50 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Amalgam burnisher</td>
-                            <td>For dentals</td>
-                            <td>90 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Rubber dam clamp</td>
-                           <td>For dentals</td>
-                            <td>150 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Crown remover</td>
-                            <td>For dentals</td>
-                            <td>75 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
-
-                        </tr>
- 			<tr>
-                            <th scope="row">5</th>
-                            <td>Cement spatula</td>
-                            <td>For dentals</td>
-                            <td>100 EGP</td>
-                            <td>This for dental fillings</td>
-                            <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                            <td><a href="/updatematerial" className="btn " id="btn_material">Update</a></td>
-
-                        </tr>
-                    </tbody>
-                </table>
+                                <MaterialTable material={material}  index={index}/>
+                            )
+                            )}
+                        </tbody>
+                    </table>
 
 
 

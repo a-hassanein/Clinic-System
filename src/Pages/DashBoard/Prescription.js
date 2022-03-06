@@ -1,9 +1,11 @@
 import { useState,useRef } from "react";
 import "../../Style/prescription.css"
 import { useReactToPrint } from 'react-to-print';
+import Axios from "axios";
 
 
 const Prescripe = () => {
+    const url = "/prescription/drugs/"
     const[drugs,setDrugs] = useState([{
         patientname:"",
         patientmobile:"",
@@ -18,6 +20,10 @@ const Prescripe = () => {
         between:"",
         note:""
     }])
+
+    const[data,setData] = useState({
+        patientmobile:"",
+    })
 
     const[patient,setPatient] = useState({
         patientname:"",
@@ -36,12 +42,22 @@ const Prescripe = () => {
     const componentRef = useRef()
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
-      });
+    });
+    const handle = (e) => {
+        if(e.target.name === 'patientmobile'){
+            setData({
+                ...data,
+                patientmobile:e.target.value
+            })
+        }
+    }
+    
+
     
 
     const handlesubmit = (e) => {
-        e.preventDefault()
         setDrugs([...drugs,{
+            patientmobile:e.target[1].value,
             drugname:e.target[2].value,
             dose:e.target[3].value,
             dosageform:e.target[4][e.target[4].selectedIndex].text,
@@ -54,13 +70,18 @@ const Prescripe = () => {
             
             
         }])
-        console.log(e)
-        console.log(drugs)
+        console.log(data.patientmobile)
+        Axios.post('/prescription',{
+            patient_phone:data.patientmobile,
+        })
+        .then(res => {
+            console.log(res.data)
+        })
     }
     return(
         <>
             <section className='home-section' >
-                <div className="container-fluid text-center">
+                <div className="container-fluid text-center" style={{ marginTop: '20px' }}>
                     <h1>Prescription</h1>
                 </div>
                 <div className='container-fluid formPart' >
@@ -72,7 +93,7 @@ const Prescripe = () => {
                             </div>
                             <div className="col-lg-6">
                                 <label className="form-label">Patient Mobile No.</label>
-                                <input type='text' className='form-control' name="patientmobile" />
+                                <input type='text' className='form-control' name="patientmobile" onChange={(e)=>{handle(e)}}/>
                             </div>
                         </div>
                         
@@ -89,7 +110,7 @@ const Prescripe = () => {
                             </div>
                             <div className="col-lg-4">
                             <label className="form-label">Dosage Form</label>
-                                <select className="form-select">
+                                <select className="form-select" >
                                     <option value="1">شراب</option>
                                     <option value="2">اقراص</option>
                                     <option value="2">كبسول</option>
@@ -110,11 +131,11 @@ const Prescripe = () => {
                         <div className="row">
                             <div className="col-lg-3">
                                 <label className="form-label">No of Days</label>
-                                <input type="number" className="form-control"/>
+                                <input type="number" className="form-control" />
                             </div>
                             <div className="col-lg-3">
                                 <label className="form-label">Duration</label>
-                                <select className="form-select">
+                                <select className="form-select" >
                                     <option value="1">يوم</option>
                                     <option value="2">ايام</option>
                                     <option value="2">اسبوع</option>
@@ -125,7 +146,7 @@ const Prescripe = () => {
                             </div>
                             <div className="col-lg-6">
                                 <label className="form-label">Food Relation</label>
-                                <select className="form-select">
+                                <select className="form-select" >
                                     <option value="1">قبل الاكل</option>
                                     <option value="2">يعد الاكل</option>
                                 </select>
@@ -134,7 +155,7 @@ const Prescripe = () => {
                         <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Instructions</label>
-                                <input type="text" className="form-control"/>
+                                <input type="text" className="form-control" />
                             </div>
                         </div>
                         <div className="row text-center">
