@@ -18,18 +18,30 @@ function Patient() {
             console.log(err)
         }
     }
-    // const AddPatient = async newpatient => {
-    //     try {
-    //         await axios.post('/patient/patient/' , newpatient)
-    //         getPatients()
-
-    //     } catch (err) {
-    //         console.log(err)
-    //     }
-    // }
     useEffect(() => {
         getPatients()
     }, [])
+    const addPatient = async newpatient => {
+        try {
+            console.log(newpatient)
+            await axios.post('/patient/patient/' , {
+                "patient_phone": newpatient.patient_phone,
+                "patient_name":  newpatient.patient_name,
+                "patient_gender": newpatient.patient_gender,
+                "current_disease": newpatient.current_disease,
+                "patient_email": newpatient.patient_email,
+                "patient_age": newpatient.patient_age,
+                "patient_address": newpatient.patient_address,
+                "doctor": newpatient.doctor,
+                "assistant": newpatient.assistant
+            } )
+            getPatients()
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+  
 
     return (
         <>
@@ -37,7 +49,7 @@ function Patient() {
 
                 <div>
 
-                    <AddPatient/>
+                    <AddPatient  addPatient={ addPatient }/>
                     <div className="container-fluid text-center">
                         <h1>All Patients</h1>
                     </div>

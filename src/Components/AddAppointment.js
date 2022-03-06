@@ -7,6 +7,7 @@ const AddAppointment = (props) => {
   const [appointment_date, setEntereddate] = useState("");
   const [patient_phone, setEnteredphone] = useState("");
   const [checkup_type, setEnteredCheckup] = useState("");
+  const [patient_id , setPatientID] = useState("");
 
   const addAppointmentHandler = (event) => {
     event.preventDefault();
@@ -14,7 +15,8 @@ const AddAppointment = (props) => {
       patient_name.trim().length === 0 ||
       appointment_date.trim().length === 0 ||
       patient_phone.trim().length === 0 ||
-      checkup_type.trim().length === 0
+      checkup_type.trim().length === 0 ||
+      patient_id.trim().length === 0
     ) {
       return;
     }
@@ -23,12 +25,14 @@ const AddAppointment = (props) => {
       appointment_date , 
       patient_phone ,
       checkup_type,
-       completed: false ,
+      patient_id,
+      completed: false ,
      });
     setEnteredPatient("");
     setEntereddate("");
     setEnteredphone("");
     setEnteredCheckup("");
+    setPatientID("");
   };
 
   const patientHandler = (event) => {
@@ -43,11 +47,15 @@ const AddAppointment = (props) => {
   const checkupHandler = (event) => {
     setEnteredCheckup(event.target.value);
   };
+  const patientIDHandler = (event) =>{
+    setPatientID(event.target.value)
+
+  }
 
   return (
     <>
       <div className="container-fluid formPart">
-        <form onSubmit={addAppointmentHandler}>
+        <form >
           <div className="row">
             <div className="col">
               <label htmlFor="patient" className="form-label">
@@ -58,6 +66,20 @@ const AddAppointment = (props) => {
                 type="text"
                 value={patient_name}
                 onChange={patientHandler}
+                className="form-control"
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <label htmlFor="patientID" className="form-label">
+                Patient ID:{" "}
+              </label>
+              <input
+                id="patientID"
+                type="text"
+                value={patient_id}
+                onChange={patientIDHandler}
                 className="form-control"
               />
             </div>
