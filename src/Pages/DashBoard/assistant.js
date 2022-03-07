@@ -1,13 +1,13 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
-import { useHistory } from 'react-router-dom';
+
 
 
 const Assistant = () => {
 
-    let history = useHistory();
+
     const [data, setData] = useState([])
-    const getMaterials = async () => {
+    const getAssistant = async () => {
         try {
             const response = await axios.get('/assistant/assistant/')
             const { data } = response
@@ -18,7 +18,7 @@ const Assistant = () => {
         }
     }
     useEffect(() => {
-      getMaterials()
+        getAssistant()
   }, [])
 
 
@@ -35,7 +35,7 @@ const Assistant = () => {
     //     });
     // }, []);
 
-    console.log(data.data)
+    //console.log(data.data)
 
 
 
@@ -51,6 +51,33 @@ const Assistant = () => {
     });
 
 
+    const [editFormData, setEditFormData] = useState({
+        name: "",
+        mobile: "",
+        gender: "",
+        address: "",
+        email: "",
+        pass: "",
+        age: "",
+      });
+    
+      const [editDataId, setEditDataId] = useState(null);
+
+
+
+      const handleEditFormChange = (event) => {
+        event.preventDefault();
+    
+        const name = event.target.getAttribute("name");
+        const value = event.target.value;
+    
+        const newFormData = { ...editFormData };
+        newFormData[name] = value;
+    
+        setEditFormData(newFormData);
+      };
+
+
     const handleAddFormChange = (event) => {
         event.preventDefault();
     
@@ -64,6 +91,85 @@ const Assistant = () => {
       };
 
 
+
+      const handleEditFormSubmit = (event) => {
+        event.preventDefault();
+    
+        const editedContact = {
+          assistant_name: editFormData.name,
+          assistant_email: editFormData.email,
+          assistant_pass: editFormData.pass,
+          assistant_number: editFormData.mobile,
+          assistant_gender: editFormData.gender,
+          assistant_address: editFormData.address,
+          assistant_age: editFormData.age, 
+          doctor: 1, 
+        };
+    
+        const newContacts = [...data];
+    
+        const index = data.findIndex((contact) => contact.id === editDataId);
+    
+        newContacts[index] = editedContact;
+    
+        setData(newContacts);
+        setEditDataId(null);
+      };
+
+
+      const handleEditClick = (event, contact) => {
+        event.preventDefault();
+        setEditDataId(contact.id);
+    
+        const formValues = {
+            name: data.data.assistant_name,
+            mobile: data.data.assistant_number,
+            gender: data.data.assistant_gender,
+            address: data.data.assistant_address,
+            email: data.data.assistant_email,
+            pass: data.data.assistant_pass,
+            age: data.data.assistant_age,
+        };
+    
+        setEditFormData(formValues);
+      };
+    
+      const handleCancelClick = () => {
+        setEditDataId(null);
+      };
+
+
+
+
+
+      const deleteAssistant = (id) =>{
+
+        try{
+            axios.delete(`http://127.0.0.1:8000/assistant/assistant/${id}`).then((response)=>{
+                getAssistant()
+                console.log(response.data)
+            })
+
+        }catch(error){
+            console.log(error)
+        }
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
       const handleAddFormSubmit = (event) => {
         event.preventDefault();
     
@@ -74,7 +180,7 @@ const Assistant = () => {
           assistant_number: addFormData.mobile,
           assistant_gender: addFormData.gender,
           assistant_address: addFormData.address,
-          assistant_age: addFormData.address, 
+          assistant_age: addFormData.age, 
           doctor: 1,        
         };
 
@@ -84,6 +190,7 @@ const Assistant = () => {
 
         try{
             axios.post('http://127.0.0.1:8000/assistant/assistant/', newData).then((response)=>{
+                getAssistant()
                 console.log(response.data)
             })
 
@@ -97,7 +204,7 @@ const Assistant = () => {
       };
 
 
-      console.log(data)
+    // console.log(data)
     return (
         <>
 
@@ -130,26 +237,27 @@ const Assistant = () => {
                             <div className="col-lg-6">
                                 <label className="form-label">Gender</label>
                                 <select class="custom-select" id="inputGroupSelect01" name="gender"  onChange={handleAddFormChange} >
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
+                                    <option value="0">choose your gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
                                 </select>
                             </div>
                             <div className="col-lg-6">
                                 <label className="form-label">Age</label>
-                                <input type='text' className='form-control' name="address" placeholder={"assistant age"}  onChange={handleAddFormChange} />
+                                <input type='text' className='form-control' name="age" placeholder={"assistant age"}  onChange={handleAddFormChange} />
                             </div>
                         </div>
                      
                         <div className="row">
                             <div className="col-lg-12">
                                 <label className="form-label">Address</label>
-                                <input type='text' className='form-control' name="email" placeholder={"assistant address"}  onChange={handleAddFormChange} />
+                                <input type='text' className='form-control' name="address" placeholder={"assistant address"}  onChange={handleAddFormChange} />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-12">
                                 <label className="form-label">Email</label>
-                                <input type='text' className='form-control' name="email" placeholder={"assistant email"}  onChange={handleAddFormChange} />
+                                <input type='email' className='form-control' name="email" placeholder={"assistant email"}  onChange={handleAddFormChange} />
                             </div>
                         </div>
                         <div className="row">
@@ -169,7 +277,15 @@ const Assistant = () => {
 
                         </form>
 
-                        <table class="table" id="table_container">
+              
+                </div>
+
+
+                <form onSubmit={handleEditFormSubmit}>
+
+                
+
+                <table class="table" id="table_container">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -191,7 +307,7 @@ const Assistant = () => {
                               data.map((resdata, index) => {
                                 //  console.log(resdata.title);
                                  return (
-                                    <tr>
+                                    <tr key={index}>
                                     <th scope="row">{resdata.assistant_id}</th>
                                     <td>{resdata.assistant_name}</td>
                                     <td>{resdata.assistant_email}</td>
@@ -200,8 +316,8 @@ const Assistant = () => {
                                     <td>{resdata.assistant_gender}</td>
                                     <td>{resdata.assistant_age}</td>
                                     <td>{resdata.assistant_address}</td>
-                                    <td><a href="#" className="btn " id="btn_material">Delete</a></td>
-                                    <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
+                                    <td><button  className="btn " id="btn_material" onClick={() => deleteAssistant(resdata.assistant_id)}>Delete</button></td>
+                                    <td><button  className="btn " id="btn_material">Update</button> </td>
         
                                 </tr>
                                  
@@ -212,11 +328,8 @@ const Assistant = () => {
                      
                     </tbody>
                 </table>
-                </div>
 
-                
-
-
+                </form>
             
                     
         </section>
