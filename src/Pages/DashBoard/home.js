@@ -40,7 +40,7 @@ const HomeDashboard = () => {
         <>
             <section className='all home-section'>
             <div className="container-fluid homeItem">
-            <Link to={"/patient"} className='cardLink'>
+            <Link to={"/dashboard/patient"} className='cardLink'>
                 <div className="card">
                     <div className="content">
                         <i className="iconstyle"><FaUserInjured style={{fontSize: '60px' ,color:"#528298"}}></FaUserInjured></i>                        <div className="contentBx">
@@ -50,7 +50,7 @@ const HomeDashboard = () => {
                 </div>
             </Link>
 
-            <Link to={"/appointment"} className='cardLink'>
+            <Link to={"/dashboard/appointment"} className='cardLink'>
                 <div className="card frame">
                     <div className="content">
                     <i className="iconstyle"><FiCalendar style={{fontSize: '60px' ,color:"#528298"}}></FiCalendar></i>
@@ -61,7 +61,7 @@ const HomeDashboard = () => {
                 </div>
             </Link>
 
-            <Link to={"/prescription"} className='cardLink'>
+            <Link to={"/dashboard/prescription"} className='cardLink'>
                 <div className="card">
                     <div className="content">
                     <i className="iconstyle"><GiMedicines style={{fontSize: '60px' ,color:"#528298"}}></GiMedicines></i>
@@ -72,7 +72,7 @@ const HomeDashboard = () => {
                 </div>
             </Link>
 
-            <Link to={"/assistant"} className='cardLink'>
+            <Link to={"/dashboard/assistant"} className='cardLink'>
                 <div className="card">
                     <div className="content">
                     <i className="iconstyle"><RiNurseFill style={{fontSize: '60px' ,color:"#528298"}}></RiNurseFill></i>
@@ -84,7 +84,7 @@ const HomeDashboard = () => {
                 </div>
             </Link>
 
-            <Link to={"/materials"} className='cardLink'>
+            <Link to={"/dashboard/materials"} className='cardLink'>
                 <div className="card">
                     <div className="content">
                     <i className="iconstyle"><BsBagDashFill style={{fontSize: '60px' ,color:"#528298"}}></BsBagDashFill></i>
@@ -96,7 +96,7 @@ const HomeDashboard = () => {
                 </div>
             </Link>
 
-            <Link to={"/bill"} className='cardLink'>
+            <Link to={"/dashboard/bill"} className='cardLink'>
                 <div className="card">
                     <div className="content">
                         <i className="iconstyle"><RiBillLine style={{fontSize: '60px' ,color:"#528298"}}></RiBillLine></i>
@@ -108,7 +108,7 @@ const HomeDashboard = () => {
                 </div>
             </Link>
 
-            <Link to={"/surgery"} className='cardLink'>
+            <Link to={"/dashboard/surgery"} className='cardLink'>
                 <div className="card">
                     <div className="content">
                         <i className="iconstyle"><GiScalpel style={{fontSize: '60px' ,color:"#528298"}}></GiScalpel></i>
@@ -119,7 +119,7 @@ const HomeDashboard = () => {
                     
                 </div>
             </Link>
-            <Link to={"/scan_labs"} className='cardLink'> 
+            <Link to={"/dashboard/scan_labs"} className='cardLink'> 
                 <div className="card">
                     <div className="content">
                         <i className="iconstyle"><ImLab style={{fontSize: '60px' ,color:"#528298"}}></ImLab></i>
@@ -131,7 +131,7 @@ const HomeDashboard = () => {
                 </div>
             </Link>
 
-            <Link to={"/dashbord/setting"} className='cardLink'>
+            <Link to={"/dashboard/dashbord/setting"} className='cardLink'>
                 <div className="card">
                     <div className="content">
                         <i className="iconstyle"><FiSettings style={{fontSize: '60px' ,color:"#528298"}}></FiSettings></i>
