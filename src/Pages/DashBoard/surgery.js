@@ -11,7 +11,7 @@ const Surgery = () => {
   const [surgeries, setSurgeries] = useState([])
   const getSurgeries = async () => {
       try {
-          const response = await axios.get('/surgery/surgery/')
+          const response = await axios.get('http://127.0.0.1:8000/surgery/surgery/')
           const { data } = response
           console.log(data)
           setSurgeries(data)
@@ -57,19 +57,23 @@ const handleAddSurgeryChange = (event) => {
     setSurgeries(newDatas);
 
     try{
-        axios.post('/surgery/surgery/', newData).then((response)=>{
+        axios.post('http://127.0.0.1:8000/surgery/surgery/', newData).then((response)=>{
             console.log(response.data)
         })
 
     }catch(error){
         console.log(error)
     }
-
-
-
-    
   };
 
+  const handledeleteSurgery = async (surgery_id) => {
+    try {
+      await axios.delete(`http://127.0.0.1:8000/surgery/surgery/${surgery_id}/`);
+      getSurgeries();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   console.log(surgeries)
 
@@ -130,7 +134,7 @@ const handleAddSurgeryChange = (event) => {
                         <tbody>
                             {surgeries.map((surgery, index) => (
 
-                                <SurgeryTable surgery={surgery}  index={index}/>
+                                <SurgeryTable surgery={surgery}  index={index} handledeleteSurgery={(surgery_id) =>{handledeleteSurgery(surgery.surgery_id)}}/>
                             )
                             )}
                         </tbody>

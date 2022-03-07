@@ -30,7 +30,11 @@ const Dashboard = () => {
                     <Route path="/dashboard/appointment" component={Appointment} />
                     <Route path="/dashboard/surgery" component={Surgery} />
                     <Route path="/dashboard/bill" component={Bill} />
+<<<<<<< HEAD
                     <Route path='/dashboard/prescription' component={Prescripe} />
+=======
+                    <Route path="/dashboard/prescription" component={Prescripe} />
+>>>>>>> 7ddb4bb6ac3d1c5ffc2d0f2bd63130b318f343c5
                     <Route path="/dashboard/patient" component={Patient} />
                     <Route path="/dashboard/materials" component={Materials}/>
                     <Route path="/dashboard/addmaterial" component={Addmaterial}/>
