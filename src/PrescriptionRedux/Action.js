@@ -1,7 +1,7 @@
 export const adddrug = ()=>{
     return{
     type:"add to favourite",
-    payload:"ahmed"
+    payload:"ahmed",
     }
 }
 export const removedrug = (drugid)=>{

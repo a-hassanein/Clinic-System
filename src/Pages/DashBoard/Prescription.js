@@ -4,6 +4,8 @@ import { useReactToPrint } from 'react-to-print';
 import Axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { adddrug } from "../../PrescriptionRedux/Action";
+import PatientTable from "../../Components/PatientTable";
+
 
 
 
@@ -267,11 +269,46 @@ const Prescripe = () => {
                     </div>
                 </div>
                 <button className="btn btn-danger" onClick={addfav}>add</button>
-                {favdrugs.map((favdrug)=>{
-                    return(
-                        <h1>{favdrug}</h1>
-                    )
-                })}
+                
+                  <table class="table" id="table_container">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Drug Name </th>
+                                <th scope="col">Dose</th>
+                                <th scope="col">Dosage Form</th>
+                                <th scope="col">Frequency</th>
+                                <th scope="col">Duration</th>
+                                <th scope="col">No of days</th>
+                                <th scope="col">Food Relation</th>
+                                <th scope="col">Instructions</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {favdrugs.map((favdrug, index) => (
+                                  <tr>
+
+                                  <td>
+                                    {index+1}
+                                  </td>
+                                  <td>{favdrug}</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                    
+                                </tr>
+
+                            )
+                            )}
+                        </tbody>
+
+                    </table>
                 
             </section>
 
