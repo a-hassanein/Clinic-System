@@ -70,7 +70,7 @@ const Appointment = (props) => {
       await axios.delete(`/appointment/appointment/${appointment_id}/`);
       getAppointments();
     } catch (error) {
-      console.log(error);
+      console.log(error); 
     }
   };
 
