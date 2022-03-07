@@ -28,12 +28,6 @@ function Updatematerial() {
                                 <input type='text' className="form-control"/>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <label className="form-label">Summary</label>
-                                <input type='text' className='form-control' name="summary"  />
-                            </div>
-                        </div>
                         <div className="row text-center">
                             <div className="col-lg-12" style={{marginTop:"15px"}}>
                                 <input type="submit" className="btn prescriptionButton" value="UPDATE"/>

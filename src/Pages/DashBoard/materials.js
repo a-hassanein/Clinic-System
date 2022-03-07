@@ -71,6 +71,19 @@ function Materials() {
 
       console.log(materials)
 
+
+      //delete
+      const handledeleteMaterial = async (material_id) => {
+        try {
+          await axios.delete(`http://127.0.0.1:8000/materials/materials/${material_id}/`);
+          getMaterials();
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+      console.log(materials)
+
   return (
     <section className="home-section">
     {/* <div id='materials'> */}
@@ -120,7 +133,7 @@ function Materials() {
                         <tbody>
                             {materials.map((material, index) => (
 
-                                <MaterialTable material={material}  index={index}/>
+                                <MaterialTable material={material}  index={index} handledeleteMaterial={(material_id) =>{handledeleteMaterial(material.material_id)}}/>
                             )
                             )}
                         </tbody>
