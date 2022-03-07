@@ -146,11 +146,7 @@ const Sidebar = () => {
                 </li>
 
                 <li className="nav_Item">
-<<<<<<< HEAD
-                    <Link to={"/dashboard/setting"} className="linkClass">
-=======
                     <Link to={"/dashboard/dashbord/setting"} className="linkClass">
->>>>>>> 7ddb4bb6ac3d1c5ffc2d0f2bd63130b318f343c5
                         <i><FiSettings></FiSettings></i>
                         <span className="links_name">Settings</span>
                         <span className="tooltip">Settings</span>
