@@ -15,7 +15,7 @@ const ListAppointment = (props) => {
    
     <ul className="list-group list-group-flush  container-fluid  formPartwith">
        {props.appointments.map((appointment , index) => (
-    
+     
       <li className="list-group-item  h4 formPartwith row" key={index}>
       <span className="col-2 "> {appointment.appointment_id} </span>
         <span className="col-2 "> {appointment.patient_name} </span>

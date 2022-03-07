@@ -81,7 +81,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link className="linkClass" to={"/home"}>
+                    <Link className="linkClass" to={"/dashboard"}>
                         <i><FiGrid></FiGrid></i>
                         <span className="links_name">Dashboard</span>
                         <span className="tooltip">Dashboard</span>
@@ -89,56 +89,56 @@ const Sidebar = () => {
                     
                 </li>
                 <li className="nav_Item">
-                    <Link to={"/patient"} className="linkClass">
+                    <Link to={"/dashboard/patient"} className="linkClass">
                         <i><FaUserInjured></FaUserInjured></i>
                         <span className="links_name">Patient</span>
                         <span className="tooltip">Patient</span>
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"/Appointment"} className="linkClass">
+                    <Link to={"/dashboard/Appointment"} className="linkClass">
                         <i><FiCalendar></FiCalendar></i>
                         <span className="links_name">Appointment</span>
                         <span className="tooltip">Appointment</span>
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"/prescription"} className="linkClass">
+                    <Link to={"/dashboard/prescription"} className="linkClass">
                         <i><GiMedicines></GiMedicines></i>
                         <span className="links_name">Prescription</span>
                         <span className="tooltip">Prescription</span>
                     </Link>
                 </li>
                 <li className="nav_Item"> 
-                    <Link to={"/assistant"} className="linkClass">
+                    <Link to={"/dashboard/assistant"} className="linkClass">
                         <i><RiNurseFill></RiNurseFill></i>
                         <span className="links_name">Assistants</span>
                         <span className="tooltip">Assistants</span>
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"/materials"} className="linkClass">
+                    <Link to={"/dashboard/materials"} className="linkClass">
                         <i><BsBagDashFill></BsBagDashFill></i>
                         <span className="links_name">Materials</span>
                         <span className="tooltip">Materials</span>
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"/bill"} className="linkClass">
+                    <Link to={"/dashboard/bill"} className="linkClass">
                         <i><RiBillLine></RiBillLine></i>
                         <span className="links_name">Bill</span>
                         <span className="tooltip">Bill</span>
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"/surgery"} className="linkClass">
+                    <Link to={"/dashboard/surgery"} className="linkClass">
                         <i><GiScalpel></GiScalpel></i>
                         <span className="links_name">Surgery</span>
                         <span className="tooltip">Surgery</span>
                     </Link>
                 </li>
                 <li className="nav_Item">
-                    <Link to={"/scan_labs"} className="linkClass">
+                    <Link to={"/dashboard/scan_labs"} className="linkClass">
                         <i><ImLab></ImLab></i>
                         <span className="links_name">Scan & Labs </span>
                         <span className="tooltip">Scan & Labs</span>
@@ -146,7 +146,7 @@ const Sidebar = () => {
                 </li>
 
                 <li className="nav_Item">
-                    <Link to={"/dashbord/setting"} className="linkClass">
+                    <Link to={"/dashboard/dashbord/setting"} className="linkClass">
                         <i><FiSettings></FiSettings></i>
                         <span className="links_name">Settings</span>
                         <span className="tooltip">Settings</span>

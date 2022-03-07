@@ -25,17 +25,17 @@ const Dashboard = () => {
             <Router> 
             <Sidebar/>
                 <Switch>
-                    <Route path="/appointment" component={Appointment} />
-                    <Route path="/surgery" component={Surgery} />
-                    <Route path="/bill" component={Bill} />
-                    <Route path="/prescription" component={Prescripe} />
-                    <Route path="/patient" component={Patient} />
-                    <Route path="/materials" component={Materials}/>
-                    <Route path="/addmaterial" component={Addmaterial}/>
-                    <Route path="/scan_labs" component={Scan_labs}/>
-                    <Route path="/assistant" component={Assistant} />
-                    <Route path="/dashbord/setting" component={Setting}/>
-                    <Route path="/" component={HomeDashboard} />
+                    <Route path="/dashboard/appointment" component={Appointment} />
+                    <Route path="/dashboard/surgery" component={Surgery} />
+                    <Route path="/dashboard/bill" component={Bill} />
+                    <Route path="/dashboard/prescription" component={Prescripe} />
+                    <Route path="/dashboard/patient" component={Patient} />
+                    <Route path="/dashboard/materials" component={Materials}/>
+                    <Route path="/dashboard/addmaterial" component={Addmaterial}/>
+                    <Route path="/dashboard/scan_labs" component={Scan_labs}/>
+                    <Route path="/dashboard/assistant" component={Assistant} />
+                    <Route path="/dashboard/setting" component={Setting}/>
+                    <Route path="/dashboard" exact component={HomeDashboard} />
                     
                   
                 </Switch>
