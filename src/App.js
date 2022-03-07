@@ -20,7 +20,11 @@ function App() {
                 <Route path="/login" component={Login} exact/>
                 <Route path="/signup" component={SignUp} exact/>
                 <Route path="/dashboard" component={Dashboard} exact/>
+                <Route path="/dashboard/:id" component={Dashboard} />
+<<<<<<< HEAD
                 <Route path="/addmaterial" component={Addmaterial} exact/>
+=======
+>>>>>>> 7ddb4bb6ac3d1c5ffc2d0f2bd63130b318f343c5
                 <Route path="/updatematerial" component={Updatematerial} exact/>
             </Switch>
           </Router>

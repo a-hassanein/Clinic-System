@@ -9,7 +9,7 @@ const Assistant = () => {
     const [data, setData] = useState([])
     const getAssistant = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/assistant/assistant/')
+            const response = await axios.get('/assistant/assistant/')
             const { data } = response
             console.log(data)
             setData(data)

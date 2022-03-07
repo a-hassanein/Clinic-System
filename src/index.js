@@ -9,11 +9,18 @@ import '@fortawesome/react-fontawesome'
 import '@fortawesome/free-solid-svg-icons'
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import {Provider} from 'react-redux'
+import store,{Persistor} from './PrescriptionRedux/Store';
+import {PersistGate} from 'redux-persist/integration/react'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={Persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

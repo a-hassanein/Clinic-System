@@ -7,14 +7,21 @@ import {
   HiPlusCircle,
   HiMinusCircle
 } from "react-icons/hi";
+import axios from "axios";
 
 
 
 const Bill = () => {
 
+  const[varible, Setvarible] = useState(0)
+
   const[inputFields, setInputfields] =  useState([
-    { activity:'',price:'' },
+    { activity:'',price:''},
   ])
+
+  const[appointment_idField, setAppointment_idField] =  useState({
+    appointment_id:'' },
+  )
 
 const componentRef = useRef()
 const handlePrint = useReactToPrint({
@@ -22,27 +29,77 @@ const handlePrint = useReactToPrint({
   });
 
 
-const handleChangeInput = (index, event) => {
-  //console.log(index, event.target.name)
-  const values = [...inputFields];
-  values[index][event.target.name] = event.target.value;
-  setInputfields(values); 
-}
+  const handleAppointmentChange = (event) => {
+    event.preventDefault();
+
+    const name = event.target.getAttribute("name");
+    const value = event.target.value;
+
+    const newAppointmentData = { ...appointment_idField };
+    newAppointmentData[name] = value;
+
+    setAppointment_idField(newAppointmentData);
+    console.log('beforeaddddd',varible)
+  };
+
+  const handleChangeInput = (index, event) => {
+    //console.log(index, event.target.name)
+    const values = [...inputFields];
+    values[index][event.target.name] = event.target.value;
+    setInputfields(values); 
+    console.log('input',inputFields)
+  }
+
+  const handleAddFields = () =>{
+    setInputfields([...inputFields, { activity:'',price:'' }])
+    Setvarible(varible+1)
+    console.log('addddd',varible)
+  }
+
+  
+  const handleRemoveFields = (index) => {
+    const values = [...inputFields];
+    values.splice(index, 1);
+    setInputfields(values);
+  }
 
 const handlesubmit = (e) => {
     e.preventDefault()
-    console.log("inputFields", inputFields); 
-}
 
-const handleAddFields = () =>{
-  setInputfields([...inputFields, { activity:'',price:'' }])
-}
+    let allData = []
 
-const handleRemoveFields = (index) => {
-  const values = [...inputFields];
-  values.splice(index, 1);
-  setInputfields(values);
-}
+    const newData = {
+      appointment_id: appointment_idField.appointment_id,
+      activity_name: inputFields[varible].activity,
+      activity_price: inputFields[varible].price,
+    };
+
+
+    const newDatas = [newData];
+
+    console.log('ay7aga',typeof(newDatas))
+
+
+      for(let j in newDatas){
+        console.log('inside fo',newDatas[j])
+      };
+
+    console.log('newdatas',newDatas)
+    setInputfields(newDatas);
+    
+
+    try{
+        axios.post('http://localhost:8000/clinic/bill/', newData).then((response)=>{
+            console.log(response.data)
+        })
+
+    }catch(error){
+        console.log(error)
+    }   
+  };
+
+
+
 
     return (
       <>
@@ -57,7 +114,7 @@ const handleRemoveFields = (index) => {
           <div className="row">
                   <div className="col-lg-12">
                       <label className="form-label">Appointment ID</label>
-                      <input type='text' className='form-control' name="appointment_id"  />
+                      <input type='text' className='form-control' name="appointment_id" value={appointment_idField.appointment_id}  onChange={handleAppointmentChange} />
                   </div>
           </div>
 
@@ -82,7 +139,7 @@ const handleRemoveFields = (index) => {
 
           <div className="row text-center">
               <div className="col-lg-12" style={{marginTop:"30px"}}>
-                  <input type="submit" className="btn prescriptionButton" value="submit" onClick={handlesubmit}/>
+                  <input type="submit" className="btn prescriptionButton" value="submit"/>
               </div>
           </div>
           </form>

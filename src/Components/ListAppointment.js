@@ -15,13 +15,15 @@ const ListAppointment = (props) => {
    
     <ul className="list-group list-group-flush  container-fluid  formPartwith">
        {props.appointments.map((appointment , index) => (
+     
       <li className="list-group-item  h4 formPartwith row" key={index}>
       <span className="col-2 "> {appointment.appointment_id} </span>
         <span className="col-2 "> {appointment.patient_name} </span>
         <span className="col-3 offset-1"> {appointment.appointment_date}</span>
         <span className="col-2 offset-1">{appointment.patient_phone}</span>
         <sapn className="rounded-pill col-2 offset-1"> {appointment.checkup_type} </sapn>
-        <span>
+        <span className="col-2 "> {appointment.patient_id} </span>
+        <span onClick={() =>{props.deleteAppointment(appointment.appointment_id)}}>
           <a
             style={{
               border: "none",
@@ -29,6 +31,7 @@ const ListAppointment = (props) => {
               color: "var(--first_color)",
               fontSize: "28px",
               marginLeft: "5px",
+              
             }}
           >
             <HiMinusCircle></HiMinusCircle>
@@ -39,6 +42,7 @@ const ListAppointment = (props) => {
           type="checkbox"
           value=""
           id="flexCheckDefault"
+          onChange={() =>{props.completedAppointment(appointment.appointment_id)}}
         />
       </li>
       ))}
