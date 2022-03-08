@@ -3,9 +3,13 @@ import axios from "axios";
 import ReadOnlyRow from "./component/ReadOnlyRow";
 import EditableRow from "./component/EditableRow";
 
+import "../../Style/assistant.css"
+
 
 
 const Assistant = () => {
+
+  
 
 
     const [data, setData] = useState([])
@@ -25,20 +29,7 @@ const Assistant = () => {
 
 
 
-    // const [data, setData] = useState([]);
-
-    // useEffect(() => {
-    //     axios.get("http://127.0.0.1:8000/assistant/assistant/")
-    //     .then((res) => {
-    //         setData(res);
-    //     })
-    //     .catch((err) => {
-    //         console.log(err);
-    //     });
-    // }, []);
-
-    //console.log(data.data)
-
+    const [errorMessage, setErrorMessage] = useState('');
 
 
 
@@ -170,47 +161,87 @@ const Assistant = () => {
 
 
 
-
-
-
-
-
-
-
-
-      
-
-
       const handleAddFormSubmit = (event) => {
         event.preventDefault();
-    
-        const newData = {
-          assistant_name: addFormData.name,
-          assistant_email: addFormData.email,
-          assistant_pass: addFormData.pass,
-          assistant_number: addFormData.mobile,
-          assistant_gender: addFormData.gender,
-          assistant_address: addFormData.address,
-          assistant_age: addFormData.age, 
-          doctor: 1,        
-        };
 
-        const newDatas = [...data, newData];
-        
-        setData(newDatas);
+        let name = document.getElementById('name').value;
+        let mobile = document.getElementById('mobile').value;
+        let address = document.getElementById('address').value;
+        let age = document.getElementById('age').value;
+        let email = document.getElementById('email').value;
+        let pass = document.getElementById('pass').value;
+        let gender = document.getElementById('gender').value;
+        //let flag = 0;
+        let err = document.getElementById('error')
+        var mailformat =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-        try{
-            axios.post('http://127.0.0.1:8000/assistant/assistant/', newData).then((response)=>{
-                getAssistant()
-                console.log(response.data)
-            })
+        if(name === null || name === ""){
+            setErrorMessage("name is required")
+            err.style.visibility = "visible"
+        }else if(mobile === null || mobile === ""){
+            setErrorMessage("mobile is required")
+            err.style.visibility = "visible"
+        }else if(isNaN(mobile)){
+            setErrorMessage("mobile should be a number not text")
+            err.style.visibility = "visible"
+        }else if(mobile.length < 11 || mobile.length > 11 ){
+            setErrorMessage("mobile digits should be 11")
+            err.style.visibility = "visible"
+        }else if(age === null || age ===""){
+            setErrorMessage("age is required")
+            err.style.visibility = "visible"
+        }else if(isNaN(age)){
+            setErrorMessage("age should be a number not text")
+        }else if (address === "" || address === null){
+            setErrorMessage("address is required")
+            err.style.visibility = "visible"
+        }else if(email === null || email === ""){
+            setErrorMessage("email is required")
+            err.style.visibility = "visible"
+        }else if(!email.match(mailformat)){
+            setErrorMessage("email should be example@exam.com")
+            err.style.visibility = "visible"
+        }else if(pass === null || pass === ""){
+            setErrorMessage("password is required")
+            err.style.visibility = "visible"
+        }else if (gender === null || gender === ""){
+            setErrorMessage("gender is required")
+            err.style.visibility = "visible"
+        }else {
 
-        }catch(error){
-            console.log(error)
+
+            const newData = {
+                assistant_name: addFormData.name,
+                assistant_email: addFormData.email,
+                assistant_pass: addFormData.pass,
+                assistant_number: addFormData.mobile,
+                assistant_gender: addFormData.gender,
+                assistant_address: addFormData.address,
+                assistant_age: addFormData.age, 
+                doctor: 1,        
+              };
+      
+              const newDatas = [...data, newData];
+              
+              setData(newDatas);
+      
+              try{
+                  axios.post('http://127.0.0.1:8000/assistant/assistant/', newData).then((response)=>{
+                      setErrorMessage('')
+                      err.style.visibility = "hidden"
+                      getAssistant()
+                      console.log(response.data)
+                  })
+      
+              }catch(error){
+                  console.log(error)
+              }
+
+               
+                    
+
         }
 
-
-    
         
       };
 
@@ -220,26 +251,33 @@ const Assistant = () => {
         <>
 
       <section className="home-section">
-          
+      
+     
       <div className="container-fluid text-center" style={{ marginTop: '20px' }}>
                     <h1>Assistant</h1>
                 </div>
+
+
                <div className='container-fluid formPart' >
-               
-                
+
+                  <div align="center" id="error">
+                  <span>{errorMessage}</span>
+                  <br/>
+                  </div> 
                     <form onSubmit={handleAddFormSubmit}>
                     <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Name</label>
                                 <input type='text' className='form-control'
+                                 id="name"
                                  name="name" placeholder={"assisatant name ..."}
                                  onChange={handleAddFormChange}
                                  />
                             </div>
                             <div className="col-lg-6">
                                 <label className="form-label">Mobile No.</label>
-                                <input type='text' className='form-control' name="mobile" placeholder={"assistant number"}
-                                 onChange={handleAddFormChange}
+                                <input type='text' className='form-control' name="mobile" id="mobile" placeholder={"assistant number"}
+                                 onChange={handleAddFormChange} 
                                 />
                             </div>
                         </div>
@@ -247,41 +285,41 @@ const Assistant = () => {
                     <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Gender</label>
-                                <select class="custom-select" id="inputGroupSelect01" name="gender"  onChange={handleAddFormChange} >
-                                    <option value="0">choose your gender</option>
+                                <select class="custom-select" id="inputGroupSelect01" name="gender"  onChange={handleAddFormChange}   id="gender" >
+                                    <option value="">choose your gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
                             </div>
                             <div className="col-lg-6">
                                 <label className="form-label">Age</label>
-                                <input type='text' className='form-control' name="age" placeholder={"assistant age"}  onChange={handleAddFormChange} />
+                                <input type='number' className='form-control' id="age" name="age" placeholder={"assistant age"}  onChange={handleAddFormChange}  />
                             </div>
                         </div>
                      
                         <div className="row">
                             <div className="col-lg-12">
                                 <label className="form-label">Address</label>
-                                <input type='text' className='form-control' name="address" placeholder={"assistant address"}  onChange={handleAddFormChange} />
+                                <input type='text' className='form-control' name="address" id="address" placeholder={"assistant address"}  onChange={handleAddFormChange}  />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-12">
                                 <label className="form-label">Email</label>
-                                <input type='email' className='form-control' name="email" placeholder={"assistant email"}  onChange={handleAddFormChange} />
+                                <input type='email' className='form-control' name="email" id="email" placeholder={"assistant email"}  onChange={handleAddFormChange}  />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-12">
                                 <label className="form-label">Password</label>
-                                <input type='password' className="form-control" name="pass" placeholder={"assistant password"}  onChange={handleAddFormChange} />
+                                <input type='password' className="form-control" name="pass" id="pass" placeholder={"assistant password"}  onChange={handleAddFormChange}  />
                             </div>
                         </div>
                 
                        
                   
                     <div className="row text-center">
-                            <div className="col-lg-12" style={{marginTop:"30px"}}>
+                            <div className="col-lg-12" style={{marginTop:"30px"}} >
                                 <button type="submit" className="btn prescriptionButton">ADD</button>
                             </div>
                         </div>
