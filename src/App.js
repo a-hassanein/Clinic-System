@@ -21,6 +21,7 @@ function App() {
                 <Route path="/signup" component={SignUp} exact/>
                 <Route path="/dashboard" component={Dashboard} exact/>
                 <Route path="/dashboard/:id" component={Dashboard} />
+                <Route path="/addmaterial" component={Addmaterial} exact/>
                 <Route path="/updatematerial" component={Updatematerial} exact/>
             </Switch>
           </Router>

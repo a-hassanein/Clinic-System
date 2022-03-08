@@ -134,7 +134,7 @@ const handleAddSurgeryChange = (event) => {
                         <tbody>
                             {surgeries.map((surgery, index) => (
 
-                                <SurgeryTable surgery={surgery}  index={index} handledeleteSurgery={(surgery_id) =>{handledeleteSurgery(surgery.surgery_id)}}/>
+                                <SurgeryTable surgery={surgery}  index={index} handledeleteSurgery={() =>{handledeleteSurgery(surgery.surgery_id)}}/>
                             )
                             )}
                         </tbody>
