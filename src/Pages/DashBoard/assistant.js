@@ -1,5 +1,7 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, Fragment} from "react";
 import axios from "axios";
+import ReadOnlyRow from "./component/ReadOnlyRow";
+import EditableRow from "./component/EditableRow";
 
 
 
@@ -92,47 +94,56 @@ const Assistant = () => {
 
 
 
+
+      const handleEditClick = (event , resdata) => {
+        event.preventDefault();
+        //console.log(typeof(resdata.assistant_id))
+        setEditDataId(resdata.assistant_id);
+    
+        const formValues = {
+            name: resdata.assistant_name,
+            mobile: resdata.assistant_number,
+            gender: resdata.assistant_gender,
+            address: resdata.assistant_address,
+            email: resdata.assistant_email,
+            pass: resdata.assistant_pass,
+            age: resdata.assistant_age,
+        };
+
+        console.log(formValues)
+    
+        setEditFormData(formValues);
+      };
+
+
       const handleEditFormSubmit = (event) => {
         event.preventDefault();
+
+        try{
+            axios.put(`http://127.0.0.1:8000/assistant/assistant/${editDataId}/` ,  {
+                assistant_name: editFormData.name,
+                assistant_email: editFormData.email,
+                assistant_pass: editFormData.pass,
+                assistant_number: editFormData.mobile,
+                assistant_gender: editFormData.gender,
+                assistant_address: editFormData.address,
+                assistant_age: editFormData.age, 
+                doctor: 1, 
+              }).then((response)=>{
+                getAssistant()
+                console.log(response.data)
+            })
+
+        }catch(error){
+            console.log(error)
+        }
     
-        const editedContact = {
-          assistant_name: editFormData.name,
-          assistant_email: editFormData.email,
-          assistant_pass: editFormData.pass,
-          assistant_number: editFormData.mobile,
-          assistant_gender: editFormData.gender,
-          assistant_address: editFormData.address,
-          assistant_age: editFormData.age, 
-          doctor: 1, 
-        };
-    
-        const newContacts = [...data];
-    
-        const index = data.findIndex((contact) => contact.id === editDataId);
-    
-        newContacts[index] = editedContact;
-    
-        setData(newContacts);
+        //setData(newDatas);
         setEditDataId(null);
       };
 
 
-      const handleEditClick = (event, contact) => {
-        event.preventDefault();
-        setEditDataId(contact.id);
-    
-        const formValues = {
-            name: data.data.assistant_name,
-            mobile: data.data.assistant_number,
-            gender: data.data.assistant_gender,
-            address: data.data.assistant_address,
-            email: data.data.assistant_email,
-            pass: data.data.assistant_pass,
-            age: data.data.assistant_age,
-        };
-    
-        setEditFormData(formValues);
-      };
+  
     
       const handleCancelClick = () => {
         setEditDataId(null);
@@ -303,35 +314,41 @@ const Assistant = () => {
                     </thead>
                     <tbody>
 
-                        {
+                        {/* {
                               data.map((resdata, index) => {
                                 //  console.log(resdata.title);
                                  return (
-                                    <tr key={index}>
-                                    <th scope="row">{resdata.assistant_id}</th>
-                                    <td>{resdata.assistant_name}</td>
-                                    <td>{resdata.assistant_email}</td>
-                                    <td>{resdata.assistant_pass}</td>
-                                    <td>{resdata.assistant_number}</td>
-                                    <td>{resdata.assistant_gender}</td>
-                                    <td>{resdata.assistant_age}</td>
-                                    <td>{resdata.assistant_address}</td>
-                                    <td><button  className="btn " id="btn_material" onClick={() => deleteAssistant(resdata.assistant_id)}>Delete</button></td>
-                                    <td><button  className="btn " id="btn_material">Update</button> </td>
-        
-                                </tr>
-                                 
+
+                                    <ReadOnlyRow  index={index} resdata={resdata}
+                                    handleEditClick={handleEditClick} deleteAssistant={deleteAssistant}/>
+                      
                                  );
                                })
                             
-                        }
+                        } */}
+
+                    {data.map((resdata, index)=> (
+                                <Fragment>
+                                {editDataId === resdata.assistant_id ? (
+                                    <EditableRow
+                                    editFormData={editFormData}
+                                    handleEditFormChange={handleEditFormChange}
+                                    handleCancelClick={handleCancelClick}
+                                    resdata={resdata}
+                                    handleEditFormSubmit={handleEditFormSubmit}
+                                    />
+                                ) : (
+                                    <ReadOnlyRow  index={index} resdata={resdata}
+                                    handleEditClick={handleEditClick} deleteAssistant={deleteAssistant}/>
+                                )}
+                                </Fragment>
+            ))}
                      
                     </tbody>
                 </table>
 
-                </form>
             
-                    
+                </form>
         </section>
         </>
     )
