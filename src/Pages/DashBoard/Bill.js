@@ -102,20 +102,20 @@ const handlesubmit = (e) => {
   };
 
 
-//   const [billDatas, setBillData] = useState([])
-//   const getBillData = async (bill_id) => {
-//     try {
-//         const response = await axios.get(`http://127.0.0.1:8000/bill/bill/${bill_id}/`)
-//         const { data } = response
-//         console.log(data)
-//         setBillData(data)
-//     } catch (err) {
-//         console.log(err)
-//     }
-// }
-// useEffect(() => {
-//   getBillData()
-// }, [])
+  const [billDatas, setBillData] = useState([])
+  const getBillData = async (bill_id) => {
+    try {
+        const response = await axios.get(`http://127.0.0.1:8000/bill/bill/${bill_id}/`)
+        const { data } = response
+        console.log(data)
+        setBillData(data)
+    } catch (err) {
+        console.log(err)
+    }
+}
+useEffect(() => {
+  getBillData()
+}, [])
 
     return (
       <>
