@@ -146,7 +146,7 @@ const Sidebar = () => {
                 </li>
 
                 <li className="nav_Item">
-                    <Link to={"/dashboard/dashbord/setting"} className="linkClass">
+                    <Link to={"/dashboard/setting"} className="linkClass">
                         <i><FiSettings></FiSettings></i>
                         <span className="links_name">Settings</span>
                         <span className="tooltip">Settings</span>
