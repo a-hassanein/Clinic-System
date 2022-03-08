@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
 
-import "../Style/prescription.css";
+import "../Style/AddAppointment.css";
 const AddAppointment = (props) => {
   const [patient_name, setEnteredPatient] = useState("");
   const [appointment_date, setEntereddate] = useState("");
   const [patient_phone, setEnteredphone] = useState("");
   const [checkup_type, setEnteredCheckup] = useState("");
   const [patient_id , setPatientID] = useState("");
+ // const [completed , setCompleted] = useState(false);
+  
 
   const addAppointmentHandler = (event) => {
     event.preventDefault();
@@ -26,7 +28,7 @@ const AddAppointment = (props) => {
       patient_phone ,
       checkup_type,
       patient_id,
-      completed: false ,
+      completed : false ,
      });
     setEnteredPatient("");
     setEntereddate("");
@@ -54,8 +56,8 @@ const AddAppointment = (props) => {
 
   return (
     <>
-      <div className="container-fluid formPart">
-        <form >
+      <div className="container-fluid formPart  ">
+        <form  className="card-body">
           <div className="row">
             <div className="col">
               <label htmlFor="patient" className="form-label">
@@ -111,8 +113,9 @@ const AddAppointment = (props) => {
                 className="form-select"
               >
                 <option>Choose</option>
-                <option value="examination">Examination</option>
-                <option value="re-examination">Re-Examination</option>
+                <option value="Examination">Examination</option>
+                <option value="Re-Examination">Re-Examination</option>
+                <option value="Surgery">Surgery</option>
               </select>
             </div>
           </div>

@@ -13,10 +13,11 @@
     border-radius: 10px;
     box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.10);
     padding-top: 20px;
+   /* transform: translateX(-10%);*/
 }
-.checksize{
-}
-.formPartwith{
+
+
+.formPartwithul{
     margin-top: 100px;
     width:90%;
     color: black;
@@ -24,7 +25,121 @@
     font-weight: 600;
     padding-top: 5px;
 }
-/*input[type="checkbox"]#flexCheckDefault:checked + span {
-    border-color: red;
-  background-color:red;
-}*/
+.listpartli{
+    width:90%;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0.15rem;
+    margin-bottom: 0.5rem;
+    width: 100%;   
+
+    
+   
+}
+.innerbox{
+    width:5%; /* or whatever width you want. */
+    max-width:5%; /* or whatever width you want. */
+    display: inline-block;
+}
+.innerboxcheckup{
+    width:18%; /* or whatever width you want. */
+    max-width:18%; /* or whatever width you want. */
+    display: inline-block;
+
+}
+.innerboxName{
+    width:30%; /* or whatever width you want. */
+    max-width:30%; /* or whatever width you want. */
+    display: inline-block;
+
+}
+.innerboxDate{
+    width:19%; /* or whatever width you want. */
+    max-width:19%; /* or whatever width you want. */
+    display: inline-block;
+
+}
+.innerboxPhone{
+    width:10%; /* or whatever width you want. */
+    max-width:10%; /* or whatever width you want. */
+    display: inline-block;
+}
+.innerboxStatus{
+    width:5%; /* or whatever width you want. */
+    max-width:5%; /* or whatever width you want. */
+    display: inline-block;
+
+}
+
+
+.spanflix{
+    
+     /*   padding: 0;
+        margin: 0;
+        list-style: none;
+        
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;*/
+      
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .spanflix {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+      /*  -webkit-flex-flow: row wrap;*/
+      /*  justify-content: space-around;*/
+    }
+  }
+  
+
+.input_checkbox{
+    accent-color: red;
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2); /* IE */
+   -moz-transform: scale(2); /* FF */
+   -webkit-transform: scale(2); /* Safari and Chrome */
+   -o-transform: scale(2); /* Opera */
+   transform: scale(2);
+   padding: 10px;
+   
+}
+.checkup_type_app{
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--first_color);
+
+}
+.patient__Name_App{
+    font-weight: 600;
+    font-size: 20px;
+   
+
+}
+.to-do-list{
+   
+    
+   
+    
+   
+    
+  
+ 
+  
+    
+  
+}

@@ -47,20 +47,26 @@ const Appointment = (props) => {
   const completedAppointment = async (appointment_id) => {
     try {
       //  console.log(appointmentsList , 'list from checkbox')
-      console.log(appointment_id, "id from checkbox");
+   //   console.log(appointment_id, "id from checkbox");
 
       const appointment = appointmentsList.filter(
         (thisappointment) => thisappointment.appointment_id === appointment_id
       )[0];
       console.log(appointment, "app");
-      appointment.completed = true;
+      appointment.completed = true; 
 
       await axios.put(
         `/appointment/appointment/${appointment_id}/`,
         appointment
-      );
+      ).then((response)=>{
+        getAppointments();
+        console.log(response.data)
+    })
 
-      getAppointments();
+
+   
+    
+    
     } catch (error) {
       console.log(error);
     }
@@ -76,9 +82,7 @@ const Appointment = (props) => {
 
   return (
     <section className="home-section">
-      <div className="container-fluid text-center">
-        <h1 style={{ marginTop: "20px" }}>Appointments</h1>
-      </div>
+   
       <AddAppointment addAppointment={addAppointment} />
       <ListAppointment
         appointments={appointmentsList}
