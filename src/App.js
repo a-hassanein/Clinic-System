@@ -1,5 +1,4 @@
 import './App.css';
-//import { BrowserRouter as Router , Route , Routes } from "react-router-dom";
 import {BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import About from './Pages/About';
@@ -21,10 +20,6 @@ function App() {
                 <Route path="/signup" component={SignUp} exact/>
                 <Route path="/dashboard" component={Dashboard} exact/>
                 <Route path="/dashboard/:id" component={Dashboard} />
-<<<<<<< HEAD
-                <Route path="/addmaterial" component={Addmaterial} exact/>
-=======
->>>>>>> 7ddb4bb6ac3d1c5ffc2d0f2bd63130b318f343c5
                 <Route path="/updatematerial" component={Updatematerial} exact/>
             </Switch>
           </Router>
