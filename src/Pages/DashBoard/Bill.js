@@ -1,6 +1,6 @@
 // import "../../Style/dashpage.css"; 
 import "../../Style/sidebar.css";
-import { useState,useRef } from "react";
+import { useState,useRef,useEffect } from "react";
 import { useReactToPrint } from 'react-to-print';
 import {Link} from "react-router-dom";
 import {
@@ -13,11 +13,10 @@ import axios from "axios";
 
 const Bill = () => {
 
-  const[varible, Setvarible] = useState(0)
 
-  const[inputFields, setInputfields] =  useState([
+  const[inputFields, setInputfields] =  useState(
     { activity:'',price:''},
-  ])
+  )
 
   const[appointment_idField, setAppointment_idField] =  useState({
     appointment_id:'' },
@@ -39,39 +38,47 @@ const handlePrint = useReactToPrint({
     newAppointmentData[name] = value;
 
     setAppointment_idField(newAppointmentData);
-    console.log('beforeaddddd',varible)
   };
 
-  const handleChangeInput = (index, event) => {
-    //console.log(index, event.target.name)
-    const values = [...inputFields];
-    values[index][event.target.name] = event.target.value;
-    setInputfields(values); 
-    console.log('input',inputFields)
+  const handleChangeInput = (event) => {
+
+    event.preventDefault();
+
+    const name = event.target.getAttribute("name");
+    const value = event.target.value;
+
+    const values = { ...inputFields };
+    values[name] = value;
+
+    setInputfields(values);
+    console.log('beforeaddddd',values)
+
+    // const values = [...inputFields];
+    // values[event.target.name] = event.target.value;
+    // setInputfields(values); 
+    // console.log('input',inputFields)
   }
 
-  const handleAddFields = () =>{
-    setInputfields([...inputFields, { activity:'',price:'' }])
-    Setvarible(varible+1)
-    console.log('addddd',varible)
-  }
+  // const handleAddFields = () =>{
+  //   setInputfields([...inputFields, { activity:'',price:'' }])
+  //   Setvarible(varible+1)
+  //   console.log('addddd',varible)
+  // }
 
   
-  const handleRemoveFields = (index) => {
-    const values = [...inputFields];
-    values.splice(index, 1);
-    setInputfields(values);
-  }
+  // const handleRemoveFields = (index) => {
+  //   const values = [...inputFields];
+  //   values.splice(index, 1);
+  //   setInputfields(values);
+  // }
 
 const handlesubmit = (e) => {
     e.preventDefault()
 
-    let allData = []
-
     const newData = {
       appointment_id: appointment_idField.appointment_id,
-      activity_name: inputFields[varible].activity,
-      activity_price: inputFields[varible].price,
+      activity_name: inputFields.activity,
+      activity_price: inputFields.price,
     };
 
 
@@ -79,18 +86,14 @@ const handlesubmit = (e) => {
 
     console.log('ay7aga',typeof(newDatas))
 
-
-      for(let j in newDatas){
-        console.log('inside fo',newDatas[j])
-      };
-
     console.log('newdatas',newDatas)
     setInputfields(newDatas);
     
 
     try{
-        axios.post('http://localhost:8000/clinic/bill/', newData).then((response)=>{
+        axios.post('http://localhost:8000/bill/bill/', newData).then((response)=>{
             console.log(response.data)
+            setInputfields(newDatas);
         })
 
     }catch(error){
@@ -99,7 +102,20 @@ const handlesubmit = (e) => {
   };
 
 
-
+//   const [billDatas, setBillData] = useState([])
+//   const getBillData = async (bill_id) => {
+//     try {
+//         const response = await axios.get(`http://127.0.0.1:8000/bill/bill/${bill_id}/`)
+//         const { data } = response
+//         console.log(data)
+//         setBillData(data)
+//     } catch (err) {
+//         console.log(err)
+//     }
+// }
+// useEffect(() => {
+//   getBillData()
+// }, [])
 
     return (
       <>
@@ -117,25 +133,24 @@ const handlesubmit = (e) => {
                       <input type='text' className='form-control' name="appointment_id" value={appointment_idField.appointment_id}  onChange={handleAppointmentChange} />
                   </div>
           </div>
-
-          { inputFields.map((inputField, index) => (
-            <div className="row" key={index}>
+          
+            <div className="row">
               <div className="col-lg-6">
                   <label className="form-label">Activity</label>
-                  <input type='text' className='form-control' name="activity" value={inputField.activity} onChange={event => handleChangeInput(index, event)}/>
+                  <input type='text' className='form-control' name="activity" value={inputFields.activity} onChange={event => handleChangeInput(event)}/>
               </div>
-              <div className="col-lg-5">
+              <div className="col-lg-6">
                   <label className="form-label">Price</label>
-                  <input type='text' className='form-control' name="price" value={inputField.price} onChange={event => handleChangeInput(index, event)}/>
+                  <input type='text' className='form-control' name="price" value={inputFields.price} onChange={event => handleChangeInput(event)}/>
               </div>
-              <div className="col-lg-1" style={{top:"37px"}}>
+              {/* <div className="col-lg-1" style={{top:"37px"}}>
                   
                   <a style={{border:"none", backgroundColor:"none",color:'var(--first_color)',fontSize:"28px",marginLeft:'5px'}} onClick={() => handleRemoveFields(index)}><HiMinusCircle></HiMinusCircle></a>
                   <a style={{border:"none", backgroundColor:"none",color:'var(--first_color)',fontSize:"28px",marginLeft:'5px'}} onClick={() => handleAddFields()}><HiPlusCircle></HiPlusCircle></a>
                   
-              </div>
+              </div> */}
             </div>
-          ))}
+
 
           <div className="row text-center">
               <div className="col-lg-12" style={{marginTop:"30px"}}>
@@ -163,23 +178,17 @@ const handlesubmit = (e) => {
           </div>
         </div>
 
-        <div className="row text-center" style={{fontSize:"24px", textTransform:"capitalize"}}>
-        { inputFields.map((inputField, index) => {
-              return(
-                  <>
+        {/* <div className="row text-center" style={{fontSize:"24px", textTransform:"capitalize"}}>
+
                   <div className="row">
                       <div className="col-lg-6">
-                          <p className="drugs">{inputField.activity}</p>
+                          <p className="drugs">{billDatas[0].activity}</p>
                       </div>
                       <div className="col-lg-6">
-                          <p className="drugs">{inputField.price}</p>
+                          <p className="drugs">{billDatas[0].price}</p>
                       </div>
                   </div>
-
-                  </>
-              )
-          })}
-        </div>
+        </div> */}
         </div>
         <div className="container-fluid presc-button-container" >
                     <div className="row text-center">

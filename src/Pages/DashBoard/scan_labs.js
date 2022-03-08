@@ -1,8 +1,12 @@
 import React from "react";
 import "../../Style/scan_lab.css";
-import { Link } from "react-router-dom";
+import { Link , Switch ,Route,Router} from "react-router-dom";
 import { useState, useRef } from "react";
 import { useReactToPrint } from 'react-to-print';
+import {
+    AiFillStar
+} from "react-icons/ai";
+import ScanFav from './ScanFav'
 const Labs = [
     {
         id: 1,
@@ -135,6 +139,8 @@ function Scan_labs() {
 
         <>
             <section className='home-section' style={{ marginTop: '20px' }} >
+            
+
                 <div className="container-fluid text-center">
                     <h1>Scan & Labs</h1>
                 </div>
@@ -154,11 +160,16 @@ function Scan_labs() {
                             </div>
 
                             <div className="row">
-                                <div className="col-lg-12">
-                                    <label className="form-label">Doctor Name</label>
-                                    <input type='text' className='form-control' name="doctorname" required />
+                                <div className="col-lg-6">
+                                    <label className="form-label">Patient Age</label>
+                                    <input type='number' className='form-control' name="patientage" required  />
+                                </div>
+                                <div className="col-lg-6">
+                                    <label className="form-label">Appointment ID </label>
+                                    <input type='text' className='form-control' name="appointmentid" required />
                                 </div>
                             </div>
+
                             <div className="row">
                                 <div className="col-lg-6">
                                     <label className="form-label">Lab Name</label>
@@ -232,9 +243,10 @@ function Scan_labs() {
                                     </div>
                                 </div> */}
                                 <div className="align-items-center text-center">
-                            <button type="submit" id="submitbtn" style={{ marginTop: "20px", width: "200px" }} className="btn align-items-center">Submit</button>
+                            <button type="submit" id="submitbtn" style={{ marginTop: "20px", width: "200px" }} className="btn align-items-center">Add</button>
                             </div>
                         </form>
+                    <Link to={"/dashboard/scan_labs/addfav"} className="btn" id="submitbtn" style={{ width: "45px", fontSize: "10px",float: "right" ,marginBottom: "25px" }}><AiFillStar style={{fontSize: "20px" }}></AiFillStar></Link>
                     </div>
                     <div className="container prescriptionPart" ref={componentRef}>
                         <div className="row  doctor-presc-info">
@@ -300,7 +312,6 @@ function Scan_labs() {
             </div>
 
         </section >
-
         </>
 
 
