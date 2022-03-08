@@ -8,8 +8,8 @@ import Home from './Components/Home';
 import SignUp from './Pages/signup';
 import Login from './Pages/login';
 import Dashboard from './Pages/DashBoard/Dashboard'
-import Addmaterial from './Pages/DashBoard/addmaterial'
-import Updatematerial from './Pages/DashBoard/updatematerial'
+// import Addmaterial from './Pages/DashBoard/addmaterial'
+// import Updatematerial from './Pages/DashBoard/updatematerial'
 function App() {
   return (
           <>
@@ -21,7 +21,7 @@ function App() {
                 <Route path="/signup" component={SignUp} exact/>
                 <Route path="/dashboard" component={Dashboard} exact/>
                 <Route path="/dashboard/:id" component={Dashboard} />
-                <Route path="/updatematerial" component={Updatematerial} exact/>
+                {/* <Route path="/updatematerial" component={Updatematerial} exact/> */}
             </Switch>
           </Router>
 
