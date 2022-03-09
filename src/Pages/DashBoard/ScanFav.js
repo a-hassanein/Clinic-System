@@ -49,7 +49,7 @@ function ScanFav() {
         e.preventDefault()
     
         const newData = {
-            Lab_name: favscans.favscan_name,
+            Lab_name: favlabs.favlab_name,
         };
         const newDatas = [...favlabspost,newData];
     
