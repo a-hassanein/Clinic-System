@@ -1,9 +1,11 @@
 // import "../../Style/dashpage.css";
-import { useState,useRef,useEffect } from "react";
+import { useState,useRef,useEffect,Fragment } from "react";
 import { useReactToPrint } from 'react-to-print';
 import {Link} from "react-router-dom";
 import SurgeryTable from "../../Components/SurgeryTable";
 import axios from "axios";
+import SurgeryReadOnlyRow from "./component/sergeryReadOnly";
+import EdiSurgerytableRow from "./component/EditSurgeryTableRow";
 
 
 const Surgery = () => {
@@ -29,6 +31,71 @@ const [addSurgeryData, setAddSurgeryData] = useState({
     surgery_description: "",
 });
 
+const [editSurgeryData, setEditSurgeryData] = useState({
+  surgery: "",
+  price: "",
+  surgery_description: "",
+});
+
+const [editSurgeryID, seteditSurgeryID] = useState(null);
+
+const handleEditSurgeryChange = (event) => {
+  event.preventDefault();
+
+  const name = event.target.getAttribute("name");
+  const value = event.target.value;
+
+  const newSurgeryData = { ...editSurgeryData };
+  newSurgeryData[name] = value;
+
+  setEditSurgeryData(newSurgeryData);
+};
+
+const handleEditSurgerySubmit = (event) => {
+  event.preventDefault();
+
+  const newData = {
+    surgery_name: editSurgeryData.surgery,
+    surgery_price: editSurgeryData.price,
+    surgery_description: editSurgeryData.surgery_description,    
+  };
+
+  const newDatas = [newData];
+  
+  setSurgeries(newDatas);
+
+  try{
+      axios.put(`http://127.0.0.1:8000/surgery/surgery/${editSurgeryID}/`, newData).then((response)=>{
+          getSurgeries()
+          console.log(response.data)
+
+      })
+
+  }catch(error){
+      console.log(error)
+  }
+  seteditSurgeryID(null);
+};
+
+const handleEditClick = (event , resdata) => {
+  event.preventDefault();
+  //console.log(typeof(resdata.assistant_id))
+  seteditSurgeryID(resdata.surgery_id);
+
+  const formValues = {
+      surgery: resdata.surgery_name,
+      price: resdata.surgery_price,
+      surgery_description: resdata.surgery_description,
+  };
+
+  console.log(formValues)
+
+  setEditSurgeryData(formValues);
+};
+
+const handleCancelClick = () => {
+  seteditSurgeryID(null);
+};
 
 const handleAddSurgeryChange = (event) => {
     event.preventDefault();
@@ -119,7 +186,7 @@ const handleAddSurgeryChange = (event) => {
                         <button className="btn" id="searchbtn" type="submit">Search</button>
                     </form>
         </div>
-        
+        <form onSubmit={handleEditSurgerySubmit}>
         <table class="table" id="table_container"> 
                         <thead>
                             <tr>
@@ -132,13 +199,32 @@ const handleAddSurgeryChange = (event) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {surgeries.map((surgery, index) => (
+
+                        {surgeries.map((resdata, index)=> (
+                                <Fragment>
+                                {editSurgeryID === resdata.surgery_id ? (
+                                    <EdiSurgerytableRow
+                                    editSurgeryData={editSurgeryData}
+                                    handleEditFormChange={handleEditSurgeryChange}
+                                    handleCancelClick={handleCancelClick}
+                                    resdata={resdata}
+                                    handleEditFormSubmit={handleEditSurgerySubmit}
+                                    index={index}
+                                    />
+                                ) : (
+                                    <SurgeryReadOnlyRow  index={index} resdata={resdata}
+                                    handleEditClick={handleEditClick} handledeleteSurgery={handledeleteSurgery}/>
+                                )}
+                                </Fragment>
+            ))}
+                            {/* {surgeries.map((surgery, index) => (
 
                                 <SurgeryTable surgery={surgery}  index={index} handledeleteSurgery={() =>{handledeleteSurgery(surgery.surgery_id)}}/>
                             )
-                            )}
+                            )} */}
                         </tbody>
                     </table>
+                    </form>
         </div>
       </>
     );
