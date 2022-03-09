@@ -5,6 +5,12 @@ import Axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { adddrug } from "../../PrescriptionRedux/Action";
 import PatientTable from "../../Components/PatientTable";
+import { Link , Switch ,Route,Router} from "react-router-dom";
+import {
+    AiFillStar
+} from "react-icons/ai";
+import "../../Style/scan_lab.css";
+
 
 
 
@@ -199,7 +205,7 @@ const Prescripe = () => {
                             </div>
                         </div>
                     </form>
-
+                    <Link to={"/dashboard/prescription/drugfav"} className="btn" id="submitbtn" style={{ width: "45px", fontSize: "10px",float: "right" ,marginBottom: "25px" }}><AiFillStar style={{fontSize: "20px" }}></AiFillStar></Link>
                 </div>
                 <div className="container prescriptionPart"  ref={componentRef}>
                     <div className="row  doctor-presc-info">
@@ -268,47 +274,7 @@ const Prescripe = () => {
                         </div>
                     </div>
                 </div>
-                <button className="btn btn-danger" onClick={addfav}>add</button>
                 
-                  <table class="table" id="table_container">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Drug Name </th>
-                                <th scope="col">Dose</th>
-                                <th scope="col">Dosage Form</th>
-                                <th scope="col">Frequency</th>
-                                <th scope="col">Duration</th>
-                                <th scope="col">No of days</th>
-                                <th scope="col">Food Relation</th>
-                                <th scope="col">Instructions</th>
-
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {favdrugs.map((favdrug, index) => (
-                                  <tr>
-
-                                  <td>
-                                    {index+1}
-                                  </td>
-                                  <td>{favdrug}</td>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                    
-                                </tr>
-
-                            )
-                            )}
-                        </tbody>
-
-                    </table>
                 
             </section>
 
