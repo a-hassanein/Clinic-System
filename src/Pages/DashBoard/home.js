@@ -34,6 +34,10 @@ import {
     BiLogOut
   } from "react-icons/bi";
 
+import {
+    IoMdAnalytics
+} from "react-icons/io";
+
 const HomeDashboard = () => {
 
     return (
@@ -64,7 +68,7 @@ const HomeDashboard = () => {
             <Link to={"/dashboard/prescription"} className='cardLink'>
                 <div className="card">
                     <div className="content">
-                    <i className="iconstyle"><GiMedicines style={{fontSize: '60px' ,color:"#528298"}}></GiMedicines></i>
+                    <i className="iconstyle"><GiMedicines style={{fontSize: '60px' ,color:"#528298"}}></GiMedicines></i> 
                         <div className="contentBx">
                             <h3>Prescription</h3>
                         </div>
@@ -131,7 +135,19 @@ const HomeDashboard = () => {
                 </div>
             </Link>
 
-            <Link to={"/dashboard/dashbord/setting"} className='cardLink'>
+            <Link to={"/dashboard/analytics"} className='cardLink'>
+                <div className="card">
+                    <div className="content">
+                        <i className="iconstyle"><IoMdAnalytics style={{fontSize: '60px' ,color:"#528298"}}></IoMdAnalytics></i>
+                        <div className="contentBx">
+                            <h3>Analytics</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </Link>
+
+            <Link to={"/dashboard/setting"} className='cardLink'>
                 <div className="card">
                     <div className="content">
                         <i className="iconstyle"><FiSettings style={{fontSize: '60px' ,color:"#528298"}}></FiSettings></i>

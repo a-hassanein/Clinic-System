@@ -1,5 +1,6 @@
 .formPart{
     margin-top: 100px;
+    padding-bottom: 28px;
     width:90%;
     color:var(--first_color);
     font-size: 20px;

@@ -16,7 +16,7 @@ import Setting from '../DashBoard/setting'
 import ScanFav from '../DashBoard/ScanFav'
 import Drugfav from './Drugfav'
 import Scan_labs from '../DashBoard/scan_labs';
-
+import Analytics from '../DashBoard/Analytics';
 
 
 
@@ -37,6 +37,7 @@ const Dashboard = () => {
                     <Route path="/dashboard/addmaterial" component={Addmaterial}/>
                     <Route path="/dashboard/scan_labs" exact component={Scan_labs}/>
                     <Route path="/dashboard/assistant" component={Assistant} />
+                    <Route path="/dashboard/analytics" component={Analytics} />
                     <Route path="/dashboard/setting" component={Setting}/>
                     <Route path="/dashboard/scan_labs/addfav" component={ScanFav}/> 
                     <Route path='/dashboard/prescription/drugfav' component={Drugfav} />
