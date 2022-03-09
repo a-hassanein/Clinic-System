@@ -13,7 +13,9 @@ import axios from "axios";
 
 const Bill = () => {
 
+  let sum=0
 
+  const[data, setData] =  useState([])
   const[inputFields, setInputfields] =  useState(
     { activity:'',price:''},
   )
@@ -82,18 +84,19 @@ const handlesubmit = (e) => {
     };
 
 
-    const newDatas = [newData];
+    const newDatas = [...data,newData];
 
     console.log('ay7aga',typeof(newDatas))
 
     console.log('newdatas',newDatas)
-    setInputfields(newDatas);
+    setData(newDatas);
     
 
     try{
-        axios.post('http://localhost:8000/bill/bill/', newData).then((response)=>{
+        axios.post('http://localhost:8000/bill/billpost', newData).then((response)=>{
             console.log(response.data)
-            setInputfields(newDatas);
+            setData(newDatas);
+            getBillData()
         })
 
     }catch(error){
@@ -103,19 +106,19 @@ const handlesubmit = (e) => {
 
 
   const [billDatas, setBillData] = useState([])
-  const getBillData = async (bill_id) => {
+  const getBillData = async () => {
     try {
-        const response = await axios.get(`http://127.0.0.1:8000/bill/bill/${bill_id}/`)
+        const response = await axios.get(`http://127.0.0.1:8000/bill/bill/${appointment_idField.appointment_id}`)
         const { data } = response
         console.log(data)
-        setBillData(data)
+        setData(data)
     } catch (err) {
         console.log(err)
     }
 }
-useEffect(() => {
-  getBillData()
-}, [])
+// useEffect(() => {
+//   getBillData()
+// }, [])
 
     return (
       <>
@@ -178,17 +181,26 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* <div className="row text-center" style={{fontSize:"24px", textTransform:"capitalize"}}>
-
-                  <div className="row">
-                      <div className="col-lg-6">
-                          <p className="drugs">{billDatas[0].activity}</p>
-                      </div>
-                      <div className="col-lg-6">
-                          <p className="drugs">{billDatas[0].price}</p>
-                      </div>
+        <div className="row text-center" style={{fontSize:"24px", textTransform:"capitalize"}}>
+                {data.map((resdata,index)=>(
+                  <div className="row" key={index}>
+                        <div className="col-lg-6">
+                            <p className="drugs">{resdata.activity_name}</p>
+                        </div>
+                        <div className="col-lg-6">
+                            <p className="drugs">{resdata.activity_price}</p>
+                            <p style={{visibility:"hidden"}}> {sum = sum + resdata.activity_price} </p>
+                        </div>
                   </div>
-        </div> */}
+                ))}
+                <div className="row" >
+                  <div className="col-lg-12">
+                    <hr/>
+                    <p className="drugs"><b>Total Price</b> {sum}</p>
+                  </div>
+                </div>
+
+        </div>
         </div>
         <div className="container-fluid presc-button-container" >
                     <div className="row text-center">

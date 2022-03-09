@@ -186,6 +186,9 @@ const handleAddSurgeryChange = (event) => {
                         <button className="btn" id="searchbtn" type="submit">Search</button>
                     </form>
         </div>
+        <div className="container-fluid">
+          <div className="row">
+          <div className="col-12">
         <form onSubmit={handleEditSurgerySubmit}>
         <table class="table" id="table_container"> 
                         <thead>
@@ -225,6 +228,9 @@ const handleAddSurgeryChange = (event) => {
                         </tbody>
                     </table>
                     </form>
+                    </div>
+                    </div>
+                    </div>
         </div>
       </>
     );
