@@ -40,10 +40,6 @@ function Scan_labs() {
         getScans()
   }, [])
 
-  const [addfield, setAddfield] = useState({
-    patientlab: "",
-    patientscan: "",
-});
 
   const [labscans, setLabscans] = useState([])
   const [addLabData, setAddLabData] = useState({

@@ -330,6 +330,10 @@ const Assistant = () => {
                 </div>
 
 
+                <div className="container-fluid">
+                <div className="row">
+                <div className="col-12">
+
                 <form onSubmit={handleEditFormSubmit}>
 
                 
@@ -384,9 +388,10 @@ const Assistant = () => {
                      
                     </tbody>
                 </table>
-
-            
                 </form>
+                </div>
+                    </div>
+                    </div>
         </section>
         </>
     )
