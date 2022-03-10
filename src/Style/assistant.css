@@ -2,4 +2,7 @@
     visibility: hidden;
     background-color:#BCD9E6;
     color: black;
+    border-radius: 12px;
+    padding: 5px;
+    width: 100%;
 }
