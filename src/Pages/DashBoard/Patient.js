@@ -8,6 +8,15 @@ import AddPatient from "../../Components/AddPatient";
 import axios from "axios";
 function Patient() {
     const [patients, setPatients] = useState([])
+    // const [addPatientsData, setPatientsData] = useState({
+    //     name: "",
+    //     mobile: "",
+    //     gender: "",
+    //     address: "",
+    //     email: "",
+    //     pass: "",
+    //     age: "",
+    // });
     const getPatients = async () => {
         try {
             const response = await axios.get('/patient/patient/')
@@ -21,26 +30,49 @@ function Patient() {
     useEffect(() => {
         getPatients()
     }, [])
-    const addPatient = async newpatient => {
-        try {
-            console.log(newpatient)
-            await axios.post('/patient/patient/' , {
-                "patient_phone": newpatient.patient_phone,
-                "patient_name":  newpatient.patient_name,
-                "patient_gender": newpatient.patient_gender,
-                "current_disease": newpatient.current_disease,
-                "patient_email": newpatient.patient_email,
-                "patient_age": newpatient.patient_age,
-                "patient_address": newpatient.patient_address,
-                "doctor": newpatient.doctor,
-                "assistant": newpatient.assistant
-            } )
-            getPatients()
+    // const handleAddPatientChange = (event) => {
+    //     event.preventDefault();
+    
+    //     const name = event.target.getAttribute("name");
+    //     const value = event.target.value;
+    
+    //     const newFormData = { ...addPatientsData };
+    //     newFormData[name] = value;
+    
+    //     setaddPatientsData(newFormData);
+    //   };
 
-        } catch (err) {
-            console.log(err)
-        }
-    }
+    //   const handleAddFormSubmit = (event) => {
+    //     event.preventDefault();
+    
+    //     const newData = {
+    //       assistant_name: addPatientsData.name,
+    //       assistant_email: addPatientsData.email,
+    //       assistant_pass: addPatientsData.pass,
+    //       assistant_number: addPatientsData.mobile,
+    //       assistant_gender: addPatientsData.gender,
+    //       assistant_address: addPatientsData.address,
+    //       assistant_age: addPatientsData.age, 
+    //       doctor: 1,        
+    //     };
+
+    //     const newDatas = [...data, newData];
+        
+    //     setData(newDatas);
+
+    //     try{
+    //         axios.post('http://127.0.0.1:8000/patient/patient/', newData).then((response)=>{
+    //             getPatients()
+    //             console.log(response.data)
+    //         })
+
+    //     }catch(error){
+    //         console.log(error)
+    //     }
+
+    // }
+    
+    
   
 
     return (
@@ -49,7 +81,7 @@ function Patient() {
 
                 <div>
 
-                    <AddPatient  addPatient={ addPatient }/>
+                    <AddPatient />
                     <div className="container-fluid text-center">
                         <h1>All Patients</h1>
                     </div>
