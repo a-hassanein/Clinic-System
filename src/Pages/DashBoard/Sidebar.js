@@ -38,6 +38,10 @@ import {
     BiLogOut
   } from "react-icons/bi";
 
+import {
+    IoMdAnalytics
+} from "react-icons/io";
+
 const Sidebar = () => {
     const [ sidebardef ,setBtn1 ] =useState()   
 
@@ -142,6 +146,14 @@ const Sidebar = () => {
                         <i><ImLab></ImLab></i>
                         <span className="links_name">Scan & Labs </span>
                         <span className="tooltip">Scan & Labs</span>
+                    </Link>
+                </li>
+
+                <li className="nav_Item">
+                    <Link to={"/dashboard/analytics"} className="linkClass">
+                        <i><IoMdAnalytics></IoMdAnalytics></i>
+                        <span className="links_name">Analytics</span>
+                        <span className="tooltip">Analytics</span>
                     </Link>
                 </li>
 

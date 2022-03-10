@@ -14,6 +14,7 @@ import store,{Persistor} from './PrescriptionRedux/Store';
 import {PersistGate} from 'redux-persist/integration/react'
 
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

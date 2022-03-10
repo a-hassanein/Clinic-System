@@ -29,7 +29,7 @@ const ListAppointment = (props) => {
               style={{
                 border: "none",
                 backgroundColor: "none",
-                color: "black",
+                color: "var(--first_color)",
                 fontSize: "28px",
                 marginLeft: "5px",
               }}

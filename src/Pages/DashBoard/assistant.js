@@ -260,10 +260,12 @@ const Assistant = () => {
 
                <div className='container-fluid formPart' >
 
-                  <div align="center" id="error">
+                
+                  <div align="center" className="col-12 text-center" id="error" style={{marginLeft:"auto" ,marginRight:"auto"}}>
                   <span>{errorMessage}</span>
                   <br/>
-                  </div> 
+                  </div>
+                
                     <form onSubmit={handleAddFormSubmit}>
                     <div className="row">
                             <div className="col-lg-6">
