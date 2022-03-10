@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import  { useState, useEffect} from "react";
+import axios from "axios";
 import {
     LineChart,
     Line,
@@ -14,40 +16,106 @@ import {
   } from 'recharts';
   import '../../Style/analytics.css';
 const Analytics = () => {
+
+  const [dataAnalytics, setData] = useState([])
+  const getAnalytics = async () => {
+      try {
+          const response = await axios.get('/analytics/analytics')
+          const { data } = response
+          console.log(data)
+          setData(data)
+      } catch (err) {
+          console.log(err)
+      }
+  }
+  useEffect(() => {
+    getAnalytics()
+}, [])
+
+  //  let list = []
+  //  let sum = 0
+  //  for(let i = 0 ; i < 12; i++){
+  //    for(let j = 0 ; j < dataAnalytics.length ; j++){
+  //         if (i === dataAnalytics[j]){
+  //            list[i+1] = sum + 1
+  //         }      
+  //    }
+  //    sum = 0
+  //  }
+
+  function getOccurrence(array, value) {
+    var count = 0;
+    array.forEach((v) => (v === value && count++));
+    return count;
+}
+
+   console.log(getOccurrence(dataAnalytics , 3))
+
+  
+
+  //  console.log("---------------------------->",list)
+
+
+
     const data = [
         {
-          name: 'Page A',
-          pv: 1500
+          name: 'Jan',
+          pv: getOccurrence(dataAnalytics , 1)
           
         },
         {
-          name: 'Page B',
-          pv: 4500
+          name: 'Feb',
+          pv: getOccurrence(dataAnalytics , 2)
           
         },
         {
-          name: 'Page C',
-          pv: 500
+          name: 'March',
+          pv: getOccurrence(dataAnalytics , 3)
           
         },
         {
-          name: 'Page D',
-          pv: 6000
+          name: 'April',
+          pv: getOccurrence(dataAnalytics , 4)
           
         },
         {
-          name: 'Page E',
-          pv: 1961
+          name: 'May',
+          pv: getOccurrence(dataAnalytics , 5)
           
         },
         {
-          name: 'Page F',
-          pv: 350
+          name: 'June',
+          pv: getOccurrence(dataAnalytics , 6)
           
         },
         {
-          name: 'Page G',
-          pv: 1500
+          name: 'July',
+          pv: getOccurrence(dataAnalytics , 7)
+          
+        },
+        {
+          name: 'Aug',
+          pv: getOccurrence(dataAnalytics , 8)
+          
+        },
+        {
+          name: 'Sep',
+          pv: getOccurrence(dataAnalytics , 9)
+          
+        },
+        {
+          name: 'Oct',
+          pv: getOccurrence(dataAnalytics , 10)
+          
+        },
+        {
+          name: 'Nov',
+          pv: getOccurrence(dataAnalytics , 11)
+          
+        },
+        {
+          name: 'Des',
+          pv: getOccurrence(dataAnalytics , 12)
           
         },
       ];
