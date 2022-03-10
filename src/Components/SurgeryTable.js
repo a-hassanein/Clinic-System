@@ -11,7 +11,7 @@ function SurgeryTable({ surgery ,index, handledeleteSurgery }) {
               <td>{ surgery.surgery_name }</td>
               <td>{ surgery.surgery_price}</td>
               <td>{ surgery.surgery_description}</td>
-              <td><a href="/updatematerial" className="btn " id="btn_material">Update</a> </td>
+              <td><a href="#" className="btn " id="btn_material">Update</a> </td>
               <td><span onClick={handledeleteSurgery}><a className="btn " id="btn_material">Delete</a></span></td>
               
 

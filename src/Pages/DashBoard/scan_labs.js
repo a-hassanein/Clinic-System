@@ -1,139 +1,100 @@
 import React from "react";
 import "../../Style/scan_lab.css";
 import { Link , Switch ,Route,Router} from "react-router-dom";
-import { useState, useRef } from "react";
+import { useState, useRef,useEffect } from "react";
 import { useReactToPrint } from 'react-to-print';
 import {
     AiFillStar
 } from "react-icons/ai";
 import ScanFav from './ScanFav'
-const Labs = [
-    {
-        id: 1,
-        selected: false,
-        name: "lab1",
-    },
-    {
-        id: 2,
-        selected: false,
-        name: "lab2",
+import axios from "axios";
 
-    },
-    {
-        id: 3,
-        selected: false,
-        name: "lab3",
-
-    },
-    {
-        id: 4,
-        selected: true,
-        name: "lab4",
-
-    },
-    {
-        id: 5,
-        selected: false,
-        name: "lab5",
-
-    },
-];
 function Scan_labs() {
-    const [labs, setLabs] = useState([{
-        patientname: "",
-        patientmobile: "",
-        doctorname: "",
-        scanname: "",
-        labname: "",
-    }])
-
-    const [patient, setPatient] = useState({
-        patientname: "",
-    })
-
-    const patientValidate = (e) => {
-        if (e.target.name === 'patientname') {
-            setPatient({
-                ...patient,
-                patientname: e.target.value
-            })
+    const [labs, setLabs] = useState([])
+    const getLabs = async () => {
+        try {
+            const response = await axios.get('http://127.0.0.1:8000/favlabs/favlabs/')
+            const { data } = response
+            console.log(data)
+            setLabs(data)
+        } catch (err) {
+            console.log(err)
         }
     }
+    useEffect(() => {
+        getLabs()
+  }, [])
 
+  const [scans, setScans] = useState([])
+    const getScans = async () => {
+        try {
+            const response = await axios.get('http://127.0.0.1:8000/favlabs/favscans/')
+            const { data } = response
+            console.log(data)
+            setScans(data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    useEffect(() => {
+        getScans()
+  }, [])
+
+
+  const [labscans, setLabscans] = useState([])
+  const [addLabData, setAddLabData] = useState({
+    patientname: "",
+    patientmobile: "",
+    patientage: "",
+    appointmentid: "",
+    patientlab: "",
+    patientscan: "",
+    activity: "",
+});
+
+
+const handleAddBillChange = (event) => {
+    event.preventDefault();
+    
+    const name = event.target.getAttribute("name");
+    const value = event.target.value;
+
+    const newLabData = { ...addLabData };
+    newLabData[name] = value;
+    setAddLabData(newLabData);
+  };
+  console.log("add data ",addLabData)
+
+
+  const handleAddLabSubmit = (event) => {
+    event.preventDefault();
+    // if(event.target.name==="patientlab"){
+    //     setAddLabData({...addLabData,activity: event.target.value})
+    // }
+    const newData = {
+      appointment_id: addLabData.appointmentid,
+      Lab_name: document.getElementById("avtivityID").value,    
+    };
+
+    const newDatas = [...labscans, newData];
+    
+    setLabscans(newDatas);
+
+    try{
+        console.log(document.getElementById("avtivityID").value)
+        axios.post('http://127.0.0.1:8000/labs/labs/', newData).then((response)=>{
+            console.log(response.data)
+        })
+
+    }catch(error){
+        console.log(error)
+    }
+  };
 
     const componentRef = useRef()
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
     });
-
-
-    const handlesubmit = (e) => {
-        e.preventDefault()
-        setLabs([...labs, {
-            scanname: e.target[2].value,
-            labname: e.target[2].value,
-
-
-        }])
-
-    }
-    //     constructor(props) {
-    //       super(props);
-    //       this.state = {
-    //         List: Labs,
-    //         MasterChecked: false,
-    //         SelectedList: [],
-    //       };
-    //     }   
-    //    onMasterCheck (e) {
-    //         let tempList = this.state.List;
-    //         // Check/ UnCheck All Items
-    //         tempList.map((lab) => (lab.selected = e.target.checked));
-
-    //         //Update State
-    //         this.setState({
-    //             MasterChecked: e.target.checked,
-    //             List: tempList,
-    //             SelectedList: this.state.List.filter((e) => e.selected),
-    //         });
-    //     }
-    //     onItemCheck  (e, item) {
-    //         let tempList = this.state.List;
-    //         tempList.map((lab) => {
-    //             if (lab.id === item.id) {
-    //                 lab.selected = e.target.checked;
-    //             }
-    //             return lab;
-    //         });
-    //         const totalItems = this.state.List.length;
-    //         const totalCheckedItems = tempList.filter((e) => e.selected).length;
-
-    //         // Update State
-    //         this.setState({
-    //             MasterChecked: totalItems === totalCheckedItems,
-    //             List: tempList,
-    //             SelectedList: this.state.List.filter((e) => e.selected),
-    //         });
-    //     }
-
-    //     // Event to get selected rows(Optional)
-    //      getSelectedRows (){
-    //         this.setState({
-    //             SelectedList: this.state.List.filter((e) => e.selected),
-    //         });
-    //     }
-
-    // patientValidate (e) {
-    //     if (e.target.name === 'patientname') {
-    //         setPatient({
-    //             ...patient,
-    //             patientname: e.target.value
-    //         })
-    //     }
-    // }
-
-
-
 
     return (
 
@@ -147,101 +108,59 @@ function Scan_labs() {
                 <div>
 
                     <div className='container-fluid  formcontainer' >
-                        <form method="post" onSubmit={(e) => { handlesubmit(e) }}>
+                        <form onSubmit={handleAddLabSubmit}>
                             <div className="row">
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Name</label>
-                                    <input type='text' className='form-control' name="patientname" required onChange={(e) => { patientValidate(e) }} />
+                                    <input type='text' className='form-control' name="patientname" required onChange={handleAddBillChange}/>
                                 </div>
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Phone Number </label>
-                                    <input type='text' className='form-control' name="patientmobile" required />
+                                    <input type='text' className='form-control' name="patientmobile" required onChange={handleAddBillChange}/>
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Age</label>
-                                    <input type='number' className='form-control' name="patientage" required  />
+                                    <input type='number' className='form-control' name="patientage" required  onChange={handleAddBillChange}/>
                                 </div>
                                 <div className="col-lg-6">
                                     <label className="form-label">Appointment ID </label>
-                                    <input type='text' className='form-control' name="appointmentid" required />
+                                    <input type='text' className='form-control' name="appointmentid" required onChange={handleAddBillChange}/>
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="col-lg-6">
                                     <label className="form-label">Lab Name</label>
-                                    <select className="form-select">
-                                        <option value="1">Lab1</option>
-                                        <option value="2">Lab2</option>
-                                        <option value="2">Lab3</option>
-                                        <option value="3">Lab4</option>
-                                        <option value="4">Lab5</option>
+                                    <select className="form-select" name="patientlab" onChange={handleAddBillChange}>
+                                            <option value="0">choose Lab</option>
+                                        {labs.map((lab) => (
+                                            <option value={ lab.Lab_name }>{ lab.Lab_name }</option>
+                                        ))}
                                     </select>
                                 </div>
                                 <div className="col-lg-6">
                                     <label className="form-label">Scan Name</label>
-                                    <select className="form-select" >
-                                        <option value="1">Scan1</option>
-                                        <option value="2">Scan2</option>
-                                        <option value="2">Scan3</option>
-                                        <option value="3">Scan4</option>
-                                        <option value="4">Scan5</option>
+                                    <select className="form-select" name="patientscan" onChange={handleAddBillChange}>
+                                            <option value="0">choose Scan</option>
+                                        {scans.map((scan) => (
+                                            <option value={ scan.Scan_name }>{ scan.Scan_name }</option>
+                                        ))}
                                     </select>
                                 </div>
                             </div>
-                            {/* <div className="col-md-12">
-                                    <table className="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">
-                                                    <input
-                                                        type="checkbox"
-                                                        className="form-check-input"
-                                                        checked={this.state.MasterChecked}
-                                                        id="mastercheck"
-                                                        onChange={(e) => this.onMasterCheck(e)}
-                                                    />
-                                                </th>
-                                                <th scope="col"> Lab Name</th>
-                                               
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {this.state.List.map((user) => (
-                                                <tr key={user.id} className={user.selected ? "selected" : ""}>
-                                                    <th scope="row">
-                                                        <input
-                                                            type="checkbox"
-                                                            checked={user.selected}
-                                                            className="form-check-input"
-                                                            id="rowcheck{user.id}"
-                                                            onChange={(e) => this.onItemCheck(e, user)}
-                                                        />
-                                                    </th>
-                                                    <td>{user.name}</td>
-                                                   
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                    <button
-                                        className="btn btn-primary"
-                                    onClick={() => this.getSelectedRows()}
-                                    >
-                                        Get Selected Items {this.state.SelectedList.length}
-                                    </button>
-                                    <div className="row">
-                                        <b>All Row Items:</b>
-                                        <code>{JSON.stringify(this.state.List)}</code>
-                                    </div>
-                                    <div className="row">
-                                        <b>Selected Row Items(Click Button To Get):</b>
-                                        <code>{JSON.stringify(this.state.SelectedList)}</code>
-                                    </div>
-                                </div> */}
+
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    <label className="form-label">Lab Name</label>
+                                    <input type='text' className='form-control' id="avtivityID" name="activity" value={addLabData.patientlab || addLabData.patientscan } onChange={handleAddBillChange} required />
+                                </div>
+                            </div>
+                           
+                           
+
                                 <div className="align-items-center text-center">
                             <button type="submit" id="submitbtn" style={{ marginTop: "20px", width: "200px" }} className="btn align-items-center">Add</button>
                             </div>
@@ -269,7 +188,7 @@ function Scan_labs() {
 
                         <div className="row prescription-body" dir="rtl">
                             <div className="col-lg-4">
-                                <h5 className="patient-prescription-info">الاسم:{patient.patientname}</h5>
+                                <h5 className="patient-prescription-info">الاسم:</h5>
                             </div>
 
                             <div className="col-lg-4">
@@ -289,10 +208,10 @@ function Scan_labs() {
                                 return (
                                     <>
                                         <div className="col-lg-6">
-                                            <p className="Labs">{lab.labname} </p>
+                                            <p className="Labs"> </p>
                                         </div>
                                         <div className="col-lg-6" dir="rtl">
-                                            <p className="Scan">{lab.scanname} </p>
+                                            <p className="Scan"></p>
                                         </div>
                                     </>
                                 )

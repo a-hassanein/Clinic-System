@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AddAppointment from "../../Components/AddAppointment";
 import ListAppointment from "../../Components/ListAppointment";
 import axios from "axios";
-
+import "../../Style/header.css"
 //axios.get('/appointment/appointment/')
 
 const Appointment = (props) => {
@@ -82,6 +82,10 @@ const Appointment = (props) => {
 
   return (
     <section className="home-section">
+        <div className="container-fluid text-center" style={{ marginTop: '20px' }}>
+                    <h1>Appointment</h1>
+                </div>
+
    
       <AddAppointment addAppointment={addAppointment} />
       <ListAppointment

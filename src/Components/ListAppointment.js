@@ -1,14 +1,14 @@
 import React from "react";
 import "../Style/ListAppointment.css";
-import { HiPlusCircle, HiMinusCircle } from "react-icons/hi";
-import {RiDeleteBin7Fill , RiDeleteBinLine} from 'react-icons/ri'
 import {MdDeleteOutline} from "react-icons/md"
-import {TiUserDeleteOutline} from "react-icons/ti"
+import {FaRegCopy} from "react-icons/fa"
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 const ListAppointment = (props) => {
   if (props.appointments.length === 0) {
     return (
       <ul className="list-group list-group-flush text-center container-fluid formPart">
-        <li className="list-group-item h1 listclass">No Appointment Today</li>
+        <li className="list-group-item h1 listclass">You Don't Have Any Apopointment Yet!  </li>
       </ul>
     );
   }
@@ -21,9 +21,23 @@ const ListAppointment = (props) => {
           className="list-group-item  h4 listpartli row"
           key={index}
         >
-          <span className="badge-primary badge-pill spanflix col-1 ">
+          <span className="badge-info badge-pill spanflix col-1 innerId" >
             {appointment.appointment_id}
           </span>
+          <CopyToClipboard text={appointment.appointment_id}>
+          <a
+              style={{
+                border: "none",
+                backgroundColor: "none",
+                color: "var(--first_color)",
+                fontSize: "28px",
+                marginLeft: "5px",
+              }}
+            >
+              <FaRegCopy/>
+            
+            </a>
+            </CopyToClipboard>
           <span className="checkup_type_app spanflix col-1 innerboxcheckup">{appointment.checkup_type}</span>
           <span className="spanflix col-1  innerboxName"> {appointment.patient_name} </span>
 

@@ -260,10 +260,12 @@ const Assistant = () => {
 
                <div className='container-fluid formPart' >
 
-                  <div align="center" id="error">
+                
+                  <div align="center" className="col-12 text-center" id="error" style={{marginLeft:"auto" ,marginRight:"auto"}}>
                   <span>{errorMessage}</span>
                   <br/>
-                  </div> 
+                  </div>
+                
                     <form onSubmit={handleAddFormSubmit}>
                     <div className="row">
                             <div className="col-lg-6">
@@ -285,7 +287,7 @@ const Assistant = () => {
                     <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Gender</label>
-                                <select class="custom-select"  name="gender"  onChange={handleAddFormChange}   id="gender" >
+                                <select class="custom-select" name="gender"  onChange={handleAddFormChange} id="gender" >
                                     <option value="">choose your gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -330,7 +332,9 @@ const Assistant = () => {
                 </div>
 
 
-
+                <div className="container-fluid">
+                <div className="row">
+                <div className="col-12">
 
                 <form onSubmit={handleEditFormSubmit}>
 
@@ -386,9 +390,10 @@ const Assistant = () => {
                      
                     </tbody>
                 </table>
-
-            
                 </form>
+                </div>
+                    </div>
+                    </div>
         </section>
         </>
     )

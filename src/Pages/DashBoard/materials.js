@@ -4,8 +4,11 @@ import Updatematerial from '../DashBoard/updatematerial';
 import MaterialTable from "../../Components/MaterialTable";
 import axios from "axios";
 import "../../Style/materials.css";
-import { useState,useRef,useEffect } from "react";
+import { useState,useRef,useEffect, Fragment } from "react";
 import { useHistory } from 'react-router-dom';
+import EditMaterial from "./component/EditMaterial";
+import MaterialRow from "./component/MaterialRow";
+
 
 function Materials() {
 
@@ -25,13 +28,31 @@ function Materials() {
 }, [])
 
 
-//post 
     const [addMaterialData, setAddMaterialData] = useState({
         materialname: "",
         usage: "",
         price: "",
     });
 
+    const [editMaterialData, setEditMaterialData] = useState({
+      materialname: "",
+      usage: "",
+      price: "",
+    });
+  
+    const [editDataId, setEditDataId] = useState(null);
+
+    const handleEditMaterialChange = (event) => {
+      event.preventDefault();
+  
+      const name = event.target.getAttribute("name");
+      const value = event.target.value;
+  
+      const newMaterialData = { ...editMaterialData };
+      newMaterialData[name] = value;
+  
+      setEditMaterialData(newMaterialData);
+    };
 
     const handleAddMaterialChange = (event) => {
         event.preventDefault();
@@ -56,23 +77,59 @@ function Materials() {
         };
 
         const newDatas = [...materials, newData];
-        
+      
         setMaterials(newDatas);
 
         try{
             axios.post('/materials/materials/', newData).then((response)=>{
                 console.log(response.data)
             })
-
         }catch(error){
             console.log(error)
         }
       };
 
-      console.log(materials)
+
+      const handleEditClick = (event , materialsedit) => {
+        event.preventDefault();
+        setEditDataId(materialsedit.material_id);
+    
+        const formValues = {
+          materialname: materialsedit.material_name,
+          usage: materialsedit.material_usage,
+          price: materialsedit.material_price,
+        };
+
+        console.log(formValues)
+    
+        setEditMaterialData(formValues);
+      };
 
 
-      //delete
+      const handleEditMaterialSubmit = (event) => {
+        event.preventDefault();
+
+        try{
+            axios.put(`http://127.0.0.1:8000/materials/materials/${editDataId}/` ,  {
+              material_name: editMaterialData.materialname,
+              material_usage: editMaterialData.usage,
+              material_price: editMaterialData.price, 
+              }).then((response)=>{
+                getMaterials()
+                console.log(response.materials)
+            })
+
+        }catch(error){
+            console.log(error)
+        }
+        setEditDataId(null);
+      };
+
+      const handleCancelClick = () => {
+        setEditDataId(null);
+      };
+
+
       const handledeleteMaterial = async (material_id) => {
         try {
           await axios.delete(`http://127.0.0.1:8000/materials/materials/${material_id}/`);
@@ -118,7 +175,7 @@ function Materials() {
                     </form>
 
                 </div>
-
+                <form onSubmit={handleEditMaterialSubmit} > 
                 <table class="table" id="table_container"> 
                         <thead>
                             <tr>
@@ -126,18 +183,36 @@ function Materials() {
                               <th scope="col">MATERIAL NAME </th>
                               <th scope="col">MATERIAL USAGE</th>
                               <th scope="col">MATERIAL PRICE</th>
-                              <th scope="col">DELETE MATERIAL</th>
                               <th scope="col">UPDATE MATERIAL</th>
+                              <th scope="col">DELETE MATERIAL</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {materials.map((material, index) => (
+                            {/* {materials.map((material, index) => (
 
-                                <MaterialTable material={material}  index={index} handledeleteMaterial={(material_id) =>{handledeleteMaterial(material.material_id)}}/>
+                                <MaterialTable material={material}  index={index} handledeleteMaterial={() =>{handledeleteMaterial(material.material_id)}}/>
                             )
-                            )}
+                            )} */}
+
+                                {materials.map((materialsedit, index,material)=> (
+                                <Fragment>
+                                {editDataId === materialsedit.material_id ? (
+                                    <EditMaterial
+                                    editMaterialData={editMaterialData}
+                                    handleEditMaterialChange={handleEditMaterialChange}
+                                    handleCancelClick={handleCancelClick}
+                                    materialsedit={materialsedit}
+                                    handleEditMaterialSubmit={handleEditMaterialSubmit}
+                                    />
+                                ) : (
+                                    <MaterialRow  index={index} materialsedit={materialsedit} material={material}
+                                    handleEditClick={handleEditClick} handledeleteMaterial={handledeleteMaterial}/>
+                                )}
+                                </Fragment>
+            ))}
                         </tbody>
                     </table>
+                    </form>
 
 
 

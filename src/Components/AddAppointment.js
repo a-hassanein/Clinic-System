@@ -69,6 +69,8 @@ const AddAppointment = (props) => {
                 value={patient_name}
                 onChange={patientHandler}
                 className="form-control"
+                pattern="[A-Za-z]"
+                required
               />
             </div>
           </div>
@@ -83,6 +85,9 @@ const AddAppointment = (props) => {
                 value={patient_id}
                 onChange={patientIDHandler}
                 className="form-control"
+                pattern="[0-9]"
+                required
+
               />
             </div>
           </div>
@@ -97,6 +102,8 @@ const AddAppointment = (props) => {
                 value={patient_phone}
                 onChange={phoneHandler}
                 className="form-control"
+                pattern="[0-9]"
+                required
               />
             </div>
           </div>
@@ -111,6 +118,7 @@ const AddAppointment = (props) => {
                 value={ checkup_type}
                 onChange={checkupHandler}
                 className="form-select"
+                required
               >
                 <option>Choose</option>
                 <option value="Examination">Examination</option>
@@ -128,6 +136,7 @@ const AddAppointment = (props) => {
             value={appointment_date}
             onChange={dateHandler}
             className="form-control"
+            required
           />
           </div>
           </div>
