@@ -1,5 +1,7 @@
 import axios from 'axios';
 import {
+    SIGNUP_SUCCESS,
+    SIGNUP_FAIL,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     USER_LOADED_SUCCESS,
@@ -10,8 +12,6 @@ import {
     PASSWORD_RESET_FAIL,
     PASSWORD_RESET_CONFIRM_SUCCESS,
     PASSWORD_RESET_CONFIRM_FAIL,
-    SIGNUP_SUCCESS,
-    SIGNUP_FAIL,
     ACTIVATION_SUCCESS,
     ACTIVATION_FAIL,
     LOGOUT
@@ -107,18 +107,18 @@ export const login = (email, password) => async dispatch => {
     }
 };
 
-export const signup = (name, username, email,  age, gender, phone,  password, re_password ) => async dispatch => {
+export const signup = (name, username, email,  age, gender, phone,  password, re_password)  => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
         }
     };
-
-    const body = JSON.stringify({name, username, email,  age, gender, phone,  password, re_password });
-
+    console.log("HEEEEEEEEEEEEEEEEEEEy")
+    const body = JSON.stringify({ name, username, email,age, gender, phone, password, re_password });
+    console.log(body)
     try {
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/`, body, config);
-
+        console.log(res.data)
         dispatch({
             type: SIGNUP_SUCCESS,
             payload: res.data

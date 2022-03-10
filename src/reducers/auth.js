@@ -1,4 +1,6 @@
 import {
+    SIGNUP_SUCCESS,
+    SIGNUP_FAIL,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     USER_LOADED_SUCCESS,
@@ -9,8 +11,6 @@ import {
     PASSWORD_RESET_FAIL,
     PASSWORD_RESET_CONFIRM_SUCCESS,
     PASSWORD_RESET_CONFIRM_FAIL,
-    SIGNUP_SUCCESS,
-    SIGNUP_FAIL,
     ACTIVATION_SUCCESS,
     ACTIVATION_FAIL,
     LOGOUT
@@ -44,7 +44,7 @@ export default function(state = initialState, action) {
         case SIGNUP_SUCCESS:
             return {
                 ...state,
-                isAuthenticated: false
+                isAuthenticated: true
             }
         case USER_LOADED_SUCCESS:
             return {

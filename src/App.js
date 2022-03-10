@@ -12,7 +12,6 @@ import ResetPassword from './Containers/ResetPassword';
 import ResetPasswordConfirm from './Containers/ResetPasswordConfirm';
 function App() {
   return (
-    <>
       <Provider store={store}>
         <Router>
           <Switch>
@@ -28,7 +27,6 @@ function App() {
         </Router>
       </Provider>
 
-    </>
   );
 }
 

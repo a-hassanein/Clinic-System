@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import signupImage from "../Images/signup-remove.png"
+import registerImg from "../Images/signup-remove.png"
 import { useState } from "react";
 import logo from "../Images/logo3.png";
 import "../Style/signup.css"
-import { signup } from '../actions/auth';
+import { signup} from '../actions/auth';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faFacebook,
@@ -34,7 +34,7 @@ const SignUp = ({ signup, isAuthenticated }) => {
         e.preventDefault();
 
         if (password === re_password) {
-            signup = (name, username, email,  age, gender, phone,  password, re_password);
+            signup(name, username, email,  age, gender, phone,  password, re_password);
             setAccountCreated(true);
         }
     };
@@ -55,7 +55,7 @@ const SignUp = ({ signup, isAuthenticated }) => {
                             <p style={{ color: "#ffffff", fontWeight: 700 }}>
                                 Welcome To
                                 <Link to=''>
-                                    <img id="logoSignUpId" style={{ width: '100px', alignItems: "center", paddingBottom: 12, marginLeft: 10 }} src={logo} />
+                                    <img id="logoId" style={{ width: '100px', alignItems: "center", paddingBottom: 12, marginLeft: 10 }} src={logo} />
                                 </Link>
                             </p>
                             <h3 style={{ fontWeight: 600, fontSize: 20 }}>
@@ -64,7 +64,7 @@ const SignUp = ({ signup, isAuthenticated }) => {
                             </h3>
                         </div>
                         <div className="welcomeImg">
-                            <img id="signupImg" src={signupImage}>
+                            <img id="registerImg" src={registerImg}>
                             </img>
                         </div>
 
@@ -76,39 +76,39 @@ const SignUp = ({ signup, isAuthenticated }) => {
                                 <label className="form-label"></label>
                                 <input type="text" id="formInput" className="form-control" name='name'
                                     value={name}
-                                    onChange={e => onChange(e)} placeholder="Enter Your Name" required />
+                                    onChange={e => onChange(e)} placeholder="Enter Your Name*" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
                                 <input type="text" className="form-control" name='username'
                                     value={username}
                                     onChange={e => onChange(e)}
-                                    required placeholder="Enter Your User Name" />
+                                    required placeholder="Enter Your User Name*" />
                             </div>
                             <div >
                                 <label className="form-label"></label>
                                 <input type="email" className="form-control"  name='email' value={email}
                                     onChange={e => onChange(e)}
-                                    placeholder="Enter Your Email" required />
+                                    placeholder="Enter Your Email*" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="number" className="form-control"  name='age' value={age} onChange={e => onChange(e)} placeholder="Enter Your Age" required />
+                                <input type="number" className="form-control"  name='age' value={age} onChange={e => onChange(e)} placeholder="Enter Your Age*" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="text" className="form-control"  name='gender' value={gender} onChange={e => onChange(e)} placeholder="Enter Your Gender" required />
+                                <input type="text" className="form-control"  name='gender' value={gender} onChange={e => onChange(e)} placeholder="Enter Your Gender*" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="number" className="form-control"  name='phone' value={phone} onChange={e => onChange(e)} placeholder="Enter Your Phone Number" required />
+                                <input type="text" className="form-control"  name='phone' value={phone} onChange={e => onChange(e)} placeholder="Enter Your Phone Number*" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
                                 <input  type="password"  name='password' className="form-control" value={password}
                                     onChange={e => onChange(e)}
                                     minLength='8'
-                                    placeholder="Password" required />
+                                    placeholder="Password*" required />
                             </div>
                             <div >
                                 <label className="form-label"></label>
@@ -116,7 +116,7 @@ const SignUp = ({ signup, isAuthenticated }) => {
                                     value={re_password}
                                     onChange={e => onChange(e)}
                                     minLength='6'
-                                    placeholder="Confirm Password" required />
+                                    placeholder="Confirm Password*" required />
                             </div>
                             <button type="submit" className="btn" >Sign Up</button>
                         </form>
