@@ -16,6 +16,7 @@ import {
     ACTIVATION_FAIL,
     LOGOUT
 } from './types';
+import myAxios from "../Pages/token"
 
 export const load_user = () => async dispatch => {
     if (localStorage.getItem('access')) {
@@ -28,7 +29,7 @@ export const load_user = () => async dispatch => {
         }; 
 
         try {
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/users/me/`, config);
+            const res = await myAxios.get(`${process.env.REACT_APP_API_URL}/auth/jwt/users/me/`, config);
     
             dispatch({
                 type: USER_LOADED_SUCCESS,
@@ -58,7 +59,7 @@ export const checkAuthenticated = () => async dispatch => {
         const body = JSON.stringify({ token: localStorage.getItem('access') });
 
         try {
-            const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/verify/`, body, config)
+            const res = await myAxios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/verify/`, body, config)
 
             if (res.data.code !== 'token_not_valid') {
                 dispatch({
@@ -92,7 +93,7 @@ export const login = (email, password) => async dispatch => {
     const body = JSON.stringify({ email, password });
 
     try {
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/create/`, body, config);
+        const res = await myAxios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/create/`, body, config);
 
         dispatch({
             type: LOGIN_SUCCESS,
@@ -201,3 +202,5 @@ export const logout = () => dispatch => {
         type: LOGOUT
     });
 };
+
+export default load_user;
