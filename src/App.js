@@ -12,20 +12,20 @@ import ResetPassword from './Containers/ResetPassword';
 import ResetPasswordConfirm from './Containers/ResetPasswordConfirm';
 function App() {
   return (
-      <Provider store={store}>
-        <Router>
-          <Switch>
-            <Route path="/" component={Home} exact />
-            <Route path="/login" component={Login} exact />
-            <Route path="/signup" component={SignUp} exact />
-            <Route path="/dashboard" component={Dashboard} exact />
-            <Route path="/dashboard/:id" component={Dashboard} />
-            <Route exact path='/reset-password' component={ResetPassword} />
-            <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
-            <Route exact path='/activate/:uid/:token' component={Activate} />
-          </Switch>
-        </Router>
-      </Provider>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/login" component={Login} exact />
+          <Route path="/signup" component={SignUp} exact />
+          <Route path="/dashboard" component={Dashboard} exact />
+          <Route path="/dashboard/:id" component={Dashboard} />
+          <Route exact path='/reset-password' component={ResetPassword} />
+          <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
+          <Route exact path='/activate/:uid/:token' component={Activate} />
+        </Switch>
+      </Router>
+    </Provider>
 
   );
 }
