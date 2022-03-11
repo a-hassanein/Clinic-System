@@ -111,7 +111,7 @@ const Assistant = () => {
         event.preventDefault();
 
         try{
-            axios.put(`http://127.0.0.1:8000/assistant/assistant/${editDataId}/` ,  {
+            axios.put(`/assistant/assistant/${editDataId}/`,  {
                 assistant_name: editFormData.name,
                 assistant_email: editFormData.email,
                 assistant_pass: editFormData.pass,
@@ -144,10 +144,10 @@ const Assistant = () => {
 
 
 
-      const deleteAssistant = (id) =>{
+      const deleteAssistant = async (id) =>{
 
         try{
-            axios.delete(`http://127.0.0.1:8000/assistant/assistant/${id}`).then((response)=>{
+            await axios.delete(`/assistant/assistant/${id}/`).then((response)=>{
                 getAssistant()
                 console.log(response.data)
             })
@@ -226,7 +226,7 @@ const Assistant = () => {
               setData(newDatas);
       
               try{
-                  axios.post('http://127.0.0.1:8000/assistant/assistant/', newData).then((response)=>{
+                  axios.post('/assistant/assistant/', newData).then((response)=>{
                       setErrorMessage('')
                       err.style.visibility = "hidden"
                       getAssistant()

@@ -93,7 +93,7 @@ const handlesubmit = (e) => {
     
 
     try{
-        axios.post('http://localhost:8000/bill/billpost', newData).then((response)=>{
+        axios.post('/bill/billpost', newData).then((response)=>{
             console.log(response.data)
             setData(newDatas);
             getBillData()
@@ -108,7 +108,7 @@ const handlesubmit = (e) => {
   const [billDatas, setBillData] = useState([])
   const getBillData = async () => {
     try {
-        const response = await axios.get(`http://127.0.0.1:8000/bill/bill/${appointment_idField.appointment_id}`)
+        const response = await axios.get(`/bill/bill/${appointment_idField.appointment_id}`)
         const { data } = response
         console.log(data)
         setData(data)

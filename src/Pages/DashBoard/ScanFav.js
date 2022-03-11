@@ -58,7 +58,7 @@ function ScanFav() {
         
     
         try{
-            axios.post('http://localhost:8000/favlabs/favlabs/', newData).then((response)=>{
+            axios.post('/favlabs/favlabs/', newData).then((response)=>{
                 console.log(response.data)
                 setFavlabspost(newDatas);
             })
@@ -81,7 +81,7 @@ function ScanFav() {
         
     
         try{
-            axios.post('http://127.0.0.1:8000/favlabs/favscans/', newData).then((response)=>{
+            axios.post('/favlabs/favscans/', newData).then((response)=>{
                 console.log(response.data)
                 setFavscanspost(newDatas);
             })
