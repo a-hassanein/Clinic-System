@@ -38,11 +38,14 @@ import {
     BiLogOut
   } from "react-icons/bi";
 
+import {
+    IoMdAnalytics
+} from "react-icons/io";
+
 const Sidebar = () => {
     const [ sidebardef ,setBtn1 ] =useState()   
 
     useEffect(() =>{    
-        console.log("11")       
             let sidebardef = document.querySelector(".sidebar");        
         setBtn1(sidebardef)     
     },[]);      
@@ -146,6 +149,14 @@ const Sidebar = () => {
                 </li>
 
                 <li className="nav_Item">
+                    <Link to={"/dashboard/analytics"} className="linkClass">
+                        <i><IoMdAnalytics></IoMdAnalytics></i>
+                        <span className="links_name">Analytics</span>
+                        <span className="tooltip">Analytics</span>
+                    </Link>
+                </li>
+
+                <li className="nav_Item">
                     <Link to={"/dashboard/setting"} className="linkClass">
                         <i><FiSettings></FiSettings></i>
                         <span className="links_name">Settings</span>
@@ -153,10 +164,10 @@ const Sidebar = () => {
                     </Link>
                 </li>
             </ul>
-            <div className="profile_content">
-                <div className="profile">
+            <div className="profile_content" style={{textDecoration:"none", direction:"none"}}>
+                <a href="http://localhost:3000/" className="linkClass" style={{textDecoration:"none", direction:"none"}}>
+                <div className="profile" style={{textDecoration:"none", direction:"none"}}>
                     <div className="profile_details">
-                    <img className="profileImg" src={require("../../Images/Hassanein.png")} alt="..logo"/>
                     <div className="name_clinic">
                         <div className="name">Ahmed Hassanein</div>
                         <div className="clinic">Masr Clinic</div>
@@ -164,6 +175,7 @@ const Sidebar = () => {
                     </div>
                     <i id="log_out"><BiLogOut></BiLogOut></i>
                 </div>
+                </a>
             </div>
         </div>
         <section class="home-section">

@@ -184,6 +184,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    text-decoration: none;
 }
 
 .sidebar .profile_content .profile{
@@ -191,6 +192,7 @@
     padding: 10px 6px;
     height: 60px;
     background: #446f83;
+    text-decoration: none;
 }
 
 .sidebar .profile_content .profile .profile_details{
@@ -199,11 +201,13 @@
     opacity: 0;
     pointer-events: none;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .sidebar.active .profile .profile_details{
     opacity: 1;
     pointer-events: auto;
+    text-decoration: none;
 }
 
 .profile .profile_details .profileImg{
@@ -215,16 +219,21 @@
 
 .profile .profile_details .name_clinic{
     margin-left: 10px;
+    text-decoration: none;
+    color: #fff;
 }
 
 .profile .profile_details .name{
     font-size: 15px;
     font-weight: 600;
+    text-decoration: none;
+    color: #fff;
 }
 
 .profile .profile_details .clinic{
     font-size: 12px;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .profile #log_out{
@@ -237,6 +246,8 @@
     font-size: 25px;
     border-radius: 12px;
     text-align: center;
+    text-decoration: none;
+    color: #fff;
 }
 
 .sidebar.active .profile #log_out{

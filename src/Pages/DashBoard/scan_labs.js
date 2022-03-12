@@ -13,7 +13,7 @@ function Scan_labs() {
     const [labs, setLabs] = useState([])
     const getLabs = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/favlabs/favlabs/')
+            const response = await axios.get('/favlabs/favlabs/')
             const { data } = response
             console.log(data)
             setLabs(data)
@@ -28,7 +28,7 @@ function Scan_labs() {
   const [scans, setScans] = useState([])
     const getScans = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/favlabs/favscans/')
+            const response = await axios.get('/favlabs/favscans/')
             const { data } = response
             console.log(data)
             setScans(data)
@@ -65,12 +65,19 @@ const handleAddBillChange = (event) => {
   };
   console.log("add data ",addLabData)
 
+  const [labprint, setLabprint] = useState([{
+      labs:''
+  }])
+
 
   const handleAddLabSubmit = (event) => {
     event.preventDefault();
     // if(event.target.name==="patientlab"){
     //     setAddLabData({...addLabData,activity: event.target.value})
     // }
+    setLabprint([...labprint,{
+        labs:event.target[6].value
+    }])
     const newData = {
       appointment_id: addLabData.appointmentid,
       Lab_name: document.getElementById("avtivityID").value,    
@@ -82,7 +89,7 @@ const handleAddBillChange = (event) => {
 
     try{
         console.log(document.getElementById("avtivityID").value)
-        axios.post('http://127.0.0.1:8000/labs/labs/', newData).then((response)=>{
+        axios.post('/labs/labs/', newData).then((response)=>{
             console.log(response.data)
         })
 
@@ -204,14 +211,11 @@ const handleAddBillChange = (event) => {
                             </div>
                         </div>
                         <div className="row text-center" style={{ fontSize: "24px" }}>
-                            {labs.map((lab) => {
+                            {labprint.map((lab) => {
                                 return (
                                     <>
-                                        <div className="col-lg-6">
-                                            <p className="Labs"> </p>
-                                        </div>
-                                        <div className="col-lg-6" dir="rtl">
-                                            <p className="Scan"></p>
+                                        <div className="col-lg-12" >
+                                            <p className="Labs" style={{fontSize:'40px',fontWeight:'600'}}>{lab.labs}</p>
                                         </div>
                                     </>
                                 )

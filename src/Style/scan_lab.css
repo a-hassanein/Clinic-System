@@ -51,7 +51,7 @@
   
   }
 
-.formcontainer #submitbtn {
+#submitbtn {
     margin-bottom: 20px;
     background-color: var(--first_color);
     color: var(--light_color);
@@ -65,7 +65,7 @@
     margin-right: auto;
     
 }
-.formcontainer #submitbtn:hover{
+#submitbtn:hover{
     background-color: #70a1b8;
 
 }
