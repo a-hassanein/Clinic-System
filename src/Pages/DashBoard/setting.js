@@ -38,9 +38,9 @@ const Setting = () => {
         getUser()
   }, [])
 
-    let token=localStorage.getItem("access");
-    var decode1 = jwt(token);
-    console.log("---------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> ",decode1)
+    // let token=localStorage.getItem("access");
+    // var decode1 = jwt(token);
+    // console.log("---------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> ",decode1)
     // console.log("---------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> ", token)
 
 
