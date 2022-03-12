@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Style/styleservices.css'
 import '../Style/ContactUs.css'
-// import '../Style/sendmsg.css'
+import '../Style/sendmsg.css'
 import {Link} from "react-router-dom";
 
 function Sendmsg() {
@@ -24,3 +24,4 @@ function Sendmsg() {
 }
 
 export default Sendmsg
+
