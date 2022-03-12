@@ -20,7 +20,7 @@ const EdiSurgerytableRow = ({
           placeholder="Enter a name..."
           name="surgery"
           value={editSurgeryData.surgery}
-          onChange={handleEditFormChange}
+          onChange={handleEditFormChange} 
         ></input>
       </td>
       <td>

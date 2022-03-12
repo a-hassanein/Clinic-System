@@ -82,7 +82,7 @@ const Appointment = (props) => {
 
   return (
     <section className="home-section">
-        <div className="container-fluid text-center header" style={{ marginTop: '20px' }}>
+        <div className="container-fluid text-center" style={{ marginTop: '20px' }}>
                     <h1>Appointment</h1>
                 </div>
 

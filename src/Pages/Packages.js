@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {Link} from "react-router-dom";
 import CardPackages from "../Components/CardPackages";
 import "../Style/Packages.css";
@@ -40,6 +40,16 @@ function Packages() {
       list2: "Lorem Ipsum is simply dummy text",
     },
   ];
+
+  let token=localStorage.getItem("access");
+  const[ tokenState, SetTokenState ] = useState('');
+  function handletoken(){
+    if (token != null){
+      SetTokenState('/dashboard')
+    }else{
+      SetTokenState('/login')
+    }
+  }
   return (
     <div className="Body__Packages"  >
       <br />
@@ -56,7 +66,7 @@ function Packages() {
       <br />
  
         <div className="d-flex justify-content-center flex-wrap" style={{marginBottom:"100px"}}>
-        <Link to={"/dashboard"} className='cardLinkPackage'>
+        <Link to={tokenState} className='cardLinkPackage' onClick={handletoken}>
           <div className="p-5">
             <CardPackages
               title={packages[0].title}
@@ -67,7 +77,7 @@ function Packages() {
             />
           </div>
         </Link>
-        <Link to={"/dashboard"} className='cardLinkPackage'>
+        <Link to={tokenState} className='cardLinkPackage' onClick={handletoken}> 
           <div className="p-5 ">
             <CardPackages
               title={packages[1].title}

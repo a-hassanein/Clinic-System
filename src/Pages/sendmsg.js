@@ -1,7 +1,11 @@
 import React from 'react'
 import '../Style/styleservices.css'
 import '../Style/ContactUs.css'
+<<<<<<< HEAD
 import '../Style/sendmsg.css'
+=======
+// import '../Style/sendmsg.css'
+>>>>>>> dcb38745eede01651dab374aced228ebd90590b3
 import {Link} from "react-router-dom";
 
 function Sendmsg() {
@@ -23,5 +27,9 @@ function Sendmsg() {
   )
 }
 
+<<<<<<< HEAD
 export default Sendmsg
 
+=======
+export default Sendmsg
+>>>>>>> dcb38745eede01651dab374aced228ebd90590b3
