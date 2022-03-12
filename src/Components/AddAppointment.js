@@ -9,10 +9,60 @@ const AddAppointment = (props) => {
   const [checkup_type, setEnteredCheckup] = useState("");
   const [patient_id , setPatientID] = useState("");
  // const [completed , setCompleted] = useState(false);
-  
+   
+  const [errorMessage , setErrorMessage] = useState('');
 
   const addAppointmentHandler = (event) => {
     event.preventDefault();
+    let patient = document.getElementById('patient').value;
+    let patientID = document.getElementById('patientID').value;
+    let phone = document.getElementById('phone').value;
+    let checkup = document.getElementById('checkup').value;
+    let time = document.getElementById('time').value;
+    let err = document.getElementById('error') 
+  //  let date = new Date()
+
+    if(patient == null || patient == ""){
+       setErrorMessage('Patient name is required')
+       err.style.visibility = 'visible'
+    }else if (patientID == null || patientID == ""){
+       setErrorMessage('Patient ID is required')
+       err.style.visibility = 'visible'
+    }else if (isNaN(patientID ) ){
+      setErrorMessage('Patient ID must be number not text')
+      err.style.visibility = 'visible'
+    }else if (phone == null || phone =="" ){
+      setErrorMessage('Phone is required')
+      err.style.visibility = 'visible'
+    }else if (isNaN(phone)){
+      setErrorMessage('Phone must be number not text')
+      err.style.visibility = 'visible'
+    }else if (phone < 11){
+      setErrorMessage("Phone digits must be more than 11")
+      err.style.visibility = "visible"
+    }/*else if (checkup == null || checkup == "" ){
+      setErrorMessage('Check up name is required')
+      err.style.visibility = 'visible'
+    }*/
+    else if (checkup == "Choose"  ){
+      setErrorMessage('Check up name ')
+      err.style.visibility = 'visible'
+
+    }
+    else if (time == null || time == '' ){
+      setErrorMessage('Time is required')
+      err.style.visibility = 'visible'
+
+    }
+    else if (err.value == null || err.value =="" ){
+      setErrorMessage("")
+      err.style.visibility = "hidden"
+    }
+    
+     
+
+    
+
     if (
       patient_name.trim().length === 0 ||
       appointment_date.trim().length === 0 ||
@@ -35,6 +85,7 @@ const AddAppointment = (props) => {
     setEnteredphone("");
     setEnteredCheckup("");
     setPatientID("");
+    setErrorMessage("");
   };
 
   const patientHandler = (event) => {
@@ -57,6 +108,10 @@ const AddAppointment = (props) => {
   return (
     <>
       <div className="container-fluid formPart  ">
+      <div align="center" id="error">
+                  <span>{errorMessage}</span>
+                  <br/>
+                  </div> 
         <form  className="card-body">
           <div className="row">
             <div className="col">
@@ -97,7 +152,7 @@ const AddAppointment = (props) => {
                 Phone:{" "}
               </label>
               <input
-                id="patient"
+                id="phone"
                 type="tel"
                 value={patient_phone}
                 onChange={phoneHandler}
@@ -120,7 +175,7 @@ const AddAppointment = (props) => {
                 className="form-select"
                 required
               >
-                <option>Choose</option>
+                <option value="Choose">Choose</option>
                 <option value="Examination">Examination</option>
                 <option value="Re-Examination">Re-Examination</option>
                 <option value="Surgery">Surgery</option>
@@ -142,7 +197,7 @@ const AddAppointment = (props) => {
           </div>
           <div className="row text-center">
           <div className="col-lg-12" style={{marginTop:"30px"}}>
-          <input type="submit" className="btn prescriptionButton" value="Add Appointment" onClick={addAppointmentHandler}/> 
+          <input type="submit" className="btn AppointmentButton" value="Add Appointment" onClick={addAppointmentHandler}/> 
           </div>
           </div>
         </form>
