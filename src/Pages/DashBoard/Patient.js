@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import PatientTable from "../../Components/PatientTable";
 import AddPatient from "../../Components/AddPatient";
+import config from "../../actions/auth"
 
 import axios from "axios";
 function Patient() {

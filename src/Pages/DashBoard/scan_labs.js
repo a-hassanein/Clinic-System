@@ -13,7 +13,7 @@ function Scan_labs() {
     const [labs, setLabs] = useState([])
     const getLabs = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/favlabs/favlabs/')
+            const response = await axios.get('/favlabs/favlabs/')
             const { data } = response
             console.log(data)
             setLabs(data)
@@ -28,7 +28,7 @@ function Scan_labs() {
   const [scans, setScans] = useState([])
     const getScans = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/favlabs/favscans/')
+            const response = await axios.get('/favlabs/favscans/')
             const { data } = response
             console.log(data)
             setScans(data)
@@ -40,10 +40,6 @@ function Scan_labs() {
         getScans()
   }, [])
 
-  const [addfield, setAddfield] = useState({
-    patientlab: "",
-    patientscan: "",
-});
 
   const [labscans, setLabscans] = useState([])
   const [addLabData, setAddLabData] = useState({
@@ -93,7 +89,7 @@ const handleAddBillChange = (event) => {
 
     try{
         console.log(document.getElementById("avtivityID").value)
-        axios.post('http://127.0.0.1:8000/labs/labs/', newData).then((response)=>{
+        axios.post('/labs/labs/', newData).then((response)=>{
             console.log(response.data)
         })
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {Link} from "react-router-dom";
 import CardPackages from "../Components/CardPackages";
 import "../Style/Packages.css";
@@ -13,10 +13,10 @@ function Packages() {
       list2: "Lorem Ipsum is simply dummy text",
     },
     {
-      title: "SILVER",
-      Subtitle: 150,
+      title: "PREMIUM",
+      Subtitle: 1500,
       coin: "EGP",
-      per: " /MONTH",
+      per: " /Year",
       list0: "Lorem Ipsum is simply dummy text",
       list1: "Lorem Ipsum is simply dummy text",
       list2: "Lorem Ipsum is simply dummy text",
@@ -40,6 +40,16 @@ function Packages() {
       list2: "Lorem Ipsum is simply dummy text",
     },
   ];
+
+  let token=localStorage.getItem("access");
+  const[ tokenState, SetTokenState ] = useState('');
+  function handletoken(){
+    if (token != null){
+      SetTokenState('/dashboard')
+    }else{
+      SetTokenState('/login')
+    }
+  }
   return (
     <div className="Body__Packages"  >
       <br />
@@ -56,8 +66,8 @@ function Packages() {
       <br />
  
         <div className="d-flex justify-content-center flex-wrap" style={{marginBottom:"100px"}}>
-        <Link to={"/dashboard"} className='cardLinkPackage'>
-          <div className="p-4 ">
+        <Link to={tokenState} className='cardLinkPackage' onClick={handletoken}>
+          <div className="p-5">
             <CardPackages
               title={packages[0].title}
               Subtitle={packages[0].Subtitle}
@@ -67,8 +77,8 @@ function Packages() {
             />
           </div>
         </Link>
-        <Link to={"/dashboard"} className='cardLinkPackage'>
-          <div className="p-4 ">
+        <Link to={tokenState} className='cardLinkPackage' onClick={handletoken}> 
+          <div className="p-5 ">
             <CardPackages
               title={packages[1].title}
               Subtitle={packages[1].Subtitle}
@@ -80,7 +90,7 @@ function Packages() {
             />
           </div>
         </Link>
-        <Link to={"/dashboard"} className='cardLinkPackage'>
+     {/*   <Link to={"/dashboard"} className='cardLinkPackage'>
           <div className="p-4 ">
             <CardPackages
               title={packages[2].title}
@@ -105,7 +115,7 @@ function Packages() {
               list2={packages[3].list2}
             />
           </div>
-          </Link>
+          </Link>*/ }
         </div>
       </div>
 

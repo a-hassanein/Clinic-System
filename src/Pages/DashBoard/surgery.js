@@ -6,6 +6,8 @@ import SurgeryTable from "../../Components/SurgeryTable";
 import axios from "axios";
 import SurgeryReadOnlyRow from "./component/sergeryReadOnly";
 import EdiSurgerytableRow from "./component/EditSurgeryTableRow";
+import myAxios from "../token"
+import load_user from "../../actions/auth"
 
 
 const Surgery = () => {
@@ -13,7 +15,7 @@ const Surgery = () => {
   const [surgeries, setSurgeries] = useState([])
   const getSurgeries = async () => {
       try {
-          const response = await axios.get('http://127.0.0.1:8000/surgery/surgery/')
+          const response = await axios.get('/surgery/surgery/')
           const { data } = response
           console.log(data)
           setSurgeries(data)
@@ -65,7 +67,11 @@ const handleEditSurgerySubmit = (event) => {
   setSurgeries(newDatas);
 
   try{
-      axios.put(`http://127.0.0.1:8000/surgery/surgery/${editSurgeryID}/`, newData).then((response)=>{
+      axios.put(`/surgery/surgery/${editSurgeryID}/`, {
+        surgery_name: editSurgeryData.surgery,
+        surgery_price: editSurgeryData.price,
+        surgery_description: editSurgeryData.surgery_description, 
+      }).then((response)=>{
           getSurgeries()
           console.log(response.data)
 
@@ -124,7 +130,7 @@ const handleAddSurgeryChange = (event) => {
     setSurgeries(newDatas);
 
     try{
-        axios.post('http://127.0.0.1:8000/surgery/surgery/', newData).then((response)=>{
+        axios.post('/surgery/surgery/', newData, load_user(getSurgeries)).then((response)=>{
             console.log(response.data)
         })
 
@@ -135,7 +141,7 @@ const handleAddSurgeryChange = (event) => {
 
   const handledeleteSurgery = async (surgery_id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/surgery/surgery/${surgery_id}/`);
+      await axios.delete(`/surgery/surgery/${surgery_id}/`);
       getSurgeries();
     } catch (error) {
       console.log(error);
@@ -186,6 +192,9 @@ const handleAddSurgeryChange = (event) => {
                         <button className="btn" id="searchbtn" type="submit">Search</button>
                     </form>
         </div>
+        <div className="container-fluid">
+          <div className="row">
+          <div className="col-12">
         <form onSubmit={handleEditSurgerySubmit}>
         <table class="table" id="table_container"> 
                         <thead>
@@ -225,6 +234,9 @@ const handleAddSurgeryChange = (event) => {
                         </tbody>
                     </table>
                     </form>
+                    </div>
+                    </div>
+                    </div>
         </div>
       </>
     );

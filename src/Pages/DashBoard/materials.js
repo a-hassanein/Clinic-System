@@ -82,7 +82,8 @@ function Materials() {
 
         try{
             axios.post('/materials/materials/', newData).then((response)=>{
-                console.log(response.data)
+              getMaterials();  
+              console.log(response.data)
             })
         }catch(error){
             console.log(error)
@@ -110,7 +111,7 @@ function Materials() {
         event.preventDefault();
 
         try{
-            axios.put(`http://127.0.0.1:8000/materials/materials/${editDataId}/` ,  {
+            axios.put(`/materials/materials/${editDataId}/` ,  {
               material_name: editMaterialData.materialname,
               material_usage: editMaterialData.usage,
               material_price: editMaterialData.price, 
@@ -132,7 +133,7 @@ function Materials() {
 
       const handledeleteMaterial = async (material_id) => {
         try {
-          await axios.delete(`http://127.0.0.1:8000/materials/materials/${material_id}/`);
+          await axios.delete(`/materials/materials/${material_id}/`);
           getMaterials();
         } catch (error) {
           console.log(error);

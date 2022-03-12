@@ -317,7 +317,7 @@ const componentRef = useRef()
                             </div>
                         </div>
                     </form>
-                    <Link to={"/dashboard/prescription/drugfav"} className="btn" id="submitbtn" style={{ width: "45px", fontSize: "10px",float: "right" ,marginBottom: "25px" }}><AiFillStar style={{fontSize: "20px" }}></AiFillStar></Link>
+                    <Link to={"/dashboard/prescription/drugfav"} className="btn" id="submitbtn" style={{ width: "45px", fontSize: "10px",float: "right"  }}><AiFillStar style={{fontSize: "20px" }}></AiFillStar></Link>
                 </div>
                 <div className="container prescriptionPart"  ref={componentRef}>
                     <div className="row  doctor-presc-info">

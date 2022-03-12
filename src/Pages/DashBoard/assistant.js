@@ -111,7 +111,7 @@ const Assistant = () => {
         event.preventDefault();
 
         try{
-            axios.put(`http://127.0.0.1:8000/assistant/assistant/${editDataId}/` ,  {
+            axios.put(`/assistant/assistant/${editDataId}/`,  {
                 assistant_name: editFormData.name,
                 assistant_email: editFormData.email,
                 assistant_pass: editFormData.pass,
@@ -144,10 +144,10 @@ const Assistant = () => {
 
 
 
-      const deleteAssistant = (id) =>{
+      const deleteAssistant = async (id) =>{
 
         try{
-            axios.delete(`http://127.0.0.1:8000/assistant/assistant/${id}`).then((response)=>{
+            await axios.delete(`/assistant/assistant/${id}/`).then((response)=>{
                 getAssistant()
                 console.log(response.data)
             })
@@ -226,7 +226,7 @@ const Assistant = () => {
               setData(newDatas);
       
               try{
-                  axios.post('http://127.0.0.1:8000/assistant/assistant/', newData).then((response)=>{
+                  axios.post('/assistant/assistant/', newData).then((response)=>{
                       setErrorMessage('')
                       err.style.visibility = "hidden"
                       getAssistant()
@@ -260,10 +260,12 @@ const Assistant = () => {
 
                <div className='container-fluid formPart' >
 
-                  <div align="center" id="error">
+                
+                  <div align="center" className="col-12 text-center" id="error" >
                   <span>{errorMessage}</span>
                   <br/>
-                  </div> 
+                  </div>
+                
                     <form onSubmit={handleAddFormSubmit}>
                     <div className="row">
                             <div className="col-lg-6">
@@ -330,6 +332,10 @@ const Assistant = () => {
                 </div>
 
 
+                <div className="container-fluid">
+                <div className="row">
+                <div className="col-12">
+
                 <form onSubmit={handleEditFormSubmit}>
 
                 
@@ -384,9 +390,10 @@ const Assistant = () => {
                      
                     </tbody>
                 </table>
-
-            
                 </form>
+                </div>
+                    </div>
+                    </div>
         </section>
         </>
     )
