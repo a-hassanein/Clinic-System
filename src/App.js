@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home';
 import SignUp from './Pages/signup';
 import Login from './Pages/login';
-import Dashboard from './Pages/DashBoard/Dashboard'
+import Dashboard from './Pages/DashBoard/Dashboard';
+import Sendmsg from './Pages/sendmsg';
 // import Addmaterial from './Pages/DashBoard/addmaterial'
 // import Updatematerial from './Pages/DashBoard/updatematerial'
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/signup" component={SignUp} exact/>
                 <Route path="/dashboard" component={Dashboard} exact/>
                 <Route path="/dashboard/:id" component={Dashboard} />
+                <Route path="/sendmsg" component={Sendmsg} exact/>
                 {/* <Route path="/updatematerial" component={Updatematerial} exact/> */}
             </Switch>
           </Router>
