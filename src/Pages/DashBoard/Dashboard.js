@@ -17,6 +17,7 @@ import ScanFav from '../DashBoard/ScanFav'
 import Drugfav from './Drugfav'
 import Scan_labs from '../DashBoard/scan_labs';
 import Analytics from '../DashBoard/Analytics';
+// import Home from '../../Components/Home';
 
 
 
@@ -41,7 +42,8 @@ const Dashboard = () => {
                     <Route path="/dashboard/setting" component={Setting}/>
                     <Route path="/dashboard/scan_labs/addfav" component={ScanFav}/> 
                     <Route path='/dashboard/prescription/drugfav' component={Drugfav} />
-                    <Route path="/dashboard" exact component={HomeDashboard} />
+                    <Route path="/dashboard" exact component={HomeDashboard} /> 
+    
                 </Switch>
             </Router>
 
