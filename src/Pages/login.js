@@ -55,7 +55,11 @@ const Login = ({ login, isAuthenticated }) => {
                                     onChange={e => onChange(e)}
                                     minLength='8' placeholder="Password" required />
                             </div>
+                            <div style={{textDecoration:"none", direction:"none"}}>
+                            <Link to={"/dashboard"} style={{textDecoration:"none", direction:"none"}}>
                             <button type="submit" className="btn" >Sign In</button>
+                            </Link>
+                            </div>
                         </form>
                         <div>
                             <p id="social-text" style={{ alignitems: "center" }}> or sign in with</p>

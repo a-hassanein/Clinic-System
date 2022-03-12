@@ -17,13 +17,16 @@ import { connect } from 'react-redux';
 import { logout } from '../actions/auth';
 const Home = ({ logout, isAuthenticated }) => {
   const [redirect, setRedirect] = useState(false);
+  let token=localStorage.getItem("access");
 
   const logout_user = () => {
     logout();
     setRedirect(true);
   };
 
-  const guestLinks = () => (
+  function guestLinks() {
+    return(
+      <>
     <Fragment>
       <div className='buttonContent'>
         <Link to='/login' className="btn ml-lg-auto" id="signinID">
@@ -36,17 +39,22 @@ const Home = ({ logout, isAuthenticated }) => {
         </Link>
       </div>
     </Fragment>
-  );
+    
+    </>)
+  }
 
-  const authLinks = () => (
-    <div className='buttonContent'>
-      <a className="btn ml-lg-auto" id="signinID" href='#!' onClick={logout_user}>
-        Log Out      </a>
+  function authLinks(){
+    return(
+        <>
+      <div className='buttonContent'>
+          <Link to='/' className="btn ml-lg-auto" id="signinID" onClick={logout_user}>
+            Log Out
+          </Link>
+      </div>
+      </>
+    )
 
-
-    </div>
-
-  );
+  }
   return (
 
     <>
@@ -70,7 +78,7 @@ const Home = ({ logout, isAuthenticated }) => {
                 </div>
                 <br />
 
-                {isAuthenticated ? authLinks() : guestLinks()}
+                {token != null ? authLinks() : guestLinks()}
 
                 {/* <div className='buttonContent'>
                   <Link to='/login' className="btn ml-lg-auto" id="signinID">
@@ -83,7 +91,7 @@ const Home = ({ logout, isAuthenticated }) => {
                   </Link>
                 </div> */}
               </div>
-              {redirect ? <Redirect to='/' /> : <Fragment></Fragment>}
+              
 
               {/* <div className="col-lg-4 col-md-5 col-sm-0 col-xs-0"><img className="d-none d-lg-block" src={require('../Images/Home_img.png')} alt='...img' width={'450px'} /></div> */}
 

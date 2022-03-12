@@ -165,10 +165,10 @@ const Sidebar = () => {
                     </Link>
                 </li>
             </ul>
-            <div className="profile_content">
-                <div className="profile">
+            <div className="profile_content" style={{textDecoration:"none", direction:"none"}}>
+                <a href="http://localhost:3000/" className="linkClass" style={{textDecoration:"none", direction:"none"}}>
+                <div className="profile" style={{textDecoration:"none", direction:"none"}}>
                     <div className="profile_details">
-                    <img className="profileImg" src={require("../../Images/Hassanein.png")} alt="..logo"/>
                     <div className="name_clinic">
                         <div className="name">Ahmed Hassanein</div>
                         <div className="clinic">Masr Clinic</div>
@@ -176,6 +176,7 @@ const Sidebar = () => {
                     </div>
                     <i id="log_out"><BiLogOut></BiLogOut></i>
                 </div>
+                </a>
             </div>
         </div>
         <section class="home-section">
