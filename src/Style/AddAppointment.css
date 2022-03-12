@@ -17,7 +17,7 @@
     padding: 0.15rem;
     margin-bottom: 0.5rem;
 }
-.formPart .prescriptionButton{
+.formPart .AppointmentButton{
     /*margin-bottom: 20px;*/
     background-color: var(--first_color);
     color: var(--light_color);
@@ -28,16 +28,16 @@
     border-radius: 10px;
     padding: 0.15rem;
     margin-bottom: 0.5rem;
-  font-size: 1vw; 
+     font-size: 1vw; 
     width: 15%;
-
+    height: 3rem;
 }
 .formPart select{
     border-radius: 10px;
     min-height: 50px;
 }
 
-.formPart .prescriptionButton:hover{
+.formPart .AppointmentButton:hover{
     background-color:var(--fourth_color);
     color: var(--light_color);
 
@@ -45,7 +45,7 @@
 
 
 @media only screen and (max-width: 800px) {
-    .formPart .prescriptionButton { 
+    .formPart .AppointmentButton { 
        width: 100%;
        height: 20px;
        font-size: 20px;

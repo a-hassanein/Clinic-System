@@ -55,6 +55,7 @@ const ListAppointment = (props) => {
               onChange={() => {
                 props.completedAppointment(appointment.appointment_id);
               }}
+              checked = {appointment.completed}
             />
           </span>
           <span
