@@ -261,7 +261,7 @@ const Assistant = () => {
                <div className='container-fluid formPart' >
 
                 
-                  <div align="center" className="col-12 text-center" id="error" style={{marginLeft:"auto" ,marginRight:"auto"}}>
+                  <div align="center" className="col-12 text-center" id="error" >
                   <span>{errorMessage}</span>
                   <br/>
                   </div>
