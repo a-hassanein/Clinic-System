@@ -42,7 +42,6 @@ const Sidebar = () => {
     const [ sidebardef ,setBtn1 ] =useState()   
 
     useEffect(() =>{    
-        console.log("11")       
             let sidebardef = document.querySelector(".sidebar");        
         setBtn1(sidebardef)     
     },[]);      

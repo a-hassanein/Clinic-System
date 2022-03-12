@@ -21,8 +21,7 @@ import Scan_labs from '../DashBoard/scan_labs';
 
 
 const Dashboard = () => {
-  const {url} = useRouteMatch()
-  console.log(url)
+ 
   return (
     <>
             <Router> 

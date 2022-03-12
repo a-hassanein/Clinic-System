@@ -69,12 +69,19 @@ const handleAddBillChange = (event) => {
   };
   console.log("add data ",addLabData)
 
+  const [labprint, setLabprint] = useState([{
+      labs:''
+  }])
+
 
   const handleAddLabSubmit = (event) => {
     event.preventDefault();
     // if(event.target.name==="patientlab"){
     //     setAddLabData({...addLabData,activity: event.target.value})
     // }
+    setLabprint([...labprint,{
+        labs:event.target[6].value
+    }])
     const newData = {
       appointment_id: addLabData.appointmentid,
       Lab_name: document.getElementById("avtivityID").value,    
@@ -208,14 +215,11 @@ const handleAddBillChange = (event) => {
                             </div>
                         </div>
                         <div className="row text-center" style={{ fontSize: "24px" }}>
-                            {labs.map((lab) => {
+                            {labprint.map((lab) => {
                                 return (
                                     <>
-                                        <div className="col-lg-6">
-                                            <p className="Labs"> </p>
-                                        </div>
-                                        <div className="col-lg-6" dir="rtl">
-                                            <p className="Scan"></p>
+                                        <div className="col-lg-12" >
+                                            <p className="Labs" style={{fontSize:'40px',fontWeight:'600'}}>{lab.labs}</p>
                                         </div>
                                     </>
                                 )
