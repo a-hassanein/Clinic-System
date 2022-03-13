@@ -29,9 +29,9 @@ function Moreservices() {
                     </div>
                     <img style={{ "height": "60px", "width": "60px" }} src={require("../Images/hospital.png")} className="card-img-top" alt="..." />
 
-                    <h3 className="card-title text-center" >CREATE YOUR PRIVATE CLINIC</h3>
+                    <h3 className="card-title text-center" >CREATE YOUR PRIVATE CUSTOMIZED CLINIC</h3>
                     <hr />
-                    <p className="card-text text-center">You can create and manage your own private clinic and use our features for you also you can try our featuers we provide for free by trial package for 30 days , and discover more of our featuers , after 30 days you can subscribe with us by premium. </p>
+                    <p className="card-text text-center">You can create and manage your own private clinic and use our features for you also you can try our featuers we provide for free by trial package for 30 days , and discover more of our featuers. </p>
                   </div>
                 </div>
               </div>
