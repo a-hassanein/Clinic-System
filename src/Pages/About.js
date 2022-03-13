@@ -134,7 +134,7 @@ function About() {
                     <div className="content">
                         <div className="imgBx"><img src={require('../Images/Asmaa2.png')}/></div>
                         <div className="contentBx">
-                            <h3>Aasmaa Alaa <br></br> <span>Software Engineer</span></h3>
+                            <h3>Assmaa AlaaEldin <br></br> <span>Software Engineer</span></h3>
                         </div>
                     </div>
                     <ul className="sci">
