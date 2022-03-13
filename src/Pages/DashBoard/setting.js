@@ -18,7 +18,7 @@ const Setting = () => {
  const [data, setData] = useState([])
     const getUser = async () => {
         try {
-            const response = await axios.get('/auth/users/3/')
+            const response = await axios.get('/auth/users/2/')
             const { data } = response
             console.log(data)
             setData(data)

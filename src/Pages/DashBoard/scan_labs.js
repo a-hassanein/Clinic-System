@@ -56,6 +56,33 @@ function Scan_labs() {
     patientscan: "",
     activity: "",
 });
+const [data1, setData1] = useState([])
+    const getUser = async () => {
+        try {
+            const response = await axios.get('/auth/users/2/')
+            const { data } = response
+            console.log(data)
+            setData1(data)
+           
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    useEffect(() => {
+        getUser()
+  }, [])
+
+  const [patient,setPatient] = useState({
+    patientname:""
+})
+const patientValidate = (e)=>{
+    if(e.target.name==='patientname'){
+        setPatient({
+            ...patient,
+            patientname:e.target.value
+        })
+    }
+}
 
 
 const handleAddBillChange = (event) => {
@@ -181,7 +208,11 @@ const handleAddBillChange = (event) => {
                             <div className="row">
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Name</label>
+<<<<<<< HEAD
+                                    <input type='text' className='form-control' name="patientname" required  onChange={(e)=>{patientValidate(e)}}/>
+=======
                                     <input type='text' className='form-control' name="patientname" id="patientname"  onChange={handleAddBillChange}/>
+>>>>>>> f916e3d7f754c062ea033c04fbb0610af7eaedd4
                                 </div>
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Phone Number </label>
@@ -237,34 +268,23 @@ const handleAddBillChange = (event) => {
                     <Link to={"/dashboard/scan_labs/addfav"} className="btn" id="submitbtn" style={{ width: "45px", fontSize: "10px",float: "right" ,marginBottom: "25px" }}><AiFillStar style={{fontSize: "20px" }}></AiFillStar></Link>
                     </div>
                     <div className="container prescriptionPart" ref={componentRef}>
+                    <div className="row text-center">
+                        <div className="col-lg-12 ">
+                            <h1 className="clinic-info"><b>Scans & Labs</b></h1>
+                        </div>
+                    </div>
                         <div className="row  doctor-presc-info">
-                            <div className="col-lg-6 ">
-                                <h2 className="clinic-info">Clinic name</h2>
-                            </div>
-                            <div className="col-lg-6 ">
-                                <h2 className="clinic-info">Doctor name</h2>
-                            </div>
-                            <div className="col-lg-6 ">
-                                <h3 className="clinic-info">clinic numbers</h3>
-                            </div>
-                            <div className="col-lg-6">
-                                <h3 className="clinic-info">Doctor info</h3>
-                            </div>
-                            <div className="col-lg-6">
-                                <h3 className="clinic-info">clinic address</h3>
-                            </div>
+                        <div className="col-lg-6 ">
+                            <h2 className="clinic-info">DR: {data1.name}</h2>
+                        </div>
+                        <div className="col-lg-6 ">
+                            <h3 className="clinic-info">Tel No: {data1.phone}</h3>
+                        </div>
                         </div>
 
                         <div className="row prescription-body" dir="rtl">
                             <div className="col-lg-4">
-                                <h5 className="patient-prescription-info">الاسم:</h5>
-                            </div>
-
-                            <div className="col-lg-4">
-                                <h5 className="patient-prescription-info">السن:25</h5>
-                            </div>
-                            <div className="col-lg-4">
-                                <h5 className="patient-prescription-info">التاريخ:25-2-2022</h5>
+                                <h5 className="patient-prescription-info">الاسم:{patient.patientname}</h5>
                             </div>
                         </div>
                         <div className="row">
