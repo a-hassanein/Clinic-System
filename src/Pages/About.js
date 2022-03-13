@@ -23,6 +23,8 @@ function About() {
                     <p>3eadty clinic system , using Python and Django framwork , javaScript and reactjs framwork . This project implementation made by students from ITI-3 monthes -open source -full stack web development using python track. 3eadty clinic system .. this system help you to manage your clinic and provide analytics form clinic activities per month To improve profits and opportunities in your business, also can access your clinic from anywhere you are in and many awesome featuers and services that help you to manage your clinic easily such as you can book and handle appointment for yiur patient, make your prescription, extract bill for every patient, add an unlimited number of your patients, create your materiaks stock, add your favourite drugs and labs, add your assistants in clinic, create your surgeries stock and you can customize your profile setting. You can use and take advantage of all this features with trail package for 30 days. 
 thank you for visiting our site.
 </p>
+
+
                     </div>
                 </div>
             </div>
