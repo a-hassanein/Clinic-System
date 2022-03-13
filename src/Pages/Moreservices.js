@@ -109,7 +109,7 @@ function Moreservices() {
                   <div className="card-body" id="card_services">
                     <img style={{ "height": "60px", "width": "60px" }} src={require("../Images/medical-team.png")} className="card-img-top" alt="..." />
 
-                    <h3 className="card-title text-center" > ADD YOUR ASSESSTANT IN CLINIC</h3>
+                    <h3 className="card-title text-center" > ADD YOUR ASSISTANT IN CLINIC</h3>
                     <hr />
                     <p className="card-text text-center">If you have assistants in your real clinic we provide to you to add any number of yours assistants in your clinic and access it to help you in your tasks. </p>
                   </div>
