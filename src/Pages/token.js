@@ -7,6 +7,6 @@ var myAxios=axios.create({
   timeout: 700,
   headers: [{'Authorization': `bearer ${token}`}]
 });
-console.log("___________+",token )
+console.log("======>",token )
 
 export default myAxios;

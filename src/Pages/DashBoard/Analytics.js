@@ -159,50 +159,22 @@ const Analytics = () => {
             <div className="container-fluid text-center" style={{ marginTop: '20px' }}>
                 <h1>Analytics</h1>
             </div>
-                <div className='container-fluid text-center formPart' >
-                <center><h1 id="h2t">Clinic Analytics</h1></center>
-                    <div className='row partItem '>
-                        
-                            <div className="card" style={{marginLeft:"auto", marginRight:"auto"}}>
-                            <div className="content">
-                                {/* <i className="iconstyle"><IoMdAnalytics style={{fontSize: '60px' ,color:"#528298"}}></IoMdAnalytics></i> */}
-                                <div className="contentBx">
-                                    <h3>{suOfpatients}</h3>
-                                </div>
-                            </div>
-                            </div>
-
-                            <div className="card" style={{marginLeft:"auto", marginRight:"auto"}}>
-                            <div className="content">
-                                {/* <i className="iconstyle"><IoMdAnalytics style={{fontSize: '60px' ,color:"#528298"}}></IoMdAnalytics></i> */}
-                                <div className="contentBx">
-                                    <h3>Analytics</h3>
-                                </div>
-                            </div>
-                            </div>
-
-                            <div className="card" style={{marginLeft:"auto", marginRight:"auto"}}>
-                            <div className="content">
-                                {/* <i className="iconstyle"><IoMdAnalytics style={{fontSize: '60px' ,color:"#528298"}}></IoMdAnalytics></i> */}
-                                <div className="contentBx">
-                                    <h3>Analytics</h3>
-                                </div>
-                            </div>
-                            </div>
-
-                            <div className="card" style={{marginLeft:"auto", marginRight:"auto"}}>
-                            <div className="content">
-                                {/* <i className="iconstyle"><IoMdAnalytics style={{fontSize: '60px' ,color:"#528298"}}></IoMdAnalytics></i> */}
-                                <div className="contentBx">
-                                    <h3>Analytics</h3>
-                                </div>
-                            </div>
-                            </div>
-                            
-                    </div>
-                </div>
+                
                 <div className='container-fluid formPart' style={{marginBottom:"20px"}}>
-                    <center><h1 id="h2t">Clinic Analytics</h1></center>
+                <center><h1 id="h2t">Clinic Analytics</h1></center>
+                    <div className='row'>
+                    <div className='col-4 analytics'>
+                    <div className="card" style={{marginLeft:"auto", marginRight:"auto"}}>
+                            <div className="content text-center">
+                                {/* <i className="iconstyle"><IoMdAnalytics style={{fontSize: '60px' ,color:"#528298"}}></IoMdAnalytics></i> */}
+                                <div className="contentBx">
+                                    <h3>Number of Patients</h3>
+                                    <div className='badge ' style={{backgroundColor:"#528298", color:"#BCD9E6", borderRadius:"15px", fontSize:"38px"}}>{suOfpatients}</div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    <div className='col-8'>
                     <ResponsiveContainer width="100%" height={400}>
                         <AreaChart
                             width={500}
@@ -223,6 +195,8 @@ const Analytics = () => {
                             <Area type="monotone" dataKey="pv" stroke="#528298" fill="#70a1b8" />
                         </AreaChart>
                     </ResponsiveContainer>
+                    </div>
+                    </div>
                 </div>
             </section>
             </>

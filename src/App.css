@@ -13,3 +13,7 @@ body{
   --font_family:'Cairo', sans-serif;
 }
 
+input{
+  font-weight: bold;
+}
+

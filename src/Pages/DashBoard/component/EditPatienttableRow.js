@@ -8,7 +8,7 @@ const EditPatienttableRow = ({
   index,
 }) => {
   return (
-    <tr>
+    <tr key={index}>
         <td>
             {index+1}
             </td>
@@ -63,7 +63,7 @@ const EditPatienttableRow = ({
           required="required"
           placeholder="Enter doctor number..."
           name="doctorname"
-          value={editPatient.doctorname}
+          value={"1"}
           onChange={handleEditFormChange}
         ></input>
       </td>

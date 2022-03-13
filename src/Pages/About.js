@@ -47,16 +47,16 @@ thank you for visiting our site.
                     </div>
                     <ul className="sci">
                     <li style={{"--i":1}}>
-                        <a href="#"><i><RiFacebookFill></RiFacebookFill></i></a>
+                        <a href="https://www.facebook.com/AhmedHassanein1998"><i><RiFacebookFill></RiFacebookFill></i></a>
                     </li>
                     <li style={{"--i":2}}>
-                        <a href="#"><i><RiTwitterFill></RiTwitterFill></i></a>
+                        <a href="https://twitter.com/hassanein_a"><i><RiTwitterFill></RiTwitterFill></i></a>
                     </li>
                     <li style={{"--i":3}}>
-                        <a href="#"><i><RiGithubFill></RiGithubFill></i></a>
+                        <a href="https://github.com/a-hassanein"><i><RiGithubFill></RiGithubFill></i></a>
                     </li>
                     <li style={{"--i":4}}>
-                        <a href="#"><i><RiLinkedinFill></RiLinkedinFill></i></a>
+                        <a href="https://www.linkedin.com/in/a-hassanein/"><i><RiLinkedinFill></RiLinkedinFill></i></a>
                     </li>
                 </ul>
                 </div>
@@ -70,16 +70,16 @@ thank you for visiting our site.
                     </div>
                     <ul className="sci">
                     <li style={{"--i":1}}>
-                        <a href="#"><i><RiFacebookFill></RiFacebookFill></i></a>
+                        <a href="https://www.facebook.com/abdo.elsese"><i><RiFacebookFill></RiFacebookFill></i></a>
                     </li>
                     <li style={{"--i":2}}>
                         <a href="#"><i><RiTwitterFill></RiTwitterFill></i></a>
                     </li>
                     <li style={{"--i":3}}>
-                        <a href="#"><i><RiGithubFill></RiGithubFill></i></a>
+                        <a href="https://github.com/abdelrahmanelsese1"><i><RiGithubFill></RiGithubFill></i></a>
                     </li>
                     <li style={{"--i":4}}>
-                        <a href="#"><i><RiLinkedinFill></RiLinkedinFill></i></a>
+                        <a href="https://www.linkedin.com/in/abdelrahman-mohamed-elsese/"><i><RiLinkedinFill></RiLinkedinFill></i></a>
                     </li>
                 </ul>
                 </div>
@@ -93,16 +93,16 @@ thank you for visiting our site.
                     </div>
                     <ul className="sci">
                     <li style={{"--i":1}}>
-                        <a href="#"><i><RiFacebookFill></RiFacebookFill></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100035313377270"><i><RiFacebookFill></RiFacebookFill></i></a>
                     </li>
                     <li style={{"--i":2}}>
                         <a href="#"><i><RiTwitterFill></RiTwitterFill></i></a>
                     </li>
                     <li style={{"--i":3}}>
-                        <a href="#"><i><RiGithubFill></RiGithubFill></i></a>
+                        <a href="https://github.com/Ahmedxd199"><i><RiGithubFill></RiGithubFill></i></a>
                     </li>
                     <li style={{"--i":4}}>
-                        <a href="#"><i><RiLinkedinFill></RiLinkedinFill></i></a>
+                        <a href="https://www.linkedin.com/in/ahmed-elsobky-165349151"><i><RiLinkedinFill></RiLinkedinFill></i></a>
                     </li>
                 </ul>
                 </div>
@@ -116,16 +116,16 @@ thank you for visiting our site.
                     </div>
                     <ul className="sci">
                     <li style={{"--i":1}}>
-                        <a href="#"><i><RiFacebookFill></RiFacebookFill></i></a>
+                        <a href="https://www.facebook.com/alaafar19"><i><RiFacebookFill></RiFacebookFill></i></a>
                     </li>
                     <li style={{"--i":2}}>
-                        <a href="#"><i><RiTwitterFill></RiTwitterFill></i></a>
+                        <a href="https://twitter.com/itsalaa___"><i><RiTwitterFill></RiTwitterFill></i></a>
                     </li>
                     <li style={{"--i":3}}>
-                        <a href="#"><i><RiGithubFill></RiGithubFill></i></a>
+                        <a href="https://github.com/alaafarouk8"><i><RiGithubFill></RiGithubFill></i></a>
                     </li>
                     <li style={{"--i":4}}>
-                        <a href="#"><i><RiLinkedinFill></RiLinkedinFill></i></a>
+                        <a href="https://www.linkedin.com/in/alaa-farouk"><i><RiLinkedinFill></RiLinkedinFill></i></a>
                     </li>
                 </ul>
                 </div>
@@ -139,16 +139,16 @@ thank you for visiting our site.
                     </div>
                     <ul className="sci">
                     <li style={{"--i":1}}>
-                        <a href="#"><i><RiFacebookFill></RiFacebookFill></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100009588633417"><i><RiFacebookFill></RiFacebookFill></i></a>
                     </li>
                     <li style={{"--i":2}}>
                         <a href="#"><i><RiTwitterFill></RiTwitterFill></i></a>
                     </li>
                     <li style={{"--i":3}}>
-                        <a href="#"><i><RiGithubFill></RiGithubFill></i></a>
+                        <a href="https://github.com/3asma2"><i><RiGithubFill></RiGithubFill></i></a>
                     </li>
                     <li style={{"--i":4}}>
-                        <a href="#"><i><RiLinkedinFill></RiLinkedinFill></i></a>
+                        <a href="https://www.linkedin.com/in/3asmaa-alaa-eldin/"><i><RiLinkedinFill></RiLinkedinFill></i></a>
                     </li>
                 </ul>
                 </div>
@@ -162,16 +162,16 @@ thank you for visiting our site.
                     </div>
                     <ul className="sci">
                     <li style={{"--i":1}}>
-                        <a href="#"><i><RiFacebookFill></RiFacebookFill></i></a>
+                        <a href="https://web.facebook.com/angle.meshmesh/"><i><RiFacebookFill></RiFacebookFill></i></a>
                     </li>
                     <li style={{"--i":2}}>
                         <a href="#"><i><RiTwitterFill></RiTwitterFill></i></a>
                     </li>
                     <li style={{"--i":3}}>
-                        <a href="#"><i><RiGithubFill></RiGithubFill></i></a>
+                        <a href="https://github.com/abrar4799"><i><RiGithubFill></RiGithubFill></i></a>
                     </li>
                     <li style={{"--i":4}}>
-                        <a href="#"><i><RiLinkedinFill></RiLinkedinFill></i></a>
+                        <a href="https://www.linkedin.com/in/abrar-abd-el-mohsen/"><i><RiLinkedinFill></RiLinkedinFill></i></a>
                     </li>
                 </ul>
                 </div>

@@ -245,7 +245,7 @@ const componentRef = useRef()
                             <div className="col-lg-6">
                                 <label className="form-label">Favourite Drugs</label>
                                 <select className="form-select" id='favs' name="favdrugname" onChange={(event)=>{handleAddFormChange(event)}}>
-                                    <option value='0' selected='selected'>Choose From Favourite Drugs</option>
+                                    <option value='0'>Choose From Favourite Drugs</option>
                                 {favdrugs.map((favdrug)=>{
                                     return(
                                             <option value={favdrug.favname}>{favdrug.favname}</option>
@@ -376,11 +376,6 @@ const componentRef = useRef()
                             )
                         })} 
                     </div>
-                    <div className="row prescription-footer" >
-                        <div className="col-lg-12 text-center" >
-                            <h2 className="presc-footer-text">عيادتي </h2>
-                        </div>
-                    </div> 
                     
                 </div>
                 <div className="container-fluid presc-button-container" >

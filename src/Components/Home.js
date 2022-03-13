@@ -71,7 +71,7 @@ const Home = ({ logout, isAuthenticated }) => {
                   <p>Hello our dear Doctor in 3eadty Clinic System. thank you for visiting oursite.
 Our system help you to manage your clinic and provide analytics form clinic activities per month To improve profits and opportunities in your business, also can access your clinic from anywhere you are in. 
 Take a tour in our site to know features and packages we provide and being part of us.
-3eadty is pecially built for you with love, We hope you enjoy with us.
+3eadty is specially built for you with love, We hope you enjoy with us.
 3eadty Clinic System Team.</p>
                 </div>
                 <br />

@@ -7,10 +7,11 @@ import AddPatient from "../../Components/AddPatient";
 import config from "../../actions/auth"
 import PatientReadOnlyRow from "./component/PatientReadOnlyRow";
 import EditPatienttableRow from "./component/EditPatienttableRow";
-
+import "../../Style/assistant.css"
 import axios from "axios";
 function Patient() {
     const [patients, setPatients] = useState([])
+    const [errorMessage, setErrorMessage] = useState('');
     const getPatients = async () => {
         try {
             const response = await axios.get('/patient/patient/')
@@ -30,7 +31,7 @@ const [addPatient, setAddPatient] = useState({
     phone: "",
     address: "",
     age: "",
-    doctorname: "",
+    doctorname: 1,
     email: "",
     currentdisease: "",
     Gender: "",
@@ -41,7 +42,7 @@ const [editPatient, setEditPatient] = useState({
     phone: "",
     address: "",
     age: "",
-    doctorname: "",
+    doctorname: 1,
     email: "",
     currentdisease: "",
     Gender: "",
@@ -66,7 +67,7 @@ const handleEditPatientChange = (event) => {
   
     const newData = {
       patient_phone: editPatient.phone,
-      doctor: editPatient.doctorname,
+      doctor: 1,
       patient_name: editPatient.fullname,    
       patient_gender: editPatient.Gender,    
       current_disease: editPatient.currentdisease,    
@@ -82,7 +83,7 @@ const handleEditPatientChange = (event) => {
     try{
         axios.put(`/patient/patient/${editPatientID}/`, {
             patient_phone: editPatient.phone,
-            doctor: editPatient.doctorname,
+            doctor: 1,
             patient_name: editPatient.fullname,    
             patient_gender: editPatient.Gender,    
             current_disease: editPatient.currentdisease,    
@@ -108,9 +109,9 @@ const handleEditPatientChange = (event) => {
   
     const formValues = {
         phone: resdata.patient_phone,
-        doctorname: resdata.doctor,
         fullname: resdata.patient_name,    
-        Gender: resdata.patient_gender,    
+        Gender: resdata.patient_gender,
+        doctor: 1,    
         currentdisease: resdata.current_disease,    
         email: resdata.patient_email,    
         age: resdata.patient_age,    
@@ -141,10 +142,63 @@ const handleEditPatientChange = (event) => {
   
     const handleAddPatientSubmit = (event) => {
       event.preventDefault();
+
+        let fullname = document.getElementById('fullname').value;
+        let phone = document.getElementById('phone').value;
+        let address = document.getElementById('address').value;
+        let age = document.getElementById('age').value;
+        let email = document.getElementById('email').value;
+        let currentdisease = document.getElementById('currentdisease').value;
+        let Gender = document.getElementById('Gender').value;
+        let err = document.getElementById('error')
+        var mailformat =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        let flag=0
+        for(let i=0 ; i< patients.length ; i++){
+            if(phone==patients.patient_phone){
+                flag =1
+            }
+        }
+
+        if(fullname === null || fullname === ""){
+            setErrorMessage("name is required")
+            err.style.visibility = "visible"
+        }else if(phone === null || phone === ""){
+            setErrorMessage("mobile is required")
+            err.style.visibility = "visible"
+        }else if(isNaN(phone)){
+            setErrorMessage("mobile should be a number not text")
+            err.style.visibility = "visible"
+        }else if(flag>0){
+            setErrorMessage("mobile already exist")
+            err.style.visibility = "visible"
+        }else if(phone.length < 11){
+            setErrorMessage("mobile digits should be 11")
+            err.style.visibility = "visible"
+        }else if(age === null || age ===""){
+            setErrorMessage("age is required")
+            err.style.visibility = "visible"
+        }else if(isNaN(age)){
+            setErrorMessage("age should be a number not text")
+        }else if (address === "" || address === null){
+            setErrorMessage("address is required")
+            err.style.visibility = "visible"
+        }else if(email === null || email === ""){
+            setErrorMessage("email is required")
+            err.style.visibility = "visible"
+        }else if(!email.match(mailformat)){
+            setErrorMessage("email should be example@exam.com")
+            err.style.visibility = "visible"
+        }else if(currentdisease === null || currentdisease === ""){
+            setErrorMessage("currentdisease is required")
+            err.style.visibility = "visible"
+        }else if (Gender === null || Gender === ""){
+            setErrorMessage("gender is required")
+            err.style.visibility = "visible"
+        }else {
   
       const newData = {
         patient_phone: addPatient.phone,
-        doctor: addPatient.doctorname,
+        doctor: 1,
         patient_name: addPatient.fullname,    
         patient_gender: addPatient.Gender,    
         current_disease: addPatient.currentdisease,    
@@ -159,12 +213,13 @@ const handleEditPatientChange = (event) => {
   
       try{
           axios.post('/patient/patient/', newData).then((response)=>{
-              console.log(response.data)
+            err.style.visibility = "hidden"  
+            console.log(response.data)
           })
   
       }catch(error){
           console.log(error)
-      }
+      }}
     };
   
     const handledeletePatient = async (patient_id) => {
@@ -188,48 +243,52 @@ const handleEditPatientChange = (event) => {
                 <h1>Add New Patient</h1>
             </div>
             <div className="container-fluid formPart" id="createpatientForm">
+            <      div align="center" className="col-12 text-center" id="error" >
+                  <span>{errorMessage}</span>
+                  <br/>
+                  </div>
                 <div className="container-fluid">
                     <form onSubmit={handleAddPatientSubmit}>
-                        <div class="row">
+                        <div className="row">
                             <h4><b>Add New Patient</b></h4>
-                            <div class="col-md-6">
-                                <label class="col-form-label">Full Name</label>
-                                <input class="form-control" placeholder="Enter Full Name" type="text" name="fullname" onChange={handleAddPatientChange} required />
+                            <div className="col-md-6">
+                                <label className="col-form-label">Full Name</label>
+                                <input className="form-control" placeholder="Enter Full Name" type="text" name="fullname" id={"fullname"} onChange={handleAddPatientChange} required />
                             </div>
-                            <div class="col-md-6">
-                                <label class="col-form-label">Phone Number</label>
-                                <input class="form-control" placeholder="Enter Phone Number " type="phonenumber" name="phone" onChange={handleAddPatientChange} required />
+                            <div className="col-md-6">
+                                <label className="col-form-label">Phone Number</label>
+                                <input className="form-control" placeholder="Enter Phone Number " type="phonenumber" name="phone" id={"phone"} onChange={handleAddPatientChange} required />
 
                             </div>
 
                         </div>
-                        <div class="row g-3 align-items-center">
-                            <div class="col-md-8">
-                                <label class="col-form-label">Address</label>
-                                <input class="form-control" placeholder="Enter Address" type="text" name="address" onChange={handleAddPatientChange} required />
+                        <div className="row g-3 align-items-center">
+                            <div className="col-md-8">
+                                <label className="col-form-label">Address</label>
+                                <input className="form-control" placeholder="Enter Address" type="text" name="address" id={"address"} onChange={handleAddPatientChange} required />
                             </div>
-                            <div class="col-md-4">
-                                <label class="col-form-label">Age</label>
-                                <input class="form-control" placeholder="Enter Age" type="number" name="age" onChange={handleAddPatientChange} required />
+                            <div className="col-md-4">
+                                <label className="col-form-label">Age</label>
+                                <input className="form-control" placeholder="Enter Age" type="number" name="age" id={"age"} onChange={handleAddPatientChange} required />
 
                             </div>
 
 
                         </div>
                         
-                        <div class="row g-3 align-items-center">
-                            <div class="col-md-5">
-                                <label class="col-form-label">Email</label>
-                                <input class="form-control" placeholder="Enter Email" type="email" name="email" onChange={handleAddPatientChange} required />
+                        <div className="row g-3 align-items-center">
+                            <div className="col-md-5">
+                                <label className="col-form-label">Email</label>
+                                <input className="form-control" placeholder="Enter Email" type="email" name="email" id={"email"} onChange={handleAddPatientChange} required />
 
                             </div>
-                            <div class="col-md-4">
-                                <label class="col-form-label">Current Disease</label>
-                                <input class="form-control" placeholder="Enter Current Disease" type="text" name="currentdisease" onChange={handleAddPatientChange} required />
+                            <div className="col-md-4">
+                                <label className="col-form-label">Current Disease</label>
+                                <input className="form-control" placeholder="Enter Current Disease" type="text" name="currentdisease" id={"currentdisease"} onChange={handleAddPatientChange} required />
                             </div>
-                            <div class="col-md-3">
-                                <label class="col-form-label">Gender</label>
-                                <select class="form-select" name="Gender" onChange={handleAddPatientChange}>
+                            <div className="col-md-3">
+                                <label className="col-form-label">Gender</label>
+                                <select className="form-select" name="Gender" onChange={handleAddPatientChange} id={"Gender"}>
                                     <option value="0">Select Your Gender</option>
                                     <option value="female">Female</option>
                                     <option value="male">Male</option>
@@ -239,20 +298,17 @@ const handleEditPatientChange = (event) => {
 
                         </div>
 
-                        <div class="row g-3 align-items-center">
-                            <div class="col-md-12">
-                                <label class="col-form-label">Doctor Name</label>
-                                <input class="form-control" placeholder="Enter Doctor" name="doctorname" type="text"  onChange={handleAddPatientChange}/>
+                        {/* <div className="row g-3 align-items-center">
+                            <div className="col-md-12">
+                                <label className="col-form-label">Doctor Name</label>
+                                <input className="form-control" placeholder="Enter Doctor" name="doctorname" type="text"  onChange={handleAddPatientChange}/>
                             </div>
-                            
+                        </div> */}
 
-
-                        </div>
-
-                        {/* <div class="row align-items-center">
-                            <div class="col-md-12">
-                                <label class="col-form-label">Comments</label>
-                                <input class="form-control" placeholder="Enter Comments" type="text" required onChange={e => setComments(e.target.value)} />
+                        {/* <div className="row align-items-center"> 
+                            <div className="col-md-12">
+                                <label className="col-form-label">Comments</label>
+                                <input className="form-control" placeholder="Enter Comments" type="text" required onChange={e => setComments(e.target.value)} />
                             </div>
                         </div> */}
                         <input type="submit" className="btn prescriptionButton" id="searchbtn" style={{ marginLeft: "auto", marginRight: "auto", marginTop: "20px" }} value="Add Patient"/>
@@ -275,7 +331,7 @@ const handleEditPatientChange = (event) => {
                 <div className="row">
                 <div className="col-12">
                     <form onSubmit={handleEditPatientSubmit}>
-                    <table class="table" id="table_container">
+                    <table className="table" id="table_container">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -291,7 +347,7 @@ const handleEditPatientChange = (event) => {
                         </thead>
                         <tbody>
                             {patients.map((resdata, index)=> (
-                                <Fragment>
+                                <Fragment key={index}>
                                 {editPatientID === resdata.patient_id ? (
                                     <EditPatienttableRow
                                     editPatient={editPatient}
