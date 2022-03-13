@@ -49,7 +49,7 @@ const Analytics = () => {
     return count;
 }
 
-   console.log(getOccurrence(dataAnalytics , 3))
+   //console.log(getOccurrence(dataAnalytics , 3))
 
   
 
@@ -119,6 +119,40 @@ const Analytics = () => {
           
         },
       ];
+
+
+      const [suOfpatients, setSumPatients] = useState()
+      const [patients, setPatients] = useState([])
+      const getPatients = async () => {
+          try {
+              const response = await axios.get('/patient/patient/')
+              const { data } = response
+              console.log(data)
+              setPatients(data)
+              let sum = 0
+              for(let i = 0; i< data.length; i ++){
+                sum = sum + 1
+              }
+              setSumPatients(sum)
+          } catch (err) {
+              console.log(err)
+          }
+      }
+      useEffect(() => {
+          getPatients()
+      }, [])
+
+
+      // const getNumOfpatient = async () => {
+      //   let sum = 0
+      //   for(let i = 0; i< patients.length; i ++){
+      //     sum = sum + 1
+      //   }
+      //   console.log(setSumPatients(sum))
+      // }
+ 
+
+
         return(
             <>
             <section className='home-section' >
@@ -133,7 +167,7 @@ const Analytics = () => {
                             <div className="content">
                                 {/* <i className="iconstyle"><IoMdAnalytics style={{fontSize: '60px' ,color:"#528298"}}></IoMdAnalytics></i> */}
                                 <div className="contentBx">
-                                    <h3>Analytics</h3>
+                                    <h3>{suOfpatients}</h3>
                                 </div>
                             </div>
                             </div>
