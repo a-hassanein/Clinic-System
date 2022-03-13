@@ -72,7 +72,8 @@ return(
             <div className="row text-center contactinfo2" >
                     <div className="col-lg-4 contactinfodiv">
                         <span className="icon" ><HiMail/></span>
-                        <p className="contactway">eadty.clinic@gmail.com</p>
+                        <p className="contactway">
+myclinicapp79@gmail.com</p>
                     </div>
                     <div className="col-lg-4 contactinfodiv">
                         <span className="icon"><BsFillTelephoneFill/></span>

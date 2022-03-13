@@ -68,13 +68,11 @@ const Home = ({ logout, isAuthenticated }) => {
               <div className="col-md-7 col-lg-7 col-sm-12 col-xs-12">
                 <div><h1 >Hello Doctor</h1></div>
                 <div>
-                  <p>The Doctor is the title character in the long-running BBC science fiction television programme Doctor Who.
-                    Since the show's inception in 1963, the character has been portrayed by thirteen lead actors.
-                    In the programme, "the Doctor" is the alias assumed by a millennia-old humanoid alien called a Time Lord
-                    who travels through space and time in the TARDIS, frequently with companions.
-                    The transition to each succeeding actor is explained within the show's narrative through the plot device of "regeneration",
-                    a biological function of the Time Lord race that allows a change of cellular structure and appearance with recovery following
-                    a potentially fatal injury Hi Ashraf@.</p>
+                  <p>Hello our dear Doctor in 3eadty Clinic System. thank you for visiting oursite.
+Our system help you to manage your clinic and provide analytics form clinic activities per month To improve profits and opportunities in your business, also can access your clinic from anywhere you are in. 
+Take a tour in our site to know features and packages we provide and being part of us.
+3eadty is pecially built for you with love, We hope you enjoy with us.
+3eadty Clinic System Team.</p>
                 </div>
                 <br />
 
