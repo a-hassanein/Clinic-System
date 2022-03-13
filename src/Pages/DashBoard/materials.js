@@ -177,7 +177,7 @@ function Materials() {
 
                 </div>
                 <form onSubmit={handleEditMaterialSubmit} > 
-                <table class="table" id="table_container"> 
+                <table className="table" id="table_container"> 
                         <thead>
                             <tr>
                               <th scope="col">#</th>
@@ -196,7 +196,7 @@ function Materials() {
                             )} */}
 
                                 {materials.map((materialsedit, index,material)=> (
-                                <Fragment>
+                                <Fragment key={index}>
                                 {editDataId === materialsedit.material_id ? (
                                     <EditMaterial
                                     editMaterialData={editMaterialData}

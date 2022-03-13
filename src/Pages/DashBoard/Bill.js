@@ -173,7 +173,7 @@ const handlesubmit = (e) => {
           </div>
           <div className="row">
             <div className="col-lg-6 ">
-                <h7 className="clinic-info">Clinic name</h7>
+                <h6 className="clinic-info">Clinic name</h6>
             </div>
             <div className="col-lg-6 ">
                 <h2 className="clinic-info">Appointment ID</h2>
@@ -184,14 +184,14 @@ const handlesubmit = (e) => {
         <div className="row text-center" style={{fontSize:"24px", textTransform:"capitalize"}}>
                 {data.map((resdata,index)=>(
                   <div className="row" key={index}>
-                        <div className="col-lg-6">
-                            <p className="drugs">{resdata.activity_name}</p>
-                        </div>
-                        <div className="col-lg-6">
-                            <p className="drugs">{resdata.activity_price}</p>
-                            <p style={{visibility:"hidden"}}> {sum = sum + resdata.activity_price} </p>
-                        </div>
+                  <div className="col-lg-6" style={{float:"left" ,left:"0px",display:"inline-block"}}>
+                      <p className="drugs">{resdata.activity_name}</p>
                   </div>
+                  <div className="col-lg-6">
+                      <p className="drugs" style={{float:"right" ,right:"0px",display:"inline-block"}}>{resdata.activity_price}</p>
+                      <p style={{ visibility: "hidden" }}> {sum = sum + resdata.activity_price} </p>
+                  </div>
+              </div>
                 ))}
                 <div className="row" >
                   <div className="col-lg-12">
@@ -201,6 +201,7 @@ const handlesubmit = (e) => {
                 </div>
 
         </div>
+        
         </div>
         <div className="container-fluid presc-button-container" >
                     <div className="row text-center">

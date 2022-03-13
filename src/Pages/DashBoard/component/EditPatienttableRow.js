@@ -8,7 +8,7 @@ const EditPatienttableRow = ({
   index,
 }) => {
   return (
-    <tr>
+    <tr key={index}>
         <td>
             {index+1}
             </td>

@@ -7,6 +7,8 @@ import Bill from '../DashBoard/Bill';
 import HomeDashboard from '../DashBoard/home';
 import Prescripe from './Prescription'
 import Patient from './Patient'
+import PatientInfo from './PatientInfo'
+import PatientHistory from './PatientHistory'
 import {BrowserRouter as Router, Switch ,Route, useRouteMatch } from 'react-router-dom';
 import Appointment from './Appointment';
 import Materials from '../DashBoard/materials';
@@ -32,7 +34,9 @@ const Dashboard = () => {
                     <Route path="/dashboard/surgery" component={Surgery} />
                     <Route path="/dashboard/bill" component={Bill} />
                     <Route path='/dashboard/prescription' exact component={Prescripe} />
-                    <Route path="/dashboard/patient" component={Patient} />
+                    <Route path="/dashboard/patient" exact component={Patient} />
+                    <Route path="/dashboard/patient/patientinfo/:id" exact component={PatientInfo} />
+                    <Route path="/dashboard/patient/patientinfo/:id/patienthistory/:id" component={PatientHistory} />
                     <Route path="/dashboard/materials" component={Materials}/>
                     <Route path="/dashboard/addmaterial" component={Addmaterial}/>
                     <Route path="/dashboard/scan_labs" exact component={Scan_labs}/>

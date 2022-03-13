@@ -10,20 +10,20 @@ function Addmaterial() {
         <div className="container">
 <div id="formm">
           <form>
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" />
+    <div className="mb-3">
+      <label for="name" className="form-label">Name</label>
+      <input type="text" className="form-control" id="name" />
     </div>
-     <div class="mb-3">
-      <label for="usage" class="form-label">Usage</label>
-      <input type="text" class="form-control" id="usage" />
+     <div className="mb-3">
+      <label for="usage" className="form-label">Usage</label>
+      <input type="text" className="form-control" id="usage" />
     </div>
-     <div class="mb-3">
-      <label for="summary" class="form-label">Summary</label>
-      <input type="text" class="form-control" id="summary" />
+     <div className="mb-3">
+      <label for="summary" className="form-label">Summary</label>
+      <input type="text" className="form-control" id="summary" />
     </div>
     
-    <button id="btn_form_add" type="submit" class="btn btn-primary">Add Material</button>
+    <button id="btn_form_add" type="submit" className="btn btn-primary">Add Material</button>
     </form>
     </div>
     </div>

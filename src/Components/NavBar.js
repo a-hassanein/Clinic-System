@@ -65,7 +65,6 @@ const NavBar = () => {
         id="navbar"
         className="navbar navbar-expand-lg navbar-light fixed-top  "
       >
-        <Link to={"/"}>
           <a href="#home">
             <img
               className={"logo"}
@@ -73,7 +72,6 @@ const NavBar = () => {
               alt="..logo"
             />
           </a>
-        </Link>
         <button
           className="navbar-toggler"
           type="button"

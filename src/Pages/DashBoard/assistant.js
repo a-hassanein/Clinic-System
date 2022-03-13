@@ -287,7 +287,7 @@ const Assistant = () => {
                     <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Gender</label>
-                                <select class="custom-select" name="gender"  onChange={handleAddFormChange} id="gender" >
+                                <select className="custom-select" name="gender"  onChange={handleAddFormChange} id="gender" >
                                     <option value="">choose your gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -340,7 +340,7 @@ const Assistant = () => {
 
                 
 
-                <table class="table" id="table_container">
+                <table className="table" id="table_container">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -372,7 +372,7 @@ const Assistant = () => {
                         } */}
 
                     {data.map((resdata, index)=> (
-                                <Fragment>
+                                <Fragment key={index}>
                                 {editDataId === resdata.assistant_id ? (
                                     <EditableRow
                                     editFormData={editFormData}

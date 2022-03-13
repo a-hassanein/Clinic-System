@@ -196,7 +196,7 @@ const handleAddSurgeryChange = (event) => {
           <div className="row">
           <div className="col-12">
         <form onSubmit={handleEditSurgerySubmit}>
-        <table class="table" id="table_container"> 
+        <table className="table" id="table_container"> 
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -210,7 +210,7 @@ const handleAddSurgeryChange = (event) => {
                         <tbody>
 
                         {surgeries.map((resdata, index)=> (
-                                <Fragment>
+                                <Fragment key={index}>
                                 {editSurgeryID === resdata.surgery_id ? (
                                     <EdiSurgerytableRow
                                     editSurgeryData={editSurgeryData}
