@@ -20,12 +20,13 @@ const Login = ({ login, isAuthenticated }) => {
     });
 
     const { email, password } = formData;
-
+    const [errorMessage, setErrorMessage] = useState('');
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
-
     const onSubmit = e => {
+        let err = document.getElementById('errorMessage')
         e.preventDefault();
         login(email, password);
+        
     };
     if (isAuthenticated) {
         return <Redirect to='/' />
@@ -55,14 +56,18 @@ const Login = ({ login, isAuthenticated }) => {
                                     onChange={e => onChange(e)}
                                     minLength='8' placeholder="Password" required />
                             </div>
-                            <div style={{textDecoration:"none", direction:"none"}}>
-                            <Link to={"/dashboard"} style={{textDecoration:"none", direction:"none"}}>
-                            <button type="submit" className="btn" >Sign In</button>
-                            </Link>
+                            <div align="center" className="col-12 text-center" id="errorMessage" >
+                                <span>{errorMessage}</span>
+                                <br />
+                            </div>
+                            <div style={{ textDecoration: "none", direction: "none" }}>
+                                <Link to={"/dashboard"} style={{ textDecoration: "none", direction: "none" }}>
+                                    <button type="submit" className="btn" >Sign In</button>
+                                </Link>
                             </div>
                         </form>
                         <div>
-                            <p id="social-text" style={{ alignitems: "center" }}> or sign in with</p>
+                            {/* <p id="social-text" style={{ alignitems: "center" }}> or sign in with</p>
                             <div id="socialmediaLogin">
                                 <a href="https://www.facebook.com">
                                     <FontAwesomeIcon icon={faFacebook} size="2x" />
@@ -73,7 +78,7 @@ const Login = ({ login, isAuthenticated }) => {
                                 <a href="https://www.instagram.com">
                                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                                 </a>
-                            </div>
+                            </div> */}
                             <div className="footerform " style={{ color: "#528298", paddingTop: '15px' }}>
                                 <p id="footerLink" >Forget Password ? <Link id="linkform" to='/reset-password'> Reset Password  </Link> </p>
                             </div>

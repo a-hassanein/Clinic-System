@@ -5,7 +5,7 @@ import registerImg from "../Images/signup-remove.png"
 import { useState } from "react";
 import logo from "../Images/logo3.png";
 import "../Style/signup.css"
-import { signup} from '../actions/auth';
+import { signup } from '../actions/auth';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faFacebook,
@@ -23,20 +23,76 @@ const SignUp = ({ signup, isAuthenticated }) => {
         phone: '',
         password: '',
         re_password: '',
-    
+
     });
 
-    const { name, username, email,  age, gender, phone,  password, re_password } = formData;
+    const { name, username, email, age, gender, phone, password, re_password } = formData;
+    const [errorMessage, setErrorMessage] = useState('');
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
-
     const onSubmit = e => {
         e.preventDefault();
-
-        if (password === re_password) {
-            signup(name, username, email,  age, gender, phone,  password, re_password);
+        let name = document.getElementById('name').value;
+        let username = document.getElementById('username').value;
+        let phone = document.getElementById('phone').value;
+        let age = document.getElementById('age').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        let re_password = document.getElementById('re_password').value;
+        let gender = document.getElementById('gender').value;
+        let err = document.getElementById('errorMessage')
+        var mailformat =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        var nameregx=/^[aA-zZ\s]+$/;
+        if(name === null || name === ""){
+            setErrorMessage("Name is required")
+            err.style.visibility = "visible"
+        }
+        else if (!name.match(nameregx)) {
+            setErrorMessage("name should be string")
+            err.style.visibility = "visible"
+        }
+        else if(username === null || username === ""){
+            setErrorMessage("Username is required")
+            err.style.visibility = "visible"
+        }else if(isNaN(phone)){
+            setErrorMessage("Password should be a number not string")
+            err.style.visibility = "visible"
+        }else if(phone.length < 11 || phone.length > 11 ){
+            setErrorMessage("Mobile Phone Number digits should be 11")
+            err.style.visibility = "visible"
+        }else if(age === null || age ===""){
+            setErrorMessage("Age is required")
+            err.style.visibility = "visible"
+        }else if(isNaN(age)){
+            setErrorMessage("Age should be a number not string")
+        }else if(email === null || email === ""){
+            setErrorMessage("Email is required")
+            err.style.visibility = "visible"
+        }else if(!email.match(mailformat)){
+            setErrorMessage("email should be example@exam.com")
+            err.style.visibility = "visible"
+        }else if(password === null || password === ""){
+            setErrorMessage("Password is required")
+            err.style.visibility = "visible"
+        }
+        else if(re_password === null || re_password === ""){
+            setErrorMessage("Confirm Password is required")
+            err.style.visibility = "visible"
+        }
+        else if (password !== re_password) {
+            setErrorMessage("Passwords Doesnt Match")
+            err.style.visibility = "visible"
+        }
+        else if (gender === null || gender === ""){
+            setErrorMessage("Gender is required")
+            err.style.visibility = "visible"
+        }
+        else if (password === re_password) {
+            signup(name, username, email, age, gender, phone, password, re_password);
             setAccountCreated(true);
         }
+
+        
     };
     if (isAuthenticated) {
         return <Redirect to='/' />
@@ -74,54 +130,66 @@ const SignUp = ({ signup, isAuthenticated }) => {
                             <div id="Form_Title">Create Account</div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="text" id="formInput" className="form-control" name='name'
+                                <input type="text" id="name" className="form-control" name='name'
                                     value={name}
-                                    onChange={e => onChange(e)} placeholder="Enter Your Name*" required />
+                                    onChange={e => onChange(e)} placeholder="Enter Your Name*"  />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="text" className="form-control" name='username'
+                                <input type="text" id="username"
+                                    className="form-control" name='username'
                                     value={username}
                                     onChange={e => onChange(e)}
-                                    required placeholder="Enter Your User Name*" />
+                                     placeholder="Enter Your User Name*" />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="email" className="form-control"  name='email' value={email}
+                                <input type="email" id="email" className="form-control" name='email' value={email}
                                     onChange={e => onChange(e)}
-                                    placeholder="Enter Your Email*" required />
+                                    placeholder="Enter Your Email*"  />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="number" className="form-control"  name='age' value={age} onChange={e => onChange(e)} placeholder="Enter Your Age*" required />
+                                <input type="number" className="form-control" id="age" name='age' value={age} onChange={e => onChange(e)} placeholder="Enter Your Age*"  />
+                            </div>
+                            <div className="col-lg-6">
+                                <select class="custom-select" name="gender"  value={gender} onChange={e => onChange(e)} id="gender" required>
+                                    <option value="">choose your gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            {/* <div >
+                                <label className="form-label"></label>
+                                <input type="text" className="form-control" name='gender' value={gender} onChange={e => onChange(e)} placeholder="Enter Your Gender*" required />
+                            </div> */}
+                            <div >
+                                <label className="form-label"></label>
+                                <input type="text" className="form-control" id="phone" name='phone' value={phone} pattern="^01[0-2]\d{1,8}$" onChange={e => onChange(e)} placeholder="Enter Your Phone Number*"  />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="text" className="form-control"  name='gender' value={gender} onChange={e => onChange(e)} placeholder="Enter Your Gender*" required />
-                            </div>
-                            <div >
-                                <label className="form-label"></label>
-                                <input type="text" className="form-control"  name='phone' value={phone} onChange={e => onChange(e)} placeholder="Enter Your Phone Number*" required />
-                            </div>
-                            <div >
-                                <label className="form-label"></label>
-                                <input  type="password"  name='password' className="form-control" value={password}
+                                <input type="password" name='password' id="password" className="form-control" value={password}
                                     onChange={e => onChange(e)}
                                     minLength='8'
-                                    placeholder="Password*" required />
+                                    placeholder="Password*"  />
                             </div>
                             <div >
                                 <label className="form-label"></label>
-                                <input type="password" className="form-control" name='re_password'
+                                <input type="password" className="form-control" id="re_password" name='re_password'
                                     value={re_password}
                                     onChange={e => onChange(e)}
                                     minLength='6'
-                                    placeholder="Confirm Password*" required />
+                                    placeholder="Confirm Password*"  />
+                            </div>
+                            <div align="center" className="col-12 text-center" id="errorMessage" >
+                                <span>{errorMessage}</span>
+                                <br/>
                             </div>
                             <button type="submit" className="btn" >Sign Up</button>
                         </form>
                         <div >
-                            <p id="social-text" style={{ alignitems: "center" }}> or sign up with</p>
+                            {/* <p id="social-text" style={{ alignitems: "center" }}> or sign up with</p>
                             <div id="socialmediaSignUp">
                                 <a href="https://www.facebook.com"
                                 >
@@ -135,7 +203,8 @@ const SignUp = ({ signup, isAuthenticated }) => {
                                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                                 </a>
 
-                            </div>
+                            </div> */}
+                           
                             <div className="footerform " style={{ color: "#528298", paddingTop: '15px' }}>
                                 <p id="footerLink">Have an Account ? <Link id="linkform" to='/login'> Sign In Now </Link> </p>
                             </div>

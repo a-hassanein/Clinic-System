@@ -286,7 +286,6 @@ const Assistant = () => {
                           
                     <div className="row">
                             <div className="col-lg-6">
-                                <label className="form-label">Gender</label>
                                 <select class="custom-select" name="gender"  onChange={handleAddFormChange} id="gender" >
                                     <option value="">choose your gender</option>
                                     <option value="male">Male</option>
