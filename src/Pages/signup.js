@@ -152,7 +152,7 @@ const SignUp = ({ signup, isAuthenticated }) => {
                                 <label className="form-label"></label>
                                 <input type="number" className="form-control" id="age" name='age' value={age} onChange={e => onChange(e)} placeholder="Enter Your Age*"  />
                             </div>
-                            <div className="col-lg-6">
+                            <div >
                                 <select class="custom-select" name="gender"  value={gender} onChange={e => onChange(e)} id="gender" required>
                                     <option value="">choose your gender</option>
                                     <option value="male">Male</option>
