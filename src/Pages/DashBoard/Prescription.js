@@ -39,6 +39,21 @@ const Prescripe = () => {
         between:"",
         note:""
     }])
+    const [data1, setData1] = useState([])
+    const getUser = async () => {
+        try {
+            const response = await axios.get('/auth/users/2/')
+            const { data } = response
+            console.log(data)
+            setData1(data)
+           
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    useEffect(() => {
+        getUser()
+  }, [])
 
 
 const getdrugs = async() => {
@@ -320,34 +335,23 @@ const componentRef = useRef()
                     <Link to={"/dashboard/prescription/drugfav"} className="btn" id="submitbtn" style={{ width: "45px", fontSize: "10px",float: "right"  }}><AiFillStar style={{fontSize: "20px" }}></AiFillStar></Link>
                 </div>
                 <div className="container prescriptionPart"  ref={componentRef}>
+                    <div className="row text-center">
+                        <div className="col-lg-12 ">
+                            <h1 className="clinic-info"><b>Prescription</b></h1>
+                        </div>
+                    </div>
                     <div className="row  doctor-presc-info">
                         <div className="col-lg-6 ">
-                            <h2 className="clinic-info">Clinic name</h2>
+                            <h2 className="clinic-info">DR: {data1.name}</h2>
                         </div>
                         <div className="col-lg-6 ">
-                            <h2 className="clinic-info">Doctor name</h2>
-                        </div>
-                        <div className="col-lg-6 ">
-                            <h3 className="clinic-info">clinic numbers</h3>
-                        </div>
-                        <div className="col-lg-6">
-                            <h3 className="clinic-info">Doctor info</h3>
-                        </div>
-                        <div className="col-lg-6">
-                            <h3 className="clinic-info">clinic address</h3>
+                            <h3 className="clinic-info">Tel No: {data1.phone}</h3>
                         </div>
                     </div>
                     
                     <div className="row prescription-body" dir="rtl">
-                        <div className="col-lg-4">
+                        <div className="col-lg-6">
                             <h5 className="patient-prescription-info">الاسم:{patient.patientname}</h5>
-                        </div>
-                            
-                        <div className="col-lg-4">
-                            <h5 className="patient-prescription-info">السن:25</h5>
-                        </div>
-                        <div className="col-lg-4">
-                            <h5 className="patient-prescription-info">التاريخ:25-2-2022</h5>
                         </div>
                     </div>
                     <div className="row">

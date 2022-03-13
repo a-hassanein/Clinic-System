@@ -205,14 +205,6 @@ const handlesubmit = (e) => {
               <h1 className="clinic-info"><b>BILL</b></h1>
             </div>
           </div>
-          <div className="row">
-            <div className="col-lg-6 ">
-                <h6 className="clinic-info">Clinic name</h6>
-            </div>
-            <div className="col-lg-6 ">
-                <h2 className="clinic-info">Appointment ID</h2>
-            </div>
-          </div>
         </div>
 
         <div className="row text-center" style={{fontSize:"24px", textTransform:"capitalize"}}>

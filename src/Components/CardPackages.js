@@ -22,6 +22,8 @@ function CardPackages(props) {
           <li>{props.list0} </li>
           <li>{props.list1} </li>
           <li>{props.list2}</li>
+          <li>{props.list3}</li>
+          <li>{props.list4}</li>
         </ul>
 
         <Button className="Card__Button">Select</Button>

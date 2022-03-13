@@ -54,7 +54,7 @@ function DrugFav() {
         
     
         try{
-            axios.post('http://localhost:8000/favdrugs/favdrugs/', newData).then((response)=>{
+            axios.post('/favdrugs/favdrugs/', newData).then((response)=>{
                 console.log(response.data)
                 setFavdrugspost(newDatas);
             })

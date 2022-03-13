@@ -8,18 +8,22 @@ function Packages() {
     {
       title: "TRIAL",
       Subtitle: "FREE",
-      list0: "Lorem Ipsum is simply dummy text",
-      list1: "Lorem Ipsum is simply dummy text",
-      list2: "Lorem Ipsum is simply dummy text",
+      list0: "Unlimited Access",
+      list1: "Unlimited NO. Patient",
+      list2: "24/7 Technical Support",
+      list3: "Limited Data Size",
+      list4: "30 Days",
     },
     {
       title: "PREMIUM",
       Subtitle: 1500,
       coin: "EGP",
       per: " /Year",
-      list0: "Lorem Ipsum is simply dummy text",
-      list1: "Lorem Ipsum is simply dummy text",
-      list2: "Lorem Ipsum is simply dummy text",
+      list0: "Unlimited Access",
+      list1: "Unlimited NO. Patient",
+      list2: "24/7 Technical Support",
+      list3: "Provide Clinic Analytics",
+      list4: "365 days",
     },
     {
       title: "GOLD",
@@ -74,6 +78,8 @@ function Packages() {
               list0={packages[0].list0}
               list1={packages[0].list1}
               list2={packages[0].list2}
+              list3={packages[0].list3}
+              list4={packages[0].list4}
             />
           </div>
         </Link>
@@ -87,6 +93,8 @@ function Packages() {
               list0={packages[1].list0}
               list1={packages[1].list1}
               list2={packages[1].list2}
+              list3={packages[1].list3}
+              list4={packages[1].list4}
             />
           </div>
         </Link>

@@ -16,7 +16,17 @@
     min-height: 100vh;
     overflow: hidden;
 }
-
+#errorMessage{
+    margin-top: 20px;
+    visibility: hidden;
+    background-color:#528298;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight:600 ;
+    padding: 5px;
+    width: 350px;
+}
 .main-login .login-conatiner{
     height: 90vh;
     width: 70% ;

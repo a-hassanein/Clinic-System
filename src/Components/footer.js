@@ -10,7 +10,7 @@ function Footer() {
             <div className="py-5">
             <img src={require('../Images/logo4.png')} alt="..logo" style={{width: "100%" , height:"100%" , maxWidth:"300px" ,marginLeft:"25px" }} />
             <div className="col-lg-6 mx-auto" >
-                <p className="fs-5 mb-4 text-white"> 3eadty Clinic System , Using Python And Django Framwork , JavaScript And Reactjs Framwork . This Project Implementation Made By Students From ITI-3 Monthes -Open Source -Full Stack Web Development Using Python Track. thank you for visiting our site </p>
+                <p className="fs-5 mb-4 text-white"> 3eadty Clinic System , Using Python And Django Framwork , JavaScript And Reactjs Framwork . This Project Implementation Made By Students From ITI-3 Monthes -Open Source -Full Stack Web Development Using Python Track. Thank you for visiting our site </p>
                 {/* <Link to={"/home"} className="btn text-center" id={"dashbordBtn"}>Dashbord</Link> */}
             </div>
             </div>
