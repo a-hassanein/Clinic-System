@@ -20,7 +20,7 @@
 
 
 
-.partItem .card {
+.analytics .card {
 position: relative;
 width: 450px;
 height: 350px;
@@ -34,7 +34,7 @@ align-items: center;
 text-decoration: none;
 }
 
-.partItem .card .content{
+.analytics .card .content{
     position: relative;
     display: flex;
     justify-content: center;
@@ -45,14 +45,14 @@ text-decoration: none;
     text-decoration: none;
 }
 
-.partItem .card:hover .content{
+.analytics .card:hover .content{
     opacity: 1;
     transform: translateY(-20px);
     text-decoration: none;
 }
 
 
-.partItem .card .content .imgBx img{
+.analytics .card .content .imgBx img{
     position: absolute;
     top: 0;
     left: 0;
@@ -61,7 +61,7 @@ text-decoration: none;
     object-fit: cover;
 }
 
-.partItem .card .content .contentBx h3{
+.analytics .card .content .contentBx h3{
     color: #528298;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -73,7 +73,7 @@ text-decoration: none;
     text-decoration: none;
 }
 
-.partItem .card .content .contentBx h3 span{
+.analytics .card .content .contentBx h3 span{
     font-size: 12px;
     font-weight: 600;
     text-transform: initial;

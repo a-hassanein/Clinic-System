@@ -224,10 +224,6 @@ const handleAddSurgeryChange = (event) => {
         </div>
 
         <div className="frame_nav d-flex justify-content-center">
-                    <form className="d-flex" >
-                        <input className="form-control me-2" type="search" placeholder="Search For Patient" aria-label="Search" id="searchfield" />
-                        <button className="btn" id="searchbtn" type="submit">Search</button>
-                    </form>
         </div>
         <div className="container-fluid">
           <div className="row">

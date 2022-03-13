@@ -110,7 +110,8 @@ const handleEditPatientChange = (event) => {
     const formValues = {
         phone: resdata.patient_phone,
         fullname: resdata.patient_name,    
-        Gender: resdata.patient_gender,    
+        Gender: resdata.patient_gender,
+        doctor: 1,    
         currentdisease: resdata.current_disease,    
         email: resdata.patient_email,    
         age: resdata.patient_age,    
