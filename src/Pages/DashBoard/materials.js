@@ -8,6 +8,7 @@ import { useState,useRef,useEffect, Fragment } from "react";
 import { useHistory } from 'react-router-dom';
 import EditMaterial from "./component/EditMaterial";
 import MaterialRow from "./component/MaterialRow";
+import "../../Style/assistant.css";
 
 
 function Materials() {
@@ -40,6 +41,10 @@ function Materials() {
       price: "",
     });
   
+
+    const [errorMessage, setErrorMessage] = useState('');
+
+
     const [editDataId, setEditDataId] = useState(null);
 
     const handleEditMaterialChange = (event) => {
@@ -69,7 +74,30 @@ function Materials() {
 
       const handleAddMaterialSubmit = (event) => {
         event.preventDefault();
-    
+
+        let materialname = document.getElementById('materialname').value;
+        let usage = document.getElementById('usage').value;
+        let price = document.getElementById('price').value;
+        //let flag = 0;
+        let err = document.getElementById('error')
+        //var mailformat =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+        if(materialname === null || materialname === ""){
+            setErrorMessage("materialname is required")
+            err.style.visibility = "visible"
+        }else if(usage === null || usage === ""){
+            setErrorMessage("usage is required")
+            err.style.visibility = "visible"
+        }  else if(price === null || price === ""){
+          setErrorMessage("price should be a number not text")
+          err.style.visibility = "visible"
+      }
+        else if(isNaN(price)){
+            setErrorMessage("price should be a number not text")
+            err.style.visibility = "visible"
+        }
+      
+        else {   
         const newData = {
           material_name: addMaterialData.materialname,
           material_usage: addMaterialData.usage,
@@ -82,12 +110,17 @@ function Materials() {
 
         try{
             axios.post('/materials/materials/', newData).then((response)=>{
+              err.style.visibility = "hidden"
               getMaterials();  
               console.log(response.data)
             })
         }catch(error){
             console.log(error)
         }
+
+      }
+
+
       };
 
 
@@ -110,6 +143,7 @@ function Materials() {
       const handleEditMaterialSubmit = (event) => {
         event.preventDefault();
 
+      
         try{
             axios.put(`/materials/materials/${editDataId}/` ,  {
               material_name: editMaterialData.materialname,
@@ -123,6 +157,9 @@ function Materials() {
         }catch(error){
             console.log(error)
         }
+
+  
+
         setEditDataId(null);
       };
 
@@ -148,24 +185,30 @@ function Materials() {
       <center><h1 style={{ marginTop: '20px' }}>Your Materials</h1></center>
 
       <div className='container-fluid formPart' >
+
+                 <div align="center" className="col-12 text-center" id="error" style={{marginLeft:"auto" ,marginRight:"auto"}}>
+                  <span>{errorMessage}</span>
+                  <br/>
+                  </div>
+
                     <form  onSubmit={handleAddMaterialSubmit}>
                         
                         <div className="row">
                             <div className="col-lg-12">
 					<center><h2 id="h2t">New Material</h2></center>
                                 <label className="form-label">Material Name</label>
-                                <input type='text' className='form-control' name="materialname" onChange={handleAddMaterialChange} />
+                                <input type='text' className='form-control' id={'materialname'} name="materialname" onChange={handleAddMaterialChange} />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
                                 <label className="form-label">Usage</label>
-                                <input type='text' className="form-control" name="usage" onChange={handleAddMaterialChange} />
+                                <input type='text' className="form-control" id={'usage'} name="usage" onChange={handleAddMaterialChange} />
                             </div>
                             
                             <div className="col-lg-6">
                                 <label className="form-label">Price</label>
-                                <input type='text' className="form-control" name="price" onChange={handleAddMaterialChange} />
+                                <input type='text' className="form-control" id={'price'} name="price" onChange={handleAddMaterialChange} />
                             </div>
                         </div>
                         <div className="row text-center">

@@ -8,6 +8,7 @@ import SurgeryReadOnlyRow from "./component/sergeryReadOnly";
 import EdiSurgerytableRow from "./component/EditSurgeryTableRow";
 import myAxios from "../token"
 import load_user from "../../actions/auth"
+import "../../Style/assistant.css"
 
 
 const Surgery = () => {
@@ -26,6 +27,10 @@ const Surgery = () => {
   useEffect(() => {
     getSurgeries()
 }, [])
+
+
+const [errorMessage, setErrorMessage] = useState('');
+
 
 const [addSurgeryData, setAddSurgeryData] = useState({
     surgery: "",
@@ -119,6 +124,29 @@ const handleAddSurgeryChange = (event) => {
   const handleAddSurgerySubmit = (event) => {
     event.preventDefault();
 
+
+    let surgery = document.getElementById('surgery').value;
+    let price = document.getElementById('price').value;
+    let surgery_description = document.getElementById('surgery_description').value;
+    //let flag = 0;
+    let err = document.getElementById('error')
+    //var mailformat =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if(surgery === null || surgery === ""){
+        setErrorMessage("surgery is required")
+        err.style.visibility = "visible"
+    }else if(price === null || price === ""){
+        setErrorMessage("price is required")
+        err.style.visibility = "visible"
+    }else if(isNaN(price)){
+        setErrorMessage("price should be a number not text")
+        err.style.visibility = "visible"
+    }else if(surgery_description === null || surgery_description === ""){
+        setErrorMessage("surgery_description is required")
+        err.style.visibility = "visible"
+    }
+    else {
+
     const newData = {
       surgery_name: addSurgeryData.surgery,
       surgery_price: addSurgeryData.price,
@@ -131,12 +159,15 @@ const handleAddSurgeryChange = (event) => {
 
     try{
         axios.post('/surgery/surgery/', newData, load_user(getSurgeries)).then((response)=>{
+          err.style.visibility = "hidden"
             console.log(response.data)
         })
 
     }catch(error){
         console.log(error)
     }
+
+  }
   };
 
   const handledeleteSurgery = async (surgery_id) => {
@@ -158,23 +189,29 @@ const handleAddSurgeryChange = (event) => {
         </div>
 
         <div className='container-fluid formPart' >
+
+        <div align="center" className="col-12 text-center" id="error" style={{marginLeft:"auto" ,marginRight:"auto"}}>
+                  <span>{errorMessage}</span>
+                  <br/>
+                  </div>
+
           <form onSubmit={handleAddSurgerySubmit}>
 
             <div className="row">
               <div className="col-lg-6">
                   <label className="form-label">Surgery Name</label>
-                  <input type='text' className='form-control' name="surgery" onChange={handleAddSurgeryChange}/>
+                  <input type='text' className='form-control' name="surgery" id='surgery'onChange={handleAddSurgeryChange}/>
               </div>
               <div className="col-lg-6">
                   <label className="form-label">Price</label>
-                  <input type='text' className='form-control' name="price" onChange={handleAddSurgeryChange}/> 
+                  <input type='text' className='form-control' name="price" id="price" onChange={handleAddSurgeryChange}/> 
               </div>
             </div>
 
           <div className="row">
                   <div className="col-lg-12">
                       <label className="form-label">Description</label>
-                      <textarea type='text' className='form-control' name="surgery_description" onChange={handleAddSurgeryChange}/>
+                      <textarea type='text' className='form-control' id="surgery_description" name="surgery_description" onChange={handleAddSurgeryChange}/>
                   </div>
           </div>
 
