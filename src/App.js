@@ -10,6 +10,8 @@ import store from './store';
 import Activate from './Containers/Activate';
 import ResetPassword from './Containers/ResetPassword';
 import ResetPasswordConfirm from './Containers/ResetPasswordConfirm';
+import Moreservices from './Pages/Moreservices';
+
 function App() {
   return (
     <Provider store={store}>
@@ -19,6 +21,7 @@ function App() {
           <Route path="/login" component={Login} exact />
           <Route path="/signup" component={SignUp} exact />
           <Route path="/dashboard" component={Dashboard} exact />
+          <Route path="/moreservices" component={Moreservices} exact />
           <Route path="/dashboard/:id" component={Dashboard} />
           <Route exact path='/reset-password' component={ResetPassword} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
