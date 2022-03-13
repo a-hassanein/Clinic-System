@@ -22,8 +22,7 @@ import Analytics from '../DashBoard/Analytics';
 
 
 const Dashboard = () => {
-  const {url} = useRouteMatch()
-  console.log(url)
+ 
   return (
     <>
             <Router> 
