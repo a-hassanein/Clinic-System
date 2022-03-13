@@ -208,11 +208,7 @@ const handleAddBillChange = (event) => {
                             <div className="row">
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Name</label>
-<<<<<<< HEAD
                                     <input type='text' className='form-control' name="patientname" required  onChange={(e)=>{patientValidate(e)}}/>
-=======
-                                    <input type='text' className='form-control' name="patientname" id="patientname"  onChange={handleAddBillChange}/>
->>>>>>> f916e3d7f754c062ea033c04fbb0610af7eaedd4
                                 </div>
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Phone Number </label>
