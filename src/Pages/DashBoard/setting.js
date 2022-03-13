@@ -151,7 +151,7 @@ const Setting = () => {
                 </div>
 
                <div className='container-fluid formPart' >
-                     <div align="center" className="col-12 text-center" id="error" style={{marginLeft:"auto" ,marginRight:"auto"}}>
+                 <div align="center" className="col-12 text-center" id="error" style={{marginLeft:"auto" ,marginRight:"auto"}}>
                   <span>{errorMessage}</span>
                   <br/>
                   </div>

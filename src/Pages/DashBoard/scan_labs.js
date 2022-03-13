@@ -1,6 +1,6 @@
 import React from "react";
 import "../../Style/scan_lab.css";
-import { Link , Switch ,Route,Router} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useState, useRef,useEffect } from "react";
 import { useReactToPrint } from 'react-to-print';
 import {
@@ -8,8 +8,13 @@ import {
 } from "react-icons/ai";
 import ScanFav from './ScanFav'
 import axios from "axios";
+import "../../Style/assistant.css"
 
 function Scan_labs() {
+
+
+    const [errorMessage, setErrorMessage] = useState('');
+
     const [labs, setLabs] = useState([])
     const getLabs = async () => {
         try {
@@ -102,6 +107,55 @@ const handleAddBillChange = (event) => {
     // if(event.target.name==="patientlab"){
     //     setAddLabData({...addLabData,activity: event.target.value})
     // }
+
+
+    let avtivityID = document.getElementById('avtivityID').value;
+    let patientname = document.getElementById('patientname').value;
+    let patientmobile = document.getElementById('patientmobile').value;
+    let patientage = document.getElementById('patientage').value;
+    let appointmentid = document.getElementById('appointmentid').value;
+    let patientlab = document.getElementById('patientlab').value;
+    let patientscan = document.getElementById('patientscan').value;
+    //let flag = 0;
+    let err = document.getElementById('error')
+
+    if(patientname === null || patientname === ""){
+        setErrorMessage("patientname is required")
+        err.style.visibility = "visible"
+    }else if(patientmobile === null || patientmobile === ""){
+        setErrorMessage("patientmobile is required")
+        err.style.visibility = "visible"
+    }else if(isNaN(patientmobile)){
+        setErrorMessage("patientmobile should be a number not text")
+        err.style.visibility = "visible"
+    }else if(patientmobile.length < 11 || patientmobile.length > 11 ){
+        setErrorMessage("patientmobile digits should be 11")
+        err.style.visibility = "visible"
+    }else if(patientage === null || patientage ===""){
+        setErrorMessage("patientage is required")
+        err.style.visibility = "visible"
+    }else if(isNaN(patientage)){
+        setErrorMessage("patientage should be a number not text")
+    }else if (appointmentid === "" || appointmentid === null){
+        setErrorMessage("appointmentid is required")
+        err.style.visibility = "visible"
+    }else if(isNaN(appointmentid)){
+        setErrorMessage("appointmentid should be a number not text")
+        err.style.visibility = "visible"
+    }else if (patientlab === null || patientlab === ""){
+        setErrorMessage("patientlab is required")
+        err.style.visibility = "visible"
+    }else if (patientscan === null || patientscan === ""){
+        setErrorMessage("patientscan is required")
+        err.style.visibility = "visible"
+    }
+    else if (avtivityID === null || avtivityID === ""){
+        setErrorMessage("avtivityID is required")
+        err.style.visibility = "visible"
+    }
+    else {
+
+
     setLabprint([...labprint,{
         labs:event.target[6].value
     }])
@@ -117,12 +171,15 @@ const handleAddBillChange = (event) => {
     try{
         console.log(document.getElementById("avtivityID").value)
         axios.post('/labs/labs/', newData).then((response)=>{
+            err.style.visibility = "hidden"
             console.log(response.data)
         })
 
     }catch(error){
         console.log(error)
     }
+
+}
   };
 
     const componentRef = useRef()
@@ -142,33 +199,42 @@ const handleAddBillChange = (event) => {
                 <div>
 
                     <div className='container-fluid  formcontainer' >
+
+                    <div align="center" className="col-12 text-center" id="error" >
+                  <span>{errorMessage}</span>
+                  <br/>
+                  </div>
                         <form onSubmit={handleAddLabSubmit}>
                             <div className="row">
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Name</label>
+<<<<<<< HEAD
                                     <input type='text' className='form-control' name="patientname" required  onChange={(e)=>{patientValidate(e)}}/>
+=======
+                                    <input type='text' className='form-control' name="patientname" id="patientname"  onChange={handleAddBillChange}/>
+>>>>>>> f916e3d7f754c062ea033c04fbb0610af7eaedd4
                                 </div>
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Phone Number </label>
-                                    <input type='text' className='form-control' name="patientmobile" required onChange={handleAddBillChange}/>
+                                    <input type='text' className='form-control' name="patientmobile" id="patientmobile"  onChange={handleAddBillChange}/>
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="col-lg-6">
                                     <label className="form-label">Patient Age</label>
-                                    <input type='number' className='form-control' name="patientage" required  onChange={handleAddBillChange}/>
+                                    <input type='number' className='form-control' name="patientage" id="patientage"   onChange={handleAddBillChange}/>
                                 </div>
                                 <div className="col-lg-6">
                                     <label className="form-label">Appointment ID </label>
-                                    <input type='text' className='form-control' name="appointmentid" required onChange={handleAddBillChange}/>
+                                    <input type='text' className='form-control' name="appointmentid" id="appointmentid" onChange={handleAddBillChange}/>
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="col-lg-6">
                                     <label className="form-label">Lab Name</label>
-                                    <select className="form-select" name="patientlab" onChange={handleAddBillChange}>
+                                    <select className="form-select" name="patientlab" id="patientlab" onChange={handleAddBillChange}>
                                             <option value="0">choose Lab</option>
                                         {labs.map((lab) => (
                                             <option value={ lab.Lab_name }>{ lab.Lab_name }</option>
@@ -177,7 +243,7 @@ const handleAddBillChange = (event) => {
                                 </div>
                                 <div className="col-lg-6">
                                     <label className="form-label">Scan Name</label>
-                                    <select className="form-select" name="patientscan" onChange={handleAddBillChange}>
+                                    <select className="form-select" name="patientscan" id="patientscan" onChange={handleAddBillChange}>
                                             <option value="0">choose Scan</option>
                                         {scans.map((scan) => (
                                             <option value={ scan.Scan_name }>{ scan.Scan_name }</option>
@@ -189,7 +255,7 @@ const handleAddBillChange = (event) => {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <label className="form-label">Lab Name</label>
-                                    <input type='text' className='form-control' id="avtivityID" name="activity" value={addLabData.patientlab || addLabData.patientscan } onChange={handleAddBillChange} required />
+                                    <input type='text' className='form-control' id="avtivityID" name="activity" value={addLabData.patientlab || addLabData.patientscan } onChange={handleAddBillChange}  />
                                 </div>
                             </div>
                            

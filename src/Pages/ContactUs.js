@@ -2,66 +2,64 @@ import {BsFillTelephoneFill} from "react-icons/bs";
 import {TiLocation} from "react-icons/ti"
 import {HiMail} from "react-icons/hi"
 import '../Style/ContactUs.css'
-import {  useState } from "react";
+import {  useState , useEffect} from "react";
+import axios from 'axios';
+import Sendmsg from './sendmsg';
+import {Link} from "react-router-dom";
 
-const Contact = ()=>{
-    const[info,setInfo]=useState({
-        name:"",
-        mail:"",
-    })
+function Contact() {
+//const initialValues ={'username': "",'email': "",'msg': ""};
+//const [formValues, setformValues] = useState(initialValues);
+//const [formErrors, setformErrors] = useState({});
+//const [isSubmit, setIsSubmit] = useState(false);
 
-    const[error,setError]=useState({
-        namev:null,
-        mailv:null,
-    })
 
-    const nameValidate=(e)=>{
-        if(e.target.name === "username"){
-            setInfo({
-                ...info,
-                name:e.target.value
-            })
-            setError({
-                ...error,
-                namev:
-                e.target.value.length === 0?
-                "please enter your name"
-                :e.target.value.length < 3?
-                "please enter a valid name"
-                :null
-            })
-        }
+
+    const [clientData, setclientData] = useState({
+        'client_name': "",
+        'client_email': "",
+        'client_msg': "",
+	'status':"success"
+    });
+    //change element value
+    const handelChange=(event)=>{
+	 
+        setclientData({
+            ...clientData,
+            [event.target.name]:event.target.value
+        });
+	
+    };
+
+
+    //send form
+    const sendForm=(event)=>{
+        //event.preventDefault();
+               const clientFormData= new FormData();
+       clientFormData.append("client_name",clientData.username)
+       clientFormData.append("client_email",clientData.email)
+       clientFormData.append("client_msg",clientData.msg)
+
+       try{
+        axios.post('/contactus/contactus/', clientFormData).then((response)=>{
+          console.log(response.data)
+          //  setclientData({
+           // 'client_name': "",
+         //   'client_email': "",
+          //  'client_msg': "",
+            //'status':true})
+        })
+    }catch(error){
+        console.log(error);
+          //   setclientData({
+           // 'status':false})
     }
+	//setformErrors(validate(formValues));
+    };
 
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
-    const emailValidate = (e) => {
-        if(e.target.name === "mail"){
-            setInfo({
-                ...info,
-                mail:e.target.value
-            })
-            if(!(regex.test(info.mail))){
-                
-                setError({
-                    ...error,
-                    mailv:"please enter a valid email"
-                        
-                })
-            }
-            else{
-                setError({
-                    ...error,
-                    mailv:null
-                })
-                
-            }
-        }
 
-    }
-    const handlesubmit = (event) => {
-        event.preventDefault();
-    }
+
 return(
     <>
         <div style={{marginTop:"50px"}}  >
@@ -69,11 +67,13 @@ return(
                     <h1 >Contact</h1>
                 </div>
         </div>
+
         <div className="container-fluid contactContainer " id='contact'>
             <div className="row text-center contactinfo2" >
                     <div className="col-lg-4 contactinfodiv">
                         <span className="icon" ><HiMail/></span>
-                        <p className="contactway">abdelrahman@gmail.com</p>
+                        <p className="contactway">
+myclinicapp79@gmail.com</p>
                     </div>
                     <div className="col-lg-4 contactinfodiv">
                         <span className="icon"><BsFillTelephoneFill/></span>
@@ -86,26 +86,31 @@ return(
             </div>
             <div className="row formRow">
                 <div className="col-lg-6 col-md-12">
-                    <form onSubmit={handlesubmit}>
+                    
+                    <form onSubmit={sendForm}>
                         <div className="mb-3">
                             <label  className="form-label inputLabel">Name</label>
-                            <input type="text" placeholder="Enter Your Name" name="username" className="form-control input" onChange={(e) => nameValidate(e)}/>
-                            <small>{error.namev}</small>
+                            <input onChange={handelChange} type="text" placeholder="Enter Your Name" name="username" className="form-control input" required/>
+
+                            
                         </div>
                         <div className="mb-3">
+			
                             <label  className="form-label inputLabel">Email</label>
-                            <input type="email" placeholder="Enter Your Mail" name="mail"  className="form-control input" onChange={(e) => emailValidate(e)}/>
-                            <small>{error.mailv}</small>
+                            <input onChange={handelChange}  type="email" placeholder="Enter Your Mail" name="email"  className="form-control input" required/>
+
                         </div>
                         <div className="mb-3 ">
+			
                             <label className="form-label inputLabel" >Message</label>
                             <br/>
-                            <textarea className="form-control input" placeholder="Enter Your Message" >
+                            <textarea onChange={handelChange} className="form-control input" placeholder="Enter Your Message" name="msg" required >
 
                             </textarea>
+
                         </div>
                         <div className="mb-3 text-center">
-                        <button type="submit" className="btn btn-lg  button">Send</button>
+                       <button type="submit" className="btn btn-lg  button">Send</button>
                         </div>
                     </form>
                 </div>
