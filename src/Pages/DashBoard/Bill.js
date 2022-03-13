@@ -15,6 +15,10 @@ const Bill = () => {
 
   let sum=0
 
+
+
+  const [errorMessage, setErrorMessage] = useState('');
+
   const[data, setData] =  useState([])
   const[inputFields, setInputfields] =  useState(
     { activity:'',price:''},
@@ -77,6 +81,30 @@ const handlePrint = useReactToPrint({
 const handlesubmit = (e) => {
     e.preventDefault()
 
+
+    let appointment_id = document.getElementById('appointment_id').value;
+    let price = document.getElementById('price').value;
+    let activity = document.getElementById('activity').value;
+    //let flag = 0;
+    let err = document.getElementById('error')
+    //var mailformat =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if(appointment_id === null || appointment_id === ""){
+        setErrorMessage("appointment_id is required")
+        err.style.visibility = "visible"
+    }else if(price === null || price === ""){
+        setErrorMessage("price is required")
+        err.style.visibility = "visible"
+    }else if(isNaN(price)){
+        setErrorMessage("price should be a number not text")
+        err.style.visibility = "visible"
+    }else if(activity === null || activity === ""){
+        setErrorMessage("activity is required")
+        err.style.visibility = "visible"
+    }
+    else {
+
+
     const newData = {
       appointment_id: appointment_idField.appointment_id,
       activity_name: inputFields.activity,
@@ -95,13 +123,15 @@ const handlesubmit = (e) => {
     try{
         axios.post('/bill/billpost', newData).then((response)=>{
             console.log(response.data)
+            err.style.visibility = "hidden"
             setData(newDatas);
             getBillData()
         })
 
     }catch(error){
-        console.log(error)
-    }   
+       console.log(error)
+    } 
+  }  
   };
 
 
@@ -129,22 +159,26 @@ const handlesubmit = (e) => {
         </div>
 
         <div className='container-fluid formPart' >
+        <div align="center" className="col-12 text-center" id="error" >
+                  <span>{errorMessage}</span>
+                  <br/>
+        </div>
           <form method="post" onSubmit={(e) => {handlesubmit(e)}}>
           <div className="row">
                   <div className="col-lg-12">
                       <label className="form-label">Appointment ID</label>
-                      <input type='text' className='form-control' name="appointment_id" value={appointment_idField.appointment_id}  onChange={handleAppointmentChange} />
+                      <input type='text' className='form-control' name="appointment_id" id="appointment_id" value={appointment_idField.appointment_id}  onChange={handleAppointmentChange} />
                   </div>
           </div>
           
             <div className="row">
               <div className="col-lg-6">
                   <label className="form-label">Activity</label>
-                  <input type='text' className='form-control' name="activity" value={inputFields.activity} onChange={event => handleChangeInput(event)}/>
+                  <input type='text' className='form-control' name="activity" id="activity" value={inputFields.activity} onChange={event => handleChangeInput(event)}/>
               </div>
               <div className="col-lg-6">
                   <label className="form-label">Price</label>
-                  <input type='text' className='form-control' name="price" value={inputFields.price} onChange={event => handleChangeInput(event)}/>
+                  <input type='text' className='form-control' name="price" id="price" value={inputFields.price} onChange={event => handleChangeInput(event)}/>
               </div>
               {/* <div className="col-lg-1" style={{top:"37px"}}>
                   
